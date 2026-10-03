@@ -16,8 +16,8 @@
   pointer-events: none;
 }
 .toast {
-  padding: 11px 20px;
-  border-radius: var(--radius-full);
+  padding: 9px 16px;
+  border-radius: var(--radius-md);
   background: var(--text-primary);
   color: var(--bg-card);
   font-size: var(--fs-body);
