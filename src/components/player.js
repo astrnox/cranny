@@ -10,7 +10,9 @@ import { UI } from '../utils/icons.js';
 
 const LOAD_TIMEOUT = 8000;
 const HINT_DELAY   = 4000;
-const MIN_SPINNER  = 400;
+/* 最短驻留时间。别太短：spinner 一圈 0.8s，短于这个数用户只会看到
+   一闪而过的半圈，体感上等于「没有加载动画」。 */
+const MIN_SPINNER  = 850;
 
 const I_BACK  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>`;
 const I_FULL  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3M16 3h3a2 2 0 012 2v3M16 21h3a2 2 0 002-2v-3M8 21H5a2 2 0 01-2-2v-3"/></svg>`;
@@ -42,12 +44,23 @@ function build() {
   const bar = el('div', { className: 'player__bar' }, [backBtn, title, el('div', { className: 'player__actions' }, [fsBtn, extBtn])]);
 
   const loading = el('div', { className: 'player__loading', attrs: { hidden: '' } });
-  loading.innerHTML = `<div class="spinner"></div><div class="player__loading-text">正在加载…</div>`;
+  loading.innerHTML = `
+    <div class="loader">
+      <div class="loader__rings" aria-hidden="true">
+        <span class="loader__ring"></span>
+        <span class="loader__ring"></span>
+        <span class="loader__ring"></span>
+      </div>
+      <div class="loader__text">
+        <p class="loader__title">正在开门</p>
+        <p class="loader__sub">游戏马上就好</p>
+      </div>
+    </div>
+    <div class="loader__bar" aria-hidden="true"><i></i></div>`;
 
-  const frame = el('iframe', {
-    className: 'player__frame',
-    attrs: { referrerpolicy: 'no-referrer', allowfullscreen: '', allow: 'fullscreen; autoplay; gamepad', title: '游戏画面' },
-  });
+  /* frame 每次打开都重新创建：同一个 src 二次赋值不会再次触发 load，
+     复用元素会导致 loading 永远等不到 load，直接卡到超时。 */
+  const frame = newFrame();
 
   const stage = el('div', { className: 'player__stage' }, [loading, frame]);
   const fallback = el('div', { className: 'player__fallback', attrs: { hidden: '' } });
@@ -60,6 +73,13 @@ function build() {
   return { root, backBtn, title, fsBtn, extBtn, loading, frame, stage, fallback, hint };
 }
 
+function newFrame() {
+  return el('iframe', {
+    className: 'player__frame',
+    attrs: { referrerpolicy: 'no-referrer', allowfullscreen: '', allow: 'fullscreen; autoplay; gamepad', title: '游戏画面' },
+  });
+}
+
 function clearTimers() { Object.values(timers).forEach(clearTimeout); timers = {}; }
 function later(k, fn, ms) { clearTimeout(timers[k]); timers[k] = setTimeout(fn, ms); }
 
@@ -68,7 +88,8 @@ function later(k, fn, ms) { clearTimeout(timers[k]); timers[k] = setTimeout(fn, 
    ------------------------------------------------------------ */
 function showFallback(reason) {
   clearTimers();
-  refs.loading.hidden = true;
+  refs.loading.classList.add('is-done');
+  later('hide', () => { refs.loading.hidden = true; }, 400);
   refs.hint.classList.remove('is-visible');
 
   const copies = {
@@ -139,32 +160,41 @@ export function openPlayer(game, { onClose } = {}) {
   onCloseCb = onClose;
   current = game;
 
+  let loaded = false;
+  const start = Date.now();
+
   refs.title.textContent = game.title;
   refs.root.hidden = false;
   refs.root.setAttribute('aria-label', `${game.title} 游玩窗口`);
   document.body.classList.add('is-locked');
   refs.loading.hidden = false;
   refs.loading.classList.remove('is-done');
+  refs.loading.querySelector('.loader__title').textContent = game.title;
   refs.fallback.hidden = true;
   refs.hint.classList.remove('is-visible');
+  clearTimers();
 
   if (store.isKnownBlocked(game.id)) {
     refs.frame.src = 'about:blank';
     showFallback('manual');
   } else {
-    refs.frame.src = game.url;
-    let loaded = false;
-    const start = Date.now();
-
+    /* 换新 iframe：保证 load 事件一定触发，二次打开同一游戏也能正常收起 loading */
+    const fresh = newFrame();
+    refs.frame.replaceWith(fresh);
+    refs.frame = fresh;
     refs.frame.addEventListener('load', () => {
       loaded = true;
       clearTimeout(timers.timeout);
-      later('done', () => refs.loading.classList.add('is-done'), Math.max(0, MIN_SPINNER - (Date.now() - start)));
+      later('done', () => {
+        refs.loading.classList.add('is-done');
+        later('hide', () => { if (!refs.root.hidden) refs.loading.hidden = true; }, 400);
+      }, Math.max(0, MIN_SPINNER - (Date.now() - start)));
       later('hint', () => { if (!refs.root.hidden && refs.fallback.hidden) refs.hint.classList.add('is-visible'); }, HINT_DELAY);
     }, { once: true });
 
     refs.frame.addEventListener('error', () => { if (!loaded) showFallback('error'); }, { once: true });
     later('timeout', () => { if (!loaded) showFallback('timeout'); }, LOAD_TIMEOUT);
+    refs.frame.src = game.url;
   }
 
   store.pushRecent(game.id);
