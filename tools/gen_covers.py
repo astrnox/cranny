@@ -125,7 +125,7 @@ def wrap(title, kicker, bg_stops, extra_defs, scene):
 <rect width="{W}" height="{H}" fill="url(#vg)"/>
 {GRAIN}
 {label}
-<rect x="10.5" y="10.5" width="379" height="279" rx="14" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="1.5"/></svg>"""
+<rect x="8" y="8" width="384" height="284" rx="8" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="1.5"/></svg>"""
 
 
 def tile(x, y, w, h, r, fill, label=None, fs=26, tc="#fff", op=None, sh="sh"):
