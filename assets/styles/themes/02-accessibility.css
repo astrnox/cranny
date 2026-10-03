@@ -26,6 +26,29 @@
   }
   .card:hover { transform: none; }
   .card:hover .card__img { transform: none; }
+
+  /* 加载指示器必须保留：这是「正在等待」的唯一反馈，
+     完全静止会被误读成卡死。改用低频、非位移的缓慢变化代替旋转。 */
+  .player__loading .loader,
+  .player__loading .loader * {
+    animation-duration: 1.2s !important;
+    animation-iteration-count: infinite !important;
+    transition-duration: 0.01ms !important;
+  }
+  .loader__ring:nth-child(1) { animation-name: breatheRing !important; }
+  .loader__ring:nth-child(2),
+  .loader__ring:nth-child(3) { animation: none !important; }
+  .loader__rings::after { animation-name: pulse !important; }
+  .loader__bar i { animation-name: loaderFade !important; }
+}
+
+@keyframes breatheRing {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+@keyframes loaderFade {
+  0%   { transform: translateX(-110%); opacity: 1; }
+  100% { transform: translateX(370%); opacity: 1; }
 }
 
 /* ---------- 高对比度 ---------- */
