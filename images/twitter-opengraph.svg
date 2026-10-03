@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F6F5F2"/>
+  <rect x="0" y="0" width="1200" height="14" fill="#FF5A36"/>
+  <g transform="translate(96 132)">
+    <rect x="0" y="0" width="96" height="96" rx="26" fill="#FF5A36"/>
+    <g fill="#FFFFFF" transform="translate(24 26)">
+      <rect x="0" y="0" width="18" height="18" rx="5"/>
+      <rect x="26" y="0" width="18" height="18" rx="5" opacity="0.65"/>
+      <rect x="0" y="26" width="18" height="18" rx="5" opacity="0.65"/>
+      <rect x="26" y="26" width="18" height="18" rx="5"/>
+    </g>
+  </g>
+  <text x="96" y="348" font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="104" font-weight="700" fill="#1A1C20">游戏中心</text>
+  <text x="96" y="428" font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="40" font-weight="500" fill="#5B6068">点开即玩的网页游戏集合</text>
+  <g font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="28" fill="#1A1C20">
+    <rect x="96" y="486" width="160" height="58" rx="29" fill="#FFFFFF" stroke="#E3E1DC" stroke-width="2"/>
+    <text x="176" y="524" text-anchor="middle">15 款游戏</text>
+    <rect x="276" y="486" width="260" height="58" rx="29" fill="#FFFFFF" stroke="#E3E1DC" stroke-width="2"/>
+    <text x="406" y="524" text-anchor="middle">中英双语 README</text>
+  </g>
+  <text x="1104" y="586" text-anchor="end" font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="26" fill="#B8BCC2">astrnox.github.io/gamespace</text>
+</svg>

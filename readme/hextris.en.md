@@ -1,7 +1,7 @@
 Hextris
 ==========
 
-<img src="images/twitter-opengraph.png" width="100px"><br>
+<img src="images/twitter-opengraph.svg" width="100" alt="Hextris"><br>
 
 An addictive puzzle game inspired by Tetris. Play it at [www.hextris.io](http://www.hextris.io), or [https://hextris.github.io/hextris](https://hextris.github.io/hextris).
 

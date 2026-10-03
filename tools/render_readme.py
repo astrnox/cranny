@@ -9,6 +9,7 @@ render_readme.py · 把 readme/{id}.{lang}.md 渲染为自包含的 {id}.{lang}.
 用法：python3 tools/render_readme.py
 """
 import glob
+import re
 import os
 import markdown
 
@@ -94,8 +95,16 @@ def render(md_path: str):
     name = os.path.basename(md_path)[:-3]          # {id}.{lang}
     gid, _, lang = name.rpartition(".")
     text = open(md_path, encoding="utf-8").read()
+    # README 会以 srcdoc 注入 iframe，基准是站点根目录，
+    # 去掉 ../ 前缀并剥掉 md 里多余的换行尖括号，避免 404
+    text = re.sub(r'src="\.\./+', 'src="', text)
+    text = text.replace('"><br>', '">')
     html = markdown.markdown(
         text, extensions=["tables", "fenced_code", "nl2br", "sane_lists"]
+    )
+    # 图片加载失败时隐藏破图
+    html = html.replace(
+        "<img ", '<img onerror="this.remove()" loading="lazy" '
     )
     title = gid
     for line in text.splitlines():

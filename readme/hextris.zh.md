@@ -1,7 +1,7 @@
 Hextris
 ==========
 
-<img src="images/twitter-opengraph.png" width="100px"><br>
+<img src="images/twitter-opengraph.svg" width="100" alt="Hextris"><br>
 
 一款受俄罗斯方块（Tetris）启发的让人上瘾的益智游戏。可在 [www.hextris.io](http://www.hextris.io) 或 [https://hextris.github.io/hextris](https://hextris.github.io/hextris) 游玩。
 
