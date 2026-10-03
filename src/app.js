@@ -227,7 +227,6 @@ function updateSubtitle() {
     s.fav ? `${s.fav} 个收藏` : null,
   ].filter(Boolean).join(' · ');
 }
-
 function initTopbar() {
   const onScroll = () => dom.topbar.classList.toggle('is-scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true });
