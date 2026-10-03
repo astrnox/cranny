@@ -35,11 +35,11 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  height: 38px;
-  padding: 0 14px 0 10px;
-  border-radius: var(--radius-full);
-  font-size: var(--fs-body);
-  font-weight: 600;
+  height: 32px;
+  padding: 0 10px 0 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-meta);
+  font-weight: 500;
   color: var(--brand);
   transition: background var(--dur-1) var(--ease-out);
 }
@@ -274,11 +274,11 @@
   right: 16px;
   bottom: calc(16px + env(safe-area-inset-bottom));
   z-index: 2;
-  height: 38px;
-  padding: 0 16px;
-  border-radius: var(--radius-full);
+  height: 30px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
   font-size: var(--fs-meta);
-  font-weight: 600;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 6px;
