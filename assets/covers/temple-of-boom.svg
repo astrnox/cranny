@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="TEMPLE OF BOOM 封面"><rect width="400" height="300" fill="#B5532E"/><g transform="translate(300 70)"><path d="M0 -34 L9 -10 34 0 9 10 0 34 -9 10 -34 0 -9 -10Z" fill="#FFD23F"/><path d="M0 -18 L5 -5 18 0 5 5 0 18 -5 5 -18 0 -5 -5Z" fill="#FF5A36"/></g><polygon points="150,150 250,150 232,108 168,108" fill="#F0D9C4"/><rect x="156" y="150" width="16" height="56" rx="3" fill="#E7C9AE"/><rect x="228" y="150" width="16" height="56" rx="3" fill="#E7C9AE"/><rect x="142" y="206" width="116" height="14" rx="4" fill="#D8B494"/><rect x="0" y="232" width="400" height="68" fill="#000" opacity="0.42"/><rect x="22" y="250" width="30" height="4" rx="2" fill="#FF5A36"/><text x="22" y="284" font-family="system-ui,-apple-system,'Segoe UI','Noto Sans CJK SC','PingFang SC',sans-serif" font-size="27" font-weight="800" fill="#ffffff" letter-spacing="-0.5">TEMPLE OF BOOM</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="TEMPLE OF BOOM 封面"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26140A"/><stop offset="1" stop-color="#C98A2E"/></linearGradient><radialGradient id="gl" cx="0.5" cy="0.36" r="0.62"><stop offset="0" stop-color="#fff" stop-opacity="0.2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><radialGradient id="vg" cx="0.5" cy="0.42" r="0.8"><stop offset="0.45" stop-color="#000" stop-opacity="0"/><stop offset="0.78" stop-color="#000" stop-opacity="0.12"/><stop offset="1" stop-color="#000" stop-opacity="0.4"/></radialGradient><linearGradient id="sc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="0.45" stop-color="#000" stop-opacity="0.34"/><stop offset="1" stop-color="#000" stop-opacity="0.8"/></linearGradient><filter id="nz" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><radialGradient id="s2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFF0C2" stop-opacity="0.95"/><stop offset="1" stop-color="#FFC24A" stop-opacity="0"/></radialGradient><linearGradient id="st" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5C3A1E"/><stop offset="1" stop-color="#38220F"/></linearGradient></defs>
+<rect width="400" height="300" fill="url(#bg)"/>
+<rect width="400" height="300" fill="url(#gl)"/>
+<circle cx="200" cy="96" r="58" fill="url(#s2)"/>
+<g opacity="0.45" fill="#7A4A22">
+<polygon points="200,26 246,66 154,66"/>
+<rect x="140" y="66" width="120" height="12" rx="4"/>
+<rect x="152" y="78" width="96" height="9" rx="4"/></g>
+<rect x="108" y="100" width="184" height="16" rx="5" fill="#6B4526"/>
+<rect x="120" y="118" width="22" height="86" fill="url(#st)"/><rect x="116" y="112" width="30" height="10" rx="3" fill="#6B4526"/><rect x="116" y="200" width="30" height="10" rx="3" fill="#6B4526"/><rect x="160" y="118" width="22" height="86" fill="url(#st)"/><rect x="156" y="112" width="30" height="10" rx="3" fill="#6B4526"/><rect x="156" y="200" width="30" height="10" rx="3" fill="#6B4526"/><rect x="200" y="118" width="22" height="86" fill="url(#st)"/><rect x="196" y="112" width="30" height="10" rx="3" fill="#6B4526"/><rect x="196" y="200" width="30" height="10" rx="3" fill="#6B4526"/><rect x="240" y="118" width="22" height="86" fill="url(#st)"/><rect x="236" y="112" width="30" height="10" rx="3" fill="#6B4526"/><rect x="236" y="200" width="30" height="10" rx="3" fill="#6B4526"/>
+<rect x="96" y="204" width="208" height="18" rx="6" fill="#54341C"/>
+<rect x="82" y="220" width="236" height="16" rx="6" fill="#43290F" opacity="0.85"/>
+<g opacity="0.35" fill="#FFE6A8">
+<polygon points="200,84 220,100 180,100"/></g>
+<g stroke="#FFB347" stroke-width="4" stroke-linecap="round" opacity="0.5" fill="none">
+<path d="M60 150 l-14 -10 M60 186 l-16 4 M340 150 l14 -10 M340 186 l16 4"/></g>
+<rect width="400" height="300" fill="url(#vg)"/>
+<rect width="400" height="300" filter="url(#nz)" opacity="0.05" style="mix-blend-mode:normal"/>
+<rect y="216" width="400" height="84" fill="url(#sc)"/>
+<rect x="10.5" y="10.5" width="379" height="279" rx="14" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="1.5"/></svg>
