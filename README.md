@@ -1,8 +1,8 @@
-# 游戏中心
+# cranny
 
-> 15 款自建游戏的小集合 —— 网页游戏点开即玩，PC 与安卓游戏提供下载。
+> 墙角的电子游戏。15 款自己写的小游戏 —— 开源、离线也能玩。
 
-**在线地址：<https://astrnox.github.io/gamespace/>**
+**在线地址：<https://cranny.bbrrot.com/>**
 
 ## 收录的游戏
 
