@@ -24,16 +24,12 @@
   animation-delay: calc(var(--i, 0) * 32ms);
 }
 @keyframes cardIn {
-  from { opacity: 0; transform: translate3d(0, 16px, 0) scale(0.985); }
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
   to   { opacity: 1; transform: translateZ(0); }
 }
 .card:hover {
-  transform: translateY(-5px) scale(1.025);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-card-hover);
-}
-.card:active {
-  transform: translateY(-1px) scale(0.985);
-  transition-duration: var(--dur-1);
 }
 
 /* ---------- 封面（Poki 的灵魂：几乎全屏） ---------- */
@@ -51,7 +47,7 @@
   will-change: transform;
   transition: transform var(--dur-3) var(--ease-out);
 }
-.card:hover .card__img { transform: scale(1.06); }
+.card:hover .card__img { transform: scale(1.03); }
 
 /* 缺图占位：实心色块（零渐变），真实封面就绪后基本不出现 */
 .card__placeholder {
@@ -112,36 +108,39 @@
 /* ---------- 角标（Poki 风格：彩色小胶囊） ---------- */
 .card__badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 8px;
+  left: 8px;
   z-index: 2;
-  height: 24px;
-  padding: 0 10px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 700;
+  height: 20px;
+  padding: 0 7px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  gap: 4px;
+  background: rgba(20,20,20,0.6);
+  color: #fff;
   pointer-events: none;
 }
 .card__badge::before {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 999px;
   background: currentColor;
+  opacity: 0.85;
 }
 
-/* 角标配色：明亮、务实，避开蓝/紫 */
-.badge--play    { background: var(--green);  color: #fff; }
-.badge--open    { background: var(--amber);  color: #fff; }
-.badge--pc      { background: var(--ink);    color: #fff; }
-.badge--android { background: var(--teal);   color: #fff; }
-.badge--broken  { background: var(--gray);   color: #fff; }
-.badge--repo    { background: var(--brand);  color: #fff; }
+/* 角标一律中性底 + 彩色小点。给每种类型配一整套彩色胶囊
+   是 AI 生成 UI 的常见做法，这里只用小圆点做区分。 */
+.badge--pc      { color: #fff; } .badge--pc::before      { background: #7FB2FF; }
+.badge--android { color: #fff; } .badge--android::before { background: #6ED6C0; }
+.badge--open    { color: #fff; } .badge--open::before    { background: #FFD166; }
+.badge--play    { color: #fff; } .badge--play::before    { background: #5FC08A; }
+.badge--repo    { color: #fff; } .badge--repo::before    { background: #FF8A6B; }
+.badge--broken  { color: #fff; } .badge--broken::before  { background: #C9C4BB; }
 
 /* ---------- 收藏星（右下角，hover 显示） ---------- */
 .card__star {
@@ -149,32 +148,24 @@
   top: 10px;
   right: 10px;
   z-index: 2;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
   display: grid;
   place-items: center;
-  background: rgba(255,255,255,0.92);
-  color: var(--text-tertiary);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  background: rgba(20,20,20,0.5);
+  color: rgba(255,255,255,0.75);
   opacity: 0;
-  transform: scale(0.6);
-  transition: opacity var(--dur-2) var(--ease-out),
-              transform var(--dur-2) var(--ease-pop),
-              color var(--dur-1) var(--ease-out),
-              background var(--dur-1) var(--ease-out);
+  transition: opacity var(--dur-1) var(--ease-out),
+              color var(--dur-1) var(--ease-out);
 }
-.card:hover .card__star { opacity: 1; transform: scale(1); }
-.card__star svg { width: 16px; height: 16px; }
-.card__star:hover { transform: scale(1.14); color: var(--red); }
-.card__star.is-active {
-  opacity: 1;
-  transform: scale(1);
-  color: var(--red);
-  background: var(--red-soft);
-}
+.card:hover .card__star { opacity: 1; }
+.card:hover .card__star.is-active { opacity: 1; }
+.card__star svg { width: 13px; height: 13px; }
+.card__star:hover { color: #fff; }
+.card__star.is-active { color: var(--red); }
 
 /* ---------- 失效 ---------- */
 .card[data-status="broken"] { opacity: 0.62; }
 .card[data-status="broken"] .card__cover { filter: grayscale(0.85); }
-.card[data-status="broken"]:hover { transform: translateY(-2px) scale(1.008); }
+.card[data-status="broken"]:hover { transform: translateY(-2px); }
