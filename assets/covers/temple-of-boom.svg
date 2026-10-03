@@ -17,4 +17,4 @@
 <rect width="400" height="300" fill="url(#vg)"/>
 <rect width="400" height="300" filter="url(#nz)" opacity="0.05" style="mix-blend-mode:normal"/>
 <rect y="216" width="400" height="84" fill="url(#sc)"/>
-<rect x="10.5" y="10.5" width="379" height="279" rx="14" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="1.5"/></svg>
+<rect x="8" y="8" width="384" height="284" rx="8" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="1.5"/></svg>
