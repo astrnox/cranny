@@ -97,8 +97,8 @@ export function openDetail(game, { onAction } = {}) {
     el('div', { className: 'detail__head-text' }, [
       el('h2', { className: 'detail__title', text: game.title }),
       el('div', { className: 'detail__meta' }, [
-        el('span', { className: `card__badge badge--${badge.key}`, text: badge.text, style: { position: 'static', height: '22px' } }),
-        el('span', { className: 'card__badge', text: (game.platform || []).join(' / '), style: { position: 'static', background: 'var(--bg-sunken)', color: 'var(--text-secondary)', height: '22px' } }),
+        el('span', { className: `tag tag--${badge.key}`, text: badge.text }),
+        el('span', { className: 'tag', text: (game.platform || []).join(' / ') }),
       ]),
     ]),
     (() => { const b = el('button', { className: 'detail__close', html: I_CLOSE, attrs: { type: 'button', 'aria-label': '关闭' } });
