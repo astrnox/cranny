@@ -16,6 +16,25 @@ import markdown
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "readme")
 
+
+def drop_missing_images(html: str) -> str:
+    """剔除站点上不存在的本地图片，避免 README 里留下破图。
+
+    README 通过 srcdoc 注入 sandbox iframe，iframe 不允许执行脚本，
+    onerror 兜底不可用，只能在构建期把坏图直接删掉。
+    """
+    def repl(m):
+        src = m.group(1)
+        if re.match(r'^(https?:)?//|^data:', src):
+            return m.group(0)                       # 外链原样保留
+        path = os.path.join(ROOT, src.split('?')[0].split('#')[0])
+        if os.path.isfile(path):
+            return m.group(0)
+        return ''                                    # 本地缺失 → 删掉整张图
+
+    return re.sub(r'<img[^>]*\ssrc="([^"]+)"[^>]*>', repl, html)
+
+
 CSS = """
 :root{
   --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
@@ -102,10 +121,7 @@ def render(md_path: str):
     html = markdown.markdown(
         text, extensions=["tables", "fenced_code", "nl2br", "sane_lists"]
     )
-    # 图片加载失败时隐藏破图
-    html = html.replace(
-        "<img ", '<img onerror="this.remove()" loading="lazy" '
-    )
+    html = drop_missing_images(html)
     title = gid
     for line in text.splitlines():
         if line.startswith("# "):

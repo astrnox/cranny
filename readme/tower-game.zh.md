@@ -3,7 +3,7 @@
 [English](./README.en.md) | **简体中文**
 
 <h1 align="center">塔楼建造游戏</h1>
-<p align="center"><img src="https://o2qq673j2.qnssl.com/tower-loading.gif"/></p>
+<p align="center"><img src="images/readme/tower-loading.gif"/></p>
 
 > 一款基于 ES6 和 Canvas 的塔楼建造游戏（Tower Bloxx Deluxe Skyscraper）
 
