@@ -1,5 +1,5 @@
 /* ============================================================
-   topbar.css · Poki 风格顶栏（实心白底，非玻璃）
+   topbar.css · 顶栏（实心，不做玻璃）
    ============================================================ */
 
 .topbar {
@@ -8,76 +8,76 @@
   z-index: 50;
   background: var(--bg-card);
   border-bottom: 1px solid var(--border);
-  transition: box-shadow var(--dur-2) var(--ease-out);
 }
-.topbar.is-scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.topbar.is-scrolled { box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
 
 .topbar__inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 14px var(--page-gutter);
+  padding: 10px var(--page-gutter);
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  min-height: 68px;
+  min-height: 52px;
 }
 
 /* ---------- 品牌 ---------- */
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
   white-space: nowrap;
   flex-shrink: 0;
   color: var(--text-primary);
   transition: opacity var(--dur-1) var(--ease-out);
 }
-.brand:hover { opacity: 0.7; }
+.brand:hover { opacity: 0.65; }
 
 .brand__mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--brand);
-  color: #fff;
+  width: 22px;
+  height: 22px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  box-shadow: 0 3px 10px rgba(255,90,54,0.35);
+  color: var(--brand);
 }
 .brand__mark svg { width: 20px; height: 20px; }
 @media (max-width: 520px) { .brand__text { display: none; } }
 
-/* ---------- 顶部加载进度条（数据加载时的薄条动画） ---------- */
+/* ---------- 顶部加载条 ----------
+   2px 定长细线，只在真正加载时出现；不做常驻循环滑动的彩条。 */
 .loadbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 3px;
+  height: 2px;
   overflow: hidden;
   z-index: 400;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-1) linear;
 }
 .loadbar::after {
   content: "";
   display: block;
   height: 100%;
-  width: 38%;
+  width: 30%;
   background: var(--brand);
   transform: translateX(-100%);
   animation: loadSlide 1.1s var(--ease-out) infinite;
 }
+.loadbar:not(.is-done) { opacity: 1; }
 @keyframes loadSlide {
-  to { transform: translateX(300%); }
+  to { transform: translateX(430%); }
 }
-.loadbar.is-done { opacity: 0; transition: opacity var(--dur-3) var(--ease-out); }
+.loadbar.is-done { opacity: 0; transition: opacity var(--dur-2) var(--ease-out); }
 
 .topbar__actions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   margin-left: auto;
   flex-shrink: 0;
 }
