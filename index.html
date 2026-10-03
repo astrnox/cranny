@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>游戏中心 · astrnox 的游戏合集</title>
-<meta name="description" content="astrnox 的自建游戏中心 —— 网页游戏点开即玩，PC 与安卓游戏提供下载。">
+<title>cranny · 墙角的电子游戏</title>
+<meta name="description" content="我自己写的小游戏，都开源、都能离线玩。点开即玩，也能下到电脑和手机上。">
 <meta name="theme-color" content="#F2F2F7">
 <meta name="color-scheme" content="light dark">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="游戏中心 · Game Hub">
-<meta property="og:description" content="点开即玩的网页游戏集合，以及 PC / 安卓游戏下载。">
+<meta property="og:title" content="cranny · 墙角的电子游戏">
+<meta property="og:description" content="我自己写的小游戏，都开源、都能离线玩。点开即玩，也能下到电脑和手机上。">
 <meta property="og:image" content="images/twitter-opengraph.png">
-<meta property="og:url" content="https://astrnox.github.io/gamespace/">
+<meta property="og:url" content="https://cranny.bbrrot.com/">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://github.io">
@@ -28,9 +28,13 @@
   <div class="topbar__inner">
     <a class="brand" href="./">
       <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 20V9a5 5 0 0 1 5-5h11"/>
+          <path d="M20 4v7a5 5 0 0 1-5 5H9"/>
+        </svg>
       </span>
-      <span class="brand__text">游戏中心</span>
+      <span class="brand__text">cranny</span>
     </a>
 
     <div class="topbar__actions">
@@ -43,17 +47,18 @@
 <!-- ===================== 主内容 ===================== -->
 <main class="main container">
 
-  <!-- 英雄区：Poki 式居中巨型标题 + 大搜索，是全站最标志性的一刻 -->
+  <!-- 站名只在顶栏出现一次；这里给一句话说明它是干什么的 -->
   <section class="hero">
-    <h1 class="hero__title">游戏中心</h1>
-    <p class="hero__sub" id="pageSub">正在加载…</p>
+    <p class="hero__title">墙角的电子游戏</p>
+    <p class="hero__sub">都是我自己写的，开源、离线也能玩。慢慢挑，不着急。</p>
+    <p class="hero__count" id="pageSub">正在加载…</p>
     <div class="hero__search" id="searchWrap">
       <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
            stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
       </svg>
       <input class="search__input" id="search" type="search"
-             placeholder="想玩点什么？" autocomplete="off" spellcheck="false"
+             placeholder="搜一个游戏名" autocomplete="off" spellcheck="false"
              aria-label="搜索游戏">
       <button class="search__clear" id="searchClear" type="button" aria-label="清除搜索">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
@@ -108,7 +113,7 @@
 </main>
 
 <footer class="footer">
-  <div>游戏版权归各自原作者所有 · 本站仅作个人收藏与导航，不托管、不分发游戏本体</div>
+  <div>游戏都归原作者所有 · 这里只是我个人攒着玩的地方，不托管也不分发游戏本体</div>
   <div>
     <a href="https://github.com/astrnox" target="_blank" rel="noopener noreferrer">github.com/astrnox</a>
     <span class="footer__sep">·</span>
