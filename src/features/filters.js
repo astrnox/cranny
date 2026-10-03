@@ -1,5 +1,5 @@
 /* ============================================================
-   filters.js · 分段控件与分类胶囊
+   filters.js · 分段控件与分类筛选
    ============================================================ */
 
 import { el, clear } from '../utils/dom.js';
@@ -48,36 +48,13 @@ export function renderPills(container, { onChange } = {}) {
 
 export function syncSegmented(nodes) {
   nodes.forEach(n => n.setAttribute('aria-selected', String(n.dataset.tab === state.tab)));
-  const container = nodes[0]?.parentElement;
-  if (container) moveIndicator(container);
-}
-
-/** 滑动高亮：把白色药丸平滑移到当前选中项下方 */
-function moveIndicator(container) {
-  const ind = container.querySelector('.segmented__indicator');
-  if (!ind) return;
-  const active = container.querySelector('[aria-selected="true"]');
-  if (!active) { ind.style.opacity = '0'; return; }
-  ind.style.opacity = '1';
-  ind.style.width = `${active.offsetWidth}px`;
-  ind.style.transform = `translateX(${active.offsetLeft - 4}px)`;
 }
 
 export function initSegmented(nodes, { onChange } = {}) {
-  const container = nodes[0]?.parentElement;
-  if (container && !container.querySelector('.segmented__indicator')) {
-    const ind = el('span', { className: 'segmented__indicator' });
-    container.insertBefore(ind, container.firstChild);
-    requestAnimationFrame(() => moveIndicator(container));
-    addEventListener('resize', () => moveIndicator(container), { passive: true });
-    // 字体/布局稳定后再校一次
-    setTimeout(() => moveIndicator(container), 120);
-  }
   nodes.forEach(btn => btn.addEventListener('click', () => {
     state.tab = btn.dataset.tab;
     state.category = null;
     syncSegmented(nodes);
-    moveIndicator(container);
     onChange?.();
   }));
 }
