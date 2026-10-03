@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odd Bot Out</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Odd Bot Out</h1>
+<p>A browser puzzle-observation game. A grid of identical robots is on screen — <strong>only one of them is different.</strong> Find it, click it, and move to the next round. The grid grows and the differences get subtler as you go.</p>
+<ul>
+<li><strong>Live demo:</strong> <a href="https://astrnox.github.io/odd-bot-out/">astrnox.github.io/odd-bot-out</a></li>
+<li><strong>Source:</strong> <a href="https://github.com/astrnox/odd-bot-out">github.com/astrnox/odd-bot-out</a></li>
+<li><strong>Official site:</strong> <a href="https://www.oddbotout.com/">oddbotout.com</a></li>
+</ul>
+<h2>How to play</h2>
+<p>Every round shows a grid of robots that all look alike, except one. Your job is to spot the one that doesn't belong.</p>
+<ol>
+<li><strong>Scan</strong> the grid — the odd one usually differs by a single detail: a color, an antenna, an eye, a marking.</li>
+<li><strong>Click</strong> the robot you think is different.</li>
+<li>A correct pick advances you; a wrong one costs a life (or a retry, depending on difficulty).</li>
+<li>As the levels progress the grid gets larger and the difference becomes easier to miss.</li>
+</ol>
+<p>It's a pure eye-training / pattern-spotting game — no timers, no reading, just careful looking.</p>
+<h2>How it runs</h2>
+<p>The game is <strong>native code compiled to WebAssembly with Emscripten</strong>, rendered into an HTML5 <code>&lt;canvas&gt;</code>.</p>
+<pre><code>index.html            # canvas host + loading splash
+webapp/index.js       # Emscripten runtime loader
+webapp/source_min.js  # compiled game module
+webapp/obo.css        # canvas / layout styles
+webapp/splash.png     # loading splash
+</code></pre>
+<p>A <code>&lt;progress&gt;</code> bar shows download/compile progress on first load, then the game fades in.</p>
+<h2>Run it locally</h2>
+<p>Serve over HTTP (the Emscripten module won't load from <code>file://</code>):</p>
+<pre><code class="language-bash">git clone https://github.com/astrnox/odd-bot-out.git
+cd odd-bot-out
+python3 -m http.server 8000
+# open http://localhost:8000
+</code></pre>
+<h2>Tech stack</h2>
+<ul>
+<li><strong>Game:</strong> native (C/C++) compiled with <strong>Emscripten</strong> to WebAssembly</li>
+<li><strong>Renderer:</strong> HTML5 <code>&lt;canvas&gt;</code></li>
+<li><strong>Hosting:</strong> GitHub Pages</li>
+</ul>
+<h2>Credits</h2>
+<ul>
+<li>Original game: <em>Odd Bot Out</em> — <a href="https://www.oddbotout.com/">oddbotout.com</a></li>
+<li>This repository is an unblocked web build for play in modern browsers.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fluid Weiqi (Web Edition) · 液态围棋网页版</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Fluid Weiqi (Web Edition) · 液态围棋网页版</h1>
+<p><a href="https://github.com/WangNianyi2001/Fluid-Weiqi">Fluid Weiqi（液态围棋）</a> 的网页移植版——这是一种在连续势力场（而非离散棋子）上对弈的围棋变体。</p>
+<blockquote>
+<p>原版游戏由 <strong>王念一（Nianyi Wang）</strong> 创作——<a href="https://github.com/WangNianyi2001">@WangNianyi2001</a>。<br />
+这是经原作者许可完成的社区网页移植版。所有游戏规则、命名与视觉概念均归原作者所有。</p>
+</blockquote>
+<h2>本仓库包含什么</h2>
+<p>一个包含三个包的 pnpm monorepo：</p>
+<pre><code>fluid-weiqi-web/
+├── packages/
+│   └── core/          Pure-TS game logic (board, influence field, capture, match flow, WS protocol)
+├── apps/
+│   ├── server/        Node + ws relay server (rooms, action validation, broadcast)
+│   └── web/           Vite + React + Canvas2D front-end
+└── scripts/
+    └── smoke-test.mjs  End-to-end WS protocol test
+</code></pre>
+<p>同一份游戏规则代码（<code>@fluid/core</code>）同时运行在服务端（权威校验）与客户端（预览渲染）上。</p>
+<h2>本地运行</h2>
+<p>需要 Node 22+ 与 pnpm 10+。</p>
+<pre><code class="language-bash">pnpm install
+pnpm dev
+</code></pre>
+<p><code>pnpm dev</code> 会并行启动服务端（<code>http://localhost:8787</code>）与网页开发服务器（<code>http://localhost:5173</code> 或任意空闲端口）。在浏览器中打开该网页地址即可。若要在本地进行双人对战，再打开一个标签页并使用相同的房间码即可。</p>
+<p>若要分别启动：</p>
+<pre><code class="language-bash">pnpm --filter @fluid/server dev   # backend
+pnpm --filter @fluid/web    dev   # frontend
+</code></pre>
+<p>若要运行协议冒烟测试（需服务端已在运行）：</p>
+<pre><code class="language-bash">node scripts/smoke-test.mjs
+</code></pre>
+<h2>已实现（MVP）</h2>
+<ul>
+<li>✅ 方形棋盘（默认 19×19）、落子位置连续</li>
+<li>✅ 势力场算法移植自原版的 <a href="https://github.com/WangNianyi2001/Fluid-Weiqi/blob/master/Assets/Resources/Shaders/BoardDistribution.compute"><code>BoardDistribution.compute</code></a>（CPU 采样 + Canvas 2D 放大）</li>
+<li>✅ 提子检测：在地盘图上做连通分量分析、气与自杀判定</li>
+<li>✅ 双人回合制对局，支持 <strong>place</strong>（落子）与 <strong>pass</strong>（弃权）操作</li>
+<li>✅ 连续两次弃权即对局结束；存活棋子多者获胜</li>
+<li>✅ WebSocket 协议，含房间码、加入/离开、操作转发</li>
+<li>✅ 落子自动吸附到网格；按住 <strong>Shift</strong> 可自由连续落子（与原版一致）</li>
+</ul>
+<h2>尚未实现（为 MVP 有意裁剪）</h2>
+<ul>
+<li>❌ 基于 GPU shader 的势力场渲染（回合制下 96² 的 CPU 采样已足够；后续可换成 WebGL2）</li>
+<li>❌ 球形棋盘 / 收缩模式（上游 v0.3.0 已加入）</li>
+<li>❌ 大厅浏览界面（目前房间为私有，仅凭房间码进入）</li>
+<li>❌ AI 对手</li>
+<li>❌ 音效、动画</li>
+<li>❌ 生产环境部署（步骤见下文）</li>
+</ul>
+<h2>架构说明</h2>
+<ul>
+<li><code>@fluid/core</code> 以 TypeScript 源码形式被 <code>apps/web</code>（经由 Vite）与 <code>apps/server</code>（经由 tsx）同时使用，开发期间无需构建步骤。</li>
+<li>服务端是<strong>权威方</strong>——每一手棋都要在服务端经过 <code>Match.apply()</code>。客户端绝不直接调用游戏逻辑修改状态；它只渲染服务端广播的快照。</li>
+<li>同一个 <code>Match.apply()</code> 也通过 <code>@fluid/core</code> 暴露在客户端，以便日后实现乐观 UI。</li>
+<li>状态按服务端进程保存在内存中。重启服务端会销毁所有房间（这是 MVP 阶段有意为之的简化）。</li>
+</ul>
+<h2>部署（后续）</h2>
+<p>此 MVP 面向本地对战，尚未接入任何托管平台。准备就绪时：</p>
+<ul>
+<li><strong>前端</strong>：Vercel / Netlify / GitHub Pages 可托管 <code>apps/web/dist</code>。执行 <code>pnpm --filter @fluid/web build</code>。</li>
+<li><strong>后端</strong>：任何运行 Node 22+ 且支持持久 WebSocket 连接的服务均可——Render、Fly.io、Railway，或一台小型 VPS。执行 <code>tsx src/index.ts</code>（或打包为 ESM bundle）。</li>
+<li>在后端设置 <code>PORT</code> 环境变量，并将前端指向它（目前 WS 地址为 <code>${proto}://${location.host}/ws</code> 并使用 Vite 的开发代理——生产环境请在 <code>wsClient.ts</code> 中替换为真实的后端地址）。</li>
+</ul>
+<h2>致谢</h2>
+<ul>
+<li><strong>原版游戏</strong>：<a href="https://github.com/WangNianyi2001/Fluid-Weiqi">王念一的 Fluid Weiqi</a>。所有规则、术语与游戏设计思路均源自原版，经许可使用。</li>
+<li><strong>macOS 原生版本</strong>：参见 <a href="https://github.com/Keith9922/Fluid-Weiqi/releases">Keith9922/Fluid-Weiqi releases</a>。</li>
+<li><strong>本网页移植版</strong>：Keith9922（<a href="https://github.com/Keith9922">github.com/ Keith9922</a>）。</li>
+</ul>
+<h2>许可证</h2>
+<p>本仓库中的网页移植代码以 MIT 许可证发布。游戏设计、规则与视觉概念依据<a href="https://github.com/WangNianyi2001/Fluid-Weiqi/blob/master/LICENSE">上游 LICENSE</a>仍归原作者所有。</p>
+<p>如果你 fork 或扩展本移植版，请保留对原作者的致谢。</p>
+</body>
+</html>

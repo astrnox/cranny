@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tower-game</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<p><a href="LICENSE"><img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a></p>
+<p>English | <a href="./README.zh-CN.md">简体中文</a></p>
+<h1 align="center">Tower Building Game</h1>
+<p align="center"><img src="https://o2qq673j2.qnssl.com/tower-loading.gif"/></p>
+
+<blockquote>
+<p>a tower building game based on ES6 and Canvas (Tower Bloxx Deluxe Skyscraper)</p>
+</blockquote>
+<h2>Demo</h2>
+<p align="center"><img src="https://user-images.githubusercontent.com/17680888/47480922-93a20c00-d864-11e8-8f7c-6d1d60184730.gif"/></p>
+<h2 align="center"><a href="https://iamkun.github.io/tower_game">Link to online Demo (Demo Link)</a></h2>
+<h4 align="center">Mobile Devices can scan following QR code:</h4>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17680888/47480646-abc55b80-d863-11e8-9337-4ea768ebe55d.png" />
+</p>
+
+<h2>Game Rule</h2>
+<p>The following are the default game rules:</p>
+<ul>
+<li>
+<p>The player starts with 3 hp, indicated by the hearts in the top right corner of the screen. Every time a Tower block falls the player loses 1 hp, and the game ends when hp is depleted.</p>
+</li>
+<li>
+<p>The player earns 25 points for every succesful stacked block (Success). If a block is stacked pefectly (Perfect) on top of the previous one, then the player is<br />
+rewarded with 50 points instead. Consecutive Perfects awards additional 25 points.</p>
+</li>
+</ul>
+<p><strong>Note: Each Success or Perfect constitutes a floor</strong></p>
+<p>For example, the first Perfect awards 50 points. The second consecutive Perfect awards 75 points.<br />
+ The third consecutive Perfect awards 100 points.  etc.</p>
+<p align="center">
+  <img width="550" src="https://user-images.githubusercontent.com/17680888/47473105-d9021180-d843-11e8-8c19-b6b78d86cbdf.png" />
+</p>
+
+<h2>Customizing the game rules</h2>
+<pre><code>git clone https://github.com/iamkun/tower_game.git
+cd tower_game
+npm install
+npm start
+</code></pre>
+<p>Open <code>http://localhost:8082</code> in your web browser.</p>
+<ul>
+<li>To customize image and sound resource files directly replace the corresponding file under the <code>assets</code> directory.</li>
+<li>To customize game rules modify the <code>option</code> object in <code>index.html</code>.</li>
+</ul>
+<h2>Option</h2>
+<p>Use the following table of <code>option</code> constants to complete customization of game rules.</p>
+<p><strong>Note: all constants are optionally included</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>Width of game interface</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>Height of game interface</td>
+</tr>
+<tr>
+<td>canvasId</td>
+<td>string</td>
+<td>DOM ID in Canvas</td>
+</tr>
+<tr>
+<td>soundOn</td>
+<td>boolean</td>
+<td>If sound is on</td>
+</tr>
+<tr>
+<td>successScore</td>
+<td>number</td>
+<td>Points awarded for success</td>
+</tr>
+<tr>
+<td>perfectScore</td>
+<td>number</td>
+<td>Additional points awarded for perfect</td>
+</tr>
+<tr>
+<td><a href="#hookspeed">hookSpeed</a></td>
+<td>function</td>
+<td>Speed of hook's movement</td>
+</tr>
+<tr>
+<td><a href="#hookangle">hookAngle</a></td>
+<td>function</td>
+<td>Angle of hook</td>
+</tr>
+<tr>
+<td><a href="#landblockspeed">landBlockSpeed</a></td>
+<td>function</td>
+<td>Speed of block sway</td>
+</tr>
+<tr>
+<td><a href="#setgamescore">setGameScore</a></td>
+<td>function</td>
+<td>hook for current score</td>
+</tr>
+<tr>
+<td><a href="#setgamesuccess">setGameSuccess</a></td>
+<td>function</td>
+<td>hook for number of current succesful game</td>
+</tr>
+<tr>
+<td><a href="#setgamefailed">setGameFailed</a></td>
+<td>function</td>
+<td>hook for number of current failed game</td>
+</tr>
+</tbody>
+</table>
+<h4>hookSpeed</h4>
+<p>This function takes in two parameters, currentFloor and currentScore, and returns a speed value.</p>
+<pre><code>function(currentFloor, currentScore) {
+  return number
+}
+</code></pre>
+<h4>hookAngle</h4>
+<p>This function takes in two parameters, currentFloor and currentScore, and returns a angle value.</p>
+<pre><code>function(currentFloor, currentScore) {
+  return number
+}
+</code></pre>
+<h4>landBlockSpeed</h4>
+<p>This function takes in two parameters, currentFloor and currentScore, and returns a speed value.</p>
+<pre><code>function(currentFloor, currentScore) {
+  return number
+}
+</code></pre>
+<h4>setGameScore</h4>
+<p>This function takes in one parameter, score, and sets currentScore to score.</p>
+<pre><code>function(score) {
+  // your logic
+}
+</code></pre>
+<h4>setGameSuccess</h4>
+<p>This function takes in one parameter, score, and sets GameSuccess to successCount.</p>
+<pre><code>function(successCount) {
+  // your logic
+}
+</code></pre>
+<h4>setGameFailed</h4>
+<p>This function takes in one parameter, score, and sets GameFailed to failedCount.</p>
+<pre><code>function(failedCount) {
+  // your logic
+}
+</code></pre>
+<h2>License</h2>
+<p>MIT license.</p>
+</body>
+</html>

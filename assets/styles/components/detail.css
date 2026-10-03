@@ -1,0 +1,257 @@
+/* ============================================================
+   detail.css · 详情浮层（README 预览）
+   卡片式居中，Poki 风格
+   ============================================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 17, 23, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: grid;
+  place-items: end center;
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+.overlay.is-open { opacity: 1; }
+.overlay[hidden] { display: none; }
+
+/* 桌面端居中弹窗 */
+@media (min-width: 720px) {
+  .overlay { place-items: center; padding: 32px; }
+}
+
+.detail {
+  width: 100%;
+  max-width: 620px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-sheet);
+  overflow: hidden;
+  transform: translateY(100%);
+  will-change: transform;
+  transition: transform var(--dur-4) var(--ease-spring);
+}
+.overlay.is-open .detail { transform: none; }
+
+@media (min-width: 720px) {
+  .detail {
+    border-radius: var(--radius-xl);
+    max-height: min(86vh, 780px);
+    transform: translateY(18px) scale(0.97);
+  }
+  .overlay.is-open .detail { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .detail { transition-duration: 1ms; }
+  .detail { transform: none; }
+  .card { animation: none !important; }
+}
+
+/* ---------- 头部 ---------- */
+.detail__head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.detail__cover {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  background: var(--c, var(--brand));
+  position: relative;
+}
+.detail__cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail__head-text { flex: 1; min-width: 0; }
+.detail__title {
+  font-size: var(--fs-title);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.detail__meta {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail__close {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-sunken);
+  color: var(--text-secondary);
+  transition: all var(--dur-1) var(--ease-out);
+}
+.detail__close:hover { background: var(--border); color: var(--text-primary); }
+.detail__close svg { width: 15px; height: 15px; }
+
+/* ---------- 正文 ---------- */
+.detail__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 描述 */
+.detail__desc {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+/* ---------- README 预览 ---------- */
+.readme-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.readme-label svg { width: 15px; height: 15px; }
+
+/* 语言切换（English / 简体中文） */
+.readme-lang {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: var(--radius-full);
+  background: var(--bg-sunken);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.readme-lang__btn {
+  padding: 4px 12px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out);
+}
+.readme-lang__btn:hover { color: var(--text-primary); }
+.readme-lang__btn[aria-selected="true"] {
+  background: var(--bg-card);
+  color: var(--brand);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.readme-frame {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  display: block;
+}
+
+/* README 加载占位 */
+.readme-loading {
+  padding: 60px 20px;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  color: var(--text-tertiary);
+  font-size: var(--fs-meta);
+}
+.readme-error {
+  padding: 48px 20px;
+  text-align: center;
+  line-height: 1.8;
+  color: var(--text-tertiary);
+  font-size: var(--fs-meta);
+}
+.readme-error a { color: var(--brand); font-weight: 600; }
+
+/* ---------- 底部操作区 ---------- */
+.detail__foot {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.detail__foot .btn { flex: 1; }
+
+/* 下载源（详情里也带） */
+.detail__dl { display: grid; gap: 8px; margin-bottom: 20px; }
+.dl-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg-base);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-1) var(--ease-out);
+}
+.dl-row:hover { background: var(--bg-sunken); }
+.dl-row__info { flex: 1; min-width: 0; }
+.dl-row__label { font-size: var(--fs-body); font-weight: 600; }
+.dl-row__sub { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; display: flex; gap: 8px; }
+.dl-row__code { font-family: ui-monospace, monospace; }
+.dl-row__go {
+  flex-shrink: 0;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background var(--dur-1) var(--ease-out);
+}
+.dl-row__go:hover { background: var(--brand-hover); }
+.dl-row__copy {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  color: var(--text-tertiary);
+  transition: all var(--dur-1) var(--ease-out);
+}
+.dl-row__copy:hover { background: var(--bg-card); color: var(--brand); }
+.dl-row__copy svg { width: 15px; height: 15px; }

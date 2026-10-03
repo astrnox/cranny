@@ -1,0 +1,51 @@
+/* ============================================================
+   helpers.css · 工具类
+   克制使用：优先写语义化组件样式
+   ============================================================ */
+
+/* ---------- 显示 ---------- */
+[hidden] { display: none !important; }
+.u-flex { display: flex; }
+.u-grid { display: grid; }
+.u-block { display: block; }
+
+/* ---------- 对齐 ---------- */
+.u-items-center { align-items: center; }
+.u-justify-between { justify-content: space-between; }
+.u-gap-1 { gap: var(--space-1); }
+.u-gap-2 { gap: var(--space-2); }
+.u-gap-3 { gap: var(--space-3); }
+.u-ml-auto { margin-left: auto; }
+
+/* ---------- 文本 ---------- */
+.u-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.u-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.u-text-secondary { color: var(--label-secondary); }
+.u-text-tertiary  { color: var(--label-tertiary); }
+.u-tabular { font-variant-numeric: tabular-nums; }
+
+/* ---------- 屏幕阅读器 ---------- */
+.u-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- 响应式显隐 ---------- */
+@media (max-width: 639px)  { .u-hide-sm { display: none !important; } }
+@media (min-width: 640px)  { .u-show-sm { display: none !important; } }
+@media (max-width: 1023px) { .u-hide-md { display: none !important; } }
+@media (min-width: 1024px) { .u-show-md { display: none !important; } }

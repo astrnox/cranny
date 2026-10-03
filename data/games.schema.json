@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://astrnox.github.io/gamespace/data/games.schema.json",
+  "title": "GameHub games.json",
+  "type": "object",
+  "required": ["version", "categories", "games"],
+  "properties": {
+    "version": { "type": "integer" },
+    "owner": { "type": "string" },
+    "updatedAt": { "type": "string", "description": "YYYY-MM-DD" },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      }
+    },
+    "games": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/game" }
+    }
+  },
+  "definitions": {
+    "game": {
+      "type": "object",
+      "required": ["id", "title", "desc", "cover", "category", "mode", "platform", "addedAt", "status"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "alias": { "type": "array", "items": { "type": "string" } },
+        "desc": { "type": "string", "maxLength": 80 },
+        "cover": { "type": "string" },
+        "accent": {
+          "type": "integer", "minimum": 0, "maximum": 360,
+          "description": "占位渐变的 HSL 色相角度"
+        },
+        "category": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "tags": { "type": "array", "items": { "type": "string" } },
+
+        "mode": { "type": "string", "enum": ["embed", "redirect", "download"] },
+        "url": { "type": "string" },
+        "repo": { "type": "string" },
+        "platform": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["web", "pc", "android"] },
+          "minItems": 1
+        },
+        "downloads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "url"],
+            "properties": {
+              "label": { "type": "string" },
+              "url": { "type": "string" },
+              "code": { "type": "string" },
+              "size": { "type": "string" },
+              "version": { "type": "string" }
+            }
+          }
+        },
+        "requirements": { "type": "string" },
+
+        "featured": { "type": "boolean" },
+        "addedAt": { "type": "string" },
+        "source": { "type": "string", "enum": ["fork", "own", "manual"] },
+        "status": { "type": "string", "enum": ["active", "broken", "hidden"] },
+        "embedCheck": {
+          "type": "object",
+          "properties": {
+            "checkedAt": { "type": "string" },
+            "result": { "type": "string", "enum": ["ok", "blocked", "unknown"] }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "const": "download" } }, "required": ["mode"] },
+          "then": { "required": ["downloads"] },
+          "else": { "required": ["url"] }
+        }
+      ]
+    }
+  }
+}

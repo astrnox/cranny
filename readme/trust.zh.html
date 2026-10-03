@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>trust</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<p><img alt="&quot;信任的进化&quot;" src="https://i.imgur.com/kde760y.png" /></p>
+<h1>现在就玩：<a href="http://ncase.me/trust/">http://ncase.me/trust/</a></h1>
+<p><em>《信任的进化》（The Evolution of Trust）</em> 献给公有领域，它的诞生得益于众多 Creative Commons 与开源资源！以下是所用音乐、音效和代码的完整清单：</p>
+<p><strong>音乐：</strong> "Bleu" by Komiku (CC Zero)。<a href="http://freemusicarchive.org/music/Komiku/Its_time_for_adventure_/">在 Free Music Archive 下载他们的完整专辑</a></p>
+<p><strong>音效：</strong></p>
+<ul>
+<li><a href="https://freesound.org/people/bassmosphere/sounds/384700/">投币</a> by bassmosphere (CC Zero)</li>
+<li><a href="https://freesound.org/people/plasterbrain/sounds/242857/">获得金币！</a> by plasterbrain (CC Zero)</li>
+<li><a href="https://freesound.org/people/JohnsonBrandEditing/sounds/173933/">邪恶的笑声</a> by JohnsonBrandEditing (CC Zero)</li>
+<li><a href="https://freesound.org/people/lukaso/sounds/69689/">老虎机</a> by lukaso (CC Sampling+)</li>
+<li><a href="https://freesound.org/people/adriann/sounds/191718/">鼓声渐强</a> by adriann (CC Zero)</li>
+<li><a href="https://freesound.org/people/Owdeo/sounds/116653/">click plink pop boop bonk</a> by Owdeo (CC BY-NC)</li>
+<li><a href="https://freesound.org/people/aglinder/sounds/264468/">嗖</a> by aglinder (CC Zero)</li>
+<li><a href="https://freesound.org/people/survivalzombie/sounds/240015/">吱吱作响的玩具</a> by survivalzombie (CC Zero)</li>
+<li><a href="https://freesound.org/people/Brokenphono/sounds/344149/">砰</a> by Brokenphono (CC Zero)</li>
+<li><a href="https://freesound.org/people/DSISStudios/sounds/241000/">放屁</a> by DSISStudios (CC Zero)</li>
+</ul>
+<p><strong>开源库：</strong></p>
+<ul>
+<li><a href="http://www.pixijs.com/">PIXI.js</a> 用于图形渲染</li>
+<li><a href="https://howlerjs.com/">Howler.js</a> 用于音频</li>
+<li><a href="http://www.createjs.com/tweenjs">Tween.js</a> 用于补间动画</li>
+<li><a href="https://kazzkiq.github.io/balloon.css/">Balloon.css</a> 用于弹出式提示框</li>
+<li><a href="https://github.com/kriskowal/q/">Q</a> 用于 Promise</li>
+<li><a href="https://github.com/daniellmb/MinPubSub">MinPubSub</a> 用于发布/订阅</li>
+<li><a href="https://github.com/typicode/pegasus">Pegasus</a> 用于让我自己懒得写 XHR</li>
+</ul>
+<p><strong>字体：</strong> <a href="http://www.dafont.com/futurahandwritten.font">Futura Handwritten</a> by Bill Snyder</p>
+<h1>操作指南：翻译这玩意儿！</h1>
+<p><strong>[重要提示：<br />
+在你决定动手翻译之前，请先查看上方的 "ISSUES" 标签页，<br />
+看看是否已经有人在做了。<br />
+如果是，也许你们可以合作！<br />
+如果还没有人做，请在这个仓库里新建一个 ISSUE，<br />
+好让其他人知道你在做！]</strong></p>
+<p>目前的翻译版本：<br />
+<a href="https://htlife.github.io/trust_jp/">日语</a>、<br />
+<a href="https://sekai.co/trust/">中文（简体）</a>、<br />
+<a href="https://audreyt.github.io/trust-zh-TW/">中文（台湾）</a>、<br />
+<a href="https://brunolemos.github.io/trust/">巴西葡萄牙语</a>、<br />
+<a href="https://ayowel.github.io/trust/">法语</a>、<br />
+<a href="https://ccamara.github.io/trust/">西班牙语（西班牙）</a>、<br />
+<a href="https://maeriens.github.io/trust/">西班牙语（拉美）</a>、<br />
+<a href="https://notdotteam.github.io/trust/">俄语</a>、<br />
+<a href="https://jkoelling.github.io/trust/">德语</a>、<br />
+<a href="https://lvdt.github.io/trust/">意大利语</a>、<br />
+<a href="https://osaatcioglu.github.io/trust">土耳其语</a>、<br />
+<a href="https://sin.github.io/trust/">波兰语</a>、<br />
+<a href="https://nghiatt90.github.io/trust-vn/">越南语</a>、<br />
+<a href="https://lightspot21.github.io/trust/">希腊语</a>、<br />
+<a href="https://hamed.github.io/trust/">波斯语／法尔西语</a>、<br />
+<a href="http://ncase.me/trust-hu/">匈牙利语</a>、<br />
+<a href="https://fbricart.github.io/trust/">加泰罗尼亚语</a>、<br />
+<a href="https://mudaraljundi.github.io/trust/">阿拉伯语</a>、<br />
+<a href="http://ncase.me/trust-bg/">保加利亚语</a>、<br />
+<a href="https://osori.github.io/trust-ko/">韩语</a>、<br />
+<a href="https://enfactorial.github.io/trust/">罗马尼亚语</a>、<br />
+<a href="https://yaroslav-f.github.io/trust/">乌克兰语</a>、<br />
+<a href="http://www.varljiv.org/evolucija-povjerenja/index.html">克罗地亚语</a>、<br />
+<a href="http://trust.alicedarner.se/">瑞典语</a>、<br />
+<a href="http://ncase.me/trust-et/">爱沙尼亚语</a>、<br />
+<a href="https://nextghost.github.io/trust/">捷克语</a>、<br />
+<a href="https://reversedfate.github.io/trust/">拉脱维亚语</a>、<br />
+<a href="https://rayraz.github.io/trust/">荷兰语</a>、<br />
+<a href="https://1luap.github.io/trust/">芬兰语</a>、<br />
+<a href="https://mok0.github.io/trust/">丹麦语</a>、<br />
+<a href="https://chairulakmal.github.io/trust/">印度尼西亚语</a><br />
+<a href="https://kreshnik.github.io/trust/">阿尔巴尼亚语</a>、<br />
+<a href="https://stosto2.github.io/trust/">马其顿语</a>、<br />
+<a href="https://matejko124.github.io/trust/">斯洛文尼亚语</a>、<br />
+<a href="https://kamee.gitlab.io/trust/">亚美尼亚语</a>、<br />
+<a href="https://tiwalaph.github.io/TiwalaPH/">菲律宾语（他加禄语）</a>、<br />
+<a href="https://januscahill.github.io/trust/">世界语</a>、<br />
+<a href="http://myhtmlcopy.epizy.com/trust/">泰语</a></p>
+<p><strong>第 1 步)</strong> Fork 或下载这个仓库<br />
+（如果你打算 fork，请确保把 <em>你的</em> 仓库放在名为 <code>gh-pages</code> 的分支上，这样 GitHub 才能自动为它生成网页！）</p>
+<p><strong>第 2 步)</strong> 翻译以下文件：</p>
+<p><code>index.html</code> —— 标题与社交分享文案（几个词）  <br />
+<code>words.html</code> —— 互动内容的所有文本（约 3,300 词）  <br />
+（可选）<code>notes/index.html</code> —— 脚注（约 1,100 词）  <br />
+（可选）<code>peeps/index.html</code> —— 完整致谢名单（几个词）</p>
+<p><strong>第 3 步)</strong> 记得测试你的译文！你可以使用 <a href="https://www.npmjs.com/package/http-server">http-server</a> 或 <a href="https://www.mamp.info/en/">MAMP</a> 在本地进行测试。</p>
+<p><strong>第 4 步)</strong> 给我发邮件，附上你 fork 的仓库／翻译后文件的链接，收件地址为 <code>N {{at}} NCASE {{dot}} ME</code>。这里可能有些地方需要修修补补！（另外，如果你遇到任何问题，也请给我发邮件！我接下来几周都不在，回复可能会比较慢）</p>
+<p><strong>第 5 步)</strong> 等我忙完／闲下来，真正把你翻译的版本从英文主版本链接出去</p>
+<p><strong>第 6 步)</strong> 庆祝吧！🎉</p>
+<h1>"许可证"</h1>
+<p><a href="https://github.com/ncase/trust/blob/gh-pages/LICENSE">Creative Commons Zero</a>：这是一份公有领域奉献声明，所以基本上，你想怎样就怎样！非常欢迎署名，但我不会派法律打手去找你麻烦之类的。</p>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2048 · 玩法索引</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>2048 · 玩法索引</h1>
+<p>一个 2048 的改版集合：经典原样保留，旁边还印着六种新走法——倾斜重力的星球、蜂窝六边形、量子叠加、整除合成、斐波那契数列，以及一盘人机竞速。全部模式在手机、平板、电脑上均可直接<strong>触摸/滑动</strong>操作。</p>
+<h2>在线阅读</h2>
+<p>部署在 GitHub Pages：<strong>https://2048.xns.asia</strong><br />
+（记忆技巧：我是亚洲的2048小能手）</p>
+<h2>七种玩法</h2>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>玩法</th>
+<th>页面</th>
+<th>一句话规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td><strong>经典</strong></td>
+<td><code>game.html</code></td>
+<td>方向键滑动，相同数字相撞合成，合出 2048</td>
+</tr>
+<tr>
+<td>01</td>
+<td><strong>星球引力</strong></td>
+<td><code>game_gravity.html</code></td>
+<td>你不推，你倾斜：转动星体让重力替你坠</td>
+</tr>
+<tr>
+<td>02</td>
+<td><strong>蜂窝六边形</strong></td>
+<td><code>game_hex.html</code></td>
+<td>六边形棋盘、六个方向滑动，在蜂窝里合体</td>
+</tr>
+<tr>
+<td>03</td>
+<td><strong>人机对抗</strong></td>
+<td><code>game_ai.html</code></td>
+<td>双棋盘人机竞速，谁先合成 2048 谁赢</td>
+</tr>
+<tr>
+<td>04</td>
+<td><strong>量子叠加</strong></td>
+<td><code>game_quantum.html</code></td>
+<td>叠加态瓦片：相干增强合二为一，或干涉相消湮灭</td>
+</tr>
+<tr>
+<td>05</td>
+<td><strong>整除合成</strong></td>
+<td><code>game_dive.html</code></td>
+<td>瓦片与约数合体相加，合成新数会解锁更多质数</td>
+</tr>
+<tr>
+<td>06</td>
+<td><strong>斐波那契</strong></td>
+<td><code>game_fib.html</code></td>
+<td>数字不是 2 的幂：首尾相接的斐波那契数才能合体</td>
+</tr>
+</tbody>
+</table>
+<p>经典模式同时内置 <strong>限时挑战（1 分钟）</strong>、<strong>无尽模式</strong>、<strong>每日难题</strong>、<strong>别造 128</strong>、<strong>反转 2048</strong>、<strong>限步挑战</strong>（60 步内冲高分）与 <strong>障碍格</strong>（3 个不可通行格子），可通过游戏页内的模式切换或 <code>?mode=endless</code> 等参数进入。</p>
+<h2>操作方式</h2>
+<ul>
+<li><strong>经典 / 蜂窝六边形 / AI 对抗 / 量子 / 整除 / 斐波那契</strong>：方向键 / WASD，手机上直接滑动。</li>
+<li><strong>星球引力</strong>：<code>←→</code> 或左右拖动转动星体，<code>Space</code> 或轻点让瓦片坠落合体。</li>
+<li>所有玩法均支持触摸滑动。系统开启「减弱动态效果」时，仅装饰动画被缩短，棋盘瓦片的滑动/合体反馈依然保留。</li>
+</ul>
+<h2>本地运行</h2>
+<p>任意静态服务器即可：</p>
+<pre><code class="language-bash">cd 2048
+python3 -m http.server 8000
+# 打开 http://localhost:8000/
+</code></pre>
+<h2>项目结构</h2>
+<pre><code>2048/
+├─ index.html            首页 · 玩法索引
+├─ game.html             经典 / 限时 / 无尽 / 每日 / 别造128 / 反转 / 限步 / 障碍
+├─ game_gravity.html     星球引力
+├─ game_hex.html         蜂窝六边形
+├─ game_ai.html         人机对抗
+├─ game_quantum.html     量子叠加
+├─ game_dive.html        整除合成
+├─ game_fib.html         斐波那契
+├─ js/
+│  ├─ gravity2048.js     星球引力（重力换向 + 坠落合体）
+│  ├─ hex2048.js         蜂窝六边形（六方向轴向坐标 + SVG 渲染）
+│  ├─ ai2048.js          AI 对抗（双棋盘 + MCTS 深搜）
+│  ├─ quantum2048.js     量子叠加（叠加态 + 干涉相消）
+│  ├─ dive2048.js         整除合成（约数合体 + 质数解锁）
+│  ├─ fib2048.js         斐波那契（首尾相接合成）
+│  └─ swipe.js           统一触摸滑动检测
+└─ style/                各玩法独立的样式表
+</code></pre>
+<h2>设计说明</h2>
+<p>全站采用「暖陶 Warm Clay」视觉：暖奶油纸底、陶土棋盘与赤陶强调色，保留经典 2048 的米色灵魂。每个心动玩法以独立页面 + 独立样式呈现，改动彼此隔离，不互相污染。</p>
+<h2>本项目的 2048 渊源</h2>
+<p>经典部分 fork 自 <a href="https://github.com/gabrielecirulli/2048">gabrielecirulli/2048</a>（MIT License）。新玩法（星球引力 / 蜂窝六边形 / AI 对抗 / 量子 / 整除 / 斐波那契）均为本项目原创实现。</p>
+<h2>License</h2>
+<p><a href="LICENSE.txt">MIT</a></p>
+</body>
+</html>

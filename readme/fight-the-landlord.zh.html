@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎮 斗地主</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<div align="center">
+    <img src="https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/docs/logo.png" alt="Logo" height="100px" />
+
+# 🎮 斗地主
+
+**一个真正公平的斗地主游戏 - 无控牌、无算法操控、纯粹的运气与技巧**
+
+基于 Go 语言实现的斗地主游戏，支持联网对战、断线重连、智能机器人等功能。
+
+[![Docker Image Size](https://img.shields.io/docker/image-size/palemoky/fight-the-landlord/latest)](https://hub.docker.com/r/palemoky/fight-the-landlord)
+[![Test](https://github.com/palemoky/fight-the-landlord/actions/workflows/test.yml/badge.svg)](https://github.com/palemoky/fight-the-landlord/actions/workflows/test.yml/badge.svg)
+[![Release](https://github.com/palemoky/fight-the-landlord/actions/workflows/release.yml/badge.svg)](https://github.com/palemoky/fight-the-landlord/actions/workflows/release.yml/badge.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+</div>
+
+<h2>项目初衷</h2>
+<p>在某些知名斗地主游戏中，新手或回归玩家刚开始会获得好牌，匹配豆子少的对手，营造"连胜"的错觉。但随着游戏时间增长，牌质量明显下降，且频繁匹配高段位玩家，导致快速输光豆子。这种算法操控严重破坏了游戏的公平性和纯粹性，在本项目中：</p>
+<ul>
+<li><strong>真随机发牌</strong>：每局洗牌完全随机，无任何控牌算法</li>
+<li><strong>公平匹配</strong>：不考虑胜率、段位、游戏时长，纯随机或房间匹配</li>
+<li><strong>开源透明</strong>：所有代码公开，欢迎审计和贡献</li>
+<li><strong>无内购无广告</strong>：纯粹的游戏体验，技巧决定胜负</li>
+</ul>
+<blockquote>
+<p><strong>核心理念</strong>：斗地主应该是运气与技巧的博弈，而不是算法与钱包的较量。</p>
+</blockquote>
+<h2>游戏截图</h2>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/docs/lobby.png" alt="Lobby" width="45%" />
+  <img src="https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/docs/in-game.png" alt="In Game" width="45%" />
+</div>
+
+<h2>DouZero 机器人出牌演示</h2>
+<p><a href="https://github.com/kwai/DouZero">DouZero</a> 是快手开源的基于深度强化学习的斗地主 AI。相比于经常出非法牌型的 LLM 而言，DouZero 能展现出更丰富的高级策略：自由出牌时主动组合复杂牌型、农民间默契配合、精准顶牌与拆牌等，对局体验更接近真人对手。</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/docs/douzero-game.png" alt="Game" width="45%" />
+  <img src="https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/docs/douzero-log.png" alt="Log" width="45%" />
+</div>
+
+<h2>快速开始</h2>
+<h3>客户端安装</h3>
+<p><strong>macOS / Linux</strong>：</p>
+<pre><code class="language-bash">curl -fsSL https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/install.sh | bash
+</code></pre>
+<p><strong>Windows (PowerShell)</strong>：</p>
+<pre><code class="language-powershell">irm https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/install.ps1 | iex
+</code></pre>
+<p><strong>运行客户端</strong>：</p>
+<pre><code class="language-bash">ddz
+</code></pre>
+<p>支持的牌型和按键见 <a href="#游戏规则">游戏规则</a> / <a href="#常用按键">常用按键</a></p>
+<blockquote>
+<p><strong>Windows 10 用户提示</strong>：游戏界面使用了 emoji 图标，Windows 10 自带的传统 cmd / PowerShell 窗口（conhost）不支持彩色 emoji 渲染，会显示异常。建议改用 <a href="https://aka.ms/terminal">Windows Terminal</a>（Microsoft Store 免费安装，Windows 11 已默认内置）运行客户端。</p>
+</blockquote>
+<h3>服务端部署</h3>
+<p><strong>使用 Docker Compose（推荐）</strong>：</p>
+<pre><code class="language-bash"># 1. 创建项目目录
+mkdir fight-the-landlord &amp;&amp; cd fight-the-landlord
+
+# 2. 下载配置文件
+curl -fsSL https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/docker-compose.yml -o docker-compose.yml
+curl -fsSL https://raw.githubusercontent.com/palemoky/fight-the-landlord/main/.env.example -o .env
+
+# 3. 修改配置（可选）
+vim .env
+
+# 4. 启动服务
+docker compose up -d
+
+# 5. 停止服务
+docker compose down
+</code></pre>
+<p>💡 推荐使用 <a href="https://github.com/jesseduffield/lazydocker">lazydocker</a> 管理服务</p>
+<h3>本地开发</h3>
+<pre><code class="language-bash"># 1. 启动 Redis
+redis-server
+
+# 2. 启动 douzero 机器人
+cd douzero &amp;&amp; uv sync &amp;&amp; uv run python server.py
+
+# 3. 启动服务端
+go run ./cmd/server
+
+# 4. 启动客户端
+go run ./cmd/client
+</code></pre>
+<h2>游戏规则</h2>
+<p>与常见的斗地主相同，开局叫地主后，两位农民需配合击败地主，地主则需要阻击两个农民，率先出完手牌的一方获胜。</p>
+<h3>牌型示例</h3>
+<pre><code>单张: 3, K, 2
+对子: 33, KK
+三张: 333
+三带一: 3334
+三带二: 33344
+顺子: 34567 (5张+)
+连对: 334455 (3对+)
+飞机: 333444 (两个连三+)
+飞机带单: 33344456
+飞机带对: 3334445566
+四带二: 333345
+四带两对: 33334455
+炸弹: 3333
+王炸: 小王大王
+</code></pre>
+<h3>常用按键</h3>
+<p>以下按键不区分大小写：</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M</td>
+<td>开关音乐（默认静音）</td>
+</tr>
+<tr>
+<td>C</td>
+<td>开关记牌器（默认关闭）</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>H</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>B</td>
+<td>小王（Black Joker）</td>
+</tr>
+<tr>
+<td>R</td>
+<td>大王（Red Joker）</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>返回上一页</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div align="center">
+
+**让斗地主回归纯粹 - 无控牌，真公平**
+
+Made with ❤️ by [palemoky](https://github.com/palemoky)
+
+</div>
+</body>
+</html>

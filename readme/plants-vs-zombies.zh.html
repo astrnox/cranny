@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>plants-vs-zombies</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h2>h5小游戏—植物大战僵尸v1.18</h2>
+<p>本项目是利用原生js实现的h5小游戏，在实现时使用了大量es6语法，对于es6语法不太熟悉的小伙伴可以先查阅相关资料了解一下</p>
+<p><strong>demo</strong>：<a href="https://yangyunhe369.github.io/h5-game-plantsVSzombies/">线上地址</a></p>
+<p><strong>代码详解</strong>：<a href="http://www.yangyunhe.me/2018/h5-game-plantsVSzombies/">博客链接</a></p>
+<h2>项目截图</h2>
+<p><img alt="" src="images/screenshot1.png" /></p>
+<h2>已完成功能：</h2>
+<ul>
+<li>[x] 绘制游戏场景：背景、阳光计分板、植物卡片（用于放置植物）、植物（6种）、僵尸（1种）</li>
+<li>[x] 植物和僵尸的攻击判定、死亡判定</li>
+<li>[x] 角色动画由一帧一帧图片不停切换绘制实现，可绘制流畅动画效果</li>
+<li>[x] 角色动画根据角色状态自动切换，植物动画包括（普通形态、攻击形态），僵尸动画包括（普通形态、移动形态、攻击形态、濒死形态、死亡形态）</li>
+<li>[x] 阳光自动生成、植物放置需消耗阳光，僵尸随机生成</li>
+<li>[x] 游戏包含僵尸、植物独立胜利条件判定</li>
+<li>[x] 游戏状态：Loading、游戏运行、游戏暂停、游戏结束（玩家胜利）、游戏结束（僵尸胜利）</li>
+</ul>
+<h2>更新代码</h2>
+<p>v1.1  优化代码，添加向日葵，能自动生成阳光</p>
+<p>v1.15 优化代码，修复添加新植物使同行僵尸攻击判定失效bug，添加坚果墙</p>
+<p>v1.17 优化代码，添加樱桃炸弹</p>
+<p>v1.18 优化代码，添加除草车可清除整行僵尸</p>
+<p>v1.2  优化代码，添加食人花</p>
+<h2>下载源码</h2>
+<pre><code class="language-bash">git clone https://github.com/yangyunhe369/h5-game-plantsVSzombies.git
+</code></pre>
+<h2>目录结构</h2>
+<pre><code>.
+├─ index.html                   // 首页html
+│  
+├─ css                          // css样式资源文件
+├─ images                       // 图片资源文件  
+└─ js
+   ├─ common.js                 // 公共方法
+   ├─ scene.js                  // 游戏场景相关类
+   ├─ game.js                   // 游戏主要运行逻辑
+   └─ main.js                   // 游戏运行主函数
+</code></pre>
+<ul>
+<li>common.js =&gt; 引入公共方法</li>
+<li>scene.js =&gt; 引入游戏场景素材相关类，包括角色类、动画类</li>
+<li>game.js =&gt; 引入游戏引擎</li>
+<li>main.js =&gt; 游戏运行主函数</li>
+</ul>
+<h2>说明</h2>
+<p>如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^</p>
+<p>或者您可以 "follow" 一下，我会不断开源更多的有趣的项目</p>
+<h2>个人简介</h2>
+<p>作者：弦云孤赫(David Yang)</p>
+<p>职业：web前端开发工程师</p>
+<p>爱好：网游、音乐（吉他）</p>
+<h2>联系方式</h2>
+<p>QQ：314786482</p>
+<p>微信：yangyunhe_yyh</p>
+<p>坐标：四川成都</p>
+<h2>License</h2>
+<p><a href="https://github.com/yangyunhe369/h5-game-plantsVSzombies/blob/master/LICENSE">MIT</a></p>
+</body>
+</html>

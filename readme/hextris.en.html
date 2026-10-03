@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hextris</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Hextris</h1>
+<p><img src="images/twitter-opengraph.png" width="100px"><br></p>
+<p>An addictive puzzle game inspired by Tetris. Play it at <a href="http://www.hextris.io">www.hextris.io</a>, or <a href="https://hextris.github.io/hextris">https://hextris.github.io/hextris</a>.</p>
+<p><strong>English</strong> | <a href="README.zh-CN.md">简体中文</a></p>
+<hr />
+<p>An addictive puzzle game inspired by Tetris.</p>
+<p>By:<br />
+ - Logan Engstrom (<a href="http://loganengstrom.com/">@lengstrom</a>)<br />
+ - Garrett Finucane (<a href="http://github.com/garrettdreyfus">@garrettdreyfus</a>)<br />
+ - Noah Moroze (<a href="http://github.com/nmoroze">@nmoroze</a>)<br />
+ - Michael Yang (<a href="http://github.com/themichaelyang">@themichaelyang</a>)</p>
+<h2>Citation</h2>
+<p>Did you use Hextris in your research? Cite us as follows:</p>
+<pre><code>  @misc{engstrom2015hextris,
+    author = {Logan Engstrom, Garrett Finucane, Noah Moroze, Michael Yang},
+    title = {hextris},
+    year = {2015},
+    howpublished = {\url{https://github.com/hextris/hextris/}},
+    note = {commit xxxxxxx}
+  }
+</code></pre>
+<h2>Contributions</h2>
+<p>This project is not very actively maintained, as we are all very busy these days. But feel free to open an issue or PR, and we'll eventually take a look. </p>
+<h2>About</h2>
+<p>Hextris was created by a group of high school friends in 2014.</p>
+<h2>Press kit</h2>
+<p>http://hextris.github.io/presskit/info.html</p>
+<h2>License</h2>
+<p>Copyright (C) 2018 Logan Engstrom</p>
+<p>This program is free software: you can redistribute it and/or modify<br />
+it under the terms of the GNU General Public License as published by<br />
+the Free Software Foundation, either version 3 of the License, or<br />
+(at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,<br />
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br />
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br />
+GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License<br />
+along with this program.  If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+</body>
+</html>

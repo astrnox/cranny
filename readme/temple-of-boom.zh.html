@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Temple of Boom</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Temple of Boom</h1>
+<p>经典 Flash 动作游戏 <strong>Temple of Boom</strong> 的免拦截、可在浏览器中直接游玩的版本。探索一座正在崩塌的神庙，在平台之间精准把握跳跃时机，一路突破陷阱与守卫。</p>
+<p>在浏览器中即刻开玩 —— 无需安装，也不需要 Flash。</p>
+<h2>游玩</h2>
+<ul>
+<li><strong>在线演示：</strong> <a href="https://astrnox.github.io/temple-of-boom/">astrnox.github.io/temple-of-boom</a></li>
+<li><strong>源码：</strong> <a href="https://github.com/astrnox/temple-of-boom">github.com/astrnox/temple-of-boom</a></li>
+</ul>
+<h2>玩法说明</h2>
+<p>你被丢入一座古老神庙的深处，出口就在最上方。</p>
+<ul>
+<li>用键盘<strong>移动</strong>，用跳跃键<strong>起跳</strong>。</li>
+<li>准确地落在平台上 —— 一次时机不对的跳跃就会让你回到原来的边缘。</li>
+<li>一路向上，躲开陷阱并击败神庙的守卫。</li>
+<li>爬得越高，节奏就越快。这里没有存档点：一次失误就意味着损失一条命。</li>
+</ul>
+<p>沿途收集金币与强化道具来延长你的旅程。随着高度上升，游戏会逐渐变难，所以每次奔跑终有终点 —— 目标就是刷新自己的最佳成绩。</p>
+<h2>操作按键</h2>
+<table>
+<thead>
+<tr>
+<th>动作</th>
+<th>按键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右移动</td>
+<td><code>←</code> <code>→</code> 或 <code>A</code> / <code>D</code></td>
+</tr>
+<tr>
+<td>跳跃</td>
+<td><code>↑</code> / <code>W</code> / <code>Space</code></td>
+</tr>
+<tr>
+<td>交互</td>
+<td><code>E</code> / <code>Enter</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>操作方式沿用原版 Flash 发行物的标准键盘布局；如果你不确定，游戏内会显示相应的提示。</p>
+</blockquote>
+<h2>运行原理</h2>
+<p>这是一款通过 <a href="https://ruffle.rs">Ruffle</a> —— 用 Rust 编写的开源 Flash Player 模拟器 —— 运行的 <strong>Adobe Flash（ActionScript）游戏</strong>。页面会启动 Ruffle 运行时，并嵌入编译好的 <code>TempleBoom</code> SWF。</p>
+<pre><code>index.html                              # boots Ruffle, embeds the SWF
+TempleBoom_CustomPreloader_ForColin.js   # Ruffle (Lime) player bootstrap
+*.swf                                    # the compiled game itself
+adSense.js                              # ad script stub
+</code></pre>
+<p>原游戏的画布分辨率为 <strong>624×400</strong>，会等比缩放以适配你的浏览器窗口。</p>
+<h2>本地运行</h2>
+<p>由于页面需要加载 Flash 运行时和资源，请通过 HTTP 提供服务（用 <code>file://</code> 直接打开 <code>index.html</code> 会被浏览器拦截）：</p>
+<pre><code class="language-bash">git clone https://github.com/astrnox/temple-of-boom.git
+cd temple-of-boom
+python3 -m http.server 8000
+# open http://localhost:8000
+</code></pre>
+<p>任何静态文件服务器都可以（<code>npx serve</code>、<code>php -S</code> 等）。</p>
+<h2>技术栈</h2>
+<ul>
+<li><strong>游戏：</strong> Adobe Flash / ActionScript（<code>.swf</code>）</li>
+<li><strong>运行时：</strong> <a href="https://ruffle.rs">Ruffle</a> —— 开源的 Flash Player 模拟器</li>
+<li><strong>引导方式：</strong> 纯 HTML + 单个嵌入脚本</li>
+<li><strong>托管：</strong> GitHub Pages</li>
+</ul>
+<h2>致谢</h2>
+<ul>
+<li>原版游戏：<em>Temple of Boom</em>（Flash） —— 所有权利归原作者所有。</li>
+<li>本仓库是一个由 Ruffle 驱动、免拦截的网页版本，可在现代浏览器中游玩。</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tower-game</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<p><a href="LICENSE"><img alt="许可证" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a></p>
+<p><a href="./README.en.md">English</a> | <strong>简体中文</strong></p>
+<h1 align="center">塔楼建造游戏</h1>
+<p align="center"><img src="https://o2qq673j2.qnssl.com/tower-loading.gif"/></p>
+
+<blockquote>
+<p>一款基于 ES6 和 Canvas 的塔楼建造游戏（Tower Bloxx Deluxe Skyscraper）</p>
+</blockquote>
+<h2>演示</h2>
+<p align="center"><img src="https://user-images.githubusercontent.com/17680888/47480922-93a20c00-d864-11e8-8f7c-6d1d60184730.gif"/></p>
+<h2 align="center"><a href="https://iamkun.github.io/tower_game">在线 Demo 链接（Demo Link）</a></h2>
+<h4 align="center">移动设备可以扫描下面的二维码：</h4>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/17680888/47480646-abc55b80-d863-11e8-9337-4ea768ebe55d.png" />
+</p>
+
+<h2>游戏规则</h2>
+<p>以下是游戏的默认规则：</p>
+<ul>
+<li>
+<p>玩家初始拥有 3 点生命值（hp），由屏幕右上角的心形图标表示。每掉落一个 Tower 方块，玩家就失去 1 点生命值；生命值耗尽时游戏结束。</p>
+</li>
+<li>
+<p>玩家每成功堆叠（Success）一个方块可获得 25 分。如果一个方块完美（Perfect）地堆叠在前一个方块上，那么玩家将获得 50 分作为奖励。连续达成 Perfect 会额外获得 25 分。</p>
+</li>
+</ul>
+<p><strong>注意：每一个 Success 或 Perfect 都算作一层楼</strong></p>
+<p>例如，第一个 Perfect 奖励 50 分。第二个连续 Perfect 奖励 75 分。<br />
+ 第三个连续 Perfect 奖励 100 分，以此类推。</p>
+<p align="center">
+  <img width="550" src="https://user-images.githubusercontent.com/17680888/47473105-d9021180-d843-11e8-8c19-b6b78d86cbdf.png" />
+</p>
+
+<h2>自定义游戏规则</h2>
+<pre><code>git clone https://github.com/iamkun/tower_game.git
+cd tower_game
+npm install
+npm start
+</code></pre>
+<p>在浏览器中打开 <code>http://localhost:8082</code>。</p>
+<ul>
+<li>如需自定义图片和声音资源文件，直接替换 <code>assets</code> 目录下的对应文件即可。</li>
+<li>如需自定义游戏规则，修改 <code>index.html</code> 中的 <code>option</code> 对象即可。</li>
+</ul>
+<h2>配置项（Option）</h2>
+<p>使用下面的 <code>option</code> 常量表来完成游戏规则的自定义。</p>
+<p><strong>注意：所有常量都是可选的</strong></p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>游戏界面的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number</td>
+<td>游戏界面的高度</td>
+</tr>
+<tr>
+<td>canvasId</td>
+<td>string</td>
+<td>Canvas 中的 DOM ID</td>
+</tr>
+<tr>
+<td>soundOn</td>
+<td>boolean</td>
+<td>是否开启声音</td>
+</tr>
+<tr>
+<td>successScore</td>
+<td>number</td>
+<td>success 时奖励的分数</td>
+</tr>
+<tr>
+<td>perfectScore</td>
+<td>number</td>
+<td>perfect 时额外奖励的分数</td>
+</tr>
+<tr>
+<td><a href="#hookspeed">hookSpeed</a></td>
+<td>function</td>
+<td>钩子移动的速度</td>
+</tr>
+<tr>
+<td><a href="#hookangle">hookAngle</a></td>
+<td>function</td>
+<td>钩子的角度</td>
+</tr>
+<tr>
+<td><a href="#landblockspeed">landBlockSpeed</a></td>
+<td>function</td>
+<td>方块摆动的速度</td>
+</tr>
+<tr>
+<td><a href="#setgamescore">setGameScore</a></td>
+<td>function</td>
+<td>用于当前分数的钩子（hook）</td>
+</tr>
+<tr>
+<td><a href="#setgamesuccess">setGameSuccess</a></td>
+<td>function</td>
+<td>用于当前成功次数的钩子（hook）</td>
+</tr>
+<tr>
+<td><a href="#setgamefailed">setGameFailed</a></td>
+<td>function</td>
+<td>用于当前失败次数的钩子（hook）</td>
+</tr>
+</tbody>
+</table>
+<h4>hookSpeed</h4>
+<p>该函数接收两个参数 currentFloor 和 currentScore，并返回一个速度值。</p>
+<pre><code>function(currentFloor, currentScore) {
+  return number
+}
+</code></pre>
+<h4>hookAngle</h4>
+<p>该函数接收两个参数 currentFloor 和 currentScore，并返回一个角度值。</p>
+<pre><code>function(currentFloor, currentScore) {
+  return number
+}
+</code></pre>
+<h4>landBlockSpeed</h4>
+<p>该函数接收两个参数 currentFloor 和 currentScore，并返回一个速度值。</p>
+<pre><code>function(currentFloor, currentScore) {
+  return number
+}
+</code></pre>
+<h4>setGameScore</h4>
+<p>该函数接收一个参数 score，并把 currentScore 设置为 score。</p>
+<pre><code>function(score) {
+  // your logic
+}
+</code></pre>
+<h4>setGameSuccess</h4>
+<p>该函数接收一个参数 score，并把 GameSuccess 设置为 successCount。</p>
+<pre><code>function(successCount) {
+  // your logic
+}
+</code></pre>
+<h4>setGameFailed</h4>
+<p>该函数接收一个参数 score，并把 GameFailed 设置为 failedCount。</p>
+<pre><code>function(failedCount) {
+  // your logic
+}
+</code></pre>
+<h2>许可证</h2>
+<p>MIT license。</p>
+</body>
+</html>

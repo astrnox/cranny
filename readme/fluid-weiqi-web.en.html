@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fluid Weiqi (Web Edition) · 液态围棋网页版</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Fluid Weiqi (Web Edition) · 液态围棋网页版</h1>
+<p>A web port of <a href="https://github.com/WangNianyi2001/Fluid-Weiqi">Fluid Weiqi (液态围棋)</a> — a Go variant played on a continuous influence field instead of discrete stones.</p>
+<blockquote>
+<p>Original game by <strong>王念一 (Nianyi Wang)</strong> — <a href="https://github.com/WangNianyi2001">@WangNianyi2001</a>.<br />
+This is a community web port done with the original author's permission. All game rules, naming, and visual concepts belong to the original author.</p>
+</blockquote>
+<h2>What's in this repo</h2>
+<p>A pnpm monorepo with three packages:</p>
+<pre><code>fluid-weiqi-web/
+├── packages/
+│   └── core/          Pure-TS game logic (board, influence field, capture, match flow, WS protocol)
+├── apps/
+│   ├── server/        Node + ws relay server (rooms, action validation, broadcast)
+│   └── web/           Vite + React + Canvas2D front-end
+└── scripts/
+    └── smoke-test.mjs  End-to-end WS protocol test
+</code></pre>
+<p>The same game-rule code (<code>@fluid/core</code>) runs on both the server (authoritative validation) and the client (preview rendering).</p>
+<h2>Running locally</h2>
+<p>Requires Node 22+ and pnpm 10+.</p>
+<pre><code class="language-bash">pnpm install
+pnpm dev
+</code></pre>
+<p><code>pnpm dev</code> runs the server (<code>http://localhost:8787</code>) and the web dev server (<code>http://localhost:5173</code> or whichever port is free) in parallel. Open the web URL in your browser. To play 2-player locally, open a second tab and use the same room code.</p>
+<p>To run them separately:</p>
+<pre><code class="language-bash">pnpm --filter @fluid/server dev   # backend
+pnpm --filter @fluid/web    dev   # frontend
+</code></pre>
+<p>To run the protocol smoke test (with the server already running):</p>
+<pre><code class="language-bash">node scripts/smoke-test.mjs
+</code></pre>
+<h2>Implemented (MVP)</h2>
+<ul>
+<li>✅ Square board (default 19×19), continuous-position stones</li>
+<li>✅ Influence-field math ported from the original <a href="https://github.com/WangNianyi2001/Fluid-Weiqi/blob/master/Assets/Resources/Shaders/BoardDistribution.compute"><code>BoardDistribution.compute</code></a> (CPU sampling + Canvas 2D upscale)</li>
+<li>✅ Capture detection: connected components on the territory map, liberty check, suicide rejection</li>
+<li>✅ Turn-based 2-player match with <strong>place</strong> and <strong>pass</strong> actions</li>
+<li>✅ Two consecutive passes ends the match; winner = most surviving stones</li>
+<li>✅ WebSocket protocol with room codes, join/leave, action relay</li>
+<li>✅ Snap-to-grid placement; hold <strong>Shift</strong> for free continuous placement (matches the original)</li>
+</ul>
+<h2>Not implemented yet (deliberate cut for MVP)</h2>
+<ul>
+<li>❌ GPU shader-based field rendering (CPU sampling at 96² is fine for turn-based; can swap in WebGL2 later)</li>
+<li>❌ Spherical board / shrink mode (added in upstream v0.3.0)</li>
+<li>❌ Lobby browsing UI (rooms are private/code-only for now)</li>
+<li>❌ AI opponent</li>
+<li>❌ Sound effects, animations</li>
+<li>❌ Production deployment (see below for steps)</li>
+</ul>
+<h2>Architecture notes</h2>
+<ul>
+<li><code>@fluid/core</code> is consumed as TypeScript source by both <code>apps/web</code> (via Vite) and <code>apps/server</code> (via tsx). No build step needed during dev.</li>
+<li>The server is <strong>authoritative</strong> — every move goes through <code>Match.apply()</code> on the server. The client never calls game logic directly to mutate state; it only renders the snapshot the server broadcasts.</li>
+<li>The same <code>Match.apply()</code> is exposed on the client via <code>@fluid/core</code> if you want to add optimistic UI later.</li>
+<li>State is in-memory per server process. Restarting the server kills all rooms (intentional for MVP simplicity).</li>
+</ul>
+<h2>Deploying (later)</h2>
+<p>This MVP targets local play and is not yet wired to a host. When you're ready:</p>
+<ul>
+<li><strong>Frontend</strong>: Vercel / Netlify / GitHub Pages will host <code>apps/web/dist</code>. Run <code>pnpm --filter @fluid/web build</code>.</li>
+<li><strong>Backend</strong>: any service that runs Node 22+ and supports persistent WebSocket connections — Render, Fly.io, Railway, or a small VPS. Run <code>tsx src/index.ts</code> (or build an ESM bundle).</li>
+<li>Set the <code>PORT</code> env var on the backend; configure the frontend to point to it (currently the WS URL is <code>${proto}://${location.host}/ws</code> and uses Vite's dev proxy — replace with your real backend URL in <code>wsClient.ts</code> for production).</li>
+</ul>
+<h2>Credits</h2>
+<ul>
+<li><strong>Original game</strong>: <a href="https://github.com/WangNianyi2001/Fluid-Weiqi">Fluid Weiqi by 王念一</a>. All rules, terminology, and game design ideas come from the original. Used with permission.</li>
+<li><strong>macOS native build</strong>: see <a href="https://github.com/Keith9922/Fluid-Weiqi/releases">Keith9922/Fluid-Weiqi releases</a>.</li>
+<li><strong>This web port</strong>: Keith9922 (<a href="https://github.com/Keith9922">github.com/Keith9922</a>).</li>
+</ul>
+<h2>License</h2>
+<p>The web port code in this repository is released under MIT. The game design, rules, and visual concepts remain the property of the original author per the <a href="https://github.com/WangNianyi2001/Fluid-Weiqi/blob/master/LICENSE">upstream LICENSE</a>.</p>
+<p>If you fork or extend this port, please keep the credits to the original author intact.</p>
+</body>
+</html>

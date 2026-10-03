@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wordle+</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Wordle+</h1>
+<p>一个猜单词游戏。在 <strong>6 次尝试</strong>内找出隐藏的 <strong>6 字母</strong>单词。每次猜测都会得到带颜色标记的反馈——而且与经典 Wordle 不同，你可以选择<strong>每日、每小时或无限</strong>模式游玩。</p>
+<ul>
+<li><strong>在线演示：</strong> <a href="https://astrnox.github.io/wordle-plus/">astrnox.github.io/wordle-plus</a></li>
+<li><strong>源码：</strong> <a href="https://github.com/astrnox/wordle-plus">github.com/astrnox/wordle-plus</a></li>
+</ul>
+<h2>如何游玩</h2>
+<p>在六次尝试中猜出这个六字母单词。每次猜测之后，方块会告诉你猜得有多接近：</p>
+<table>
+<thead>
+<tr>
+<th>方块</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟩 绿色</td>
+<td>字母正确，位置也正确</td>
+</tr>
+<tr>
+<td>🟨 黄色</td>
+<td>字母正确，位置错误</td>
+</tr>
+<tr>
+<td>⬜ 灰色</td>
+<td>该字母不在单词中</td>
+</tr>
+</tbody>
+</table>
+<p>利用这些反馈逐步缩小范围，<strong>绿色方块会被锁定</strong>并保留到下一次猜测中。六次机会，一个单词。</p>
+<h3>模式</h3>
+<ul>
+<li><strong>每日（Daily）</strong>——每天一道谜题，所有人题目相同；明天回来再挑战新的。</li>
+<li><strong>每小时（Hourly）</strong>——每小时刷新一道新谜题。</li>
+<li><strong>无限（Infinite）</strong>——无尽谜题，想玩多久都可以。</li>
+</ul>
+<p>它完全<strong>支持离线使用</strong>：可以安装为 PWA，首次加载之后即可正常工作。</p>
+<h2>运行方式</h2>
+<p>一个自带 service worker 的自包含 JavaScript 包，可安装为<strong>渐进式 Web 应用（Progressive Web App）</strong>。</p>
+<pre><code>index.html        # 应用外壳，注册 service worker
+build/bundle.js   # 游戏本体（已编译的打包文件）
+build/bundle.css  # 样式
+global.css        # 基础样式
+manifest.json     # PWA manifest
+sw.js             # service worker（离线缓存）
+img/              # 图标 + 社交分享图
+</code></pre>
+<p>键盘操作：输入字母，<code>Enter</code> 提交，<code>Backspace</code> 删除。</p>
+<h2>本地运行</h2>
+<pre><code class="language-bash">git clone https://github.com/astrnox/wordle-plus.git
+cd wordle-plus
+python3 -m http.server 8000
+# 打开 http://localhost:8000
+</code></pre>
+<p>（service worker 需要 HTTP 或 HTTPS 协议——<code>file://</code> 无法注册。）</p>
+<h2>技术栈</h2>
+<ul>
+<li><strong>语言：</strong> JavaScript（打包形式）</li>
+<li><strong>类型：</strong> 渐进式 Web 应用（可离线、可安装）</li>
+<li><strong>托管：</strong> GitHub Pages</li>
+</ul>
+<h2>致谢</h2>
+<ul>
+<li>灵感来自 Josh Wardle 的 <strong>Wordle</strong>（<a href="https://www.wordle.xyz/">wordle.xyz</a>）；<code>+</code> 变体在其基础上增加了每小时与无限模式。</li>
+<li>本仓库是一个无拦截的网页构建版本。</li>
+</ul>
+</body>
+</html>

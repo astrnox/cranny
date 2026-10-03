@@ -1,0 +1,40 @@
+/* ============================================================
+   02-accessibility.css · 无障碍降级与偏好适配
+   ============================================================ */
+
+/* ---------- 降低透明度：玻璃变实色 ---------- */
+@media (prefers-reduced-transparency: reduce) {
+  :root { --glass-blur: 0px; }
+  .glass, .glass-strong, .sheet, .player__bar, .toast {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .glass        { background: var(--bg-elevated); }
+  .glass-strong { background: var(--bg-elevated); }
+  .sheet        { background: var(--bg-elevated); }
+  .player__bar  { background: var(--bg-elevated); }
+  .toast        { background: var(--bg-elevated); }
+}
+
+/* ---------- 降低动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover { transform: none; }
+  .card:hover .card__img { transform: none; }
+}
+
+/* ---------- 高对比度 ---------- */
+@media (prefers-contrast: more) {
+  :root {
+    --label-secondary: var(--label-primary);
+    --label-tertiary:  var(--label-secondary);
+    --separator:       var(--separator-strong);
+  }
+  .card { border: 1px solid var(--separator-strong); }
+  .badge { border: 1px solid currentColor; }
+}

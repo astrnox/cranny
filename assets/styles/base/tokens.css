@@ -1,0 +1,124 @@
+/* ============================================================
+   设计 Token · 火花珊瑚系统（去蓝紫、去渐变）
+   外壳安静（暖白 + 墨黑），单一品牌色承担强调；
+   封面用多彩色块承担色彩，所以外壳不需要任何装饰性渐变。
+   ============================================================ */
+
+:root {
+  /* ---------- 中性层（暖白纸面，不是奶油色） ---------- */
+  --bg-base:        #f6f5f2;    /* 暖中性白，比奶油更干净 */
+  --bg-card:        #ffffff;
+  --bg-sunken:      #edebe6;
+  --bg-hover:       #f1efea;
+
+  /* ---------- 文字（近黑墨色，略带暖） ---------- */
+  --text-primary:   #1a1c20;
+  --text-secondary: #565a63;
+  --text-tertiary:  #8c8f98;
+  --text-on-accent: #ffffff;
+
+  /* ---------- 品牌色：火花珊瑚（能量 / 玩味 / 非蓝非紫） ---------- */
+  --brand:          #ff5a36;
+  --brand-hover:    #ed4520;
+  --brand-soft:     #ffe9e2;
+  --brand-border:   #ffc4b4;
+
+  /* ---------- 角标状态色（避开蓝/紫） ---------- */
+  --green:          #16a36a;
+  --green-soft:     #e3f5ec;
+  --amber:          #e08a12;
+  --amber-soft:     #fbf0db;
+  --teal:           #0f9d9d;
+  --teal-soft:      #ddf0f0;
+  --ink:            #2a2d33;     /* PC 角标：深色芯片 */
+  --gray:           #6b7280;
+  --gray-soft:      #efefef;
+  --red:            #e0413e;
+  --red-soft:       #fbe3e2;
+
+  /* ---------- 描边 ---------- */
+  --border:         #e7e4dd;
+  --border-strong:  #d6d2c9;
+
+  /* ---------- 骨架微光（加载动画扫光，深色自动变暗） ---------- */
+  --shimmer:        rgba(255,255,255,0.72);
+
+  /* ---------- 阴影（轻、利落，无糊感） ---------- */
+  --shadow-card:       0 1px 2px rgba(20,20,20,0.05), 0 4px 16px rgba(20,20,20,0.05);
+  --shadow-card-hover: 0 2px 6px rgba(20,20,20,0.06), 0 14px 34px rgba(20,20,20,0.12);
+  --shadow-sheet:      0 -4px 32px rgba(20,20,20,0.16);
+  --shadow-float:      0 4px 24px rgba(20,20,20,0.12);
+
+  /* ---------- 间距 ---------- */
+  --space-1:  4px;   --space-2:  8px;   --space-3:  12px;
+  --space-4:  16px;  --space-5:  20px;  --space-6:  24px;
+  --space-8:  32px;  --space-10: 40px;  --space-12: 48px;
+  --page-gutter: 20px;
+
+  /* ---------- 圆角 ---------- */
+  --radius-sm:  10px;
+  --radius-md:  16px;
+  --radius-lg:  22px;
+  --radius-xl:  30px;
+  --radius-full: 9999px;
+
+  /* ---------- 字阶（单一系统字族，靠字重建立层级） ---------- */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+          "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  --fs-display: 52px;  --lh-display: 56px;
+  --fs-title:   30px;  --lh-title:   36px;
+  --fs-section: 21px;  --lh-section: 26px;
+  --fs-card:    16px;  --lh-card:    20px;
+  --fs-meta:    13px;  --lh-meta:    17px;
+  --fs-body:    15px;  --lh-body:    21px;
+  --fs-small:   13px;
+
+  /* ---------- 动效：GPU-friendly，弹簧收尾 ---------- */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in:     cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  --ease-pop:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.34, 1.34, 0.5, 1);
+  --dur-1: 120ms;  --dur-2: 200ms;  --dur-3: 320ms;  --dur-4: 480ms;  --dur-5: 620ms;
+}
+
+/* ---------- 深色 ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base:        #141519;
+    --bg-card:        #1e2026;
+    --bg-sunken:      #262931;
+    --bg-hover:       #22252c;
+
+    --text-primary:   #f1f2f4;
+    --text-secondary: #b4b8c1;
+    --text-tertiary:  #767b86;
+
+    --brand:          #ff6a48;
+    --brand-soft:     #3a201a;
+    --brand-border:   #5e2f22;
+
+    --border:         #2c2f38;
+    --border-strong:  #3a3e4a;
+    --shimmer:        rgba(255,255,255,0.10);
+
+    --shadow-card:       0 1px 2px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.4);
+    --shadow-card-hover: 0 2px 6px rgba(0,0,0,0.35), 0 14px 34px rgba(0,0,0,0.5);
+    --shadow-sheet:      0 -4px 32px rgba(0,0,0,0.6);
+  }
+}
+html[data-theme="dark"] {
+  --bg-base:#141519; --bg-card:#1e2026; --bg-sunken:#262931; --bg-hover:#22252c;
+  --text-primary:#f1f2f4; --text-secondary:#b4b8c1; --text-tertiary:#767b86;
+  --brand:#ff6a48; --brand-soft:#3a201a; --brand-border:#5e2f22;
+  --border:#2c2f38; --border-strong:#3a3e4a;
+  --shimmer:rgba(255,255,255,0.10);
+  --shadow-card:0 1px 2px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-card-hover:0 2px 6px rgba(0,0,0,0.35), 0 14px 34px rgba(0,0,0,0.5);
+  --shadow-sheet:0 -4px 32px rgba(0,0,0,0.6);
+}
+html[data-theme="light"] {
+  --bg-base:#f6f5f2; --bg-card:#ffffff; --bg-sunken:#edebe6; --bg-hover:#f1efea;
+  --text-primary:#1a1c20; --text-secondary:#565a63; --text-tertiary:#8c8f98;
+  --brand:#ff5a36; --brand-soft:#ffe9e2; --brand-border:#ffc4b4;
+  --border:#e7e4dd; --border-strong:#d6d2c9;
+}

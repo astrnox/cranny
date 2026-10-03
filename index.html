@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>游戏中心 · astrnox 的游戏合集</title>
+<meta name="description" content="astrnox 的自建游戏中心 —— 网页游戏点开即玩，PC 与安卓游戏提供下载。">
+<meta name="theme-color" content="#F2F2F7">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="游戏中心 · Game Hub">
+<meta property="og:description" content="点开即玩的网页游戏集合，以及 PC / 安卓游戏下载。">
+
+<link rel="preconnect" href="https://github.io">
+<link rel="stylesheet" href="assets/styles/index.css">
+</head>
+<body>
+
+<!-- 顶部加载进度条 -->
+<div class="loadbar" id="loadbar" aria-hidden="true"></div>
+
+<!-- ===================== 顶栏（玻璃层） ===================== -->
+<header class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="./">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+      <span class="brand__text">游戏中心</span>
+    </a>
+
+    <div class="topbar__actions">
+      <button class="icon-btn" id="themeToggle" type="button"
+              aria-label="切换深浅色模式" title="切换主题"></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== 主内容 ===================== -->
+<main class="main container">
+
+  <!-- 英雄区：Poki 式居中巨型标题 + 大搜索，是全站最标志性的一刻 -->
+  <section class="hero">
+    <h1 class="hero__title">游戏中心</h1>
+    <p class="hero__sub" id="pageSub">正在加载…</p>
+    <div class="hero__search" id="searchWrap">
+      <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+      </svg>
+      <input class="search__input" id="search" type="search"
+             placeholder="想玩点什么？" autocomplete="off" spellcheck="false"
+             aria-label="搜索游戏">
+      <button class="search__clear" id="searchClear" type="button" aria-label="清除搜索">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- 分段控件 -->
+  <div class="segmented" role="tablist" aria-label="游戏类型切换">
+    <button class="segmented__item" role="tab" data-tab="all"   aria-selected="true"  type="button">全部</button>
+    <button class="segmented__item" role="tab" data-tab="web"   aria-selected="false" type="button">网页游戏</button>
+    <button class="segmented__item" role="tab" data-tab="local" aria-selected="false" type="button">本地游戏</button>
+    <button class="segmented__item" role="tab" data-tab="fav"   aria-selected="false" type="button">收藏</button>
+  </div>
+
+  <!-- 分类胶囊 -->
+  <div class="pills" id="pills" role="tablist" aria-label="分类筛选"></div>
+
+  <!-- 精选 -->
+  <section class="section" id="featuredSection" hidden>
+    <div class="section__head">
+      <h2 class="section__title">精选</h2>
+      <span class="section__count" id="featuredCount"></span>
+    </div>
+    <div class="row-wrap">
+      <div class="row" id="featuredRow"></div>
+    </div>
+  </section>
+
+  <!-- 最近游玩 -->
+  <section class="section" id="recentSection" hidden>
+    <div class="section__head">
+      <h2 class="section__title">最近游玩</h2>
+      <button class="section__more" id="recentClear" type="button">清空</button>
+    </div>
+    <div class="row" id="recentRow"></div>
+  </section>
+
+  <!-- 全部游戏 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title" id="gridTitle">全部游戏</h2>
+      <span class="section__count" id="gridCount"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div id="emptyState"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div>游戏版权归各自原作者所有 · 本站仅作个人收藏与导航，不托管、不分发游戏本体</div>
+  <div>
+    <a href="https://github.com/astrnox" target="_blank" rel="noopener noreferrer">github.com/astrnox</a>
+    <span class="footer__sep">·</span>
+    <a href="data/games.json" target="_blank">games.json</a>
+  </div>
+</footer>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

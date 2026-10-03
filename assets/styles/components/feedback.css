@@ -1,0 +1,128 @@
+/* ============================================================
+   feedback.css · Toast / 空状态 / 骨架 / 页脚
+   ============================================================ */
+
+/* ---------- Toast ---------- */
+.toast-host {
+  position: fixed;
+  left: 50%;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  z-index: 300;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+.toast {
+  padding: 11px 20px;
+  border-radius: var(--radius-full);
+  background: var(--text-primary);
+  color: var(--bg-card);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-float);
+  opacity: 0;
+  transform: translateY(14px) scale(0.94);
+  will-change: opacity, transform;
+  transition: opacity var(--dur-2) var(--ease-out),
+              transform var(--dur-2) var(--ease-out);
+}
+.toast.is-open { opacity: 1; transform: none; }
+.toast__icon { width: 16px; height: 16px; display: inline-flex; }
+.toast__icon svg { width: 100%; height: 100%; }
+
+/* ---------- 空状态 ---------- */
+.empty {
+  padding: 60px 20px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.empty__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+  background: var(--bg-sunken);
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+}
+.empty__icon svg { width: 38px; height: 38px; }
+.empty__title { font-size: var(--fs-section); font-weight: 800; letter-spacing: -0.02em; }
+.empty__desc {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  max-width: 380px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* ---------- 加载中：居中圆环 + 文案（明确的加载动画） ---------- */
+.boot {
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  padding: 96px 20px;
+}
+.boot__spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  border-top-color: var(--brand);
+  will-change: transform;
+  animation: bootSpin 0.8s linear infinite;
+}
+@keyframes bootSpin {
+  to { transform: rotate(360deg); }
+}
+.boot__text {
+  color: var(--text-secondary);
+  font-size: var(--fs-body);
+}
+
+/* ---------- 骨架屏（加载动画：微光扫过） ---------- */
+.card--skeleton { pointer-events: none; }
+.card__cover--sk,
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-sunken);
+  border-radius: 6px;
+}
+.card__cover--sk { border-radius: 0; }
+.card__cover--sk::after,
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 42%;
+  background: var(--shimmer);
+  transform: translateX(-100%);
+  animation: skSweep 1.25s var(--ease-out) infinite;
+}
+@keyframes skSweep {
+  to { transform: translateX(340%); }
+}
+
+/* ---------- 页脚 ---------- */
+.footer {
+  max-width: 1320px;
+  margin: 48px auto 0;
+  padding: 28px var(--page-gutter) 40px;
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-meta);
+  color: var(--text-tertiary);
+  text-align: center;
+  line-height: 1.9;
+}
+.footer a { color: var(--text-secondary); transition: color var(--dur-1) var(--ease-out); }
+.footer a:hover { color: var(--brand); }
+.footer__sep { margin: 0 8px; opacity: 0.5; }

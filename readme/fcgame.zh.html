@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FCGame - FC/NES 模拟器</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>FCGame - FC/NES 模拟器</h1>
+<ul>
+<li>基于 JSNES 二次开发的前端静态 FC/NES 模拟器。</li>
+<li>项目代码持续开源，内置少量“合规白名单 Homebrew ROM”，不内置商业 ROM。</li>
+</ul>
+<h2>网页效果图</h2>
+<h3>横屏效果</h3>
+<p><img alt="横屏预览" src="/static/landscape_mode.png" /></p>
+<h3>竖屏效果</h3>
+<p><img alt="竖屏预览" src="/static/portrait_mode.png" /></p>
+<h2>按键说明</h2>
+<p>移动端使用触摸操控，PC 端按键映射如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">按键</th>
+<th style="text-align: left;">player1</th>
+<th style="text-align: left;">player2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Up</td>
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">↑</td>
+</tr>
+<tr>
+<td style="text-align: left;">Down</td>
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">↓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Left</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">←</td>
+</tr>
+<tr>
+<td style="text-align: left;">Right</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">→</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">Num2</td>
+</tr>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">J</td>
+<td style="text-align: left;">Num1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Select</td>
+<td style="text-align: left;">Space</td>
+<td style="text-align: left;">Num/</td>
+</tr>
+<tr>
+<td style="text-align: left;">Start</td>
+<td style="text-align: left;">Enter</td>
+<td style="text-align: left;">Num*</td>
+</tr>
+</tbody>
+</table>
+<p>说明：<code>player2</code> 的 <code>Num1</code> / <code>Num2</code> / <code>Num*</code> / <code>Num/</code> 依赖数字小键盘，部分笔记本无独立小键盘；使用前请确认键盘支持并开启 <code>NumLock</code>。</p>
+<h2>Docker 部署</h2>
+<p>在仓库根目录执行以下命令即可本地运行：</p>
+<pre><code class="language-bash">docker build -t fcgame:local .
+docker run --rm -p 8080:80 fcgame:local
+</code></pre>
+<p>浏览器访问：<code>http://localhost:8080</code></p>
+<h2>本地导入 ROM</h2>
+<ol>
+<li>启动页面后，在游戏区域上方点击文件选择框。</li>
+<li>选择本地 <code>.nes</code> 文件。</li>
+<li>状态栏出现“本地 ROM 已加载”后即可开始游戏。</li>
+</ol>
+<p>说明：项目支持“本地导入 ROM”，也支持通过脚本按配置拉取 ROM 资源清单。</p>
+<h2>ROM 资源准备（本地）</h2>
+<p>在仓库根目录执行：</p>
+<pre><code class="language-bash">bash scripts/fetch-roms.sh rom-sources.json
+</code></pre>
+<p>脚本会生成：</p>
+<ol>
+<li><code>roms/&lt;source_repo&gt;/manifest.json</code>：来源级清单</li>
+<li><code>roms/index.json</code>：总入口清单</li>
+<li><code>download-report.json</code>：下载结果报告</li>
+</ol>
+<p>前端会读取 <code>roms/index.json</code> 动态加载 ROM 列表，不再在 <code>index.html</code> 中硬编码。</p>
+<h2>ROM 来源配置</h2>
+<p>默认配置文件是 <code>rom-sources.json</code>，可按来源仓库分组维护 ROM。<br />
+宽松模式下每个条目最少包含：</p>
+<ol>
+<li><code>name</code></li>
+<li><code>rom_url</code></li>
+</ol>
+<p>推荐补充：</p>
+<ol>
+<li><code>display_name</code></li>
+<li><code>license</code></li>
+<li><code>license_url</code></li>
+</ol>
+<h2>合规声明</h2>
+<ul>
+<li>本仓库 <strong>不内置和分发商业游戏 ROM</strong>。</li>
+<li>ROM 著作权归原权利人所有，开源协议不覆盖第三方 ROM 版权。</li>
+<li>仅建议使用你已获得授权、可合法持有和使用的 ROM。</li>
+<li>通过脚本拉取 ROM 时，请自行确认来源与授权边界。</li>
+</ul>
+<h2>CI 同步分支</h2>
+<ul>
+<li><code>main</code>：代码与配置（保持干净）</li>
+<li><code>runtime-assets</code>：由 GitHub Actions 生成并强制覆盖同步</li>
+</ul>
+<h2>开源协议</h2>
+<ul>
+<li>代码协议：<code>GPL-3.0-or-later</code></li>
+<li>详见仓库根目录 <code>LICENSE</code>。</li>
+</ul>
+<h2>赞助</h2>
+<p><a href="https://github.com/lucaschungzsj/fcgame/blob/main/SPONSOR.md">谢谢打赏 🙏</a> — <strong>没准儿我也能吃上带鸡蛋的豪华泡面了 🥚</strong></p>
+<h2>Star History</h2>
+<p><a href="https://www.star-history.com/?repos=lucaszhongsj%2Ffcgame&amp;type=date&amp;legend=top-left"><img alt="Star History Chart" src="https://api.star-history.com/image?repos=lucaszhongsj/fcgame&amp;type=date&amp;legend=top-left" /></a></p>
+</body>
+</html>

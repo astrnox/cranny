@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arkadium's Bubble Shooter</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Arkadium's Bubble Shooter</h1>
+<p>The classic <strong>bubble shooter</strong>, unblocked and playable in any modern browser. Aim, shoot, and match <strong>three or more</strong> bubbles of the same color to pop them. Clear every bubble on the board before they push down to the bottom line — or you lose.</p>
+<ul>
+<li><strong>Live demo:</strong> <a href="https://astrnox.github.io/arkadiumx27s-bubble-shooter/">astrnox.github.io/arkadiumx27s-bubble-shooter</a></li>
+<li><strong>Source:</strong> <a href="https://github.com/astrnox/arkadiumx27s-bubble-shooter">github.com/astrnox/arkadiumx27s-bubble-shooter</a></li>
+</ul>
+<h2>How to play</h2>
+<p>Bubbles drift down from the top in a packed hexagonal arrangement. You control the shooter at the bottom.</p>
+<ul>
+<li><strong>Aim</strong> with the mouse — the guide line shows where the next bubble will travel (it bounces off walls).</li>
+<li><strong>Click / tap</strong> to fire the bubble from the cannon.</li>
+<li>Bubbles <strong>stick</strong> to the cluster on contact. Match <strong>3+ of the same color</strong> and they pop, everything above them drops.</li>
+<li>Every shot you don't land pushes the pack <strong>down a row</strong>. Let any bubble cross the bottom line and the game ends.</li>
+<li>Clear the entire board to advance — later levels add more colors and tighter layouts, so stray shots hurt more.</li>
+</ul>
+<p>The tension is placement: the obvious shot isn't always the safe one, and a bad bounce can set up a cascade you didn't want.</p>
+<h2>Controls</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aim</td>
+<td>Move mouse / drag finger</td>
+</tr>
+<tr>
+<td>Shoot</td>
+<td>Click / tap</td>
+</tr>
+</tbody>
+</table>
+<h2>How it runs</h2>
+<p>An <strong>HTML5/JavaScript</strong> build of Arkadium's Bubble Shooter (the version published on CrazyGames), loaded as a single compiled bundle.</p>
+<pre><code>index.html      # page shell, loads the game bundle
+build/main.js   # the game engine + game code (content-hashed)
+adSense.js      # ad script stub
+</code></pre>
+<p>The canvas fills the page and scales to any window size; it works with mouse and touch.</p>
+<h2>Run it locally</h2>
+<p>Serve over HTTP (bundled scripts won't load from <code>file://</code>):</p>
+<pre><code class="language-bash">git clone https://github.com/astrnox/arkadiumx27s-bubble-shooter.git
+cd arkadiumx27s-bubble-shooter
+python3 -m http.server 8000
+# open http://localhost:8000
+</code></pre>
+<h2>Tech stack</h2>
+<ul>
+<li><strong>Language:</strong> JavaScript (HTML5 build)</li>
+<li><strong>Renderer:</strong> HTML5 <code>&lt;canvas&gt;</code></li>
+<li><strong>Hosting:</strong> GitHub Pages</li>
+</ul>
+<h2>Credits</h2>
+<ul>
+<li>Original game: <em>Arkadium's Bubble Shooter</em>, published on <a href="https://www.crazygames.com/">CrazyGames</a>. All rights to Arkadium / CrazyGames.</li>
+<li>This repository is an unblocked web build for play in modern browsers.</li>
+</ul>
+</body>
+</html>

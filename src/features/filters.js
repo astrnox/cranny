@@ -1,0 +1,83 @@
+/* ============================================================
+   filters.js · 分段控件与分类胶囊
+   ============================================================ */
+
+import { el, clear } from '../utils/dom.js';
+import { state, poolForPills } from '../core/state.js';
+import { catIcon } from '../utils/icons.js';
+
+export function renderPills(container, { onChange } = {}) {
+  const pool = poolForPills();
+  const usable = state.categories.filter(
+    c => pool.some(g => (g.category || []).includes(c.id))
+  );
+  if (state.category && !usable.some(c => c.id === state.category)) {
+    state.category = null;
+  }
+
+  clear(container);
+  const frag = document.createDocumentFragment();
+
+  const allBtn = el('button', {
+    className: 'pill',
+    text: `全部 ${pool.length}`,
+    attrs: { type: 'button', role: 'tab', 'aria-selected': String(state.category === null) },
+  });
+  allBtn.addEventListener('click', () => { state.category = null; onChange?.(); });
+  frag.appendChild(allBtn);
+
+  usable.forEach(c => {
+    const btn = el('button', {
+      className: 'pill',
+      attrs: { type: 'button', role: 'tab', 'aria-selected': String(state.category === c.id) },
+    });
+    const ic = el('span', { className: 'pill__icon', html: catIcon(c.id) });
+    btn.appendChild(ic);
+    btn.appendChild(el('span', { text: c.name }));
+    btn.addEventListener('click', () => {
+      state.category = state.category === c.id ? null : c.id;
+      onChange?.();
+    });
+    frag.appendChild(btn);
+  });
+
+  container.appendChild(frag);
+  container.querySelector('[aria-selected="true"]')
+    ?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+}
+
+export function syncSegmented(nodes) {
+  nodes.forEach(n => n.setAttribute('aria-selected', String(n.dataset.tab === state.tab)));
+  const container = nodes[0]?.parentElement;
+  if (container) moveIndicator(container);
+}
+
+/** 滑动高亮：把白色药丸平滑移到当前选中项下方 */
+function moveIndicator(container) {
+  const ind = container.querySelector('.segmented__indicator');
+  if (!ind) return;
+  const active = container.querySelector('[aria-selected="true"]');
+  if (!active) { ind.style.opacity = '0'; return; }
+  ind.style.opacity = '1';
+  ind.style.width = `${active.offsetWidth}px`;
+  ind.style.transform = `translateX(${active.offsetLeft - 4}px)`;
+}
+
+export function initSegmented(nodes, { onChange } = {}) {
+  const container = nodes[0]?.parentElement;
+  if (container && !container.querySelector('.segmented__indicator')) {
+    const ind = el('span', { className: 'segmented__indicator' });
+    container.insertBefore(ind, container.firstChild);
+    requestAnimationFrame(() => moveIndicator(container));
+    addEventListener('resize', () => moveIndicator(container), { passive: true });
+    // 字体/布局稳定后再校一次
+    setTimeout(() => moveIndicator(container), 120);
+  }
+  nodes.forEach(btn => btn.addEventListener('click', () => {
+    state.tab = btn.dataset.tab;
+    state.category = null;
+    syncSegmented(nodes);
+    moveIndicator(container);
+    onChange?.();
+  }));
+}

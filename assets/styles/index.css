@@ -1,0 +1,18 @@
+/* ============================================================
+   index.css · 样式总入口
+   ============================================================ */
+
+@import url("./base/tokens.css");
+@import url("./base/reset.css");
+
+@import url("./layout/container.css");
+@import url("./layout/topbar.css");
+
+@import url("./components/card.css");
+@import url("./components/controls.css");
+@import url("./components/player.css");
+@import url("./components/detail.css");
+@import url("./components/feedback.css");
+
+@import url("./themes/01-dark.css");
+@import url("./themes/02-accessibility.css");

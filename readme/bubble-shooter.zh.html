@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arkadium's Bubble Shooter</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Arkadium's Bubble Shooter</h1>
+<p>经典 <strong>bubble shooter</strong>（泡泡射手），已解除限制，可在任意现代浏览器中游玩。瞄准、发射，匹配<strong>三个或更多</strong>同色泡泡即可将其消除。在泡泡被压到底部底线之前清空棋盘上的所有泡泡——否则你就输了。</p>
+<ul>
+<li><strong>在线试玩：</strong> <a href="https://astrnox.github.io/arkadiumx27s-bubble-shooter/">astrnox.github.io/arkadiumx27s-bubble-shooter</a></li>
+<li><strong>源码：</strong> <a href="https://github.com/astrnox/arkadiumx27s-bubble-shooter">github.com/astrnox/arkadiumx27s-bubble-shooter</a></li>
+</ul>
+<h2>玩法说明</h2>
+<p>泡泡从顶部以紧密的六边形排列向下漂移。你控制位于底部的发射器。</p>
+<ul>
+<li>用鼠标<strong>瞄准</strong>——瞄准线会显示下一颗泡泡的飞行轨迹（它会从墙壁上反弹）。</li>
+<li><strong>点击 / 轻触</strong>以从炮口发射泡泡。</li>
+<li>泡泡接触后会<strong>粘附</strong>在泡泡群上。匹配<strong>3 个以上同色</strong>泡泡即可消除，其上方的一切都会落下。</li>
+<li>每一发没有命中的射击都会让整堆泡泡<strong>下移一排</strong>。任何一颗泡泡越过底线，游戏就结束。</li>
+<li>清空整个棋盘即可进入下一关——后续关卡会加入更多颜色和更紧凑的布局，因此失误的代价更高。</li>
+</ul>
+<p>张力在于落点选择：看起来显而易见的那一枪未必安全，一次糟糕的反弹可能引发你并不想要的连锁反应。</p>
+<h2>操作按键</h2>
+<table>
+<thead>
+<tr>
+<th>动作</th>
+<th>操作方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>瞄准</td>
+<td>移动鼠标 / 拖动手指</td>
+</tr>
+<tr>
+<td>射击</td>
+<td>点击 / 轻触</td>
+</tr>
+</tbody>
+</table>
+<h2>运行原理</h2>
+<p>这是 Arkadium's Bubble Shooter 的 <strong>HTML5/JavaScript</strong> 构建版本（即发布在 CrazyGames 上的那一版），以单个编译后的 bundle 加载。</p>
+<pre><code>index.html      # 页面外壳，加载游戏 bundle
+build/main.js   # 游戏引擎 + 游戏代码（带内容哈希）
+adSense.js      # 广告脚本桩
+</code></pre>
+<p>canvas 铺满整个页面并可缩放到任意窗口尺寸；同时支持鼠标和触屏操作。</p>
+<h2>本地运行</h2>
+<p>通过 HTTP 伺服（打包后的脚本无法从 <code>file://</code> 加载）：</p>
+<pre><code class="language-bash">git clone https://github.com/astrnox/arkadiumx27s-bubble-shooter.git
+cd arkadiumx27s-bubble-shooter
+python3 -m http.server 8000
+# open http://localhost:8000
+</code></pre>
+<h2>技术栈</h2>
+<ul>
+<li><strong>语言：</strong> JavaScript（HTML5 构建）</li>
+<li><strong>渲染器：</strong> HTML5 <code>&lt;canvas&gt;</code></li>
+<li><strong>托管：</strong> GitHub Pages</li>
+</ul>
+<h2>版权声明</h2>
+<ul>
+<li>原作：<em>Arkadium's Bubble Shooter</em>，发布于 <a href="https://www.crazygames.com/">CrazyGames</a>。Arkadium / CrazyGames 保留所有权利。</li>
+<li>本仓库是一个已解除限制的网页构建版本，可在现代浏览器中游玩。</li>
+</ul>
+</body>
+</html>

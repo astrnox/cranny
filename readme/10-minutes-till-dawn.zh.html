@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10 Minutes Till Dawn</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>10 Minutes Till Dawn</h1>
+<p>一款俯视角生存射击游戏。怪物从四面八方涌来，而你的角色会<strong>自动攻击</strong>——你唯一的任务就是不断移动、躲开工蚁般的敌群，存活<strong>十分钟</strong>。升级会在波次之间陆续到来；你如何分配它们，决定了你能走多远。</p>
+<ul>
+<li><strong>在线试玩：</strong> <a href="https://astrnox.github.io/10-minutes-till-dawn/">astrnox.github.io/10-minutes-till-dawn</a></li>
+<li><strong>源码：</strong> <a href="https://github.com/astrnox/10-minutes-till-dawn">github.com/astrnox/10-minutes-till-dawn</a></li>
+</ul>
+<h2>玩法说明</h2>
+<p>你手提灯笼，从一片黑暗战场的底部出发。时钟永远在走——<strong>坚持到十分钟整。</strong></p>
+<ul>
+<li>你的武器会<strong>自行开火</strong>，始终瞄准最近的敌人。你不需要瞄准；你要做的是<em>站位</em>。</li>
+<li>用移动按键<strong>移动</strong>，与怪群放风筝、穿过缝隙，避免被包围。</li>
+<li>你存活得越久，敌人的刷新越快、阵型也越凶险。</li>
+<li>击杀敌人可获得 XP。升级时你要<strong>挑选一项升级</strong>——额外伤害、更快的射速、更高移速、更多 HP 等等。</li>
+<li>一旦死亡，本局就结束。撑满十分钟，你就算获胜。</li>
+</ul>
+<p>没有瞄准，也没有弹药——纯粹的走位与流派选择。张力来自对怪群密度的掌控：一旦让敌人包围你，哪怕自动攻击也救不了你。</p>
+<h2>操作按键</h2>
+<table>
+<thead>
+<tr>
+<th>动作</th>
+<th>按键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移动</td>
+<td><code>W</code> <code>A</code> <code>S</code> <code>D</code> 或方向键</td>
+</tr>
+<tr>
+<td>攻击</td>
+<td>自动（瞄准最近的敌人）</td>
+</tr>
+<tr>
+<td>暂停</td>
+<td><code>Esc</code> / <code>P</code></td>
+</tr>
+</tbody>
+</table>
+<h2>运行原理</h2>
+<p>游戏使用 <strong>Unity</strong> 构建并导出为 <strong>WebGL</strong>，因此浏览器会下载 <code>.wasm</code> 构建产物并在 <code>&lt;canvas&gt;</code> 中运行。</p>
+<pre><code>index.html                          # Unity 引导 + 缩放逻辑
+Build/10MinutesTillDawnWebGL.json    # Unity 构建清单
+Build/*.wasm, *.data                # Unity WebGL 负载
+js/main.js                          # 页面脚本
+icon.png                            # favicon
+</code></pre>
+<p>游戏以固定的 <strong>675×1200</strong> 竖屏分辨率渲染，并通过信箱式裁切/缩放适配你的窗口（<code>onResize</code> 处理函数保持 9:16 宽高比）。加上 <code>?pixelated</code> 可获得清晰的像素艺术效果。</p>
+<h2>本地运行</h2>
+<p>Unity WebGL 构建必须通过 HTTP 伺服，并带上正确的 MIME 类型（尤其是 <code>.wasm</code> 和 <code>.data</code>）：</p>
+<pre><code class="language-bash">git clone https://github.com/astrnox/10-minutes-till-dawn.git
+cd 10-minutes-till-dawn
+python3 -m http.server 8000
+# open http://localhost:8000
+</code></pre>
+<p>本地游玩只需一个普通的 <code>python3 -m http.server</code>；若想要更接近生产环境的配置，可使用 <code>npx serve</code> 或 Nginx。</p>
+<h2>技术栈</h2>
+<ul>
+<li><strong>引擎：</strong> Unity（C#）</li>
+<li><strong>导出：</strong> Unity WebGL（WebAssembly）</li>
+<li><strong>托管：</strong> GitHub Pages</li>
+</ul>
+<h2>版权声明</h2>
+<ul>
+<li>原作：<em>10 Minutes Till Dawn</em>——一款 Unity WebGL 生存射击游戏。原作创作者保留所有权利。</li>
+<li>本仓库是一个已解除限制的网页构建版本，可在现代浏览器中游玩。</li>
+</ul>
+</body>
+</html>

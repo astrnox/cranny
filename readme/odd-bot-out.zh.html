@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Odd Bot Out</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>Odd Bot Out</h1>
+<p>一款浏览器上的观察解谜游戏。屏幕上是一整片一模一样的机器人 —— <strong>其中只有一个与众不同。</strong> 找出它，点中它，然后进入下一轮。随着进程推进，网格会变大，差异也会越来越隐蔽。</p>
+<ul>
+<li><strong>在线演示：</strong> <a href="https://astrnox.github.io/odd-bot-out/">astrnox.github.io/odd-bot-out</a></li>
+<li><strong>源码：</strong> <a href="https://github.com/astrnox/odd-bot-out">github.com/astrnox/odd-bot-out</a></li>
+<li><strong>官方网站：</strong> <a href="https://www.oddbotout.com/">oddbotout.com</a></li>
+</ul>
+<h2>玩法说明</h2>
+<p>每一轮都会显示一片看起来完全相同的机器人网格，只有一个例外。你的任务就是找出那个不属于这里的。</p>
+<ol>
+<li><strong>扫视</strong>网格 —— 那个异类通常只在一处细节上有差别：一个颜色、一根天线、一只眼睛、一道标记。</li>
+<li><strong>点击</strong>你认为与众不同的那个机器人。</li>
+<li>选对即可进入下一轮；选错则损失一条命（或一次重试机会，取决于难度）。</li>
+<li>随着关卡推进，网格会变得更大，差异也会变得更难被察觉。</li>
+</ol>
+<p>这是一款纯粹锻炼眼神 / 识别规律的游戏 —— 没有计时，没有阅读，只需要仔细观察。</p>
+<h2>运行原理</h2>
+<p>游戏是<strong>使用 Emscripten 编译为 WebAssembly 的原生代码</strong>，渲染到 HTML5 的 <code>&lt;canvas&gt;</code> 中。</p>
+<pre><code>index.html            # canvas host + loading splash
+webapp/index.js       # Emscripten runtime loader
+webapp/source_min.js  # compiled game module
+webapp/obo.css        # canvas / layout styles
+webapp/splash.png     # loading splash
+</code></pre>
+<p>首次加载时，一个 <code>&lt;progress&gt;</code> 进度条会显示下载／编译进度，之后游戏逐渐淡入。</p>
+<h2>本地运行</h2>
+<p>请通过 HTTP 提供服务（Emscripten 模块无法从 <code>file://</code> 加载）：</p>
+<pre><code class="language-bash">git clone https://github.com/astrnox/odd-bot-out.git
+cd odd-bot-out
+python3 -m http.server 8000
+# open http://localhost:8000
+</code></pre>
+<h2>技术栈</h2>
+<ul>
+<li><strong>游戏：</strong> 原生代码（C/C++），使用 <strong>Emscripten</strong> 编译为 WebAssembly</li>
+<li><strong>渲染器：</strong> HTML5 <code>&lt;canvas&gt;</code></li>
+<li><strong>托管：</strong> GitHub Pages</li>
+</ul>
+<h2>致谢</h2>
+<ul>
+<li>原版游戏：<em>Odd Bot Out</em> —— <a href="https://www.oddbotout.com/">oddbotout.com</a></li>
+<li>本仓库是一个免拦截的网页版本，可在现代浏览器中游玩。</li>
+</ul>
+</body>
+</html>

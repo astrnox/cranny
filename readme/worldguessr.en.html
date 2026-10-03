@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorldGuessr</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>WorldGuessr</h1>
+<p>A free-to-play, source-available version of the popular geography game inspired by GeoGuessr. This React based project aims to provide a fun and educational way to explore the world through Google Street View imagery.</p>
+<h3>Play now <a href="https://worldguessr.com">here</a>!</h3>
+<h4><a href="https://discord.gg/yenVspFmkB">Join the Discord community</a></h4>
+<h2>Features</h2>
+<ul>
+<li><strong>Random Street Views:</strong> Experience a new location anywhere in the world on each game.</li>
+<li><strong>Multiplayer Mode:</strong> Challenge your friends or play against random opponents in real-time.</li>
+<li><strong>Country Streaks:</strong> Test your knowledge and see how many countries you can guess in a row.</li>
+<li><strong>Free to run:</strong> The source code is available and free to self-host for noncommercial use (see <a href="#license">License</a>). Uses the <a href="https://developers.google.com/streetview/web">Google Maps Streetview Embed API</a>, which is completely free compared to the costly SDK used by GeoGuessr.</li>
+</ul>
+<h2>Acknowledgements</h2>
+<ul>
+<li><a href="https://leafletjs.com/">Leaflet</a> for the minimap display.</li>
+<li><a href="https://github.com/mutsuyuki/Leaflet.SmoothWheelZoom">Leaflet.SmoothWheelZoom</a> by mutsuyuki, which our fluid scroll-wheel zoom (<code>lib/leafletFluidZoom.js</code>) is adapted from.</li>
+<li><a href="https://developers.google.com/maps">Google Maps API</a> for the generous free-tier on street view imagery.</li>
+<li><a href="https://github.com/slashP/Vali">Vali</a> by @SlashP for generating balanced locations distributions for all countries.</li>
+<li><a href="https://nextjs.org/">Next.js</a> for the web application.</li>
+<li>All contributors who helped bring this project to life!</li>
+</ul>
+<h2>Running Locally</h2>
+<h3>Prerequisites</h3>
+<p>Before you start, ensure you have the following installed:<br />
+- <a href="https://nodejs.org/en/">Node.js</a> (v18.18 or later)<br />
+- <a href="https://www.npmjs.com/">npm</a> (v6.x or later)<br />
+- <a href="https://pnpm.io/">pnpm</a> (v9.x or later)</p>
+<h3>Installation</h3>
+<ol>
+<li>
+<p>Clone the repository:<br />
+<code>bash
+   git clone https://github.com/codergautam/worldguessr.git
+   cd worldguessr</code></p>
+</li>
+<li>
+<p>Install dependencies:<br />
+<code>bash
+   pnpm install</code></p>
+</li>
+<li>
+<p>Run the development server:<br />
+<code>bash
+   pnpm run dev</code></p>
+</li>
+</ol>
+<p>Open <a href="http://localhost:3000">http://localhost:3000</a> with your browser to see the result.</p>
+<h2>Deploying to a VPS / External Server</h2>
+<p>If you're deploying WorldGuessr on a VPS or any server with an external IP (not localhost), you <strong>must</strong> configure these environment variables in your <code>.env</code> file:</p>
+<pre><code class="language-bash"># Replace YOUR_IP with your server's IP address or domain
+NEXT_PUBLIC_API_URL=YOUR_IP:3001
+NEXT_PUBLIC_WS_HOST=YOUR_IP:3002
+</code></pre>
+<p><strong>Example with IP:</strong></p>
+<pre><code class="language-bash">NEXT_PUBLIC_API_URL=123.45.67.89:3001
+NEXT_PUBLIC_WS_HOST=123.45.67.89:3002
+</code></pre>
+<p><strong>Example with domain (after setting up nginx):</strong></p>
+<pre><code class="language-bash">NEXT_PUBLIC_API_URL=api.yourdomain.com
+NEXT_PUBLIC_WS_HOST=ws.yourdomain.com
+</code></pre>
+<h3>Quick Setup Checklist</h3>
+<ol>
+<li>
+<p><strong>MongoDB</strong> - Create a cluster on <a href="https://www.mongodb.com/atlas">MongoDB Atlas</a> (free tier available) and add the connection string:<br />
+<code>bash
+   MONGODB=mongodb+srv://username:password@cluster.mongodb.net/worldguessr</code></p>
+</li>
+<li>
+<p><strong>Google OAuth</strong> - Create credentials at <a href="https://console.cloud.google.com/">Google Cloud Console</a>:<br />
+<code>bash
+   NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_client_id.apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET=your_client_secret</code></p>
+</li>
+<li>
+<p><strong>API/WS URLs</strong> - Point to your external IP or domain (see above)</p>
+</li>
+</ol>
+<p>For detailed environment variable documentation, see <a href="docs/environment-variables.md">docs/environment-variables.md</a>.</p>
+<h2>Contributing</h2>
+<p>Contributions are what make this community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+<p>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".<br />
+Don't forget to give the project a star! Thanks again!</p>
+<ol>
+<li>Fork the Project</li>
+<li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+<li>Commit your Changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+<li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<h2>License</h2>
+<p>Distributed under the PolyForm Noncommercial License 1.0.0. You are free to use, modify, and distribute this project for noncommercial purposes. See <a href="LICENSE.md">LICENSE.md</a> for more information.</p>
+<h2>Community</h2>
+<p>Join the Discord community <a href="https://discord.gg/yenVspFmkB">here</a> to discuss new features, report bugs, talk to the developers and connect with other players.</p>
+<p>You can email me privately at gautam@worldguessr.com</p>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorldGuessr</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-wrap:break-word;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4,h5{line-height:1.3;margin:1.4em 0 .6em;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9em;margin-top:.2em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h2{font-size:1.4em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.15em}
+p{margin:.7em 0}
+ul,ol{padding-left:1.5em;margin:.7em 0}
+li{margin:.3em 0}
+img{max-width:100%;height:auto;border-radius:8px}
+code{
+  background:var(--code-bg);padding:.15em .4em;border-radius:6px;
+  font:0.88em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);padding:14px 16px;border-radius:10px;overflow:auto;
+  border:1px solid var(--border);
+}
+pre code{background:none;padding:0;font-size:13px}
+blockquote{
+  margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);border-radius:0 8px 8px 0;
+}
+blockquote>:first-child{margin-top:0}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:1em 0;display:block;overflow:auto;max-width:100%}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--code-bg);font-weight:700}
+tr:nth-child(2n){background:color-mix(in srgb,var(--code-bg) 40%,transparent)}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+strong{font-weight:800}
+</style>
+</head>
+<body class="markdown-body">
+<h1>WorldGuessr</h1>
+<p>一款受 GeoGuessr 启发的热门地理游戏的免费游玩、源码开放版本。这个基于 React 的项目旨在提供一种有趣且有教育意义的方式，让你通过 Google Street View 影像探索世界。</p>
+<h3>立即<a href="https://worldguessr.com">开始游玩</a>！</h3>
+<h4><a href="https://discord.gg/yenVspFmkB">加入 Discord 社区</a></h4>
+<h2>功能特性</h2>
+<ul>
+<li><strong>随机街景：</strong> 每一局都会带你体验世界上某个全新的地点。</li>
+<li><strong>多人模式：</strong> 挑战你的朋友，或与随机对手实时对战。</li>
+<li><strong>国家连胜：</strong> 检验你的知识储备，看看你能连续猜对多少个国家。</li>
+<li><strong>免费运行：</strong> 源代码公开，可免费自行托管用于非商业用途（见<a href="#license">许可证</a>）。本项目使用 <a href="https://developers.google.com/streetview/web">Google Maps Streetview Embed API</a>，相较于 GeoGuessr 所使用的昂贵 SDK，它完全免费。</li>
+</ul>
+<h2>致谢</h2>
+<ul>
+<li><a href="https://leafletjs.com/">Leaflet</a> 用于小地图显示。</li>
+<li><a href="https://github.com/mutsuyuki/Leaflet.SmoothWheelZoom">Leaflet.SmoothWheelZoom</a>，作者 mutsuyuki；我们的流畅滚轮缩放（<code>lib/leafletFluidZoom.js</code>）改编自此。</li>
+<li><a href="https://developers.google.com/maps">Google Maps API</a>，感谢其对街景影像提供的慷慨免费额度。</li>
+<li><a href="https://github.com/slashP/Vali">Vali</a>，作者 @SlashP，用于为所有国家生成均衡的地点分布。</li>
+<li><a href="https://nextjs.org/">Next.js</a> 用于构建这个 Web 应用。</li>
+<li>每一位帮助这个项目落地的贡献者！</li>
+</ul>
+<h2>本地运行</h2>
+<h3>前置条件</h3>
+<p>开始之前，请确保你已安装以下内容：<br />
+- <a href="https://nodejs.org/en/">Node.js</a>（v18.18 或更高版本）<br />
+- <a href="https://www.npmjs.com/">npm</a>（v6.x 或更高版本）<br />
+- <a href="https://pnpm.io/">pnpm</a>（v9.x 或更高版本）</p>
+<h3>安装</h3>
+<ol>
+<li>
+<p>克隆仓库：<br />
+<code>bash
+   git clone https://github.com/codergautam/worldguessr.git
+   cd worldguessr</code></p>
+</li>
+<li>
+<p>安装依赖：<br />
+<code>bash
+   pnpm install</code></p>
+</li>
+<li>
+<p>启动开发服务器：<br />
+<code>bash
+   pnpm run dev</code></p>
+</li>
+</ol>
+<p>用浏览器打开 <a href="http://localhost:3000">http://localhost:3000</a> 查看结果。</p>
+<h2>部署到 VPS／外部服务器</h2>
+<p>如果你要把 WorldGuessr 部署到 VPS 或任何拥有外部 IP 的服务器上（而非 localhost），就<strong>必须</strong>在 <code>.env</code> 文件中配置以下环境变量：</p>
+<pre><code class="language-bash"># Replace YOUR_IP with your server's IP address or domain
+NEXT_PUBLIC_API_URL=YOUR_IP:3001
+NEXT_PUBLIC_WS_HOST=YOUR_IP:3002
+</code></pre>
+<p><strong>以 IP 为例：</strong></p>
+<pre><code class="language-bash">NEXT_PUBLIC_API_URL=123.45.67.89:3001
+NEXT_PUBLIC_WS_HOST=123.45.67.89:3002
+</code></pre>
+<p><strong>以域名为例（配置好 nginx 之后）：</strong></p>
+<pre><code class="language-bash">NEXT_PUBLIC_API_URL=api.yourdomain.com
+NEXT_PUBLIC_WS_HOST=ws.yourdomain.com
+</code></pre>
+<h3>快速配置清单</h3>
+<ol>
+<li>
+<p><strong>MongoDB</strong> —— 在 <a href="https://www.mongodb.com/atlas">MongoDB Atlas</a> 上创建一个集群（有免费额度），并添加连接字符串：<br />
+<code>bash
+   MONGODB=mongodb+srv://username:password@cluster.mongodb.net/worldguessr</code></p>
+</li>
+<li>
+<p><strong>Google OAuth</strong> —— 在 <a href="https://console.cloud.google.com/">Google Cloud Console</a> 中创建凭据：<br />
+<code>bash
+   NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_client_id.apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET=your_client_secret</code></p>
+</li>
+<li>
+<p><strong>API/WS URL</strong> —— 指向你的外部 IP 或域名（见上文）</p>
+</li>
+</ol>
+<p>有关环境变量的详细说明，请参阅 <a href="docs/environment-variables.md">docs/environment-variables.md</a>。</p>
+<h2>参与贡献</h2>
+<p>贡献让这个社区成为一个学习、启发与创作的非凡之地。你的任何贡献都<strong>万分受用</strong>。</p>
+<p>如果你有能让它变得更好的建议，请 fork 这个仓库并创建 pull request。你也可以直接以 "enhancement" 为标签创建一个 issue。<br />
+别忘了给这个项目点个 star！再次感谢！</p>
+<ol>
+<li>Fork 这个项目</li>
+<li>创建你的功能分支（<code>git checkout -b feature/AmazingFeature</code>）</li>
+<li>提交你的更改（<code>git commit -m 'Add some AmazingFeature'</code>）</li>
+<li>推送到该分支（<code>git push origin feature/AmazingFeature</code>）</li>
+<li>创建一个 Pull Request</li>
+</ol>
+<h2>许可证</h2>
+<p>本项目依据 PolyForm Noncommercial License 1.0.0 发布。你可以自由地出于非商业目的使用、修改和分发本项目。更多信息请见 <a href="LICENSE.md">LICENSE.md</a>。</p>
+<h2>社区</h2>
+<p><a href="https://discord.gg/yenVspFmkB">点击这里</a>加入 Discord 社区，讨论新功能、报告 bug、与开发者交流，并结识其他玩家。</p>
+<p>你也可以私下给我发邮件：gautam@worldguessr.com</p>
+</body>
+</html>
