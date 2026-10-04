@@ -53,6 +53,7 @@
 .pill {
   flex-shrink: 0;
   height: 32px;
+  white-space: nowrap;
   padding: 0 12px;
   border-radius: var(--radius-sm);
   background: transparent;
@@ -83,6 +84,7 @@
   justify-content: center;
   gap: 7px;
   height: 40px;
+  white-space: nowrap;
   padding: 0 18px;
   border-radius: var(--radius-md);
   font-size: var(--fs-body);
@@ -180,6 +182,7 @@
   align-items: center;
   gap: 7px;
   height: 30px;
+  white-space: nowrap;
   padding: 0 11px;
   background: transparent;
   border: 1px solid var(--border);
@@ -234,6 +237,7 @@
   align-items: center;
   gap: 6px;
   height: 28px;
+  white-space: nowrap;
   margin: 0 5px 5px 0;
   padding: 0 9px;
   background: transparent;
@@ -263,6 +267,7 @@
   align-self: center;
   margin-top: 18px;
   height: 28px;
+  white-space: nowrap;
   padding: 0 10px;
   background: transparent;
   border: 1px solid var(--border);

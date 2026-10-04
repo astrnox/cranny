@@ -273,7 +273,10 @@
   font-weight: 600;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
+  /* 固定高度 + 窄容器时，「下载」两个字会被折成两行 */
+  white-space: nowrap;
   transition: background var(--dur-1) var(--ease-out);
 }
 .dl-row__go:hover { background: var(--brand-hover); }
