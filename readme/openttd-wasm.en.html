@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenTTD 交通大亨 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">OpenTTD 交通大亨</strong>
+  <span class="sep">·</span>
+  <span>GPL-2.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/OpenTTD/OpenTTD" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>OpenTTD</h1>
+<h2>Table of contents</h2>
+<ul>
+<li>1.0) <a href="#10-about" target="_blank" rel="noopener noreferrer">About</a></li>
+<li>1.1) <a href="#11-downloading-openttd" target="_blank" rel="noopener noreferrer">Downloading OpenTTD</a></li>
+<li>1.2) <a href="#12-openttd-gameplay-manual" target="_blank" rel="noopener noreferrer">OpenTTD gameplay manual</a></li>
+<li>1.3) <a href="#13-supported-platforms" target="_blank" rel="noopener noreferrer">Supported platforms</a></li>
+<li>1.4) <a href="#14-installing-and-running-openttd" target="_blank" rel="noopener noreferrer">Installing and running OpenTTD</a></li>
+<li>1.5) <a href="#15-add-on-content--mods" target="_blank" rel="noopener noreferrer">Add-on content / mods</a></li>
+<li>1.6) <a href="#16-openttd-directories" target="_blank" rel="noopener noreferrer">OpenTTD directories</a></li>
+<li>1.7) <a href="#17-compiling-openttd" target="_blank" rel="noopener noreferrer">Compiling OpenTTD</a></li>
+<li>2.0) <a href="#20-contact-and-community" target="_blank" rel="noopener noreferrer">Contact and community</a></li>
+<li>2.1) <a href="#21-multiplayer-games" target="_blank" rel="noopener noreferrer">Multiplayer games</a></li>
+<li>2.2) <a href="#22-contributing-to-openttd" target="_blank" rel="noopener noreferrer">Contributing to OpenTTD</a></li>
+<li>2.3) <a href="#23-reporting-bugs" target="_blank" rel="noopener noreferrer">Reporting bugs</a></li>
+<li>2.4) <a href="#24-translating" target="_blank" rel="noopener noreferrer">Translating</a></li>
+<li>3.0) <a href="#30-licensing" target="_blank" rel="noopener noreferrer">Licensing</a></li>
+<li>4.0) <a href="#40-credits" target="_blank" rel="noopener noreferrer">Credits</a></li>
+</ul>
+<h2>1.0) About</h2>
+<p>OpenTTD is a transport simulation game based upon the popular game Transport Tycoon Deluxe, written by Chris Sawyer.</p>
+<p>It attempts to mimic the original game as closely as possible while extending it with new features.</p>
+<p>OpenTTD is licensed under the GNU General Public License version 2.0, but includes some 3rd party software under different licenses.</p>
+<p>See the section <a href="#30-licensing" target="_blank" rel="noopener noreferrer">"Licensing"</a> below for details.</p>
+<h2>1.1) Downloading OpenTTD</h2>
+<p>OpenTTD can be downloaded from the <a href="https://www.openttd.org/" target="_blank" rel="noopener noreferrer">official OpenTTD website</a>.</p>
+<p>Both 'stable' and 'nightly' versions are available for download:</p>
+<ul>
+<li>most people should choose the 'stable' version, as this has been more extensively tested</li>
+<li>the 'nightly' version includes the latest changes and features, but may sometimes be less reliable</li>
+</ul>
+<p>OpenTTD is also available for free on <a href="https://store.steampowered.com/app/1536610/OpenTTD/" target="_blank" rel="noopener noreferrer">Steam</a>, <a href="https://www.gog.com/game/openttd" target="_blank" rel="noopener noreferrer">GOG.com</a>, and the <a href="https://www.microsoft.com/p/openttd-official/9ncjg5rvrr1c" target="_blank" rel="noopener noreferrer">Microsoft Store</a>. On some platforms OpenTTD will be available via your OS package manager or a similar service.</p>
+<h2>1.2) OpenTTD gameplay manual</h2>
+<p>OpenTTD has a <a href="https://wiki.openttd.org/" target="_blank" rel="noopener noreferrer">community-maintained wiki</a>, including a gameplay manual and tips.</p>
+<h2>1.3) Supported platforms</h2>
+<p>OpenTTD has been ported to several platforms and operating systems.</p>
+<p>The currently supported platforms are:</p>
+<ul>
+<li>Linux (SDL (OpenGL and non-OpenGL))</li>
+<li>macOS (universal) (Cocoa)</li>
+<li>Windows (Win32 GDI / OpenGL)</li>
+</ul>
+<p>Other platforms may also work (in particular various BSD systems), but we don't actively test or maintain these.</p>
+<h3>1.3.1) Legacy support</h3>
+<p>Platforms, languages and compilers change.</p>
+<p>We'll keep support going on old platforms as long as someone is interested in supporting them, except where it means the project can't move forward to keep up with language and compiler features.</p>
+<p>We guarantee that every revision of OpenTTD will be able to load savegames from every older revision (excepting where the savegame is corrupt).</p>
+<p>Please report a bug if you find a save that doesn't load.</p>
+<h2>1.4) Installing and running OpenTTD</h2>
+<p>OpenTTD is usually straightforward to install, but for more help the wiki <a href="https://wiki.openttd.org/en/Manual/Installation" target="_blank" rel="noopener noreferrer">includes an installation guide</a>.</p>
+<p>OpenTTD needs some additional graphics and sound files to run.</p>
+<p>For some platforms these will be downloaded during the installation process if required.</p>
+<p>For some platforms, you will need to refer to <a href="https://wiki.openttd.org/en/Manual/Installation" target="_blank" rel="noopener noreferrer">the installation guide</a>.</p>
+<h3>1.4.1) Free graphics and sound files</h3>
+<p>The free data files, split into OpenGFX for graphics, OpenSFX for sounds and</p>
+<p>OpenMSX for music can be found at:</p>
+<ul>
+<li><a href="https://www.openttd.org/downloads/opengfx-releases/latest" target="_blank" rel="noopener noreferrer">OpenGFX</a></li>
+<li><a href="https://www.openttd.org/downloads/opensfx-releases/latest" target="_blank" rel="noopener noreferrer">OpenSFX</a></li>
+<li><a href="https://www.openttd.org/downloads/openmsx-releases/latest" target="_blank" rel="noopener noreferrer">OpenMSX</a></li>
+</ul>
+<p>Please follow the readme of these packages about the installation procedure.</p>
+<p>The Windows installer can optionally download and install these packages.</p>
+<h3>1.4.2) Original Transport Tycoon Deluxe graphics and sound files</h3>
+<p>If you want to play with the original Transport Tycoon Deluxe data files you have to copy the data files from the CD-ROM into the baseset/ directory.</p>
+<p>It does not matter whether you copy them from the DOS or Windows version of Transport Tycoon Deluxe.</p>
+<p>The Windows install can optionally copy these files.</p>
+<p>You need to copy the following files:</p>
+<ul>
+<li>sample.cat</li>
+<li>trg1r.grf or TRG1.GRF</li>
+<li>trgcr.grf or TRGC.GRF</li>
+<li>trghr.grf or TRGH.GRF</li>
+<li>trgir.grf or TRGI.GRF</li>
+<li>trgtr.grf or TRGT.GRF</li>
+</ul>
+<h3>1.4.3) Original Transport Tycoon Deluxe music</h3>
+<p>If you want the Transport Tycoon Deluxe music, copy the appropriate files from the original game into the baseset folder.</p>
+<ul>
+<li>TTD for Windows: All files in the gm/ folder (gm_tt00.gm up to gm_tt21.gm)</li>
+<li>TTD for DOS: The GM.CAT file</li>
+<li>Transport Tycoon Original: The GM.CAT file, but rename it to GM-TTO.CAT</li>
+</ul>
+<h2>1.5) Add-on content / mods</h2>
+<p>OpenTTD features multiple types of add-on content, which modify gameplay in different ways.</p>
+<p>Most types of add-on content can be downloaded within OpenTTD via the 'Check Online Content' button in the main menu.</p>
+<p>Add-on content can also be installed manually, but that's more complicated; the <a href="https://wiki.openttd.org/" target="_blank" rel="noopener noreferrer">OpenTTD wiki</a> may offer help with that, or the <a href="./docs/directory_structure.md" target="_blank" rel="noopener noreferrer">OpenTTD directory structure guide</a>.</p>
+<h3>1.5.1) Social Integration</h3>
+<p>OpenTTD has the ability to load plugins to integrate with Social Platforms like Steam, Discord, etc.</p>
+<p>To enable such integration, the plugin for the specific platform has to be downloaded and stored in the <code>social_integration</code> folder.</p>
+<p>See <a href="https://www.openttd.org" target="_blank" rel="noopener noreferrer">OpenTTD's website</a>, under Downloads, for what plugins are available.</p>
+<h3>1.6) OpenTTD directories</h3>
+<p>OpenTTD uses its own directory structure to store game data, add-on content etc.</p>
+<p>For more information, see the <a href="./docs/directory_structure.md" target="_blank" rel="noopener noreferrer">directory structure guide</a>.</p>
+<h3>1.7) Compiling OpenTTD</h3>
+<p>If you want to compile OpenTTD from source, instructions can be found in <a href="./COMPILING.md" target="_blank" rel="noopener noreferrer">COMPILING.md</a>.</p>
+<h2>2.0) Contact and Community</h2>
+<p>'Official' channels</p>
+<ul>
+<li><a href="https://www.openttd.org" target="_blank" rel="noopener noreferrer">OpenTTD website</a></li>
+<li><a href="https://discord.gg/openttd" target="_blank" rel="noopener noreferrer">OpenTTD official Discord</a></li>
+<li>IRC chat using #openttd on irc.oftc.net <a href="https://wiki.openttd.org/en/Development/IRC%20channel" target="_blank" rel="noopener noreferrer">more info about our irc channel</a></li>
+<li><a href="https://github.com/OpenTTD/" target="_blank" rel="noopener noreferrer">OpenTTD on Github</a> for code repositories and for reporting issues</li>
+<li><a href="https://forum.openttd.org/" target="_blank" rel="noopener noreferrer">forum.openttd.org</a> - the primary community forum site for discussing OpenTTD and related games</li>
+<li><a href="https://wiki.openttd.org/" target="_blank" rel="noopener noreferrer">OpenTTD wiki</a> community-maintained wiki, including topics like gameplay guide, detailed explanation of some game mechanics, how to use add-on content (mods) and much more</li>
+</ul>
+<p>'Unofficial' channels</p>
+<ul>
+<li>the OpenTTD wiki has a <a href="https://wiki.openttd.org/en/Community/Community" target="_blank" rel="noopener noreferrer">page listing OpenTTD communities</a> including some in languages other than English</li>
+</ul>
+<h3>2.1) Multiplayer games</h3>
+<p>You can play OpenTTD with others, either cooperatively or competitively.</p>
+<p>See the <a href="./docs/multiplayer.md" target="_blank" rel="noopener noreferrer">multiplayer documentation</a> for more details.</p>
+<h3>2.2) Contributing to OpenTTD</h3>
+<p>We welcome contributors to OpenTTD.  More information for contributors can be found in <a href="./CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a></p>
+<h3>2.3) Reporting bugs</h3>
+<p>Good bug reports are very helpful.  We have a <a href="./CONTRIBUTING.md#bug-reports" target="_blank" rel="noopener noreferrer">guide to reporting bugs</a> to help with this.</p>
+<p>Desyncs in multiplayer are complex to debug and report (some software development skils are required).</p>
+<p>Instructions can be found in <a href="./docs/debugging_desyncs.md" target="_blank" rel="noopener noreferrer">debugging and reporting desyncs</a>.</p>
+<h3>2.4) Translating</h3>
+<p>OpenTTD is translated into many languages.  Translations are added and updated via the <a href="https://translator.openttd.org" target="_blank" rel="noopener noreferrer">online translation tool</a>.</p>
+<h2>3.0) Licensing</h2>
+<p>OpenTTD is licensed under the GNU General Public License version 2.0.</p>
+<p>For the complete license text, see the file '<a href="./COPYING.md" target="_blank" rel="noopener noreferrer">COPYING.md</a>'.</p>
+<p>This license applies to all files in this distribution, except as noted below.</p>
+<p>The squirrel implementation in <code>src/3rdparty/squirrel</code> is licensed under the Zlib license.</p>
+<p>See <code>src/3rdparty/squirrel/COPYRIGHT</code> for the complete license text.</p>
+<p>The md5 implementation in <code>src/3rdparty/md5</code> is licensed under the Zlib license.</p>
+<p>See the comments in the source files in <code>src/3rdparty/md5</code> for the complete license text.</p>
+<p>The fmt implementation in <code>src/3rdparty/fmt</code> is licensed under the MIT license.</p>
+<p>See <code>src/3rdparty/fmt/LICENSE.rst</code> for the complete license text.</p>
+<p>The nlohmann json implementation in <code>src/3rdparty/nlohmann</code> is licensed under the MIT license.</p>
+<p>See <code>src/3rdparty/nlohmann/LICENSE.MIT</code> for the complete license text.</p>
+<p>The OpenGL API in <code>src/3rdparty/opengl</code> is licensed under the MIT license.</p>
+<p>See <code>src/3rdparty/opengl/khrplatform.h</code> for the complete license text.</p>
+<p>The catch2 implementation in <code>src/3rdparty/catch2</code> is licensed under the Boost Software License, Version 1.0.</p>
+<p>See <code>src/3rdparty/catch2/LICENSE.txt</code> for the complete license text.</p>
+<p>The icu scriptrun implementation in <code>src/3rdparty/icu</code> is licensed under the Unicode license.</p>
+<p>See <code>src/3rdparty/icu/LICENSE</code> for the complete license text.</p>
+<p>The monocypher implementation in <code>src/3rdparty/monocypher</code> is licensed under the 2-clause BSD and CC-0 license.</p>
+<p>See <code>src/3rdparty/monocypher/LICENSE.md</code> for the complete license text.</p>
+<p>The OpenTTD Social Integration API in <code>src/3rdparty/openttd_social_integration_api</code> is licensed under the MIT license.</p>
+<p>See <code>src/3rdparty/openttd_social_integration_api/LICENSE</code> for the complete license text.</p>
+<p>The atomic datatype support detection in <code>cmake/3rdparty/llvm/CheckAtomic.cmake</code> is licensed under the Apache 2.0 license.</p>
+<p>See <code>cmake/3rdparty/llvm/LICENSE.txt</code> for the complete license text.</p>
+<h2>4.0) Credits</h2>
+<p>See <a href="./CREDITS.md" target="_blank" rel="noopener noreferrer">CREDITS.md</a></p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

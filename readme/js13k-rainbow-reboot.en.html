@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rainbow Reboot · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Rainbow Reboot</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/js13kGames/rainbow-reboot" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>JS13KGames 2026</h1>
+<p><em>ZIP Size</em></p>
+<p>A tiny WebXR game for JS13KGames 2026. JS13K is a game jam where entries must</p>
+<p>fit in 13 KB of zipped JavaScript and assets; see the official site at</p>
+<p><a href="https://js13kgames.com." target="_blank" rel="noopener noreferrer">https://js13kgames.com.</a></p>
+<p>This project uses the PlayCanvas engine under the WebXR category exception, so</p>
+<p>the engine itself does not count toward the ZIP size limit.</p>
+<p>The current build focuses on shooting, tree restoration, fruit spawning/decay,</p>
+<p>particles, and headset-first gameplay.</p>
+<h2>What the game is</h2>
+<p>You enter an orchard of five trees and restore it by shooting fruit before</p>
+<p>they rot away. Successful hits heal the trees over time, fruit color degrades if</p>
+<p>ignored, and the game is designed around tracked XR aiming rather than desktop</p>
+<p>controls.</p>
+<p>Current status highlights:</p>
+<ul>
+<li>XR start, pause, exit, and re-entry are hardened.</li>
+<li>Fruit spawns, rots, and clears correctly on hit or expiry.</li>
+<li>Healing progress is visible on each tree.</li>
+<li>Shot beams and hit particles are implemented.</li>
+<li>Headset validation has been completed for the current loop.</li>
+</ul>
+<p>See <code>todo</code>, <code>plan.md</code>, and the regression tests in <code>scripts/</code> for the current</p>
+<p>development direction.</p>
+<h2>Getting started</h2>
+<p>Install dependencies first:</p>
+<pre><code>npm install</code></pre>
+<h3>Development</h3>
+<pre><code>npm run dev</code></pre>
+<p>Starts the WebXR game with a separate JavaScript bundle, source maps, and the</p>
+<p>local PlayCanvas engine.</p>
+<h3>Production build</h3>
+<pre><code>npm run build</code></pre>
+<p>Builds with esbuild, processes the module with Rollup, minifies with two safe</p>
+<p>Terser compression passes, then packs the result with Roadroller using pinned</p>
+<p>parameters and a 32 MiB decoder memory cap. The production module is inlined</p>
+<p>into HTML, PlayCanvas remains the configured external engine, and advzip uses</p>
+<p>Zopfli (<code>--shrink-insane</code>, 500 iterations) to produce <code>dist/Unicorn.zip</code>.</p>
+<p>The build is configured to stay reproducible: search is disabled during normal</p>
+<p>production builds, and the ZIP output must stay under the 13,312-byte limit.</p>
+<p>Optional build flags:</p>
+<ul>
+<li><code>npm run build -- --closure</code> adds Closure Compiler SIMPLE before Terser.</li>
+<li><code>npm run build -- --no-roadroller</code> disables Roadroller for inspection or size</li>
+</ul>
+<p>comparisons.</p>
+<ul>
+<li>Both flags may be combined.</li>
+</ul>
+<p>Roadroller requires <code>eval</code>/<code>Function</code> and adds one-time decoding work before the</p>
+<p>game starts. Headset startup timing remains unverified.</p>
+<h3>Lint and tests</h3>
+<pre><code>npm run lint
+node --test scripts/particles.test.ts scripts/tree.test.ts scripts/tree-gameplay.test.ts</code></pre>
+<h2>Build notes</h2>
+<p><code>npm run build</code> currently produces a single root-level HTML file in the ZIP. The</p>
+<p>production archive is measured against the 13,312-byte limit, and the build notes</p>
+<p>below document the major compression steps that got it there.</p>
+<h3>ZIP measurements</h3>
+<p>Each row includes the preceding retained changes; sizes include archive overhead.</p>
+<p>Zopfli uses 50 iterations until the final row's increase to 500.</p>
+<table><thead><tr><th>Change</th><th>ZIP bytes</th><th>Saved at this step</th></tr></thead><tbody><tr><td>Rollup baseline</td><td>9,712</td><td>-</td></tr><tr><td>Root-level ZIP filenames</td><td>9,600</td><td>112</td></tr><tr><td>Terser, two compression passes</td><td>9,405</td><td>195</td></tr><tr><td>Single-file HTML</td><td>9,308</td><td>97</td></tr><tr><td>Lossless numeric tree deltas</td><td>9,144</td><td>164</td></tr><tr><td>Tuned Roadroller + Zopfli, 500 iterations</td><td>8,407</td><td>737</td></tr></tbody></table>
+<p>Savings from the 9,144-byte baseline: 737 bytes (8.1%). Total savings from the</p>
+<p>Rollup baseline: 1,305 bytes; remaining budget: 4,905 bytes.</p>
+<p>With the final pinned Roadroller settings and 500 Zopfli iterations, adding</p>
+<p>Closure SIMPLE produces 8,467 bytes, 60 bytes larger, so it is not enabled by</p>
+<p>default. An initial Closure-only trial at 50 Zopfli iterations produced 9,116</p>
+<p>bytes, saving 28 bytes without Roadroller. Initial level-1 Roadroller trials</p>
+<p>varied slightly between runs; a deeper search supplied the pinned parameters</p>
+<p>used above.</p>
+<p>Alternative tree representations were rejected: base-36 strings produced 9,357</p>
+<p>bytes and base-36 deltas produced 9,176 bytes, versus 9,308 bytes with raw</p>
+<p>numeric arrays.</p>
+<h2>Repository layout</h2>
+<ul>
+<li><code>src/</code> – game source</li>
+<li><code>scripts/</code> – build and regression tests</li>
+<li><code>lib/</code> – local engine/runtime support files</li>
+<li><code>dist/</code> – generated production output</li>
+</ul>
+<h2>Notes</h2>
+<ul>
+<li>This project is currently optimized for WebXR play.</li>
+<li>Desktop controls are intentionally out of scope.</li>
+<li>The README is focused on the current implementation and build process rather</li>
+</ul>
+<p>than the full design history.</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

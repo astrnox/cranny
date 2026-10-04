@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2048 原版 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">2048 原版</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/gabrielecirulli/2048" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>2048</h1>
+<p>A small clone of <a href="https://play.google.com/store/apps/details?id=com.veewo.a1024" target="_blank" rel="noopener noreferrer">1024</a>, based on <a href="http://saming.fr/p/2048/" target="_blank" rel="noopener noreferrer">Saming's 2048</a> (also a clone). 2048 was indirectly inspired by <a href="https://asherv.com/threes/" target="_blank" rel="noopener noreferrer">Threes</a>.</p>
+<p>Made just for fun. <a href="http://gabrielecirulli.github.io/2048/" target="_blank" rel="noopener noreferrer">Play it here!</a></p>
+<p>The official app can also be found on the <a href="https://play.google.com/store/apps/details?id=com.gabrielecirulli.app2048" target="_blank" rel="noopener noreferrer">Play Store</a> and <a href="https://itunes.apple.com/us/app/2048-by-gabriele-cirulli/id868076805" target="_blank" rel="noopener noreferrer">App Store!</a></p>
+<h3>Contributions</h3>
+<p><a href="https://github.com/iirelu/" target="_blank" rel="noopener noreferrer">Anna Harren</a> and <a href="https://github.com/sigod" target="_blank" rel="noopener noreferrer">sigod</a> are maintainers for this repository.</p>
+<p>Other notable contributors:</p>
+<ul>
+<li><a href="https://github.com/TimPetricola" target="_blank" rel="noopener noreferrer">TimPetricola</a> added best score storage</li>
+<li><a href="https://github.com/chrisprice" target="_blank" rel="noopener noreferrer">chrisprice</a> added custom code for swipe handling on mobile</li>
+<li><a href="https://github.com/marcingajda" target="_blank" rel="noopener noreferrer">marcingajda</a> made swipes work on Windows Phone</li>
+<li><a href="https://github.com/mgarciaisaia" target="_blank" rel="noopener noreferrer">mgarciaisaia</a> added support for Android 2.3</li>
+</ul>
+<p>Many thanks to <a href="https://github.com/rayhaanj" target="_blank" rel="noopener noreferrer">rayhaanj</a>, <a href="https://github.com/Mechazawa" target="_blank" rel="noopener noreferrer">Mechazawa</a>, <a href="https://github.com/grant" target="_blank" rel="noopener noreferrer">grant</a>, <a href="https://github.com/remram44" target="_blank" rel="noopener noreferrer">remram44</a> and <a href="https://github.com/ghoullier" target="_blank" rel="noopener noreferrer">ghoullier</a> for the many other good contributions.</p>
+<h3>Screenshot</h3>
+<p>&lt;p align="center"&gt;</p>
+<p>&lt;img src="<a href="https://cloud.githubusercontent.com/assets/1175750/8614312/280e5dc2-26f1-11e5-9f1f-5891c3ca8b26.png" target="_blank" rel="noopener noreferrer">https://cloud.githubusercontent.com/assets/1175750/8614312/280e5dc2-26f1-11e5-9f1f-5891c3ca8b26.png</a>" alt="Screenshot"/&gt;</p>
+<p>&lt;/p&gt;</p>
+<p>That screenshot is fake, by the way. I never reached 2048 :smile:</p>
+<h2>Contributing</h2>
+<p>Changes and improvements are more than welcome! Feel free to fork and open a pull request. Please make your changes in a specific branch and request to pull into <code>master</code>! If you can, please make sure the game fully works before sending the PR, as that will help speed up the process.</p>
+<p>You can find the same information in the <a href="https://github.com/gabrielecirulli/2048/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">contributing guide.</a></p>
+<h2>License</h2>
+<p>2048 is licensed under the <a href="https://github.com/gabrielecirulli/2048/blob/master/LICENSE.txt" target="_blank" rel="noopener noreferrer">MIT license.</a></p>
+<h2>Donations</h2>
+<p>I made this in my spare time, and it's hosted on GitHub (which means I don't have any hosting costs), but if you enjoyed the game and feel like buying me coffee, you can donate at my BTC address: <code>1Ec6onfsQmoP9kkL3zkpB6c5sA4PVcXU2i</code>. Thank you very much!</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

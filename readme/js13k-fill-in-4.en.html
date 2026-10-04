@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fill in 4 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Fill in 4</strong>
+  <span class="sep">·</span>
+  <span>Apache-2.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/js13kGames/fill-in-4" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p class="thin-note">这个项目的 README 只写了寥寥几句，下面是我们从仓库和页面里整理的资料。</p><div class="card"><h2>游戏资料</h2><dl><dt>玩法</dt><dd>四行填数的数字消除玩法。</dd><dt>类型</dt><dd>数字、消除、js13k、13KB</dd><dt>操作</dt><dd>鼠标</dd><dt>平台</dt><dd>网页</dd><dt>人数</dt><dd>1 人</dd><dt>许可证</dt><dd>Apache-2.0</dd></dl><div class="actions"><a href="https://play.js13kgames.com/fill-in-4/" target="_blank" rel="noopener noreferrer">直接开玩 ↗</a><a href="https://github.com/js13kGames/fill-in-4" target="_blank" rel="noopener noreferrer">源码仓库 ↗</a></div></div>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

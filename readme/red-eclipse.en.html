@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Red Eclipse 红日 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Red Eclipse 红日</strong>
+  <span class="sep">·</span>
+  <span>zlib</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/redeclipse/base" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>Red Eclipse</h1>
+<p>Red Eclipse is an old-school arena shooter for the modern age. Building on decades of hardcore</p>
+<p>action, from Doom, to Quake, to Halo, to Team Fortress, to Mirror's Edge. Run, gun, and parkour</p>
+<p>your way to your next frag!</p>
+<ul>
+<li>Free and open source software; no microtransactions or other payments necessary</li>
+<li>Features parkour gameplay, such as wall running, boosts, dashing, and other tricks</li>
+<li>Popular gamemodes with an array of mutators and variables</li>
+<li>A built-in editor lets you create your own release-quality maps cooperatively online</li>
+<li>Available for Windows and GNU/Linux</li>
+</ul>
+<p>Download for free at <a href="https://www.redeclipse.net/" target="_blank" rel="noopener noreferrer">https://www.redeclipse.net/</a></p>
+<h2>About</h2>
+<p>The project is a free and open source game built using SDL and OpenGL which allows it to be ported</p>
+<p>to many platforms; you can <a href="https://www.redeclipse.net/download" target="_blank" rel="noopener noreferrer">download a package</a> for Windows</p>
+<p>and GNU/Linux; or grab a development copy from our <a href="https://www.redeclipse.net/devel" target="_blank" rel="noopener noreferrer">Git repository</a></p>
+<p>and live on the bleeding edge.</p>
+<p>In a true open source by the people for the people nature, we try to work closely with the gaming</p>
+<p>and open source communities to provide a better overall experience, aiming to create a game</p>
+<p>environment that is fun and easy to play, while still having elements to master.</p>
+<p>If you think you might have something to contribute to the game or community, please feel free to</p>
+<p>drop by our <a href="https://www.redeclipse.net/chat" target="_blank" rel="noopener noreferrer">Discord server</a> or <a href="https://www.redeclipse.net/forums" target="_blank" rel="noopener noreferrer">forums</a></p>
+<p>and talk to us directly. We try to maintain a standard of friendly behaviour in our community,</p>
+<p>so don't be afraid to speak up and have your say in building this game for us all!</p>
+<p>For creators, the full power of a highly expanded <a href="http://tesseract.gg/" target="_blank" rel="noopener noreferrer">Tesseract</a> engine is at</p>
+<p>your fingertips in the included realtime easy-to-use WYSIWYG editor that is capable of creating</p>
+<p>maps both offline and online with other people in cooperative edit mode.</p>
+<h2>Distribution</h2>
+<p>This game is primarily distributed via Steam. For the most bleeding-edge version of the game, or</p>
+<p>for those who are unable to get a Steam account, it is possible to compile the game from</p>
+<p>source, following the <a href="https://www.redeclipse.net/docs/Install-Guide" target="_blank" rel="noopener noreferrer">Install Guide</a>.</p>
+<h2>Get Involved</h2>
+<p>You're encouraged to help the project by joining in with the rest of the community to make a better</p>
+<p>project! You can do this by participating in our Community, using the development version and</p>
+<p>reporting any issues, ideas, suggestions or comments you may have.</p>
+<p>Our main method of community interaction is via the <a href="https://www.redeclipse.net/chat" target="_blank" rel="noopener noreferrer">Discord server</a>.</p>
+<p>Here, you can talk directly to the Red Eclipse developers, contributors, and supporters;</p>
+<p>whether you just want to have a chat, report a problem, or make a suggestion, this is the best</p>
+<p>place to do it.</p>
+<h2>Open Source</h2>
+<p>The project is Free and Open Source, meaning that you can both use it for free and be a part of it</p>
+<p>by contributing in whatever way you can. These are the people who have helped shape Red Eclipse</p>
+<p>into what you see today. They are regular people just like you who volunteer their time or</p>
+<p>donate in the spirit of making a really cool game. Your name could be down here, too!</p>
+<h2>Credits</h2>
+<pre><code>+-------------------------------------------------------------------------------+
+|                               ACTIVE DEVELOPERS                               |
++---------------------------------------+---------------------------------------+
+| Quinton "Quin" Reeves                 | Lee "eihrul" Salzman                  |
+| Sławomir "Q009" Błauciak              | Ricky "unixfreak" Thomson             |
+| Ludwig "SniperGoth" Boscolo           | Viktor "Unnamed" Hahn                 |
+| Paranoid "Rabidbutton" Individual     | Evan "EG Music" Koutsogiannis         |
+| Lovable "MirceaKitsune" Fox           | Jacinta "cinta" Reeves                |
+| Drachen "dc" Computer                 | Renato "Tangomeister" Pagge           |
++-------------------------------------------------------------------------------+
+|                         CONTRIBUTORS PAST AND PRESENT                         |
++-------------------------------------------------------------------------------+
+| Alex "molex" Foster                   | Alex "ZeroKnight" George              |
+| Anup "DOS_WARRIOR" Debnath            | Cameron "Rhubarb" Dawdy               |
+| Christopher "Dratz-_C" Dratz          | Christopher "paroneayea" Webber       |
+| Corey "c0rdawg" Maher                 | Dale "graphitemaster" Weiler          |
+| Daniel "Imerion" Eriksson             | David "srbs" Forrest                  |
+| Derek "JoJo" Stegall                  | Eddie "skedz4u" Webb                  |
+| Henrik "ahven" Pihl                   | Isaac "Zelec" Towns                   |
+| Jeff "Architect" Cope                 | Jeroen "appleflap" Boukens            |
+| Jonathan "Ulukai" De Nil              | Jonathan "W!ck3d" Roels               |
+| Joseph "ballist1c" Calabria           | Joshua "JDWhyte" Dwight               |
+| Joshua L. "Verbalshadow" Blocher      | Kevin "Hirato" Meyer                  |
+| Kirill "TristamK" Kolesnikov          | Kurt "Kurtis84" Kessler               |
+| Luke "syreal" Jones                   | Mark "xtort-" Doodeman                |
+| Martin "arand" Werner                 | Matt "greaserpirate" Kalt             |
+| Maxim "Acerspyro" Therrien            | Mike "mikeplus64" Ledger              |
+| Mikhail "Agustis" Kashin              | Nick "Fatal_Glory" Watts              |
+| Peter McInerney                       | Petri Lukkarinen                      |
+| Radek "Dziq" Jędrecki                 | Riidom Li                             |
+| Rob "Lloir" Shannon                   | Robert "Homicidal" Crane              |
+| Robert Winkler                        | Ryan "icculus" Gordon                 |
+| Ryan Rigby                            | Rémi "LuckystrikeRx" Clouet d'Orval   |
+| Sam "comet_11" Gentle                 | Scott Baker                           |
+| Sergey "swooboo" Altshuller           | Stefan "stefan" Norman                |
+| Sébastien "sinma" Chauvel             | Taiyo Rawle                           |
+| Vadim Peretokin                       | Wayne Bennett                         |
+| Zachery "freezurbern" Slocum          |                                       |
++---------------------------------------+---------------------------------------+
+| "Gaming Tilt"     | "4rson"           | "Beha"            | "Bobbo"           |
+| "bonifarz"        | "Boognish"        | "CD Xbow"         | "D.a.M.i.E.n"     |
+| "Lyberta"         | "fbt"             | "FearFighter"     | "Fleeky"          |
+| "fluxord"         | "Furor"           | "Iceflower"       | "John_III"        |
+| "Korsi"           | "littlebabyjesus" | "Lycanfox"        | "nemurati"        |
+| "Raiden"          | "RaZgRiZ"         | "TheAssassin"     | "TheLastProject"  |
+| "w00p|dazza"      |                   |                   |                   |
++-------------------------------------------------------------------------------+
+| YOUR NAME COULD BE HERE TOO - RED ECLIPSE IS DEVELOPED BY VOLUNTEERS LIKE YOU |
++-------------------------------------------------------------------------------+</code></pre>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

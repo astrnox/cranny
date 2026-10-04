@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MawLight 噬光 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">MawLight 噬光</strong>
+  <span class="sep">·</span>
+  <span>Apache-2.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/js13kGames/mawlight" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>JS13kGame2026</h1>
+<p>Second Time in a Game jam</p>
+<p><a href="https://youtu.be/DQyQrR82AYw" target="_blank" rel="noopener noreferrer">Watch the gameplay video</a></p>
+<h1>Text in js13kgames website</h1>
+<blockquote>**MawLight.** The farther you go, the harder it gets.<br>**Farm. Upgrade. Push forward.**</blockquote>
+<p>Start near spawn and defeat mobs. Collect **white spiny orbs** for XP; level up and choose 1 of 3 cards.</p>
+<p>When you’re ready, step into a **colored beacon** to start a defense. Protect it through every wave to earn a powerful upgrade.</p>
+<p>Keep moving away from spawn. Enemies get stronger, but so do the rewards. Build your power, push deeper, and take down the boss.</p>
+<p>**Green orbs heal. Magnets attract XP.**</p>
+<p>**Menu:** ON/OFF shows current state. Press to toggle.</p>
+<table><thead><tr><th>Button</th><th>Action</th></tr></thead><tbody><tr><td>&lt;kbd&gt;MMO&lt;/kbd&gt;</td><td>Toggle multiplayer</td></tr><tr><td>&lt;kbd&gt;VR&lt;/kbd&gt;</td><td>Enter/Exit VR</td></tr><tr><td>&lt;kbd&gt;AUDIO&lt;/kbd&gt;</td><td>Toggle all sound</td></tr><tr><td>&lt;kbd&gt;SHOTS&lt;/kbd&gt;</td><td>Toggle projectile sounds</td></tr><tr><td>&lt;kbd&gt;SWAP&lt;/kbd&gt;</td><td>Swap left/right controls: VR/mobile</td></tr><tr><td>&lt;kbd&gt;INVERT&lt;/kbd&gt;</td><td>Reverse X/Y look: desktop/mobile</td></tr><tr><td>&lt;kbd&gt;LOCK&lt;/kbd&gt;</td><td>Click to Lock cursor</td></tr><tr><td>&lt;kbd&gt;CLOSE&lt;/kbd&gt;</td><td>Close menu</td></tr></tbody></table>
+<table><thead><tr><th>Action</th><th>VR controllers</th><th>VR hands</th><th>Mobile</th><th>Desktop</th></tr></thead><tbody><tr><td>Move</td><td>&lt;kbd&gt;Right stick&lt;/kbd&gt;</td><td>&lt;kbd&gt;Right hand&lt;/kbd&gt;</td><td>&lt;kbd&gt;Right side&lt;/kbd&gt;</td><td>&lt;kbd&gt;WASD&lt;/kbd&gt; / &lt;kbd&gt;↑↓&lt;/kbd&gt;</td></tr><tr><td>Turn</td><td>&lt;kbd&gt;Left stick&lt;/kbd&gt;</td><td>&lt;kbd&gt;Left hand&lt;/kbd&gt;</td><td>&lt;kbd&gt;Left side&lt;/kbd&gt;</td><td>&lt;kbd&gt;QE&lt;/kbd&gt; / &lt;kbd&gt;←→&lt;/kbd&gt;</td></tr><tr><td>Look</td><td>&lt;kbd&gt;Head&lt;/kbd&gt;</td><td>&lt;kbd&gt;Head&lt;/kbd&gt;</td><td>&lt;kbd&gt;Drag&lt;/kbd&gt;</td><td>&lt;kbd&gt;Mouse&lt;/kbd&gt; / &lt;kbd&gt;Click-drag&lt;/kbd&gt;</td></tr><tr><td>Select</td><td>Aim + &lt;kbd&gt;Trigger&lt;/kbd&gt;</td><td>Aim + &lt;kbd&gt;Pinch&lt;/kbd&gt;</td><td>&lt;kbd&gt;Tap&lt;/kbd&gt;</td><td>&lt;kbd&gt;Click&lt;/kbd&gt; / &lt;kbd&gt;1&lt;/kbd&gt; &lt;kbd&gt;2&lt;/kbd&gt; &lt;kbd&gt;3&lt;/kbd&gt;</td></tr></tbody></table>
+<p>**VR hands controls:** point your &lt;kbd&gt;Index finger&lt;/kbd&gt; or &lt;kbd&gt;Thumb&lt;/kbd&gt; where you want to move or turn.</p>
+<p>**Desktop UI:** Click &lt;kbd&gt;LOCK&lt;/kbd&gt; to lock cursor. &lt;kbd&gt;F11&lt;/kbd&gt; for fullscreen. If blurry UI, &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;0&lt;/kbd&gt; resets zoom.</p>
+<p>**No external resources.** All assets, data, and code are in the .zip. No external libraries, not even the allowed ones.</p>
+<blockquote>Special thanks to Mindaugas Cartilli and my close friends for playtesting and sharing their feedback. Thanks for helping bring MawLight out of the void!</blockquote>
+<hr>
+<h2>MawLight</h2>
+<p>A browser survival game made for js13kgames 2026, with desktop, mobile, and VR controls. Defeat enemies, collect upgrades, defend beacons, and push deeper into the world to face the bosses.</p>
+<h3>Play locally</h3>
+<p>Open <code>index.html</code> in your browser. All game code and assets are contained in this file. See the controls above.</p>
+<h3>Build</h3>
+<p>Install Node.js and 7-Zip, then run:</p>
+<pre><code>npm install
+npm run build</code></pre>
+<p>The build minifies the game and creates a compressed ZIP for submission. If 7-Zip is not detected, set <code>SEVEN_ZIP</code> to its executable path.</p>
+<h3>License</h3>
+<p>Created by Justinas Gibas. Licensed under <a href="LICENSE" target="_blank" rel="noopener noreferrer">Apache 2.0</a>.</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

@@ -50,7 +50,7 @@
   <!-- 站名只在顶栏出现一次；这里给一句话说明它是干什么的 -->
   <section class="hero">
     <p class="hero__title">墙角的电子游戏</p>
-    <p class="hero__sub">都是我自己写的，开源、离线也能玩。慢慢挑，不着急。</p>
+    <p class="hero__sub">开源的、能白嫖的、点开就能玩的。慢慢挑，不着急。</p>
     <p class="hero__count" id="pageSub">正在加载…</p>
     <div class="hero__search" id="searchWrap">
       <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -73,12 +73,36 @@
   <div class="segmented" role="tablist" aria-label="游戏类型切换">
     <button class="segmented__item" role="tab" data-tab="all"   aria-selected="true"  type="button">全部</button>
     <button class="segmented__item" role="tab" data-tab="web"   aria-selected="false" type="button">网页游戏</button>
-    <button class="segmented__item" role="tab" data-tab="local" aria-selected="false" type="button">本地游戏</button>
+    <button class="segmented__item" role="tab" data-tab="local" aria-selected="false" type="button">需下载</button>
     <button class="segmented__item" role="tab" data-tab="fav"   aria-selected="false" type="button">收藏</button>
   </div>
 
   <!-- 分类胶囊 -->
   <div class="pills" id="pills" role="tablist" aria-label="分类筛选"></div>
+
+  <!-- 次级筛选：能否站内直接玩 + 许可证。做折叠是因为 20 个分类已经够长了 -->
+  <div class="facets" id="facets">
+    <button class="facets__toggle" id="facetsToggle" type="button" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 6h16M7 12h10M10 18h4"/>
+      </svg>
+      <span>细筛</span>
+      <span class="facets__badge" id="facetsBadge" hidden>0</span>
+    </button>
+
+    <div class="facets__body" id="facetsBody" hidden>
+      <div class="facet">
+        <p class="facet__label">怎么玩</p>
+        <div class="facet__opts" id="embedOpts" role="group" aria-label="运行方式筛选"></div>
+      </div>
+      <div class="facet">
+        <p class="facet__label">许可证</p>
+        <div class="facet__opts" id="licenseOpts" role="group" aria-label="许可证筛选"></div>
+      </div>
+      <button class="facets__reset" id="facetsReset" type="button" hidden>清空细筛</button>
+    </div>
+  </div>
 
   <!-- 精选 -->
   <section class="section" id="featuredSection" hidden>

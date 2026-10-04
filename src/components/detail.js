@@ -7,11 +7,85 @@
 import { el, clear } from '../utils/dom.js';
 import { badgeInfo } from './card.js';
 import { UI } from '../utils/icons.js';
+import { state } from '../core/state.js';
 
 const I_CLOSE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>`;
 const I_DOC   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`;
 const I_COPY  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>`;
 const I_DL    = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>`;
+
+const PLATFORM_NAME = {
+  web: '网页', pc: 'PC', win: 'Windows', lin: 'Linux',
+  mac: 'macOS', android: '安卓', ios: 'iOS',
+};
+
+function platformLabel(game) {
+  return (game.platform || []).map(p => PLATFORM_NAME[p] || p).join(' / ') || '未知平台';
+}
+
+/** 许可证块：名称 + 三个关键属性（可商用 / 改后开源 / 联网开源） */
+function licenseBlock(game) {
+  const meta = (state.licenses || []).find(l => l.id === game.license);
+  const wrap = el('div', { className: 'license' });
+
+  const head = el('div', { className: 'license__head' }, [
+    el('span', { className: 'license__name',
+                 text: game.license || '未声明许可证' }),
+  ]);
+  if (meta) {
+    head.appendChild(el('a', {
+      className: 'license__link', text: '许可证全文 ↗',
+      attrs: { href: meta.url, target: '_blank', rel: 'noopener noreferrer' },
+    }));
+  }
+  wrap.appendChild(head);
+
+  if (meta) {
+    wrap.appendChild(el('div', { className: 'license__flags' }, [
+      flag('可商用', meta.commercial, true),
+      flag('改后须开源', meta.shareAlike, meta.shareAlike),
+      flag('联网服务须开源', meta.network, meta.network),
+    ]));
+  }
+
+  const notes = [];
+  if (game.licenseNote) notes.push(game.licenseNote);
+  if (game.assetNote) notes.push(game.assetNote);
+  if (notes.length) {
+    wrap.appendChild(el('p', { className: 'license__note', text: notes.join('；') }));
+  }
+  return wrap;
+}
+
+function flag(label, on, positive) {
+  return el('span', {
+    className: `flag${on ? ' is-on' : ''}${on === positive ? ' is-key' : ''}`,
+    text: `${on ? '✓' : '✗'} ${label}`,
+  });
+}
+
+/** 需要提醒用户的特殊情况 */
+function caveatsOf(game) {
+  const out = [];
+  if (game.status === 'broken') {
+    out.push({ kind: 'broken', text: '这个项目最近挂了，页面可能打不开。仓库还在，可以自己跑。' });
+  }
+  if (game.archived) {
+    out.push({ kind: 'archived', text: '上游仓库已归档，作者不再维护。' });
+  }
+  if (game.embeddable === false && game.kind === 'web') {
+    out.push({ kind: 'embed', text: '官方站禁止被内嵌，只能点开新窗口玩。' });
+  }
+  if (game.kind === 'download') {
+    out.push({ kind: 'dl', text: '这是客户端游戏，要自己下载安装，网页里玩不了。' });
+  }
+  if (game.stars) {
+    out.push({ kind: 'meta',
+               text: `GitHub ${game.stars.toLocaleString('en-US')} 星`
+                     + (game.pushedAt ? ` · 最后更新 ${game.pushedAt}` : '') });
+  }
+  return out;
+}
 
 let overlay = null;
 let panel = null;
@@ -98,7 +172,7 @@ export function openDetail(game, { onAction } = {}) {
       el('h2', { className: 'detail__title', text: game.title }),
       el('div', { className: 'detail__meta' }, [
         el('span', { className: `tag tag--${badge.key}`, text: badge.text }),
-        el('span', { className: 'tag', text: (game.platform || []).join(' / ') }),
+        el('span', { className: 'tag', text: platformLabel(game) }),
       ]),
     ]),
     (() => { const b = el('button', { className: 'detail__close', html: I_CLOSE, attrs: { type: 'button', 'aria-label': '关闭' } });
@@ -110,6 +184,18 @@ export function openDetail(game, { onAction } = {}) {
 
   if (game.desc) {
     body.appendChild(el('p', { className: 'detail__desc', text: game.desc }));
+  }
+
+  /* 许可证 + 健康度：这个站存在的理由就是这两件事，必须一眼看到 */
+  if (game.license || game.licenseNote) {
+    body.appendChild(licenseBlock(game));
+  }
+
+  /* 需要注意的情况：归档、禁嵌、素材另需授权 */
+  const caveats = caveatsOf(game);
+  if (caveats.length) {
+    body.appendChild(el('ul', { className: 'caveats' },
+      caveats.map(c => el('li', { className: `caveat caveat--${c.kind}`, text: c.text }))));
   }
 
   /* 下载源 */

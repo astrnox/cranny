@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenMW 晨风 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">OpenMW 晨风</strong>
+  <span class="sep">·</span>
+  <span>GPL-3.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/OpenMW/openmw" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>OpenMW</p>
+<p>======</p>
+<p>OpenMW is an open-source open-world RPG game engine that supports playing Morrowind by Bethesda Softworks. You need to own the game for OpenMW to play Morrowind.</p>
+<p>OpenMW also comes with OpenMW-CS, a replacement for Bethesda's Construction Set.</p>
+<ul>
+<li>Version: 0.52.0</li>
+<li>License: GPLv3 (see <a href="https://gitlab.com/OpenMW/openmw/-/raw/master/LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a> for more information)</li>
+<li>Website: <a href="https://www.openmw.org" target="_blank" rel="noopener noreferrer">https://www.openmw.org</a></li>
+<li>IRC: #openmw on irc.libera.chat</li>
+<li>Discord: <a href="https://discord.gg/bWuqq2e" target="_blank" rel="noopener noreferrer">https://discord.gg/bWuqq2e</a></li>
+</ul>
+<p>Font Licenses:</p>
+<ul>
+<li>DejaVuLGCSansMono.ttf: custom (see <a href="https://gitlab.com/OpenMW/openmw/-/raw/master/files/data/fonts/DejaVuFontLicense.txt" target="_blank" rel="noopener noreferrer">files/data/fonts/DejaVuFontLicense.txt</a> for more information)</li>
+<li>DemonicLetters.ttf: SIL Open Font License (see <a href="https://gitlab.com/OpenMW/openmw/-/raw/master/files/data/fonts/DemonicLettersFontLicense.txt" target="_blank" rel="noopener noreferrer">files/data/fonts/DemonicLettersFontLicense.txt</a> for more information)</li>
+<li>MysticCards.ttf: SIL Open Font License (see <a href="https://gitlab.com/OpenMW/openmw/-/raw/master/files/data/fonts/MysticCardsFontLicense.txt" target="_blank" rel="noopener noreferrer">files/data/fonts/MysticCardsFontLicense.txt</a> for more information)</li>
+</ul>
+<p>Current Status</p>
+<hr>
+<p>The main quests in Morrowind, Tribunal and Bloodmoon are all completable. Some issues with side quests are to be expected (but rare). Check the <a href="https://gitlab.com/OpenMW/openmw/-/issues/?milestone_title=openmw-1.0" target="_blank" rel="noopener noreferrer">bug tracker</a> for a list of issues we need to resolve before the "1.0" release. Even before the "1.0" release, however, OpenMW boasts some new <a href="https://wiki.openmw.org/index.php?title=Features" target="_blank" rel="noopener noreferrer">features</a>, such as improved graphics and user interfaces.</p>
+<p>Pre-existing modifications created for the original Morrowind engine can be hit-and-miss. The OpenMW script compiler performs more thorough error-checking than Morrowind does, meaning that a mod created for Morrowind may not necessarily run in OpenMW. Some mods also rely on quirky behaviour or engine bugs in order to work. We are considering such compatibility issues on a case-by-case basis - in some cases adding a workaround to OpenMW may be feasible, in other cases fixing the mod will be the only option. If you know of any mods that work or don't work, feel free to add them to the <a href="https://wiki.openmw.org/index.php?title=Mod_status" target="_blank" rel="noopener noreferrer">Mod status</a> wiki page.</p>
+<p>Getting Started</p>
+<hr>
+<ul>
+<li><a href="https://forum.openmw.org/" target="_blank" rel="noopener noreferrer">Official forums</a></li>
+<li><a href="https://openmw.readthedocs.io/en/latest/manuals/installation/index.html" target="_blank" rel="noopener noreferrer">Installation instructions</a></li>
+<li><a href="https://wiki.openmw.org/index.php?title=Development_Environment_Setup" target="_blank" rel="noopener noreferrer">Build from source</a></li>
+<li><a href="https://wiki.openmw.org/index.php?title=Testing" target="_blank" rel="noopener noreferrer">Testing the game</a></li>
+<li><a href="https://wiki.openmw.org/index.php?title=Contribution_Wanted" target="_blank" rel="noopener noreferrer">How to contribute</a></li>
+<li><a href="https://gitlab.com/OpenMW/openmw/issues" target="_blank" rel="noopener noreferrer">Report a bug</a> - read the <a href="https://wiki.openmw.org/index.php?title=Bug_Reporting_Guidelines" target="_blank" rel="noopener noreferrer">guidelines</a> before submitting your first bug!</li>
+<li><a href="https://gitlab.com/OpenMW/openmw/issues?label_name%5B%5D=Bug" target="_blank" rel="noopener noreferrer">Known issues</a></li>
+</ul>
+<p>The data path</p>
+<hr>
+<p>The data path tells OpenMW where to find your Morrowind files. If you run the launcher, OpenMW should be able to pick up the location of these files on its own, if both Morrowind and OpenMW are installed properly (installing Morrowind under WINE is considered a proper install).</p>
+<p>Command line options</p>
+<hr>
+<p>Syntax: openmw &lt;options&gt;</p>
+<p>Allowed options:</p>
+<p>--config arg                          additional config directories</p>
+<p>--replace arg                         settings where the values from the</p>
+<p>current source should replace those</p>
+<p>from lower-priority sources instead of</p>
+<p>being appended</p>
+<p>--user-data arg                       set user data directory (used for</p>
+<p>saves, screenshots, etc)</p>
+<p>--resources arg (=resources)          set resources directory</p>
+<p>--help                                print help message</p>
+<p>--version                             print version information and quit</p>
+<p>--data arg (=data)                    set data directories (later directories</p>
+<p>have higher priority)</p>
+<p>--data-local arg                      set local data directory (highest</p>
+<p>priority)</p>
+<p>--fallback-archive arg (=fallback-archive)</p>
+<p>set fallback BSA archives (later</p>
+<p>archives have higher priority)</p>
+<p>--start arg                           set initial cell</p>
+<p>--content arg                         content file(s): esm/esp, or</p>
+<p>omwgame/omwaddon/omwscripts</p>
+<p>--groundcover arg                     groundcover content file(s): esm/esp,</p>
+<p>or omwgame/omwaddon</p>
+<p>--no-sound [=arg(=1)] (=0)            disable all sounds</p>
+<p>--script-all [=arg(=1)] (=0)          compile all scripts (excluding dialogue</p>
+<p>scripts) at startup</p>
+<p>--script-all-dialogue [=arg(=1)] (=0) compile all dialogue scripts at startup</p>
+<p>--script-console [=arg(=1)] (=0)      enable console-only script</p>
+<p>functionality</p>
+<p>--script-run arg                      select a file containing a list of</p>
+<p>console commands that is executed on</p>
+<p>startup</p>
+<p>--script-warn [=arg(=1)] (=1)         handling of warnings when compiling</p>
+<p>scripts</p>
+<p>0 - ignore warnings</p>
+<p>1 - show warnings but consider script as</p>
+<p>correctly compiled anyway</p>
+<p>2 - treat warnings as errors</p>
+<p>--load-savegame arg                   load a save game file on game startup</p>
+<p>(specify an absolute filename or a</p>
+<p>filename relative to the current</p>
+<p>working directory)</p>
+<p>--skip-menu [=arg(=1)] (=0)           skip main menu on game startup</p>
+<p>--new-game [=arg(=1)] (=0)            run new game sequence (ignored if</p>
+<p>skip-menu=0)</p>
+<p>--encoding arg (=win1252)             Character encoding used in OpenMW game</p>
+<p>messages:</p>
+<p>win1250 - Central and Eastern European</p>
+<p>such as Polish, Czech, Slovak,</p>
+<p>Hungarian, Slovene, Bosnian, Croatian,</p>
+<p>Serbian (Latin script), Romanian and</p>
+<p>Albanian languages</p>
+<p>win1251 - Cyrillic alphabet such as</p>
+<p>Russian, Bulgarian, Serbian Cyrillic</p>
+<p>and other languages</p>
+<p>win1252 - Western European (Latin)</p>
+<p>alphabet, used by default</p>
+<p>--fallback arg                        fallback values</p>
+<p>--no-grab [=arg(=1)] (=0)             Don't grab mouse cursor</p>
+<p>--export-fonts [=arg(=1)] (=0)        Export Morrowind .fnt fonts to PNG</p>
+<p>image and XML file in current directory</p>
+<p>--activate-dist arg (=-1)             activation distance override</p>
+<p>--random-seed arg (=&lt;impl defined&gt;)   seed value for random number generator</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

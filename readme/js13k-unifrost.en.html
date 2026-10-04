@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unifrost 独霜 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Unifrost 独霜</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/js13kGames/unifrost" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>Unifrost</h1>
+<p>A tiny browser 3D platformer made for <a href="https://js13kgames.com/2026/" target="_blank" rel="noopener noreferrer">js13kGames 2016</a>.</p>
+<p>Play it on the js13kGames <a href="https://js13kgames.com/games/unifrost" target="_blank" rel="noopener noreferrer">website</a>!</p>
+<h2>Attribution</h2>
+<p>This games makes use of Frank Force's fantastic</p>
+<p><a href="https://github.com/KilledByAPixel/ZzFX" target="_blank" rel="noopener noreferrer">ZzFX</a> sound engine to power the game's</p>
+<p>very hastily added sound effects. The license and copyright notice for this</p>
+<p>library are preserved in zzfx.js.</p>
+<h3>Playtesters</h3>
+<p>Special thanks to Albin, Amanda, Hirad, Mirjam, and Sebastian for trying out</p>
+<p>the various early drafts of my game and giving feedback.</p>
+<h2>AI disclosure</h2>
+<p>No AI was involved with any of the game's design, art, audio or dialogue.</p>
+<p>I regularly used a chatbot to help answer questions about APIs, algorithms and</p>
+<p>language details. One function (<code>createPill</code>) was predominantly LLM-generated.</p>
+<p>I used no agentic AI.</p>
+<h2>Building</h2>
+<p>Yes, I'm a web developer, of course my 13KB game has a 100MB node_modules!</p>
+<h3>Installing development dependencies</h3>
+<p>I use pnpm to manage both packages and the Node runtime. If you have a recent</p>
+<p>version of pnpm, simply run <code>pnpm install</code> to install everything.</p>
+<p>If you prefer it, regular <code>npm install</code> should work fine too, but you'll get an</p>
+<p>error if you don't have the exact version of node pinned in package.json.</p>
+<p>Install it yourself, or delete <code>devEngines</code> from package.json if you can't be</p>
+<p>bothered :)</p>
+<h3>Build distribution</h3>
+<ul>
+<li><code>pnpm run build-once</code> creates dist.zip. That's the game!</li>
+<li>The build script expects <code>advzip</code> to exist on the path. If you're on Linux,</li>
+</ul>
+<p>chances are you can install it with your system package manager, probably as</p>
+<p>`advancecomp", and it's also in Homebrew on macOS for example. On Windows, you</p>
+<p>can download it from their <a href="https://www.advancemame.it/download" target="_blank" rel="noopener noreferrer">website</a>.</p>
+<h3>Development with watch mode</h3>
+<p>You nead to run at least <code>pnpm run dev</code> and <code>pnpm run bindata</code> to build</p>
+<p>everything. The game will rebuild automatically on changes, and run a Vite</p>
+<p>development server.</p>
+<p>You can also run <code>pnpm run build</code> to build the final distribution in watch mode.</p>
+<p>It'll even print the current zip size on every change!</p>
+<p>See package.json for other scripts</p>
+<p>(tests (which I think don't pass anymore) etc.).</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

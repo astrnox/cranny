@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luanti 体素沙盒 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Luanti 体素沙盒</strong>
+  <span class="sep">·</span>
+  <span>LGPL-2.1</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/luanti-org/luanti" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>Luanti (formerly Minetest)</p><p>Luanti is a free open-source voxel game engine with easy modding and game creation.</p><p>Copyright (C) 2010-2026 Perttu Ahola<br>and contributors (see source file comments and the version control log)</p><p>Table of Contents<br>------------------</p><p>1. [Further Documentation](#further-documentation)<br>2. [Default Controls](#default-controls)<br>3. [Paths](#paths)<br>4. [Configuration File](#configuration-file)<br>5. [Command-line Options](#command-line-options)<br>6. [Compiling](#compiling)<br>7. [Docker](#docker)<br>8. [Version Scheme](#version-scheme)</p><p>Further documentation<br>----------------------<br>- Website: https://www.luanti.org/<br>- Luanti Documentation: https://docs.luanti.org/<br>- Forum: https://forum.luanti.org/<br>- GitHub: https://github.com/luanti-org/luanti/<br>- [Developer documentation](doc/developing/)<br>- [doc/](doc/) directory of source distribution</p><p>Default controls<br>----------------<br>All controls are re-bindable using settings.<br>Some can be changed in the key config dialog in the settings tab.</p><p>| Button | Action |<br>|-------------------------------|----------------------------------------------------------------|<br>| Move mouse | Look around |<br>| W, A, S, D | Move |<br>| Space | Jump/move up |<br>| Shift | Sneak/move down |<br>| Q | Drop itemstack |<br>| Shift + Q | Drop single item |<br>| Left mouse button | Dig/punch/use |<br>| Right mouse button | Place/use |<br>| Shift + right mouse button | Build (without using) |<br>| I | Inventory menu |<br>| Mouse wheel | Select item |<br>| 0-9 | Select item |<br>| Z | Zoom (needs zoom privilege) |<br>| T | Chat |<br>| / | Command |<br>| Esc | Pause menu/abort/exit (pauses only singleplayer game) |<br>| + | Increase view range |<br>| - | Decrease view range |<br>| K | Enable/disable fly mode (needs fly privilege) |<br>| J | Enable/disable fast mode (needs fast privilege) |<br>| H | Enable/disable noclip mode (needs noclip privilege) |<br>| E | Aux1 (Move fast in fast mode. Games may add special features) |<br>| C | Cycle through camera modes |<br>| V | Cycle through minimap modes |<br>| Shift + V | Change minimap orientation |<br>| F1 | Hide/show HUD |<br>| F2 | Hide/show chat |<br>| F3 | Disable/enable fog |<br>| F4 | Disable/enable camera update (Mapblocks are not updated anymore when disabled, disabled in release builds) |<br>| F5 | Cycle through debug information screens |<br>| F6 | Cycle through profiler info screens |<br>| F10 | Show/hide console |<br>| F12 | Take screenshot |</p><p>Paths<br>-----<br>Locations:</p><p>* `bin` - Compiled binaries<br>* `share` - Distributed read-only data<br>* `user` - User-created modifiable data</p><p>Where each location is on each platform:</p><p>* Windows .zip / RUN_IN_PLACE source:<br>* `bin` = `bin`<br>* `share` = `.`<br>* `user` = `.`<br>* Windows installed:<br>* `bin` = `C:\Program Files\Minetest\bin (Depends on the install location)`<br>* `share` = `C:\Program Files\Minetest (Depends on the install location)`<br>* `user` = `%APPDATA%\Minetest` or `%MINETEST_USER_PATH%`<br>* Linux installed:<br>* `bin` = `/usr/bin`<br>* `share` = `/usr/share/minetest`<br>* `user` = `~/.minetest` or `$MINETEST_USER_PATH`<br>* macOS:<br>* `bin` = `Contents/MacOS`<br>* `share` = `Contents/Resources`<br>* `user` = `Contents/User` or `~/Library/Application Support/minetest` or `$MINETEST_USER_PATH`</p><p>Worlds can be found as separate folders in: `user/worlds/`</p><p>Configuration file<br>------------------<br>- Default location:<br>`user/minetest.conf`<br>- This file is created by closing Luanti for the first time.<br>- A specific file can be specified on the command line:<br>`--config `<br>- A run-in-place build will look for the configuration file in<br>`location_of_exe/../minetest.conf` and also `location_of_exe/../../minetest.conf`</p><p>Command-line options<br>--------------------<br>- Use `--help`</p><p>Compiling<br>---------</p><p>- [Compiling - common information](doc/compiling/README.md)<br>- [Compiling on GNU/Linux](doc/compiling/linux.md)<br>- [Compiling on Windows](doc/compiling/windows.md)<br>- [Compiling on MacOS](doc/compiling/macos.md)</p><p>Docker<br>------</p><p>- [Developing minetestserver with Docker](doc/developing/docker.md)<br>- [Running a server with Docker](doc/docker_server.md)</p><p>Version scheme<br>--------------<br>We use `major.minor.patch` since 5.0.0-dev. Prior to that we used `0.major.minor`.</p><p>- Major is incremented when the release contains breaking changes, all other<br>numbers are set to 0.<br>- Minor is incremented when the release contains new non-breaking features,<br>patch is set to 0.<br>- Patch is incremented when the release only contains bugfixes and very<br>minor/trivial features considered necessary.</p><p>Since 5.0.0-dev and 0.4.17-dev, the dev notation refers to the next release,<br>i.e.: 5.0.0-dev is the development version leading to 5.0.0.<br>Prior to that we used `previous_version-dev`.</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

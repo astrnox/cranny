@@ -136,6 +136,9 @@
 /* 角标一律中性底 + 彩色小点。给每种类型配一整套彩色胶囊
    是 AI 生成 UI 的常见做法，这里只用小圆点做区分。 */
 .badge--pc      { color: #fff; } .badge--pc::before      { background: #7FB2FF; }
+.badge--win     { color: #fff; } .badge--win::before     { background: #7FB2FF; }
+.badge--lin     { color: #fff; } .badge--lin::before     { background: #E0A458; }
+.badge--mac     { color: #fff; } .badge--mac::before     { background: #B0A6C8; }
 .badge--android { color: #fff; } .badge--android::before { background: #6ED6C0; }
 .badge--open    { color: #fff; } .badge--open::before    { background: #FFD166; }
 .badge--play    { color: #fff; } .badge--play::before    { background: #5FC08A; }

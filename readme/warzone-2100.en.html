@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Warzone 2100 战区2100 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Warzone 2100 战区2100</strong>
+  <span class="sep">·</span>
+  <span>GPL-2.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/warzone2100/warzone2100" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>Warzone 2100</p><p>Warzone 2100 is a free, open source, 3D real-time strategy game with a story-driven single-player campaign, online multi-player, offline skirmish, and more.</p><p># Highlights</p><p>- Remastered single-player campaign with expanding persistent bases, away missions, and more<br>- Online multiplayer with up to 10 players, free-for-all or team-play, for massive battles<br>- Local skirmish with AI bots, for endless replayability<br>- Extensive tech tree with over 400 different technologies<br>- Customizable units with a flexible design system that enables a wide variety of possible tactics<br>- Cross-platform multiplayer<br>- Support for multiple graphics backends (OpenGL, OpenGL ES, Vulkan)<br>- 100% free and open source</p><p>For more info, see: [Homepage of the Warzone 2100 Project](https://wz2100.net/)</p><p># Installation</p><p>**Visit https://wz2100.net for the latest stable release for Windows, macOS and Linux.**</p><p>&gt; Note for videos in Ubuntu: For important information during the game, download the videos manually. Assuming the game is installed in the standard `~/.local/share/` folder, use these commands:<br>&gt; ```shell<br>&gt; mkdir ~/.local/share/warzone2100<br>&gt; wget https://github.com/Warzone2100/wz-sequences/releases/download/v3/standard-quality-en-sequences.wz -O ~/.local/share/warzone2100/sequences.wz<br>&gt; ```</p><p># Origins</p><p>Warzone 2100, was originally developed by Pumpkin Studios, and released in 1999 as a<br>ground-breaking and innovative 3D real-time strategy game.</p><p>In 2004, Eidos (in collaboration with Pumpkin Studios) decided to release the source for the game<br>under the terms of the GNU GPL - followed later by the remaining music &amp; video files.</p><p>It has been developed, maintained, and improved by the community ever since, under the banner of<br>the “Warzone 2100 Project”.</p><p># State of the game</p><p>After the liberation of the Warzone 2100 source-code on December 6th, 2004, all<br>proprietary technologies have been replaced with open-source counterparts, and<br>extensive improvements and additions have been made throughout while preserving<br>what made the original release so great.</p><p>Development continues on GitHub, and bug reports &amp; contributions are welcome!</p><p># Latest development builds</p><p>[![Windows Build Status](https://img.shields.io/github/actions/workflow/status/Warzone2100/warzone2100/CI_windows.yml?branch=master&amp;label=Windows&amp;logo=windows)](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AWindows+branch%3Amaster+event%3Apush)<br>[![macOS Build Status](https://img.shields.io/github/actions/workflow/status/Warzone2100/warzone2100/CI_macos.yml?branch=master&amp;label=macOS&amp;logo=apple)](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AmacOS+branch%3Amaster+event%3Apush)<br>[![Ubuntu Build Status](https://img.shields.io/github/actions/workflow/status/Warzone2100/warzone2100/CI_ubuntu.yml?branch=master&amp;label=Ubuntu&amp;logo=ubuntu&amp;logoColor=FFFFFF)](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AUbuntu+branch%3Amaster+event%3Apush)<br>[![Fedora Build Status](https://img.shields.io/github/actions/workflow/status/Warzone2100/warzone2100/CI_fedora.yml?branch=master&amp;label=Fedora&amp;logo=fedora&amp;logoColor=FFFFFF)](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AFedora+branch%3Amaster+event%3Apush)<br>[![WebAssembly Build Status](https://img.shields.io/github/actions/workflow/status/Warzone2100/warzone2100/CI_emscripten.yml?branch=master&amp;label=WebASM&amp;logo=webassembly&amp;logoColor=FFFFFF)](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AEmscripten+branch%3Amaster+event%3Apush)<br>[![FreeBSD Build Status](https://img.shields.io/cirrus/github/Warzone2100/warzone2100/master?label=FreeBSD&amp;logo=FreeBSD)](https://cirrus-ci.com/github/Warzone2100/warzone2100/master)<br>[![Packaging status](https://repology.org/badge/tiny-repos/warzone2100.svg)](https://repology.org/project/warzone2100/versions)</p><p>### Windows</p><p>How to get the latest Windows development builds:<br>1. View the **[latest successful Windows builds](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AWindows+branch%3Amaster+event%3Apush+is%3Asuccess)**.<br>2. Select the latest workflow run in the table / list.<br>This should display a list of **Artifacts** from the run.<br>3. Download the `warzone2100_win_installer` artifact.<br>&gt; Note: A free GitHub account is currently required to download the artifacts.</p><p>### macOS</p><p>How to get the latest macOS development builds:<br>1. View the **[latest successful macOS builds](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AmacOS+branch%3Amaster+event%3Apush+is%3Asuccess)**.<br>2. Select the latest workflow run in the table / list.<br>This should display a list of **Artifacts** from the run.<br>3. Download the `warzone2100_macOS_universal` or `warzone2100_macOS_universal_novideos` artifact (depending on whether you want the full app bundle or not).<br>&gt; Note: A free GitHub account is currently required to download the artifacts.</p><p>### Ubuntu</p><p>How to get the latest Ubuntu development builds:<br>1. View the **[latest successful Ubuntu builds](https://github.com/Warzone2100/warzone2100/actions?query=workflow%3AUbuntu+branch%3Amaster+event%3Apush+is%3Asuccess)**.<br>2. Select the latest workflow run in the table / list.<br>This should display a list of **Artifacts** from the run.<br>3. Download the appropriate `warzone2100_ubuntu _amd64_deb` artifact.<br>- If you are running Ubuntu 22.04: `warzone2100_ubuntu22.04_amd64_deb`<br>- If you are running Ubuntu 24.04: `warzone2100_ubuntu24.04_amd64_deb`<br>&gt; Note: A free GitHub account is currently required to download the artifacts.<br>4. Extract the contents of the downloaded .zip (`warzone2100_ubuntu _amd64.deb`) to your Desktop.<br>5. Execute the following commands in Terminal:<br>```shell<br>cd ~/Desktop<br>sudo apt install ./warzone2100_ubuntu _amd64.deb<br>```<br>6. Download the video for crucial information during the game, for more see &quot;Videos&quot; section. Assuming the game is installed in the standard `~/.local/share/` folder, use this command (update `warzone2100- `):<br>```shell<br>wget https://github.com/Warzone2100/wz-sequences/releases/download/v3/standard-quality-en-sequences.wz -O ~/.local/share/warzone2100- /sequences.wz<br>```</p><p>### Linux (from source)</p><p>Clone this Git repo and build, following the instructions under:<br>[How to Build](#how-to-build)</p><p>&gt; Development builds are a snapshot of the current state of development, from the<br>&gt; latest (successfully-built) commit. Help testing these builds is always welcomed,<br>&gt; but they should be considered a work-in-progress.</p><p>### Videos<br>You can download videos from [here](https://github.com/Warzone2100/wz-sequences/releases/tag/v3), or [here](https://sourceforge.net/projects/warzone2100/files/warzone2100/Videos/). You will need to rename the downloaded file to `sequences.wz`, and place it into your Warzone 2100 directory, as described above.<br>Note that `.wz` files are just `.zip` in disguise, you can rename it and extract the content if wish to inspect them.</p><p># Reporting bugs</p><p>This game still has bugs and if you run into one, please use the GitHub bugtracker<br>(https://github.com/Warzone2100/warzone2100/issues) to report the bug. In order to fix<br>those bugs more quickly, we require that you follow these rules:</p><p>1. If the game crashes you may save a memory dump. Please do so and upload it<br>when reporting the bug. (Linux locates that file at /tmp/warzone2100.gdmp,<br>Windows at /Program Files/Warzone 2100/warzone2100.RPT, macOS by<br>clicking &quot;Details&quot; in the crash error message)<br>A self created backtrace is just as useful.<br>2. Give as much information about what you were doing before the crash/bug<br>occurred.<br>3. Try to reproduce the bug and add a description of the process to your bug<br>report.<br>4. You may even upload save files. These consist of one file and<br>one folder. Both are named after your savegame (e.g. MySaveGame.gam and<br>the folder MySaveGame).<br>5. Bug reports are not submit-and-forget. It may be that you forgot some<br>information or forgot to upload a file. So it is also in your interest to<br>watch the bug-report after it has been submitted. Additionally, you can enable<br>e-mails of comments to your bug report.</p><p># Configuration</p><p>Warzone 2100 uses its own subdirectory in a user&#x27;s home directory to save<br>configuration data, save files and certain other things. Additionally you can<br>use this directory to place custom maps and mods so the game can find them. The<br>location of this directory depends on the operating system.</p><p>&gt; [!TIP]<br>&gt; The easy way to find the configuration directory is to:<br>&gt; 1. Launch Warzone 2100<br>&gt; 2. Click &quot;Options&quot;<br>&gt; 3. Click the small &quot;Open Configuration Directory&quot; link in the bottom-left</p><p>### Configuration file</p><p>The configuration file is just called &#x27;config&#x27; and contains several configuration<br>options, some of them can be changed by using command-line options or using<br>the in-game menus, others can only be changed by editing the file manually.</p><p>If at any point you did something wrong, you can delete the old configuration<br>file and just restart Warzone 2100. Then the game will regenerate a new<br>configuration file with default values.</p><p># Command-line options</p><p>Warzone 2100 can be started with different options and arguments. For a list<br>of these options, run the game with the --help option.</p><p>Notes: These options all have two dashes (--), not one dash only (-). Also,<br>if the option has an argument, you need to separate the option and its argument<br>with a &#x27;=&#x27; sign - spaces do not work.</p><p>Note: Some options have corresponding entries in the configuration file and will<br>persist from one start of Warzone 2100 to the next.</p><p># Multiplaying via internet</p><p>There are two methods to start a multiplayer game via the internet: using the host&#x27;s<br>IP or using the lobby server. Make sure you are able to communicate on TCP ports<br>2100 and 9999. Note that for port forwarding, you only need to configure your<br>router to forward port 2100.</p><p>You can choose whether to connect via Lobby or IP:</p><p>* If you choose IP, Warzone 2100 asks you for the IP address of the host and<br>will try to connect to that IP.<br>* If you choose Lobby, Warzone 2100 will connect to the lobby server, as long as<br>the lobby-server-address in your config file has not been changed.</p><p>You will see a list of games from which you can select.</p><p>You can kick unwanted players out of a game before it begins by clicking left on<br>them while holding the right mouse button.</p><p>When you are hosting a game it will automatically be listed on the lobby server.<br>If you do not want your games to be listed on the lobby-server, you should<br>change the entry &quot;masterserver_name=lobby.wz2100.net&quot; in your config to some-<br>thing invalid, for example: &quot;nomasterserverplease&quot;.</p><p>If you then want to see the games that are listed on the lobby server you may<br>enter &quot;lobby.wz2100.net&quot; when prompted to enter the host&#x27;s IP or change the<br>entry in the config file back. You will have to restart Warzone 2100 in order<br>for config changes to take effect.</p><p># Cheats</p><p>Warzone 2100 has many built-in cheat codes:<br>* [Warzone 2100 Cheats](doc/Cheats.md)</p><p># Modding information</p><p>Warzone 2100 AI, maps and campaign can be scripted using JavaScript.</p><p>Links to further information<br>* [Scripting](doc/Scripting.md)<br>* [Model format](doc/PIE.md)<br>* [Animation](doc/Animation.md)</p><p># How to build</p><p>### Getting the Source</p><p>To properly build the game, either:<br>- Download a release `tar.xz`, which contains all the source code and revision information.</p><p>_OR_</p><p>- Clone the Git repo:<br>```shell<br>git clone https://github.com/Warzone2100/warzone2100.git<br>cd warzone2100<br>git fetch --tags<br>git submodule update --init --recursive<br>```<br>&gt; Note: Initializing submodules is required.</p><p>Do **not** use GitHub&#x27;s &quot;Download Zip&quot; option, as it **does not contain submodules** or the Git-based autorevision information.</p><p>### Linux</p><p>* Prerequisites<br>* Compiling tools (ex. CMake, GCC/G++/Clang, ninja-build)<br>* Archiving tools (ex. zip, p7zip)<br>* Various libraries:<br>* [SDL](https://www.libsdl.org) ≥ 3.2.12 _(strongly recommended: ≥ 3.2.26)_<br>* [PhysicsFS](https://icculus.org/physfs/) ≥ 2.1 _(strongly recommended: ≥ 3.0.2)_<br>* [libpng](https://www.libpng.org/pub/png/libpng.html) ≥ 1.2<br>* [libjpeg-turbo](https://github.com/libjpeg-turbo/libjpeg-turbo) ≥ 2.1<br>* [libtheora](https://theora.org)<br>* [libvorbis](https://xiph.org/vorbis)<br>* [libogg](https://xiph.org/ogg/)<br>* [libvpx](https://www.webmproject.org/code/)<br>* [opus](https://github.com/xiph/opus)<br>* [Freetype](https://www.freetype.org/) _(strongly recommended: ≥ 2.10.4)_<br>* [Harfbuzz](https://github.com/harfbuzz/harfbuzz) ≥ 1.0 _(strongly recommended: ≥ 3.3.0)_<br>* [fribidi](https://github.com/fribidi/fribidi)<br>* [OpenAL-Soft](https://openal-soft.org)<br>* [libcurl](https://curl.haxx.se/libcurl/) _(strongly recommended: ≥ 7.58.0)_<br>* [libsodium](https://github.com/jedisct1/libsodium) ≥ 1.0.16<br>* [SQLite](https://www.sqlite.org/index.html) ≥ 3.14<br>* [libzip](https://github.com/nih-at/libzip) _(strongly recommended: ≥ 1.10.1)_<br>* [libprotobuf](https://github.com/protocolbuffers/protobuf) (if compiling with GNS support)<br>* For language support: [Gettext](https://www.gnu.org/software/gettext/)<br>* To generate documentation: [Asciidoctor](https://asciidoctor.org) ≥ 1.5.3<br>* To build with Vulkan support: the full [Vulkan SDK](https://vulkan.lunarg.com/sdk/home) _(strongly recommended: ≥ 1.2.148.1)_<br>* **Installing prerequisites:**<br>* Using `get-dependencies_linux.sh`:<br>1. Specify one of the linux distros supported by the script: (`ubuntu`, `fedora`, `alpine`, `archlinux`, `opensuse-tumbleweed`, `gentoo`, `debian`, `raspberrypios`) _REQUIRED_<br>2. Specify a mode: (`build-all` (default), `build-dependencies`) _OPTIONAL_</p><p>Example:<br>```shell<br>sudo ./get-dependencies_linux.sh ubuntu build-dependencies<br>```<br>* **Building from the command-line:**<br>1. Starting from the _parent_ directory of the warzone2100 repository, create an [out-of-source](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Getting%20Started.html#directory-structure) build directory:<br>```shell<br>mkdir build<br>```<br>2. Change directory into the `build` directory:<br>```shell<br>cd build<br>```<br>3. Run CMake configure to generate the build files:<br>```shell<br>cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX:PATH=~/wz/install -GNinja ../warzone2100<br>```<br>&gt; - [Modify the `CMAKE_INSTALL_PREFIX` parameter value as desired](https://cmake.org/cmake/help/latest/variable/CMAKE_INSTALL_PREFIX.html) to configure the base installation path.<br>&gt; - The `../warzone2100` path at the end should point to the warzone2100 repo directory. This example assumes that the repo directory and the build directory are siblings, and that the repo was cloned into a directory named `warzone2100`.<br>4. Run CMake build:<br>```shell<br>cmake --build . --target install<br>```</p><p>### Windows using MSVC</p><p>See [platforms/windows/README-build.md](platforms/windows/README-build.md)</p><p>### macOS<br>See [platforms/macos/README.md](platforms/macos/README.md)</p><p># Licensing</p><p>Warzone 2100 is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p><p>[![SPDX-License-Identifier: GPL-2.0-or-later](https://img.shields.io/static/v1?label=SPDX-License-Identifier&amp;message=GPL-2.0-or-later&amp;color=blue&amp;logo=open-source-initiative&amp;logoColor=white&amp;logoWidth=10&amp;style=flat-square)](COPYING)</p><p>More information: [COPYING.README](COPYING.README), [COPYING.NONGPL](COPYING.NONGPL)</p><p># Special thanks</p><p>Free code signing for Windows provided by [SignPath.io](https://signpath.io), certificate by [SignPath Foundation](https://signpath.org).</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

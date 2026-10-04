@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BananaBread 引擎 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">BananaBread 引擎</strong>
+  <span class="sep">·</span>
+  <span>未声明许可证</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/kripken/BananaBread" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>The BananaBread Engine</p>
+<p>======================</p>
+<hr>
+<p>Notice</p>
+<hr>
+<p>BananaBread is no longer under active development. A fork of this project, <a href="https://github.com/cfoust/sour" target="_blank" rel="noopener noreferrer">cfoust/sour</a>, has continued the effort. Among other things, it adds support for multiplayer servers, upgrades the engine to the latest version of Sauerbraten, and supports all of the game's maps.</p>
+<hr>
+<p>A port of the Cube 2/Sauerbraten 3D game engine/first person shooter to the</p>
+<p>web, compiling C++ and OpenGL to JavaScript and WebGL using Emscripten.</p>
+<p>See the **<a href="https://github.com/kripken/BananaBread/wiki/FAQ" target="_blank" rel="noopener noreferrer">FAQ</a>**.</p>
+<p>Demos</p>
+<hr>
+<p>**<a href="https://kripken.github.io/BananaBread/cube2/bb.html" target="_blank" rel="noopener noreferrer">A live demo is available</a>**. Note that it requires <a href="http://webassembly.org/" target="_blank" rel="noopener noreferrer">WebAssembly</a>.</p>
+<p>Overview</p>
+<hr>
+<p>Cube 2 is a compact and efficient 3D game engine. By compiling it</p>
+<p>to JavaScript and WebGL you can run a complete first person</p>
+<p>shooter in your web browser, using only standard web APIs and</p>
+<p>without any plugins.</p>
+<p>Features:</p>
+<ul>
+<li>A multitude of visual effects including water reflection/refraction,</li>
+</ul>
+<p>parallax mapping, glare, particle effects,</p>
+<p>lightmaps, skeletal animation (on gpu), etc. etc.</p>
+<ul>
+<li>Streamlined and quick physics system</li>
+<li>Ragdoll physics</li>
+<li>Bot AI with adjustable skill level</li>
+<li>Integrated in-game editor</li>
+<li>Fast performance both running on the web or natively</li>
+<li>zlib license</li>
+</ul>
+<p>The original engine also has a lot of other features not yet</p>
+<p>enabled (but will be):</p>
+<ul>
+<li>Multiplayer</li>
+<li>Multiplayer editing</li>
+<li>Shadowmapping</li>
+</ul>
+<p>Building</p>
+<hr>
+<p>Get emscripten and its dependencies,</p>
+<p><a href="http://emscripten.org" target="_blank" rel="noopener noreferrer">http://emscripten.org</a></p>
+<p>It's recommended to go through the emscripten tutorial to see that it is set</p>
+<p>up properly.</p>
+<p>Then do <code>emmake make client -j8</code> in <code>cube2/src/web</code> for a web build.</p>
+<p>(You can also do <code>make</code> in <code>cube2/src/native</code> for a native linux build.)</p>
+<p>You can then run <code>bb.html</code> (in <code>cube2/</code>) to see the output.</p>
+<p>If you have any problems building, feel free to file an issue here or to</p>
+<p>find us on emscripten IRC (see <a href="http://emscripten.org" target="_blank" rel="noopener noreferrer">emscripten site</a>).</p>
+<ul>
+<li>See needed.txt for some possibly useful scripts to package the output.</li>
+</ul>
+<p>Running</p>
+<hr>
+<ol>
+<li>Run</li>
+</ol>
+<p>python -m SimpleHTTPServer 8888</p>
+<p>in cube2/</p>
+<ol>
+<li>Load localhost:8888 in your browser</li>
+</ol>
+<p>Modding</p>
+<hr>
+<p>To use maps of your own or make other kinds of changes or additions to the</p>
+<p>artwork, see the</p>
+<p>**<a href="https://github.com/kripken/BananaBread/wiki/Modding" target="_blank" rel="noopener noreferrer">Modding</a>**</p>
+<p>page.</p>
+<p>Debugging</p>
+<hr>
+<p>If you append <code>,debug</code> to the URL of one of the levels, it will use</p>
+<p><code>bb.debug.js</code> instead of <code>bb.js</code>. The debug build has not been run</p>
+<p>through closure compiler and is much more readable for stack traces</p>
+<p>and profiling and so forth.</p>
+<p>License</p>
+<hr>
+<h3>Code</h3>
+<p>Code is zlib licensed (just like Sauerbraten):</p>
+<p>Copyright (C) 2001-2012 Sauerbraten authors (see cube2/src/readme_source.txt)</p>
+<p>and BananaBread authors (see below)</p>
+<p>This software is provided 'as-is', without any express or implied</p>
+<p>warranty.  In no event will the authors be held liable for any damages</p>
+<p>arising from the use of this software.</p>
+<p>Permission is granted to anyone to use this software for any purpose,</p>
+<p>including commercial applications, and to alter it and redistribute it</p>
+<p>freely, subject to the following restrictions:</p>
+<ol>
+<li>The origin of this software must not be misrepresented; you must not</li>
+</ol>
+<p>claim that you wrote the original software. If you use this software</p>
+<p>in a product, an acknowledgment in the product documentation would be</p>
+<p>appreciated but is not required.</p>
+<ol>
+<li>Altered source versions must be plainly marked as such, and must not be</li>
+</ol>
+<p>misrepresented as being the original software.</p>
+<ol>
+<li>This notice may not be removed or altered from any source distribution.</li>
+</ol>
+<p>BananaBread authors:</p>
+<ul>
+<li>Alon Zakai</li>
+<li>Gregor Koch</li>
+<li>Bobby Richter</li>
+</ul>
+<h3>Art</h3>
+<p>All art content in this project (levels/maps, character model, etc.</p>
+<p>etc.) is either CC-BY or CC-BY-SA, which means you can use it in</p>
+<p>your projects, including commercial ones. If a directory does not</p>
+<p>contain a specific license file, then it is new artwork created for</p>
+<p>this project, which has the CC-BY license,</p>
+<p><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/3.0/</a></p>
+<p>and copyright is held by the Mozilla Foundation.</p>
+<p>Previously-existing content can also be CC-BY-SA, see license files in</p>
+<p>specific directories.</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkiFree.js 滑雪 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">SkiFree.js 滑雪</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/basicallydan/skifree.js" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>Skifree.js</h1>
+<p>This is a **work in progress** JavaScript port of the popular 1991 PC game <a href="http://en.wikipedia.org/wiki/Skifree" target="_blank" rel="noopener noreferrer">SkiFree</a> by <a href="http://ski.ihoc.net/" target="_blank" rel="noopener noreferrer">Chris Pirih</a>.</p>
+<p><a href="http://basicallydan.github.io/skifree.js" target="_blank" rel="noopener noreferrer">**Play this right now if you want to**</a> (opens a demo page).</p>
+<h2>Features so far:</h2>
+<ul>
+<li>Skiing down a never-ending skislope with randomly-generated trees which do not have transparent backgrounds</li>
+<li>Collision detection with trees - and the appropriate reaction</li>
+<li>Turning left and right</li>
+<li>Stopping</li>
+<li>MONSTAHS! GRAAAAHHH! They even eat you and then run away because they're full</li>
+<li>Distance tracking so you can see how far you've gone, you absolute badass</li>
+<li>Speed boost (this was a little-known feature to get away from monsters) using the F key</li>
+<li>**MOBILE SUPPORT** - This is cool - try loading the <a href="http://basicallydan.github.io/skifree.js" target="_blank" rel="noopener noreferrer">**the demo page**</a> on a mobile device and then use your finger to direct the skier around the piste. Also try double-tap ;)</li>
+<li>Rainbow jump platforms &amp; jumping - though a couple of improvements could be made</li>
+<li>LocalStorage high-score (thanks, <a href="https://github.com/ddoolin" target="_blank" rel="noopener noreferrer">@ddoolin</a>!)</li>
+<li>Custom-sized Hitboxes</li>
+<li>Big trees &amp; crashing into them both whilst skiing and jumping</li>
+</ul>
+<h2>So, what's left to do?</h2>
+<p>This is what I'm gonna do, probably in this order. Who the hell knows. There are other features to the original game but I'm not going to add them to the list until I've gotten through this one.</p>
+<ul>
+<li>Rocks</li>
+<li>Snowboarders</li>
+<li>Dogs</li>
+<li>Ski Lifts</li>
+</ul>
+<p>Some features which weren't in the original which I'd like to give a go:</p>
+<ul>
+<li>Being a snowboarder instead of a boring old skier</li>
+<li>Tricks, or something?</li>
+<li>Multiplayer (ooooo wouldn't that be fun?!)</li>
+</ul>
+<h2>F*ck this, let me play the game goddammit</h2>
+<ul>
+<li>Open up index.html in Chrome, or maybe even Firefox - I haven't tested it in anything but Chrome and Mobile Safari yet, and I probably won't I'm afraid</li>
+<li>Go.</li>
+</ul>
+<h2>I like to run Unit tests before I do ANYTHING.</h2>
+<ul>
+<li>Right, well first you need to do an <code>npm install</code></li>
+<li>Run <code>mocha</code> and you should see some beautiful passing tests</li>
+</ul>
+<h2>This is pretty frickin' sweet but it's clearly not finished. I can totally improve it. Let me improve it, dammit.</h2>
+<ul>
+<li>We are #seekingcontributors</li>
+<li>Make a pull request with your awesome additions.</li>
+<li>Maybe raise an issue?</li>
+</ul>
+<p>If you'd like an easy way to see how the game works, you can play the original in an Emulator: <a href="https://archive.org/details/win3_WINSKI" target="_blank" rel="noopener noreferrer">https://archive.org/details/win3_WINSKI</a></p>
+<h2>Contributors</h2>
+<p>Here's some lovely people who were kind enough to have opinions and spirit enough to make a pull request.</p>
+<ul>
+<li><a href="https://github.com/tomgrim1" target="_blank" rel="noopener noreferrer">@tomgrim1</a></li>
+<li><a href="https://github.com/ddoolin" target="_blank" rel="noopener noreferrer">@ddoolin</a></li>
+<li><a href="https://github.com/andersevenrud" target="_blank" rel="noopener noreferrer">@andersevenrud</a></li>
+<li><a href="https://github.com/dsingleton86" target="_blank" rel="noopener noreferrer">@dsingleton86</a></li>
+<li><a href="https://github.com/mcmahoniel" target="_blank" rel="noopener noreferrer">@mcmahoniel</a></li>
+<li><a href="https://github.com/collinanderson" target="_blank" rel="noopener noreferrer">@collinanderson</a></li>
+</ul>
+<p>Thanks!</p>
+<h2>Third-party credits</h2>
+<ul>
+<li><a href="http://html5boilerplate.com" target="_blank" rel="noopener noreferrer">HTML5 Boilerplate</a> provided a bunch of useful markup and stuff</li>
+<li><a href="http://spriters-resource.com/submitter/Wing%20Wang%20Wao" target="_blank" rel="noopener noreferrer">Wing Wang Wao</a> of the <a href="http://spriters-resource.com" target="_blank" rel="noopener noreferrer">Spriters Resource Forum</a> did an amazing job of providing the sprites which I have extended slightly. Thanks!</li>
+<li>Thank you <a href="http://ski.ihoc.net/" target="_blank" rel="noopener noreferrer">Chris Pirih</a> for making the original.</li>
+</ul>
+<h2>License</h2>
+<p>See <a href="blob/master/license.md" target="_blank" rel="noopener noreferrer">license.md</a></p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

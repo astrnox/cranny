@@ -168,3 +168,114 @@
 }
 .icon-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
 .icon-btn svg { width: 17px; height: 17px; }
+
+/* ============================================================
+   细筛（怎么玩 + 许可证）
+   折叠起来是因为分类药丸已经 20 个，再摊开就没法看了。
+   ============================================================ */
+.facets { margin-bottom: var(--space-5); }
+
+.facets__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 11px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  transition: border-color var(--dur-1) var(--ease-out),
+              color var(--dur-1) var(--ease-out);
+}
+.facets__toggle:hover { border-color: var(--border-strong); color: var(--text-primary); }
+.facets__toggle svg { width: 14px; height: 14px; }
+.facets__toggle[aria-expanded="true"] { color: var(--text-primary); border-color: var(--border-strong); }
+
+/* 角标：小方块计数，不是药丸 */
+.facets__badge {
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.facets__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-4) var(--space-5);
+  margin-top: 12px;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--border);
+}
+.facets__body[hidden] { display: none; }
+
+.facet { min-width: 0; }
+.facet__label {
+  margin: 0 0 7px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+/* 选项：与 .pill 同一套视觉语言，只是多了计数 */
+.opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  margin: 0 5px 5px 0;
+  padding: 0 9px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  transition: border-color var(--dur-1) var(--ease-out),
+              color var(--dur-1) var(--ease-out),
+              background-color var(--dur-1) var(--ease-out);
+}
+.opt:hover:not(:disabled) { border-color: var(--border-strong); color: var(--text-primary); }
+.opt.is-on {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-card);
+  font-weight: 600;
+}
+.opt:disabled { opacity: 0.4; cursor: not-allowed; }
+.opt__num {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.66;
+}
+
+.facets__reset {
+  align-self: center;
+  margin-top: 18px;
+  height: 28px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-tertiary);
+  font-size: var(--fs-small);
+}
+.facets__reset:hover { border-color: var(--border-strong); color: var(--text-primary); }
+.facets__reset[hidden] { display: none; }
+
+/* 药丸里的计数 */
+.pill__num {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}

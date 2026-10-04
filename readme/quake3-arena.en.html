@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quake III Arena 引擎 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Quake III Arena 引擎</strong>
+  <span class="sep">·</span>
+  <span>GPL-2.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/id-Software/Quake-III-Arena" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>Quake III Arena GPL source release</p>
+<p>==================================</p>
+<p>This file contains the following sections:</p>
+<p>LICENSE</p>
+<p>GENERAL NOTES</p>
+<p>COMPILING ON WIN32</p>
+<p>COMPILING ON GNU/LINUX</p>
+<p>COMPILING ON MAC</p>
+<p>LICENSE</p>
+<p>=======</p>
+<p>See COPYING.txt for the GNU GENERAL PUBLIC LICENSE</p>
+<p>Some source code in this release is not covered by the GPL:</p>
+<p>IO on .zip files using portions of zlib</p>
+<hr>
+<p>lines	file(s)</p>
+<p>4299	code/qcommon/unzip.c</p>
+<p>4546	libs/pak/unzip.cpp</p>
+<p>Copyright (C) 1998 Gilles Vollant</p>
+<p>zlib is Copyright (C) 1995-1998 Jean-loup Gailly and Mark Adler</p>
+<p>This software is provided 'as-is', without any express or implied</p>
+<p>warranty.  In no event will the authors be held liable for any damages</p>
+<p>arising from the use of this software.</p>
+<p>Permission is granted to anyone to use this software for any purpose,</p>
+<p>including commercial applications, and to alter it and redistribute it</p>
+<p>freely, subject to the following restrictions:</p>
+<ol>
+<li>The origin of this software must not be misrepresented; you must not</li>
+</ol>
+<p>claim that you wrote the original software. If you use this software</p>
+<p>in a product, an acknowledgment in the product documentation would be</p>
+<p>appreciated but is not required.</p>
+<ol>
+<li>Altered source versions must be plainly marked as such, and must not be</li>
+</ol>
+<p>misrepresented as being the original software.</p>
+<ol>
+<li>This notice may not be removed or altered from any source distribution.</li>
+</ol>
+<p>MD4 Message-Digest Algorithm</p>
+<hr>
+<p>lines	file(s)</p>
+<p>299		code/qcommon/md4.c</p>
+<p>277		common/md4.c</p>
+<p>Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All rights reserved.</p>
+<p>License to copy and use this software is granted provided that it is identified</p>
+<p>as the &lt;93&gt;RSA Data Security, Inc. MD4 Message-Digest Algorithm&lt;94&gt; in all mater</p>
+<p>ial mentioning or referencing this software or this function.</p>
+<p>License is also granted to make and use derivative works provided that such work</p>
+<p>s are identified as &lt;93&gt;derived from the RSA Data Security, Inc. MD4 Message-Dig</p>
+<p>est Algorithm&lt;94&gt; in all material mentioning or referencing the derived work.</p>
+<p>RSA Data Security, Inc. makes no representations concerning either the merchanta</p>
+<p>bility of this software or the suitability of this software for any particular p</p>
+<p>urpose. It is provided &lt;93&gt;as is&lt;94&gt; without express or implied warranty of any</p>
+<p>kind.</p>
+<p>checksums are used to validate pak files</p>
+<p>standard C library replacement routines</p>
+<hr>
+<p>lines	file(s)</p>
+<p>1324	code/game/bg_lib.c</p>
+<p>Copyright (c) 1992, 1993</p>
+<p>The Regents of the University of California. All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without</p>
+<p>modification, are permitted provided that the following conditions</p>
+<p>are met:</p>
+<ol>
+<li>Redistributions of source code must retain the above copyright</li>
+</ol>
+<p>notice, this list of conditions and the following disclaimer.</p>
+<ol>
+<li>Redistributions in binary form must reproduce the above copyright</li>
+</ol>
+<p>notice, this list of conditions and the following disclaimer in the</p>
+<p>documentation and/or other materials provided with the distribution.</p>
+<ol>
+<li>All advertising materials mentioning features or use of this software</li>
+</ol>
+<p>must display the following acknowledgement:</p>
+<p>This product includes software developed by the University of</p>
+<p>California, Berkeley and its contributors.</p>
+<ol>
+<li>Neither the name of the University nor the names of its contributors</li>
+</ol>
+<p>may be used to endorse or promote products derived from this software</p>
+<p>without specific prior written permission.</p>
+<p>THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND</p>
+<p>ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</p>
+<p>IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</p>
+<p>ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE</p>
+<p>FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</p>
+<p>DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</p>
+<p>OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</p>
+<p>HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</p>
+<p>LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</p>
+<p>OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</p>
+<p>SUCH DAMAGE.</p>
+<p>ADPCM coder/decoder</p>
+<hr>
+<p>lines	file(s)</p>
+<p>330		code/client/snd_adpcm.c</p>
+<p>Copyright 1992 by Stichting Mathematisch Centrum, Amsterdam, The</p>
+<p>Netherlands.</p>
+<p>All Rights Reserved</p>
+<p>Permission to use, copy, modify, and distribute this software and its</p>
+<p>documentation for any purpose and without fee is hereby granted,</p>
+<p>provided that the above copyright notice appear in all copies and that</p>
+<p>both that copyright notice and this permission notice appear in</p>
+<p>supporting documentation, and that the names of Stichting Mathematisch</p>
+<p>Centrum or CWI not be used in advertising or publicity pertaining to</p>
+<p>distribution of the software without specific, written prior permission.</p>
+<p>STICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO</p>
+<p>THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND</p>
+<p>FITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE</p>
+<p>FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES</p>
+<p>WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN</p>
+<p>ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT</p>
+<p>OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</p>
+<p>JPEG library</p>
+<hr>
+<p>code/jpeg-6</p>
+<p>libs/jpeg6</p>
+<p>Copyright (C) 1991-1995, Thomas G. Lane</p>
+<p>Permission is hereby granted to use, copy, modify, and distribute this</p>
+<p>software (or portions thereof) for any purpose, without fee, subject to these</p>
+<p>conditions:</p>
+<p>(1) If any part of the source code for this software is distributed, then this</p>
+<p>README file must be included, with this copyright and no-warranty notice</p>
+<p>unaltered; and any additions, deletions, or changes to the original files</p>
+<p>must be clearly indicated in accompanying documentation.</p>
+<p>(2) If only executable code is distributed, then the accompanying</p>
+<p>documentation must state that "this software is based in part on the work of</p>
+<p>the Independent JPEG Group".</p>
+<p>(3) Permission for use of this software is granted only if the user accepts</p>
+<p>full responsibility for any undesirable consequences; the authors accept</p>
+<p>NO LIABILITY for damages of any kind.</p>
+<p>These conditions apply to any software derived from or based on the IJG code,</p>
+<p>not just to the unmodified library.  If you use our work, you ought to</p>
+<p>acknowledge us.</p>
+<p>NOTE: unfortunately the README that came with our copy of the library has</p>
+<p>been lost, so the one from release 6b is included instead. There are a few</p>
+<p>'glue type' modifications to the library to make it easier to use from</p>
+<p>the engine, but otherwise the dependency can be easily cleaned up to a</p>
+<p>better release of the library.</p>
+<p>GENERAL NOTES</p>
+<p>=============</p>
+<p>A short summary of the file layout:</p>
+<p>code/			   		Quake III Arena source code ( renderer, game code, OS layer etc. )</p>
+<p>code/bspc				bot routes compiler source code</p>
+<p>lcc/					the retargetable C compiler ( produces assembly to be turned into qvm bytecode by q3asm )</p>
+<p>q3asm/					assembly to qvm bytecode compiler</p>
+<p>q3map/					map compiler ( .map -&gt; .bsp ) - this is the version that comes with Q3Radiant 200f</p>
+<p>q3radiant/				Q3Radiant map editor build 200f ( common/ and libs/ are support dirs for radiant )</p>
+<p>While we made sure we were still able to compile the game on Windows, GNU/Linux and Mac, this build didn't get any kind of extensive testing so it may not work completely right. Whenever an id game is released under GPL, several projects start making the source code more friendly to nowaday's compilers and environements. If you are picking up this release weeks/months/years after we uploaded it, you probably want to look around on the net for cleaned up versions of this codebase as well.</p>
+<p>COMPILING ON WIN32</p>
+<p>==================</p>
+<p>VC7 / Visual C++ 2003 project files are provided:</p>
+<p>code/quake3.sln</p>
+<p>q3radiant/Radiant.sln</p>
+<p>To compile the qvms, you need to run some batch files:</p>
+<p>you will need to have lcc.exe q3cpp.exe q3rcc.exe and q3asm.exe in your path</p>
+<p>( some precompiled binaries are provided in lcc/bin and code/win32/mod-sdk-setup/bin )</p>
+<p>the qvm batch files are in code/game code/cgame code/q3_ui code/ui ..</p>
+<p>COMPILING ON GNU/LINUX</p>
+<p>==================</p>
+<p>the build system using cons, which may be known as scons's perl ancestor now</p>
+<p>you don't have to track it down though, the build script is provided in the tree</p>
+<p>you will need nasm and gcc 2.95</p>
+<p>make sure you have the X Direct Graphics Access and X Video Mode extensions headers for your X11</p>
+<p>a typical compile command goes like this:</p>
+<p>[..]/code$ ./unix/cons -- gcc=gcc-2.95 g++=g++-2.95</p>
+<p>COMPILING ON MAC</p>
+<p>================</p>
+<p>project file for OSX compile is in code/macosx/Quake3.pbproj</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

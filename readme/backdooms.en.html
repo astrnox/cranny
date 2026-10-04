@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backdooms · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Backdooms</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/Kuberwastaken/backdooms" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>The Backdooms: Running DOOM on a QR Code</p><p>Yes, this is literally the entire game. You can scan it to play.</p><p>## 🚀 Project Overview</p><p>**The Backdooms** is a compressed, self-extracting and infinitely generating HTML game inspired by DOOM 1993 and The Backrooms that can be launched and played in a web browser directly from a QR code.</p><p>This project was a week-long study I performed (now slightly longer) designed to push the limits of QR code storage and compression, to demonstrate an innovative method of hosting lightweight web applications entirely within a QR code.</p><p>---</p><p>Play a slightly less compressed version of this game here</p><p>Yes, it&#x27;s 8bit Undertale Music There</p><p>---</p><p>## 📜 Features</p><p>✅ **Fully Offline:** No internet connection is required to play the game after scanning the QR code. The URL basically has the ENTIRE code to the game</p><p>✅ **Extreme Compression:** Utilizes a combination of Zlib compression with Gzip Decompression stream along with base64 encoding to make the final result extremely compressed.</p><p>✅ **Self-Extracting Webpage:** Uses the `DecompressionStream` API to dynamically decompress and execute the game within the browser.</p><p>✅ **Mobile Compatible:** Works on modern mobile browsers that support the Decompressionstream APIs (Edge, Yandex, Opera) `[NEW]`</p><p>## 📦 Installation &amp; Dependencies</p><p>Well, technically speaking, just a modern web browser.</p><p>But if we do get into the nitty gritty of generating a QR code of a ≈ 2.5kb game:</p><p>### Prerequisites<br>- **Python 3.7+**<br>- `qrcode` library (for generating QR codes)<br>- `pillow` (for QR code image handling)</p><p>### Install Dependencies<br>```bash<br>pip install qrcode[pil]<br>```</p><p>---</p><p>## 🛠️ Usage</p><p>### 1️⃣ Convert Your Game to a QR Code<br>Run the script with the following command:<br>```bash<br>python3 QRGEN.py<br>```<br>Example:<br>```bash<br>python3 QRGEN.py EVEN-SMALLER-SLAMMER-BACKROOMS.html qrcode.png<br>```</p><p>&gt; **Note:** An alternative implementation using BigInt instead of Base64 for even smaller QR codes is available at [The BigInt Branch](https://github.com/Kuberwastaken/backdooms/tree/BigInt), though it has limited mobile browser compatibility.</p><p>### 2️⃣ Scan the QR Code<br>Use a smartphone or QR scanner to open the game directly in a web browser.</p><p>### 3️⃣ Play Instantly 🎮<br>Enjoy *The Backdooms* without needing to download or install anything!</p><p>---</p><p>## 🔍 Technical Breakdown</p><p>### Compression Workflow<br>```mermaid<br>flowchart TD<br>A[Read Input HTML] --&gt; B[Compress with Zlib]<br>B --&gt;|wbits=15| C[Base64 Encode]<br>C --&gt; D[Embed in HTML Wrapper]</p><p>subgraph browser[Browser Processing]<br>D --&gt; E[DecompressionStream &#x27;gzip&#x27;]<br>E --&gt; F{Format Mismatch}<br>end</p><p>F --&gt; G[Convert to Data URI]<br>G --&gt; H{Fits QR Code?}<br>H --&gt;|Yes| I[Generate QR]<br>H --&gt;|No| J[Reduce HTML Size]<br>J --&gt; A<br>```</p><p>**Read Input HTML:** The process starts by reading the given HTML content from a file or input source.</p><p>**Zlib Compression + GZip decompression:** The HTML is compressed using Zlib and uses Decompressionstream from GZip for best compression</p><p>**Base64 Encoding:** The compressed data is encoded in Base64, ensuring that it remains text-based and can be embedded in an HTML file safely.</p><p>**Embedding in HTML Wrapper:** A JavaScript-based self-extracting HTML wrapper is created. This wrapper includes a DecompressionStream API function that automatically decompresses the content when opened in a browser.</p><p>**Data URI Conversion:** The entire HTML is converted into a data:text/html;base64,... format, allowing it to be stored and shared easily without a physical file.</p><p>### QR Code Generation Logic</p><p>The system first tries to generate the smallest possible QR version using qr.make(fit=True), which dynamically adjusts the QR size based on content length.</p><p>If the required version exceeds 40 (the QR code standard limit), it forces version 40 with fit=False.</p><p>The lowest error correction level L (which allows the maximum data capacity) is used to fit as much data as possible.</p><p>If the data is still too large for QR v40 with level L, the process fails, and an error is returned.</p><p>### Outcome</p><p>If successful, a QR code is generated and displayed.</p><p>If not, the process terminates with an error message indicating that the data is too large to be encoded in a QR code.</p><p>---<br>## Understand the Frustration and Trial and Error<br>Read about the development journey on my blog [MindDump](https://kuberwastaken.github.io/blog/Projects/How-I-Managed-To-Get-Doom-In-A-QR-Code)</p><p>---</p><p>## 📜 License<br>This project is released under the **MIT License**—free to use, modify, and share.<br>It would make me EXTREMELY happy to see other QR games or even seeing better versions of DOOM in a QR code, given there&#x27;s so little resources related to this</p><p>---</p><p>## 🙌 Credits<br>- id Software for Developing DOOM<br>- matttkc for putting this idea in my head 5 years ago<br>- Toby Fox for the amazing music in Undertale, this game&#x27;s GitHub hosted version uses an 8 bit version of Bonetrousle<br>- The amazing contributers that continue to make backdooms even more insane</p><p>Developed by **Kuber Mehta** :)</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

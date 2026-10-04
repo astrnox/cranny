@@ -1,329 +1,6108 @@
 {
   "$schema": "./games.schema.json",
-  "version": 2,
+  "version": 3,
   "owner": "astrnox",
-  "updatedAt": "2026-10-01",
-
+  "updatedAt": "2026-10-04",
   "categories": [
-    { "id": "puzzle",   "name": "益智" },
-    { "id": "casual",   "name": "休闲" },
-    { "id": "action",   "name": "动作" },
-    { "id": "arcade",   "name": "街机" },
-    { "id": "strategy", "name": "策略" },
-    { "id": "board",    "name": "棋牌" },
-    { "id": "shooter",  "name": "射击" },
-    { "id": "io",       "name": ".io" },
-    { "id": "sports",   "name": "体育" },
-    { "id": "retro",    "name": "怀旧" },
-    { "id": "word",     "name": "文字" },
-    { "id": "geo",      "name": "地理" }
+    {
+      "id": "puzzle",
+      "name": "益智"
+    },
+    {
+      "id": "casual",
+      "name": "休闲"
+    },
+    {
+      "id": "action",
+      "name": "动作"
+    },
+    {
+      "id": "arcade",
+      "name": "街机"
+    },
+    {
+      "id": "strategy",
+      "name": "策略"
+    },
+    {
+      "id": "board",
+      "name": "棋牌"
+    },
+    {
+      "id": "shooter",
+      "name": "射击"
+    },
+    {
+      "id": "io",
+      "name": ".io"
+    },
+    {
+      "id": "sports",
+      "name": "体育"
+    },
+    {
+      "id": "retro",
+      "name": "怀旧"
+    },
+    {
+      "id": "word",
+      "name": "文字"
+    },
+    {
+      "id": "geo",
+      "name": "地理"
+    },
+    {
+      "id": "survival",
+      "name": "生存"
+    },
+    {
+      "id": "rpg",
+      "name": "角色扮演"
+    },
+    {
+      "id": "tabletop",
+      "name": "桌游"
+    },
+    {
+      "id": "music",
+      "name": "音乐"
+    },
+    {
+      "id": "racing",
+      "name": "竞速"
+    },
+    {
+      "id": "sim",
+      "name": "模拟"
+    },
+    {
+      "id": "sandbox",
+      "name": "沙盒"
+    },
+    {
+      "id": "tower",
+      "name": "塔防"
+    }
   ],
-
+  "licenses": [
+    {
+      "id": "MIT",
+      "name": false,
+      "url": "https://opensource.org/license/mit",
+      "commercial": true,
+      "shareAlike": false,
+      "network": false
+    },
+    {
+      "id": "Apache-2.0",
+      "name": false,
+      "url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "commercial": true,
+      "shareAlike": true,
+      "network": false
+    },
+    {
+      "id": "BSD",
+      "name": false,
+      "url": "https://opensource.org/license/bsd-3-clause",
+      "commercial": true,
+      "shareAlike": false,
+      "network": false
+    },
+    {
+      "id": "zlib",
+      "name": false,
+      "url": "https://opensource.org/license/zlib-license",
+      "commercial": true,
+      "shareAlike": false,
+      "network": false
+    },
+    {
+      "id": "MPL-2.0",
+      "name": false,
+      "url": "https://www.mozilla.org/media/MPL/2.0/",
+      "commercial": true,
+      "shareAlike": true,
+      "network": false
+    },
+    {
+      "id": "LGPL-2.1",
+      "name": false,
+      "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html",
+      "commercial": true,
+      "shareAlike": true,
+      "network": false
+    },
+    {
+      "id": "GPL-2.0",
+      "name": false,
+      "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+      "commercial": true,
+      "shareAlike": true,
+      "network": false
+    },
+    {
+      "id": "GPL-3.0",
+      "name": false,
+      "url": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "commercial": true,
+      "shareAlike": true,
+      "network": false
+    },
+    {
+      "id": "AGPL-3.0",
+      "name": true,
+      "url": "https://www.gnu.org/licenses/agpl-3.0.html",
+      "commercial": true,
+      "shareAlike": true,
+      "network": true
+    },
+    {
+      "id": "CC-BY-SA-3.0",
+      "name": true,
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "commercial": true,
+      "shareAlike": true,
+      "network": true
+    },
+    {
+      "id": "CC-BY-SA-4.0",
+      "name": true,
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "commercial": true,
+      "shareAlike": true,
+      "network": true
+    },
+    {
+      "id": "CC0-1.0",
+      "name": false,
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial": true,
+      "shareAlike": false,
+      "network": false
+    },
+    {
+      "id": "NetHack-PL",
+      "name": false,
+      "url": "https://www.nethack.org/common/license.html",
+      "commercial": true,
+      "shareAlike": true,
+      "network": false
+    },
+    {
+      "id": "OSL-3.0",
+      "name": true,
+      "url": "https://opensource.org/license/osl-3-0",
+      "commercial": true,
+      "shareAlike": true,
+      "network": true
+    }
+  ],
   "games": [
     {
       "id": "2048",
       "title": "2048 合集",
-      "alias": ["2048", "二四八", "数字合并"],
+      "alias": [
+        "二四八",
+        "数字合并"
+      ],
       "desc": "多种玩法，一种经典。数字合并游戏的合集版。",
       "cover": "assets/covers/2048.svg",
-      "readmeLangs": { "default": "zh", "available": ["zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "zh",
+        "available": [
+          "zh"
+        ]
+      },
       "accent": 210,
-      "category": ["puzzle", "casual", "arcade"],
-      "tags": ["益智", "数字", "合成", "单指"],
+      "category": [
+        "puzzle",
+        "casual",
+        "arcade"
+      ],
+      "tags": [
+        "益智",
+        "数字",
+        "合成",
+        "单指"
+      ],
+      "kind": "web",
       "mode": "redirect",
+      "embeddable": false,
       "url": "https://2048.xns.asia/",
       "repo": "https://github.com/astrnox/2048",
-      "platform": ["web"],
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-08-21",
       "source": "own",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      }
     },
     {
       "id": "hextris",
       "title": "Hextris 六边形俄罗斯方块",
-      "alias": ["Hextris", "六边形", "hex"],
+      "alias": [
+        "Hextris",
+        "六边形",
+        "hex"
+      ],
       "desc": "六边形旋转方块，节奏明快的高分挑战。",
       "cover": "assets/covers/hextris.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 280,
-      "category": ["arcade", "puzzle", "casual"],
-      "tags": ["街机", "反应", "高分", "六边形"],
+      "category": [
+        "arcade",
+        "puzzle",
+        "casual"
+      ],
+      "tags": [
+        "街机",
+        "反应",
+        "高分",
+        "六边形"
+      ],
+      "kind": "web",
       "mode": "embed",
       "url": "https://hextris.io/",
       "repo": "https://github.com/astrnox/hextris",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" },
-      "note": "仓库含 CNAME 指向 hextris.io，该域名为上游所有"
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游未附标准许可证文件，仅源码公开",
+      "note": "仓库含 CNAME 指向 hextris.io，该域名为上游所有",
+      "upstream": "https://github.com/Hextris/Hextris"
     },
     {
       "id": "tower-game",
       "title": "Tower Game 叠塔",
-      "alias": ["tower", "叠塔", "建塔"],
+      "alias": [
+        "tower",
+        "叠塔",
+        "建塔"
+      ],
       "desc": "时机精准地叠放方块，塔越高越刺激。",
       "cover": "assets/covers/tower-game.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 195,
-      "category": ["casual", "arcade"],
-      "tags": ["休闲", "单指", "时机", "叠塔"],
+      "category": [
+        "casual",
+        "arcade"
+      ],
+      "tags": [
+        "休闲",
+        "单指",
+        "时机",
+        "叠塔"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/tower_game/",
       "repo": "https://github.com/astrnox/tower_game",
-      "platform": ["web"],
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      }
     },
     {
       "id": "plants-vs-zombies",
       "title": "植物大战僵尸 H5",
-      "alias": ["pvz", "植物大战僵尸", "plants"],
+      "alias": [
+        "pvz",
+        "植物大战僵尸",
+        "plants"
+      ],
       "desc": "经典塔防玩法的网页复刻版。",
       "cover": "assets/covers/plants-vs-zombies.svg",
-      "readmeLangs": { "default": "zh", "available": ["zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "zh",
+        "available": [
+          "zh"
+        ]
+      },
       "accent": 120,
-      "category": ["strategy", "casual"],
-      "tags": ["塔防", "经典", "策略"],
+      "category": [
+        "tower",
+        "strategy",
+        "casual"
+      ],
+      "tags": [
+        "塔防",
+        "经典",
+        "策略"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/h5-game-plantsVSzombies/",
       "repo": "https://github.com/astrnox/h5-game-plantsVSzombies",
-      "platform": ["web"],
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      }
     },
     {
       "id": "trust",
       "title": "Trust",
-      "alias": ["trust", "信任"],
-      "desc": "独立的网页小游戏作品。",
+      "alias": [
+        "信任"
+      ],
+      "desc": "独立的网页小游戏作品，自己写着玩的。",
       "cover": "assets/covers/trust.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 45,
-      "category": ["casual"],
-      "tags": ["休闲", "独立"],
+      "category": [
+        "casual"
+      ],
+      "tags": [
+        "休闲",
+        "独立"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/trust/",
       "repo": "https://github.com/astrnox/trust",
-      "platform": ["web"],
+      "license": "CC0-1.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "own",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      }
     },
-
     {
       "id": "temple-of-boom",
       "title": "Temple of Boom",
-      "alias": ["temple", "神庙", "boom"],
+      "alias": [
+        "temple",
+        "神庙",
+        "boom"
+      ],
       "desc": "动作闯关类网页游戏。",
       "cover": "assets/covers/temple-of-boom.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 20,
-      "category": ["action", "arcade"],
-      "tags": ["动作", "闯关"],
+      "category": [
+        "action",
+        "arcade"
+      ],
+      "tags": [
+        "动作",
+        "闯关"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/temple-of-boom/",
       "repo": "https://github.com/astrnox/temple-of-boom",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游未附标准许可证文件，仅源码公开"
     },
     {
       "id": "wordle-plus",
       "title": "Wordle Plus",
-      "alias": ["wordle", "猜词", "单词"],
+      "alias": [
+        "wordle",
+        "猜词",
+        "单词"
+      ],
       "desc": "猜单词游戏，每行一词逐步逼近答案。",
       "cover": "assets/covers/wordle-plus.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 155,
-      "category": ["word", "puzzle"],
-      "tags": ["文字", "猜词", "益智"],
+      "category": [
+        "word",
+        "puzzle"
+      ],
+      "tags": [
+        "文字",
+        "猜词",
+        "益智"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/wordle-plus/",
       "repo": "https://github.com/astrnox/wordle-plus",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游未附标准许可证文件，仅源码公开"
     },
     {
       "id": "odd-bot-out",
       "title": "Odd Bot Out",
-      "alias": ["odd bot", "找出不同"],
+      "alias": [
+        "odd bot",
+        "找出不同"
+      ],
       "desc": "从机器人堆里找出与众不同的那一个。",
       "cover": "assets/covers/odd-bot-out.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 330,
-      "category": ["puzzle", "casual"],
-      "tags": ["观察", "益智", "找不同"],
+      "category": [
+        "puzzle",
+        "casual"
+      ],
+      "tags": [
+        "观察",
+        "益智",
+        "找不同"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/odd-bot-out/",
       "repo": "https://github.com/astrnox/odd-bot-out",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游未附标准许可证文件，仅源码公开"
     },
     {
       "id": "bubble-shooter",
       "title": "Bubble Shooter 泡泡龙",
-      "alias": ["bubble", "泡泡龙", "消泡泡"],
+      "alias": [
+        "bubble",
+        "泡泡龙",
+        "消泡泡"
+      ],
       "desc": "经典泡泡龙玩法，三消击破整片泡泡。",
       "cover": "assets/covers/bubble-shooter.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 265,
-      "category": ["arcade", "puzzle"],
-      "tags": ["街机", "消除", "经典"],
+      "category": [
+        "arcade",
+        "puzzle"
+      ],
+      "tags": [
+        "街机",
+        "消除",
+        "经典"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/arkadiumx27s-bubble-shooter/",
       "repo": "https://github.com/astrnox/arkadiumx27s-bubble-shooter",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游未附标准许可证文件，仅源码公开"
     },
     {
       "id": "10-minutes-till-dawn",
       "title": "10 Minutes Till Dawn",
-      "alias": ["10 minutes", "黎明前十分钟"],
+      "alias": [
+        "10 minutes",
+        "黎明前十分钟"
+      ],
       "desc": "生存射击，在怪物潮中撑过十分钟。",
       "cover": "assets/covers/10-minutes-till-dawn.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 250,
-      "category": ["shooter", "action"],
-      "tags": ["射击", "生存", "Roguelike"],
+      "category": [
+        "shooter",
+        "action",
+        "survival"
+      ],
+      "tags": [
+        "射击",
+        "生存",
+        "Roguelike"
+      ],
+      "kind": "web",
       "mode": "embed",
+      "embeddable": true,
       "url": "https://astrnox.github.io/10-minutes-till-dawn/",
       "repo": "https://github.com/astrnox/10-minutes-till-dawn",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "embedCheck": { "checkedAt": "2026-10-01", "result": "unknown" }
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游未附标准许可证文件，仅源码公开"
     },
-
     {
       "id": "fcgame",
       "title": "FCGame · FC/NES 模拟器",
-      "alias": ["fc", "nes", "红白机", "模拟器"],
+      "alias": [
+        "fc",
+        "nes",
+        "红白机",
+        "模拟器"
+      ],
       "desc": "基于 JSNES 的网页模拟器，支持导入本地 ROM。",
       "cover": "assets/covers/fcgame.svg",
-      "readmeLangs": { "default": "zh", "available": ["zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "zh",
+        "available": [
+          "zh"
+        ]
+      },
       "accent": 0,
-      "category": ["retro", "arcade"],
-      "tags": ["模拟器", "红白机", "怀旧", "ROM"],
+      "category": [
+        "retro",
+        "arcade"
+      ],
+      "tags": [
+        "模拟器",
+        "红白机",
+        "怀旧",
+        "ROM"
+      ],
+      "kind": "web",
       "mode": "redirect",
+      "embeddable": false,
       "url": "https://github.com/astrnox/fcgame",
       "repo": "https://github.com/astrnox/fcgame",
-      "platform": ["web"],
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": true,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
       "note": "需先部署到 Pages/Docker；仅内置合规 Homebrew ROM，不内置商业 ROM"
     },
-
     {
       "id": "worldguessr",
       "title": "WorldGuessr 猜地理",
-      "alias": ["worldguessr", "猜地图", "geo"],
+      "alias": [
+        "worldguessr",
+        "猜地图",
+        "geo"
+      ],
       "desc": "街景猜地点的地理问答游戏（需服务端）。",
       "cover": "assets/covers/worldguessr.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 205,
-      "category": ["geo", "casual"],
-      "tags": ["地理", "猜谜", "街景"],
+      "category": [
+        "geo",
+        "casual"
+      ],
+      "tags": [
+        "地理",
+        "猜谜",
+        "街景"
+      ],
+      "kind": "web",
       "mode": "redirect",
+      "embeddable": false,
       "url": "https://github.com/astrnox/worldguessr",
       "repo": "https://github.com/astrnox/worldguessr",
-      "upstream": "https://github.com/codergautam/worldguessr",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
-      "note": "Next.js + Node 服务端项目，GitHub Pages 无法直接运行"
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "上游许可证识别为 NOASSERTION",
+      "note": "Next.js + Node 服务端项目，GitHub Pages 无法直接运行",
+      "upstream": "https://github.com/codergautam/worldguessr"
     },
     {
       "id": "remake",
       "title": "Remake",
-      "alias": ["remake", "重制"],
+      "alias": [
+        "重制"
+      ],
       "desc": "pnpm monorepo 前端项目，需构建后部署。",
       "cover": "assets/covers/remake.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 175,
-      "category": ["casual"],
-      "tags": ["待构建", "monorepo"],
+      "category": [
+        "casual"
+      ],
+      "tags": [
+        "待构建",
+        "monorepo"
+      ],
+      "kind": "web",
       "mode": "redirect",
+      "embeddable": false,
       "url": "https://github.com/astrnox/remake",
       "repo": "https://github.com/astrnox/remake",
-      "platform": ["web"],
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "own",
       "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
       "note": "需 pnpm build 产出 dist 后才能部署"
     },
     {
       "id": "fluid-weiqi-web",
       "title": "Fluid 围棋",
-      "alias": ["围棋", "weiqi", "go", "fluid"],
+      "alias": [
+        "围棋",
+        "weiqi",
+        "go",
+        "fluid"
+      ],
       "desc": "围棋对战前端，含构建流程与服务端配置。",
       "cover": "assets/covers/fluid-weiqi-web.svg",
-      "readmeLangs": { "default": "en", "available": ["en", "zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en",
+          "zh"
+        ]
+      },
       "accent": 35,
-      "category": ["board", "strategy"],
-      "tags": ["围棋", "棋类", "对弈"],
+      "category": [
+        "board",
+        "strategy",
+        "tabletop"
+      ],
+      "tags": [
+        "围棋",
+        "棋类",
+        "对弈"
+      ],
+      "kind": "web",
       "mode": "redirect",
+      "embeddable": false,
       "url": "https://github.com/astrnox/fluid-weiqi-web",
       "repo": "https://github.com/astrnox/fluid-weiqi-web",
-      "platform": ["web"],
+      "platform": [
+        "web"
+      ],
+      "players": 1,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "own",
       "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
+      "licenseNote": "仓库许可证识别为 NOASSERTION，需补充许可声明",
       "note": "pnpm monorepo + vercel.json，需构建后部署到 Vercel"
     },
     {
       "id": "fight-the-landlord",
       "title": "斗地主 AI 对战",
-      "alias": ["斗地主", "landlord", "douzero"],
+      "alias": [
+        "斗地主",
+        "landlord",
+        "douzero"
+      ],
       "desc": "Go 后端驱动的斗地主，集成 DouZero AI。",
       "cover": "assets/covers/fight-the-landlord.svg",
-      "readmeLangs": { "default": "zh", "available": ["zh"] },
+      "coverFrom": "scene",
+      "readmeLangs": {
+        "default": "zh",
+        "available": [
+          "zh"
+        ]
+      },
       "accent": 355,
-      "category": ["board", "strategy"],
-      "tags": ["斗地主", "AI", "棋牌"],
+      "category": [
+        "board",
+        "tabletop"
+      ],
+      "tags": [
+        "斗地主",
+        "AI",
+        "棋牌"
+      ],
+      "kind": "web",
       "mode": "redirect",
+      "embeddable": false,
       "url": "https://github.com/astrnox/fight-the-landlord",
       "repo": "https://github.com/astrnox/fight-the-landlord",
-      "platform": ["web"],
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 2,
       "featured": false,
       "addedAt": "2026-10-01",
       "source": "fork",
       "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-01",
+        "result": "unknown"
+      },
       "note": "Go 后端项目（含 Dockerfile），需服务器运行，非纯前端"
+    },
+    {
+      "id": "mindustry",
+      "title": "Mindustry 工厂战争",
+      "alias": [
+        "mindustry",
+        "塔防",
+        "流水线"
+      ],
+      "desc": "塔防加流水线自动化，一人Factories 的开源答案。",
+      "cover": "assets/covers/mindustry.svg",
+      "coverFrom": "scene",
+      "accent": 205,
+      "category": [
+        "strategy",
+        "tower",
+        "action"
+      ],
+      "tags": [
+        "塔防",
+        "自动化",
+        "RTS",
+        "可联机"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://mindustrygame.github.io/",
+      "repo": "https://github.com/Anuken/Mindustry",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "freeciv-web",
+      "title": "Freeciv-web 自由文明",
+      "alias": [
+        "freeciv",
+        "文明",
+        "4x"
+      ],
+      "desc": "浏览器里的 4X 文明网页版，开源世纪老将。",
+      "cover": "assets/covers/freeciv-web.svg",
+      "coverFrom": "scene",
+      "accent": 30,
+      "category": [
+        "strategy",
+        "board"
+      ],
+      "tags": [
+        "4X",
+        "回合",
+        "文明",
+        "多人"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://freecivweb.org/",
+      "repo": "https://github.com/freeciv/freeciv-web",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "openttd-wasm",
+      "title": "OpenTTD 交通大亨",
+      "alias": [
+        "openttd",
+        "td",
+        "交通"
+      ],
+      "desc": "开源运输模拟，WASM 移植后浏览器直接跑。",
+      "cover": "assets/covers/openttd-wasm.svg",
+      "coverFrom": "scene",
+      "accent": 200,
+      "category": [
+        "sim",
+        "strategy"
+      ],
+      "tags": [
+        "模拟",
+        "交通",
+        "经营",
+        "像素"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://transport-tycoon.k3.demos.sulat.com/",
+      "repo": "https://github.com/OpenTTD/OpenTTD",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "unciv",
+      "title": "Unciv 完整文明",
+      "alias": [
+        "unciv",
+        "文明"
+      ],
+      "desc": "手机端 3  civilisation 的开源复刻，Web 版可直接玩。",
+      "cover": "assets/covers/unciv.svg",
+      "coverFrom": "scene",
+      "accent": 215,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "4X",
+        "回合",
+        "文明"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://play.rosebud.ai/play/unciv-base",
+      "repo": "https://github.com/yairm210/Unciv",
+      "license": "MPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "cc-web",
+      "title": "Command & Conquer 网页复刻",
+      "alias": [
+        "cc",
+        "红色警戒",
+        "rts"
+      ],
+      "desc": "红色警戒网页复刻，非官方但完整可玩。",
+      "cover": "assets/covers/cc-web.svg",
+      "coverFrom": "scene",
+      "accent": 12,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "RTS",
+        "即时战略",
+        "复刻"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://adityaravishankar.github.io/command-and-conquer/",
+      "repo": "https://github.com/adityaravishankar/command-and-conquer",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 808,
+      "pushedAt": "2020-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "licenseNote": "仓库无 LICENSE 文件，仅源码公开，法律上默认保留所有权利",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "ancient-beast",
+      "title": "Ancient Beast 远古巨兽",
+      "alias": [
+        "ancientbeast",
+        "回合计"
+      ],
+      "desc": "阿凡提式回合策略，画面精致的老牌开源。",
+      "cover": "assets/covers/ancient-beast.svg",
+      "coverFrom": "scene",
+      "accent": 270,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "回合",
+        "策略",
+        "多人"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://ancientbeast.com/",
+      "repo": "https://github.com/FreezingMoon/AncientBeast",
+      "license": "AGPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "burgomaster-1255",
+      "title": "1255 Burgomaster 城建",
+      "alias": [
+        "1255",
+        "城建"
+      ],
+      "desc": "中世纪城市建设与战役管理，界面朴素但系统扎实。",
+      "cover": "assets/covers/burgomaster-1255.svg",
+      "coverFrom": "scene",
+      "accent": 25,
+      "category": [
+        "strategy",
+        "sim"
+      ],
+      "tags": [
+        "城建",
+        "中世纪",
+        "建造"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://1255.areso.pro/",
+      "repo": "https://github.com/Areso/1255-burgomaster",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "3d-city",
+      "title": "3d.city 城市模拟",
+      "alias": [
+        "3dcity",
+        "城市"
+      ],
+      "desc": "像搭积木一样长城市的网页沙盒。",
+      "cover": "assets/covers/3d-city.svg",
+      "coverFrom": "scene",
+      "accent": 165,
+      "category": [
+        "sim",
+        "sandbox"
+      ],
+      "tags": [
+        "城市",
+        "建造",
+        "沙盒"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://lo-th.github.io/3d.city/",
+      "repo": "https://github.com/lo-th/3d.city",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "cataclysm-dda",
+      "title": "Cataclysm: DDA",
+      "alias": [
+        "dda",
+        "末日",
+        "cataclysm"
+      ],
+      "desc": "回合制生存 Roguelike，浏览器 WASM 版能玩但很长。",
+      "cover": "assets/covers/cataclysm-dda.svg",
+      "coverFrom": "scene",
+      "accent": 45,
+      "category": [
+        "survival",
+        "rpg"
+      ],
+      "tags": [
+        "Roguelike",
+        "生存",
+        "回合",
+        "末日"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://browsercraft.com/play/cataclysm-dark-days-ahead",
+      "repo": "https://github.com/CleverRaven/Cataclysm-DDA",
+      "license": "CC-BY-SA-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "shattered-pixel-dungeon",
+      "title": "Shattered Pixel Dungeon",
+      "alias": [
+        "像素地牢",
+        "spd"
+      ],
+      "desc": "像素风 Roguelike 地牢爬行，手机也能玩。",
+      "cover": "assets/covers/shattered-pixel-dungeon.svg",
+      "coverFrom": "scene",
+      "accent": 350,
+      "category": [
+        "rpg",
+        "survival"
+      ],
+      "tags": [
+        "Roguelike",
+        "地牢",
+        "像素",
+        "回合"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://pixel-dungeon.com/",
+      "repo": "https://github.com/00-Evan/shattered-pixel-dungeon",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "dcss",
+      "title": "Dungeon Crawl Stone Soup",
+      "alias": [
+        "dcss",
+        "石头汤",
+        "crawl"
+      ],
+      "desc": "文字 roguelike 的社区分支，WebTiles 直连公共服务器。",
+      "cover": "assets/covers/dcss.svg",
+      "coverFrom": "scene",
+      "accent": 60,
+      "category": [
+        "rpg",
+        "survival"
+      ],
+      "tags": [
+        "Roguelike",
+        "文字",
+        "地牢",
+        "多人"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://crawl.develz.org/play.htm",
+      "repo": "https://github.com/crawl/crawl",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "nethack",
+      "title": "NetHack",
+      "alias": [
+        "nethack",
+        "地下城"
+      ],
+      "desc": "三十年不倒的地牢绞肉机，正版授权老游戏。",
+      "cover": "assets/covers/nethack.svg",
+      "coverFrom": "scene",
+      "accent": 95,
+      "category": [
+        "rpg",
+        "survival"
+      ],
+      "tags": [
+        "Roguelike",
+        "文字",
+        "地牢",
+        "硬核"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://nethack.alt.org/",
+      "repo": "https://github.com/NetHack/NetHack",
+      "license": "NetHack-PL",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "实测响应头带 CSP frame-ancestors self，禁止内嵌",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "angband",
+      "title": "Angband",
+      "alias": [
+        "angband"
+      ],
+      "desc": "classic roguelike，设定深且自由度高。",
+      "cover": "assets/covers/angband.svg",
+      "coverFrom": "scene",
+      "accent": 30,
+      "category": [
+        "rpg"
+      ],
+      "tags": [
+        "Roguelike",
+        "文字",
+        "地牢"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://angband.live/",
+      "repo": "https://github.com/angband/angband",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "a-dark-room",
+      "title": "A Dark Room",
+      "alias": [
+        "暗室",
+        "adr"
+      ],
+      "desc": "一开始只有生火按钮的文字生存，克制到极致的经典。",
+      "cover": "assets/covers/a-dark-room.svg",
+      "coverFrom": "scene",
+      "accent": 0,
+      "category": [
+        "word",
+        "survival"
+      ],
+      "tags": [
+        "文字",
+        "生存",
+        "放置",
+        "极简"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://adarkroom.doublespeakgames.com/",
+      "repo": "https://github.com/doublespeakgames/adarkroom",
+      "license": "MPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "2048-original",
+      "title": "2048 原版",
+      "alias": [
+        "2048",
+        "二四八",
+        "数字合并"
+      ],
+      "desc": "那个把手机屏幕玩秃的数字合并游戏原版。",
+      "cover": "assets/covers/2048-original.svg",
+      "coverFrom": "scene",
+      "accent": 45,
+      "category": [
+        "puzzle",
+        "casual"
+      ],
+      "tags": [
+        "益智",
+        "数字",
+        "合成",
+        "经典"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play2048.co/",
+      "repo": "https://github.com/gabrielecirulli/2048",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方站设了 frame-ancestors，无法内嵌；站内 fork 版见「2048 合集」",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "candy-box-2",
+      "title": "Candy Box 2",
+      "alias": [
+        "糖果盒",
+        "放置"
+      ],
+      "desc": "网页里藏了二十年的放置 RPG，后劲很大。",
+      "cover": "assets/covers/candy-box-2.svg",
+      "coverFrom": "scene",
+      "accent": 330,
+      "category": [
+        "rpg",
+        "casual"
+      ],
+      "tags": [
+        "放置",
+        "文字",
+        "隐藏要素",
+        "彩蛋"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://candybox2.github.io/",
+      "repo": "https://github.com/candybox2/candybox2.github.io",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "clumsy-bird",
+      "title": "Clumsy Bird 笨笨鸟",
+      "alias": [
+        "笨鸟",
+        "clumsy"
+      ],
+      "desc": "Flappy Bird 的开源复刻，物理弹得莫名其妙地好玩。",
+      "cover": "assets/covers/clumsy-bird.svg",
+      "coverFrom": "scene",
+      "accent": 55,
+      "category": [
+        "arcade",
+        "casual"
+      ],
+      "tags": [
+        "飞行",
+        "物理",
+        "单指",
+        "高分"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://ellisonleao.github.io/clumsy-bird/",
+      "repo": "https://github.com/ellisonleao/clumsy-bird",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "duck-hunt-js",
+      "title": "Duck Hunt JS 猎鸭",
+      "alias": [
+        "猎鸭",
+        "ducks"
+      ],
+      "desc": "红白机上那两管猎鸭枪的网页复刻。",
+      "cover": "assets/covers/duck-hunt-js.svg",
+      "coverFrom": "scene",
+      "accent": 20,
+      "category": [
+        "shooter",
+        "retro"
+      ],
+      "tags": [
+        "射击",
+        "怀旧",
+        "复刻",
+        "鼠标"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://duckhuntjs.com/",
+      "repo": "https://github.com/MattSurabian/DuckHunt-JS",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "skifree-js",
+      "title": "SkiFree.js 滑雪",
+      "alias": [
+        "滑雪",
+        "skifree"
+      ],
+      "desc": "无尽下坡滑雪，越滑越快，看你能撑多久。",
+      "cover": "assets/covers/skifree-js.svg",
+      "coverFrom": "scene",
+      "accent": 195,
+      "category": [
+        "arcade",
+        "sports"
+      ],
+      "tags": [
+        "滑雪",
+        "无尽",
+        "反应",
+        "单指"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://basicallydan.github.io/skifree.js/",
+      "repo": "https://github.com/basicallydan/skifree.js",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "alien-invasion",
+      "title": "Alien Invasion 星际侵略",
+      "alias": [
+        "外星",
+        "入侵"
+      ],
+      "desc": "打飞机类射击，敌人分波次涌来。",
+      "cover": "assets/covers/alien-invasion.svg",
+      "coverFrom": "scene",
+      "accent": 140,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "射击",
+        "飞机",
+        "复古"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://cykod.github.io/AlienInvasion/",
+      "repo": "https://github.com/cykod/AlienInvasion",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 183,
+      "pushedAt": "2019-10-07",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "breakout-71",
+      "title": "Breakout 71",
+      "alias": [
+        "打砖块",
+        "breakout"
+      ],
+      "desc": "70 年代太空打砖块的现代重制，画面很讲究。",
+      "cover": "assets/covers/breakout-71.svg",
+      "coverFrom": "scene",
+      "accent": 250,
+      "category": [
+        "arcade",
+        "puzzle"
+      ],
+      "tags": [
+        "打砖块",
+        "街机",
+        "矢量"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://breakout.lecaro.me/",
+      "repo": "https://gitlab.com/lecarore/breakout71",
+      "license": "AGPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "digger",
+      "title": "Digger 挖地",
+      "alias": [
+        "挖地",
+        "digger"
+      ],
+      "desc": "钻地采矿石的 HTML5 小游戏，上游仓库已归档。",
+      "cover": "assets/covers/digger.svg",
+      "coverFrom": "scene",
+      "accent": 85,
+      "category": [
+        "arcade",
+        "action"
+      ],
+      "tags": [
+        "挖矿",
+        "街机",
+        "HTML5"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://lutzroeder.com/html5/digger/",
+      "repo": "https://github.com/lutzroeder/digger",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 95,
+      "pushedAt": "2024-02-12",
+      "archived": true,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "licenseNote": "上游仓库已归档且无许可证文件",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "custom-tetris",
+      "title": "Custom Tetris 俄罗斯方块",
+      "alias": [
+        "俄罗斯方块",
+        "tetris"
+      ],
+      "desc": "带自定关卡编辑器的俄罗斯方块。",
+      "cover": "assets/covers/custom-tetris.svg",
+      "coverFrom": "scene",
+      "accent": 280,
+      "category": [
+        "puzzle",
+        "arcade"
+      ],
+      "tags": [
+        "俄罗斯方块",
+        "消除",
+        "编辑器"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://ondras.github.io/custom-tetris/",
+      "repo": "https://github.com/ondras/custom-tetris",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "backdooms",
+      "title": "Backdooms",
+      "alias": [
+        "dooms",
+        "快克"
+      ],
+      "desc": "老 Doom 引擎做的手机版，扫码即玩。",
+      "cover": "assets/covers/backdooms.svg",
+      "coverFrom": "scene",
+      "accent": 0,
+      "category": [
+        "shooter",
+        "retro"
+      ],
+      "tags": [
+        "FPS",
+        "复古",
+        "手机",
+        "扫码"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://kuberwastaken.github.io/backdooms/",
+      "repo": "https://github.com/Kuberwastaken/backdooms",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 641,
+      "pushedAt": "2026-09-17",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "captain-rogers",
+      "title": "Captain Rogers 罗杰船长",
+      "alias": [
+        "罗杰船长",
+        "platformer"
+      ],
+      "desc": "单屏平台跳跃，致敬红白机时代。",
+      "cover": "assets/covers/captain-rogers.svg",
+      "coverFrom": "scene",
+      "accent": 165,
+      "category": [
+        "action",
+        "arcade"
+      ],
+      "tags": [
+        "平台",
+        "跳跃",
+        "像素"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://enclavegames.com/games/captain-rogers/",
+      "repo": "https://github.com/EnclaveGames/Captain-Rogers",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "broken",
+      "stars": 51,
+      "pushedAt": "2020-05-24",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "licenseNote": "仓库无 LICENSE 文件",
+      "note": "在线站已 404（项目下线），仓库与 README 仍可访问",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "green-mahjong",
+      "title": "Green Mahjong 绿麻将",
+      "alias": [
+        "麻将",
+        "mahjong"
+      ],
+      "desc": "麻将连连看，三消规则清爽不费脑。",
+      "cover": "assets/covers/green-mahjong.svg",
+      "coverFrom": "scene",
+      "accent": 130,
+      "category": [
+        "puzzle",
+        "casual"
+      ],
+      "tags": [
+        "麻将",
+        "三消",
+        "消除"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://danbeck.github.io/green-mahjong/",
+      "repo": "https://github.com/danbeck/green-mahjong",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "c4",
+      "title": "c4 四子棋",
+      "alias": [
+        "四子棋",
+        "connect4"
+      ],
+      "desc": "经典四子棋，网页上跟人对弈或跟电脑练。",
+      "cover": "assets/covers/c4.svg",
+      "coverFrom": "scene",
+      "accent": 210,
+      "category": [
+        "tabletop",
+        "board"
+      ],
+      "tags": [
+        "棋类",
+        "桌游",
+        "策略",
+        "双人对弈"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://kenrick95.github.io/c4/",
+      "repo": "https://github.com/kenrick95/c4",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 2,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "diablo-js",
+      "title": "Diablo JS 暗黑",
+      "alias": [
+        "暗黑",
+        "diablo"
+      ],
+      "desc": "动作 RPG，地牢刷装备的手感很有那年味。",
+      "cover": "assets/covers/diablo-js.svg",
+      "coverFrom": "scene",
+      "accent": 5,
+      "category": [
+        "rpg",
+        "action"
+      ],
+      "tags": [
+        "刷装备",
+        "地牢",
+        "动作"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://mitallast.github.io/diablo-js/",
+      "repo": "https://github.com/mitallast/diablo-js",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "hexa-battle",
+      "title": "Hexa Battle 六角战",
+      "alias": [
+        "六角战",
+        "hb"
+      ],
+      "desc": "六边形格子上的爬行对战。",
+      "cover": "assets/covers/hexa-battle.svg",
+      "coverFrom": "scene",
+      "accent": 185,
+      "category": [
+        "rpg",
+        "action"
+      ],
+      "tags": [
+        "六边形",
+        "地牢",
+        "爬行"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://itajaja.github.io/hb/",
+      "repo": "https://github.com/itajaja/hb",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 87,
+      "pushedAt": "2017-06-21",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "untrusted",
+      "title": "Untrusted 不可信",
+      "alias": [
+        "不可信"
+      ],
+      "desc": "画风很怪的解谜 RPG，第一人称里摸索出路。",
+      "cover": "assets/covers/untrusted.svg",
+      "coverFrom": "scene",
+      "accent": 25,
+      "category": [
+        "rpg",
+        "puzzle"
+      ],
+      "tags": [
+        "解谜",
+        "第一人称",
+        "复古"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://alexnisnevich.github.io/untrusted/",
+      "repo": "https://github.com/AlexNisnevich/untrusted",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "rapid-dominance",
+      "title": "Rapid Dominance 快节奏",
+      "alias": [
+        "rapid"
+      ],
+      "desc": "RTS 与卡牌混合的快节奏对战。",
+      "cover": "assets/covers/rapid-dominance.svg",
+      "coverFrom": "scene",
+      "accent": 15,
+      "category": [
+        "strategy",
+        "board"
+      ],
+      "tags": [
+        "RTS",
+        "卡牌",
+        "快节奏"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://wenta.github.io/rapid-dominance/",
+      "repo": "https://github.com/wenta/rapid-dominance",
+      "license": "Apache-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 18,
+      "pushedAt": "2023-11-01",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "hexgl",
+      "title": "HexGL 未来竞速",
+      "alias": [
+        "hexgl",
+        "极速"
+      ],
+      "desc": "反重力赛车，实时光影做得像 2012 年的科幻片。",
+      "cover": "assets/covers/hexgl.svg",
+      "coverFrom": "scene",
+      "accent": 200,
+      "category": [
+        "racing"
+      ],
+      "tags": [
+        "竞速",
+        "科幻",
+        "反重力",
+        "光影"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://hexgl.bkcore.com/",
+      "repo": "https://github.com/BKcore/HexGL",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "astray",
+      "title": "Astray 迷宫",
+      "alias": [
+        "astray",
+        "3d迷宫"
+      ],
+      "desc": "第一人称 3D 迷宫生成器，每一局都不一样。",
+      "cover": "assets/covers/astray.svg",
+      "coverFrom": "scene",
+      "accent": 285,
+      "category": [
+        "action",
+        "puzzle"
+      ],
+      "tags": [
+        "3D",
+        "迷宫",
+        "第一人称"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://wwwtyro.github.io/Astray/",
+      "repo": "https://github.com/wwwtyro/Astray",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "fluid-table-tennis",
+      "title": "Fluid Table Tennis 流体乒乓",
+      "alias": [
+        "乒乓球",
+        "fluid"
+      ],
+      "desc": "流体物理驱动的乒乓球，来球角度全靠算。",
+      "cover": "assets/covers/fluid-table-tennis.svg",
+      "coverFrom": "scene",
+      "accent": 160,
+      "category": [
+        "sports",
+        "arcade"
+      ],
+      "tags": [
+        "乒乓球",
+        "物理",
+        "流体",
+        "对战"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://anirudhjoshi.github.io/fluid_table_tennis/",
+      "repo": "https://github.com/anirudhjoshi/fluid_table_tennis",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 2,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "wpilot",
+      "title": "WPilot 太空飞行员",
+      "alias": [
+        "wpilot",
+        "太空"
+      ],
+      "desc": "太空飞行射击，操作简单但容易上瘾。",
+      "cover": "assets/covers/wpilot.svg",
+      "coverFrom": "scene",
+      "accent": 230,
+      "category": [
+        "shooter",
+        "action"
+      ],
+      "tags": [
+        "太空",
+        "射击",
+        "飞行",
+        "复古"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://jfd.github.io/wpilot/",
+      "repo": "https://github.com/jfd/wpilot",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "nazi-zombies-portable",
+      "title": "Nazi Zombies Portable",
+      "alias": [
+        "nzp",
+        "丧尸"
+      ],
+      "desc": "开放世界丧尸射击，老派但很杀时间。",
+      "cover": "assets/covers/nazi-zombies-portable.svg",
+      "coverFrom": "scene",
+      "accent": 10,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "FPS",
+        "丧尸",
+        "开放世界",
+        "联机"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://nzp.gay/",
+      "repo": "https://github.com/nzp-team/nzportable",
+      "platform": [
+        "web"
+      ],
+      "players": 4,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 827,
+      "pushedAt": "2026-09-24",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "licenseNote": "仓库无 LICENSE 文件",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "bemuse",
+      "title": "Bemuse 音乐游戏",
+      "alias": [
+        "bemuse",
+        "节奏"
+      ],
+      "desc": "节奏游戏里少见的一档，界面干净、上手快。",
+      "cover": "assets/covers/bemuse.svg",
+      "coverFrom": "scene",
+      "accent": 275,
+      "category": [
+        "music"
+      ],
+      "tags": [
+        "节奏",
+        "音乐",
+        "谱面",
+        "现代"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://bemuse.ninja/",
+      "repo": "https://github.com/bemusic/bemuse",
+      "license": "AGPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "lichess",
+      "title": "Lichess 国际象棋",
+      "alias": [
+        "lichess",
+        "国际象棋",
+        "chess"
+      ],
+      "desc": "免费开源的在线国际象棋，强弱 AI 都有。",
+      "cover": "assets/covers/lichess.svg",
+      "coverFrom": "scene",
+      "accent": 40,
+      "category": [
+        "board",
+        "strategy"
+      ],
+      "tags": [
+        "棋类",
+        "国际象棋",
+        "联机",
+        "开源之最"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://lichess.org/",
+      "repo": "https://github.com/lichess-org/lila",
+      "license": "AGPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 2,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方站设 X-Frame-Options: DENY，只能外链",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "boxcars",
+      "title": "Boxcars 双陆棋",
+      "alias": [
+        "boxcars",
+        "双陆"
+      ],
+      "desc": "在线双陆棋，对手来自全世界。",
+      "cover": "assets/covers/boxcars.svg",
+      "coverFrom": "scene",
+      "accent": 120,
+      "category": [
+        "tabletop",
+        "board"
+      ],
+      "tags": [
+        "双陆棋",
+        "棋类",
+        "联机"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://play.bgammon.org/",
+      "repo": "https://github.com/tslocum/boxcars",
+      "license": "AGPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 2,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "stendhal",
+      "title": "Stendhal 斯坦达尔",
+      "alias": [
+        "stendhal",
+        "mmo"
+      ],
+      "desc": "文字 MMORPG，玩了二十年的老开源世界。",
+      "cover": "assets/covers/stendhal.svg",
+      "coverFrom": "scene",
+      "accent": 300,
+      "category": [
+        "rpg",
+        "word"
+      ],
+      "tags": [
+        "MMO",
+        "文字",
+        "冒险",
+        "多人"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://stendhalgame.org/",
+      "repo": "https://github.com/arianne/stendhal",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方站设 X-Frame-Options: SAMEORIGIN；游戏本身需 Java 客户端",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "openra",
+      "title": "OpenRA 红色警戒",
+      "alias": [
+        "openra",
+        "红色警戒"
+      ],
+      "desc": "用开源引擎重做的红色警戒，原版素材需自备。",
+      "cover": "assets/covers/openra.svg",
+      "coverFrom": "scene",
+      "accent": 20,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "RTS",
+        "即时战略",
+        "经典复刻"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/OpenRA/OpenRA",
+      "license": "GPL-3.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/OpenRA/OpenRA/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/OpenRA/OpenRA/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/OpenRA/OpenRA/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 17478,
+      "pushedAt": "2026-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-3.0；原版 C&C 素材需自备",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "warzone-2100",
+      "title": "Warzone 2100 战区2100",
+      "alias": [
+        "warzone",
+        "战区"
+      ],
+      "desc": "开源 RTS 老兵，剧情和难度比同类扎实。",
+      "cover": "assets/covers/warzone-2100.svg",
+      "coverFrom": "scene",
+      "accent": 190,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "RTS",
+        "剧情",
+        "科幻"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/warzone2100/warzone2100",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/warzone2100/warzone2100/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/warzone2100/warzone2100/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/warzone2100/warzone2100/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 3982,
+      "pushedAt": "2026-10-02",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码与素材均 GPL-2.0-or-later，含 CC0 内容",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "0ad",
+      "title": "0 A.D. 零纪元",
+      "alias": [
+        "0ad",
+        "零纪元"
+      ],
+      "desc": "古代文明 RTS，免费但配置要求偏高；仓库已归档。",
+      "cover": "assets/covers/0ad.svg",
+      "coverFrom": "scene",
+      "accent": 35,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "RTS",
+        "古代",
+        "高画质"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/0ad/0ad",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/0ad/0ad/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/0ad/0ad/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/0ad/0ad/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 2824,
+      "pushedAt": "2024-08-17",
+      "archived": true,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "licenseNote": "此为已废弃的 SVN 镜像，代码 GPL-2.0，美术 CC-BY-SA-3.0",
+      "note": "上游仓库已标注 DEPRECATED，官方已迁移到自建 SVN",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "widelands",
+      "title": "Widelands 旷野",
+      "alias": [
+        "widelands",
+        "旷野"
+      ],
+      "desc": "《盖亚战纪》思路的开源经济模拟 RTS。",
+      "cover": "assets/covers/widelands.svg",
+      "coverFrom": "scene",
+      "accent": 45,
+      "category": [
+        "strategy",
+        "sim"
+      ],
+      "tags": [
+        "RTS",
+        "经济",
+        "建造"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/widelands/widelands",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/widelands/widelands/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/widelands/widelands/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/widelands/widelands/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 3072,
+      "pushedAt": "2026-10-01",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "wesnoth",
+      "title": "Battle for Wesnoth 韦诺之战",
+      "alias": [
+        "wesnoth",
+        "韦诺"
+      ],
+      "desc": "战棋经典，几百关战役全靠手写剧情。",
+      "cover": "assets/covers/wesnoth.svg",
+      "coverFrom": "scene",
+      "accent": 265,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "战棋",
+        "回合",
+        "剧情",
+        "海量关卡"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/wesnoth/wesnoth",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/wesnoth/wesnoth/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/wesnoth/wesnoth/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/wesnoth/wesnoth/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 6900,
+      "pushedAt": "2026-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-2.0，新素材多为 CC-BY-SA",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "hedgewars",
+      "title": "Hedgewars 刺猬大战",
+      "alias": [
+        "hedgewars",
+        "刺猬"
+      ],
+      "desc": "炮战版坦克大战，画面卡通但战术真不简单。",
+      "cover": "assets/covers/hedgewars.svg",
+      "coverFrom": "scene",
+      "accent": 75,
+      "category": [
+        "action",
+        "strategy"
+      ],
+      "tags": [
+        "炮战",
+        "回合",
+        "卡通",
+        "联机"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/hedgewars/hw",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "android",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/hedgewars/hw/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/hedgewars/hw/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/hedgewars/hw/releases"
+        },
+        {
+          "label": "Android 官方下载",
+          "platform": [
+            "android"
+          ],
+          "url": "https://github.com/hedgewars/hw/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 563,
+      "pushedAt": "2026-09-26",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "freeciv",
+      "title": "Freeciv 自由文明（客户端）",
+      "alias": [
+        "freeciv客户端"
+      ],
+      "desc": "经典自由文明桌面版，与网页版可互通存档。",
+      "cover": "assets/covers/freeciv.svg",
+      "coverFrom": "scene",
+      "accent": 25,
+      "category": [
+        "strategy",
+        "board"
+      ],
+      "tags": [
+        "4X",
+        "回合",
+        "文明",
+        "联机"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/freeciv/freeciv",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/freeciv/freeciv/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/freeciv/freeciv/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/freeciv/freeciv/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 1601,
+      "pushedAt": "2026-10-04",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-2.0，部分素材为 CC",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "luanti",
+      "title": "Luanti 体素沙盒",
+      "alias": [
+        "luanti",
+        "minetest",
+        "体素"
+      ],
+      "desc": "原 Minetest，开源体素沙盒，模组生态极活跃。",
+      "cover": "assets/covers/luanti.svg",
+      "coverFrom": "scene",
+      "accent": 110,
+      "category": [
+        "sandbox"
+      ],
+      "tags": [
+        "体素",
+        "沙盒",
+        "模组",
+        "建造"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/luanti-org/luanti",
+      "license": "LGPL-2.1",
+      "platform": [
+        "mac",
+        "android",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/luanti-org/luanti/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/luanti-org/luanti/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/luanti-org/luanti/releases"
+        },
+        {
+          "label": "Android 官方下载",
+          "platform": [
+            "android"
+          ],
+          "url": "https://github.com/luanti-org/luanti/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 13676,
+      "pushedAt": "2026-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "引擎 LGPL-2.1，素材 CC-BY-SA-3.0",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "veloren",
+      "title": "Veloren 沃洛伦",
+      "alias": [
+        "veloren",
+        "沃洛伦"
+      ],
+      "desc": "体素风 RPG，Rust 团队写的，生态全自由。",
+      "cover": "assets/covers/veloren.svg",
+      "coverFrom": "scene",
+      "accent": 150,
+      "category": [
+        "rpg",
+        "sandbox"
+      ],
+      "tags": [
+        "体素",
+        "RPG",
+        "开放世界",
+        "联机"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/veloren/veloren",
+      "license": "GPL-3.0",
+      "platform": [
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/veloren/veloren/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/veloren/veloren/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 7598,
+      "pushedAt": "2026-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-3.0，素材 CC-BY-SA-4.0",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "endless-sky",
+      "title": "Endless Sky 无尽天空",
+      "alias": [
+        "endlesssky",
+        "太空贸易"
+      ],
+      "desc": "太空贸易与战斗，像在写自己的科幻小说。",
+      "cover": "assets/covers/endless-sky.svg",
+      "coverFrom": "scene",
+      "accent": 250,
+      "category": [
+        "rpg",
+        "sim"
+      ],
+      "tags": [
+        "太空",
+        "贸易",
+        "RPG",
+        "剧情"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/endless-sky/endless-sky",
+      "license": "GPL-3.0",
+      "platform": [
+        "mac",
+        "android",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/endless-sky/endless-sky/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/endless-sky/endless-sky/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/endless-sky/endless-sky/releases"
+        },
+        {
+          "label": "Android 官方下载",
+          "platform": [
+            "android"
+          ],
+          "url": "https://github.com/endless-sky/endless-sky/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 7609,
+      "pushedAt": "2026-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-3.0，素材 CC-BY-SA 与公共领域",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "flare-rpg",
+      "title": "Flare RPG 火焰",
+      "alias": [
+        "flare",
+        "火焰"
+      ],
+      "desc": "单人动作 RPG，剧情改编自开源奇幻小说。",
+      "cover": "assets/covers/flare-rpg.svg",
+      "coverFrom": "scene",
+      "accent": 15,
+      "category": [
+        "rpg",
+        "action"
+      ],
+      "tags": [
+        "动作",
+        "RPG",
+        "奇幻",
+        "剧情"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/flareteam/flare-game",
+      "license": "GPL-3.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/flareteam/flare-game/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/flareteam/flare-game/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/flareteam/flare-game/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 1320,
+      "pushedAt": "2026-08-08",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "licenseNote": "仓库许可证识别为 NOASSERTION；上游声明 GPL-3.0，素材 CC-BY-SA-3.0",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "supertuxkart",
+      "title": "SuperTuxKart 超级卡丁车",
+      "alias": [
+        "supertuxkart",
+        "卡丁车"
+      ],
+      "desc": "卡通引擎的竞速游戏，关卡编辑器能自己造图。",
+      "cover": "assets/covers/supertuxkart.svg",
+      "coverFrom": "scene",
+      "accent": 205,
+      "category": [
+        "racing"
+      ],
+      "tags": [
+        "竞速",
+        "卡通",
+        "编辑器",
+        "联机"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/supertuxkart/stk-code",
+      "license": "GPL-3.0",
+      "platform": [
+        "mac",
+        "android",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/supertuxkart/stk-code/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/supertuxkart/stk-code/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/supertuxkart/stk-code/releases"
+        },
+        {
+          "label": "Android 官方下载",
+          "platform": [
+            "android"
+          ],
+          "url": "https://github.com/supertuxkart/stk-code/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 5394,
+      "pushedAt": "2026-10-02",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "xonotic",
+      "title": "Xonotic 超级武器竞赛",
+      "alias": [
+        "xonotic",
+        "武器竞赛"
+      ],
+      "desc": "Arena 射击的复活之作，上下左右都爽。",
+      "cover": "assets/covers/xonotic.svg",
+      "coverFrom": "scene",
+      "accent": 300,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "FPS",
+        "竞技",
+        "快节奏",
+        "联机"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/xonotic/xonotic",
+      "license": "GPL-2.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/xonotic/xonotic/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/xonotic/xonotic/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/xonotic/xonotic/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-2.0，素材 GPL/CC-BY-SA",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "red-eclipse",
+      "title": "Red Eclipse 红日",
+      "alias": [
+        "redeclipse",
+        "红日"
+      ],
+      "desc": "免费开源的三维竞技射击，自带编辑器。",
+      "cover": "assets/covers/red-eclipse.svg",
+      "coverFrom": "scene",
+      "accent": 5,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "FPS",
+        "竞技",
+        "编辑器"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/redeclipse/base",
+      "license": "zlib",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/redeclipse/base/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/redeclipse/base/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/redeclipse/base/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 534,
+      "pushedAt": "2026-09-27",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "licenseNote": "引擎代码 zlib；随附社区数据模块多为 CC-BY-SA",
+      "note": "官方组织是 redeclipse，游戏主体代码在 redeclipse/base（SVG/CC 资源在 redeclipse/community）",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "freedoom",
+      "title": "Freedoom 自由的地狱",
+      "alias": [
+        "freedoom",
+        "doom"
+      ],
+      "desc": "完全自由 doom 引擎的素材包，自己配就能玩。",
+      "cover": "assets/covers/freedoom.svg",
+      "coverFrom": "scene",
+      "accent": 0,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "FPS",
+        "素材包",
+        "自由"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/freedoom/freedoom",
+      "license": "BSD",
+      "platform": [
+        "mac",
+        "android",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/freedoom/freedoom/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/freedoom/freedoom/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/freedoom/freedoom/releases"
+        },
+        {
+          "label": "Android 官方下载",
+          "platform": [
+            "android"
+          ],
+          "url": "https://github.com/freedoom/freedoom/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 1354,
+      "pushedAt": "2026-10-02",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "licenseNote": "仓库许可证识别为 NOASSERTION，项目声明 BSD 系列",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "quake3-arena",
+      "title": "Quake III Arena 引擎",
+      "alias": [
+        "q3",
+        "quake3"
+      ],
+      "desc": "id 开源了 Quake III 引擎，但原版素材不自由。",
+      "cover": "assets/covers/quake3-arena.svg",
+      "coverFrom": "scene",
+      "accent": 0,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "FPS",
+        "引擎",
+        "竞技"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/id-Software/Quake-III-Arena",
+      "license": "GPL-2.0",
+      "platform": [
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/id-Software/Quake-III-Arena/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/id-Software/Quake-III-Arena/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 8249,
+      "pushedAt": "2024-08-02",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "引擎代码 GPL-2.0；原版对局素材不自由，需搭配自由素材包",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "openmw",
+      "title": "OpenMW 晨风",
+      "alias": [
+        "openmw",
+        "晨风"
+      ],
+      "desc": "重建上古卷轴 3 的开源引擎，素材需自备。",
+      "cover": "assets/covers/openmw.svg",
+      "coverFrom": "scene",
+      "accent": 120,
+      "category": [
+        "rpg",
+        "sandbox"
+      ],
+      "tags": [
+        "RPG",
+        "开放世界",
+        "引擎"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/OpenMW/openmw",
+      "license": "GPL-3.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/OpenMW/openmw/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/OpenMW/openmw/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/OpenMW/openmw/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 6595,
+      "pushedAt": "2026-10-03",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "引擎 GPL-3.0；需自备《晨风》游戏数据",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "openrct2",
+      "title": "OpenRCT2 侏罗纪公园",
+      "alias": [
+        "openrct2",
+        "过山车"
+      ],
+      "desc": "《过山车大亨 2》的开源重制版，功能比原版还多。",
+      "cover": "assets/covers/openrct2.svg",
+      "coverFrom": "scene",
+      "accent": 340,
+      "category": [
+        "sim"
+      ],
+      "tags": [
+        "模拟经营",
+        "过山车",
+        "建造"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/OpenRCT2/OpenRCT2",
+      "license": "GPL-3.0",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/OpenRCT2/OpenRCT2/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/OpenRCT2/OpenRCT2/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/OpenRCT2/OpenRCT2/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 16274,
+      "pushedAt": "2026-10-04",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "assetNote": "代码 GPL-3.0；需自备《过山车大亨 2》原始数据",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "stepmania",
+      "title": "StepMania 跳舞机",
+      "alias": [
+        "stepmania",
+        "跳舞机"
+      ],
+      "desc": "开源音乐游戏引擎，自制谱面与键盘练习两用。",
+      "cover": "assets/covers/stepmania.svg",
+      "coverFrom": "scene",
+      "accent": 285,
+      "category": [
+        "music"
+      ],
+      "tags": [
+        "音乐",
+        "节奏",
+        "引擎",
+        "自制谱面"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/stepmania/stepmania",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/stepmania/stepmania/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/stepmania/stepmania/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/stepmania/stepmania/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 2107,
+      "pushedAt": "2026-08-22",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "licenseNote": "仓库未附 LICENSE 文件；项目官网声明 MIT，需以官网为准",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "bananabread",
+      "title": "BananaBread 引擎",
+      "alias": [
+        "bananabread",
+        "香蕉面包"
+      ],
+      "desc": "C++ 3D 引擎的 WebAssembly 移植，网页里能跑。",
+      "cover": "assets/covers/bananabread.svg",
+      "coverFrom": "scene",
+      "accent": 130,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "引擎",
+        "3D",
+        "WebAssembly"
+      ],
+      "kind": "download",
+      "mode": "download",
+      "embeddable": false,
+      "repo": "https://github.com/kripken/BananaBread",
+      "platform": [
+        "mac",
+        "win",
+        "lin"
+      ],
+      "downloads": [
+        {
+          "label": "Windows 官方下载",
+          "platform": [
+            "win"
+          ],
+          "url": "https://github.com/kripken/BananaBread/releases"
+        },
+        {
+          "label": "Linux 官方下载",
+          "platform": [
+            "lin"
+          ],
+          "url": "https://github.com/kripken/BananaBread/releases"
+        },
+        {
+          "label": "macOS 官方下载",
+          "platform": [
+            "mac"
+          ],
+          "url": "https://github.com/kripken/BananaBread/releases"
+        }
+      ],
+      "requirements": "需从源码或发行包安装，配置要求见项目主页",
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "stars": 1451,
+      "pushedAt": "2022-05-31",
+      "archived": false,
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "unknown"
+      },
+      "licenseNote": "仓库未附 LICENSE 文件；项目声明 zlib",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-a-verse-on-leverage",
+      "title": "A Verse on Leverage",
+      "alias": [
+        "杠杆",
+        "js13k"
+      ],
+      "desc": "押韵串烧动作游戏，靠谐音过关。",
+      "cover": "assets/covers/js13k-a-verse-on-leverage.svg",
+      "coverFrom": "scene",
+      "accent": 320,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "文字",
+        "押韵",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/a-verse-on-leverage/",
+      "repo": "https://github.com/js13kGames/a-verse-on-leverage",
+      "upstream": "https://github.com/js13kGames/a-verse-on-leverage",
+      "license": "AGPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-ap11",
+      "title": "ap11",
+      "alias": [
+        "ap",
+        "js13k"
+      ],
+      "desc": "2014 年参赛作品，剧情简短的老派动作。",
+      "cover": "assets/covers/js13k-ap11.svg",
+      "coverFrom": "scene",
+      "accent": 8,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "参赛作品",
+        "复古",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/ap11/",
+      "repo": "https://github.com/js13kGames/ap11",
+      "upstream": "https://github.com/js13kGames/ap11",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-asdf",
+      "title": "asdf · 西蒙复刻",
+      "alias": [
+        "西蒙",
+        "simon",
+        "js13k"
+      ],
+      "desc": "1978 年西蒙电子游戏复刻，四个按钮。",
+      "cover": "assets/covers/js13k-asdf.svg",
+      "coverFrom": "scene",
+      "accent": 35,
+      "category": [
+        "casual"
+      ],
+      "tags": [
+        "记忆",
+        "经典复刻",
+        "四键",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/asdf/",
+      "repo": "https://github.com/js13kGames/asdf",
+      "upstream": "https://github.com/js13kGames/asdf",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-bouncing-button",
+      "title": "Bouncing Button",
+      "alias": [
+        "弹跳按钮",
+        "js13k"
+      ],
+      "desc": "按钮在屏幕上乱弹，点击得分。",
+      "cover": "assets/covers/js13k-bouncing-button.svg",
+      "coverFrom": "scene",
+      "accent": 200,
+      "category": [
+        "arcade"
+      ],
+      "tags": [
+        "点击",
+        "极简",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/bouncing-button/",
+      "repo": "https://github.com/js13kGames/bouncing-button",
+      "upstream": "https://github.com/js13kGames/bouncing-button",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-chem-fight",
+      "title": "Chem Fight 化学大战",
+      "alias": [
+        "化学",
+        "chem",
+        "js13k"
+      ],
+      "desc": "买原子配 compounds，反应对赢整场战斗。",
+      "cover": "assets/covers/js13k-chem-fight.svg",
+      "coverFrom": "scene",
+      "accent": 165,
+      "category": [
+        "strategy"
+      ],
+      "tags": [
+        "化学",
+        "对战",
+        "教育",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/chem-fight/",
+      "repo": "https://github.com/js13kGames/chem-fight",
+      "upstream": "https://github.com/js13kGames/chem-fight",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-clash-of-elements",
+      "title": "Clash of Elements",
+      "alias": [
+        "元素冲突",
+        "js13k"
+      ],
+      "desc": "左上角架枪轰对角敌人，拆掉对方建筑。",
+      "cover": "assets/covers/js13k-clash-of-elements.svg",
+      "coverFrom": "scene",
+      "accent": 5,
+      "category": [
+        "shooter",
+        "strategy"
+      ],
+      "tags": [
+        "对战",
+        "射击",
+        "建筑",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/clash-of-elements/",
+      "repo": "https://github.com/js13kGames/clash-of-elements",
+      "upstream": "https://github.com/js13kGames/clash-of-elements",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-dante",
+      "title": "Dante 但丁",
+      "alias": [
+        "但丁",
+        "js13k"
+      ],
+      "desc": "2022 年参赛作品，取材但丁《神曲》。",
+      "cover": "assets/covers/js13k-dante.svg",
+      "coverFrom": "scene",
+      "accent": 275,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "参赛作品",
+        "动作",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/dante/",
+      "repo": "https://github.com/js13kGames/dante",
+      "upstream": "https://github.com/js13kGames/dante",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-dodos-escaping-from-extinction",
+      "title": "Dodos Escaping",
+      "alias": [
+        "恐鸟",
+        "js13k"
+      ],
+      "desc": "恐鸟逃离灭绝，可自造关卡。",
+      "cover": "assets/covers/js13k-dodos-escaping-from-extinction.svg",
+      "coverFrom": "scene",
+      "accent": 100,
+      "category": [
+        "action",
+        "puzzle"
+      ],
+      "tags": [
+        "平台",
+        "关卡编辑",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/dodos-escaping-from-extinction/",
+      "repo": "https://github.com/js13kGames/dodos-escaping-from-extinction",
+      "upstream": "https://github.com/js13kGames/dodos-escaping-from-extinction",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-elematter",
+      "title": "Elematter 元素塔防",
+      "alias": [
+        "元素塔防",
+        "js13k"
+      ],
+      "desc": "简笔画风的塔防，2014 年参赛作。",
+      "cover": "assets/covers/js13k-elematter.svg",
+      "coverFrom": "scene",
+      "accent": 145,
+      "category": [
+        "tower",
+        "strategy"
+      ],
+      "tags": [
+        "塔防",
+        "极简",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/elematter/",
+      "repo": "https://github.com/js13kGames/elematter",
+      "upstream": "https://github.com/js13kGames/elematter",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-felicity-and-the-fifth-element-love",
+      "title": "Felicity and the Fifth Element",
+      "alias": [
+        "第五元素",
+        "js13k"
+      ],
+      "desc": "单屏 NES 风格平台跳跃，手感很难。",
+      "cover": "assets/covers/js13k-felicity-and-the-fifth-element-love.svg",
+      "coverFrom": "scene",
+      "accent": 15,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "平台",
+        "高难度",
+        "NES",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/felicity-and-the-fifth-element-love/",
+      "repo": "https://github.com/js13kGames/felicity-and-the-fifth-element-love",
+      "upstream": "https://github.com/js13kGames/felicity-and-the-fifth-element-love",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-fill-in-4",
+      "title": "Fill in 4",
+      "alias": [
+        "填四",
+        "js13k"
+      ],
+      "desc": "四行填数的数字消除玩法。",
+      "cover": "assets/covers/js13k-fill-in-4.svg",
+      "coverFrom": "scene",
+      "accent": 45,
+      "category": [
+        "puzzle"
+      ],
+      "tags": [
+        "数字",
+        "消除",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/fill-in-4/",
+      "repo": "https://github.com/js13kGames/fill-in-4",
+      "upstream": "https://github.com/js13kGames/fill-in-4",
+      "license": "Apache-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-floor-thirteen",
+      "title": "Floor Thirteen",
+      "alias": [
+        "十三层",
+        "js13k"
+      ],
+      "desc": "像素战争塔防，作者昵称就叫 Pixel Wars。",
+      "cover": "assets/covers/js13k-floor-thirteen.svg",
+      "coverFrom": "scene",
+      "accent": 180,
+      "category": [
+        "tower",
+        "strategy"
+      ],
+      "tags": [
+        "塔防",
+        "像素",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/floor-thirteen/",
+      "repo": "https://github.com/js13kGames/floor-thirteen",
+      "upstream": "https://github.com/js13kGames/floor-thirteen",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-forest-racer",
+      "title": "Forest Racer 森林竞速",
+      "alias": [
+        "森林竞速",
+        "js13k"
+      ],
+      "desc": "高速纯 HTML5 竞速，跑得比音乐还快。",
+      "cover": "assets/covers/js13k-forest-racer.svg",
+      "coverFrom": "scene",
+      "accent": 95,
+      "category": [
+        "racing"
+      ],
+      "tags": [
+        "竞速",
+        "高速",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/forest-racer/",
+      "repo": "https://github.com/js13kGames/forest-racer",
+      "upstream": "https://github.com/js13kGames/forest-racer",
+      "license": null,
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-hard-vacuum-recon",
+      "title": "Hard Vacuum Recon",
+      "alias": [
+        "真空侦察",
+        "js13k"
+      ],
+      "desc": "冰星球侦察，靠记忆和半坏的设备活着回来。",
+      "cover": "assets/covers/js13k-hard-vacuum-recon.svg",
+      "coverFrom": "scene",
+      "accent": 220,
+      "category": [
+        "action",
+        "survival"
+      ],
+      "tags": [
+        "科幻",
+        "记忆",
+        "文字",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/hard-vacuum-recon/",
+      "repo": "https://github.com/js13kGames/hard-vacuum-recon",
+      "upstream": "https://github.com/js13kGames/hard-vacuum-recon",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-junojs",
+      "title": "JunoJS",
+      "alias": [
+        "朱诺",
+        "js13k"
+      ],
+      "desc": "又一款太空管状射击，Juno 探测器的梗。",
+      "cover": "assets/covers/js13k-junojs.svg",
+      "coverFrom": "scene",
+      "accent": 250,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "太空",
+        "射击",
+        "复古",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/junojs/",
+      "repo": "https://github.com/js13kGames/junojs",
+      "upstream": "https://github.com/js13kGames/junojs",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-kazukis-escape",
+      "title": "Kazuki's Escape",
+      "alias": [
+        "和树的escape",
+        "js13k"
+      ],
+      "desc": "越狱五年的和树在夜里逃出去。",
+      "cover": "assets/covers/js13k-kazukis-escape.svg",
+      "coverFrom": "scene",
+      "accent": 300,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "逃脱",
+        "潜行",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/kazukis-escape/",
+      "repo": "https://github.com/js13kGames/kazukis-escape",
+      "upstream": "https://github.com/js13kGames/kazukis-escape",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-mawlight",
+      "title": "MawLight 噬光",
+      "alias": [
+        "噬光",
+        "js13k"
+      ],
+      "desc": "种田、升级、推线，越往前越难。",
+      "cover": "assets/covers/js13k-mawlight.svg",
+      "coverFrom": "scene",
+      "accent": 155,
+      "category": [
+        "rpg",
+        "strategy"
+      ],
+      "tags": [
+        "经营",
+        "生存",
+        "推进",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/mawlight/",
+      "repo": "https://github.com/js13kGames/mawlight",
+      "upstream": "https://github.com/js13kGames/mawlight",
+      "license": "Apache-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-mentat",
+      "title": "Mentat 门萨",
+      "alias": [
+        "门萨",
+        "数独",
+        "js13k"
+      ],
+      "desc": "拖数字棋子，行列和为偶数就得分。",
+      "cover": "assets/covers/js13k-mentat.svg",
+      "coverFrom": "scene",
+      "accent": 25,
+      "category": [
+        "puzzle"
+      ],
+      "tags": [
+        "数独",
+        "变体",
+        "益智",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/mentat/",
+      "repo": "https://github.com/js13kGames/mentat",
+      "upstream": "https://github.com/js13kGames/mentat",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-milehigh",
+      "title": "Mile High 空中事故",
+      "alias": [
+        "空中",
+        "劫机",
+        "js13k"
+      ],
+      "desc": "在客机上求好运，飞机一直在出事。",
+      "cover": "assets/covers/js13k-milehigh.svg",
+      "coverFrom": "scene",
+      "accent": 210,
+      "category": [
+        "casual"
+      ],
+      "tags": [
+        "随机",
+        "黑色幽默",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/milehigh/",
+      "repo": "https://github.com/js13kGames/milehigh",
+      "upstream": "https://github.com/js13kGames/milehigh",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-mission-darkwhite",
+      "title": "Mission Darkwhite",
+      "alias": [
+        "暗白行动",
+        "js13k"
+      ],
+      "desc": "只支持鼠标键盘的太空射击，越快越准。",
+      "cover": "assets/covers/js13k-mission-darkwhite.svg",
+      "coverFrom": "scene",
+      "accent": 240,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "太空",
+        "瞄准",
+        "射击",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/mission-darkwhite/",
+      "repo": "https://github.com/js13kGames/mission-darkwhite",
+      "upstream": "https://github.com/js13kGames/mission-darkwhite",
+      "license": "Apache-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-neptune-blue",
+      "title": "Neptune Blue 海王蓝",
+      "alias": [
+        "海王",
+        "js13k"
+      ],
+      "desc": "海王星上的操作演练，左右移动躲攻击。",
+      "cover": "assets/covers/js13k-neptune-blue.svg",
+      "coverFrom": "scene",
+      "accent": 195,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "躲避",
+        "太空",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://js13kgames.github.io/neptune-blue/",
+      "repo": "https://github.com/js13kGames/neptune-blue",
+      "upstream": "https://github.com/js13kGames/neptune-blue",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-please-play-again",
+      "title": "Please Play Again",
+      "alias": [
+        "再来一次",
+        "js13k"
+      ],
+      "desc": "2013 年参赛作品，「再玩一次」的执念。",
+      "cover": "assets/covers/js13k-please-play-again.svg",
+      "coverFrom": "scene",
+      "accent": 60,
+      "category": [
+        "arcade"
+      ],
+      "tags": [
+        "参赛作品",
+        "街机",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/please-play-again/",
+      "repo": "https://github.com/js13kGames/please-play-again",
+      "upstream": "https://github.com/js13kGames/please-play-again",
+      "license": "GPL-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-pocketrocket",
+      "title": "PocketRocket 口袋火箭",
+      "alias": [
+        "口袋火箭",
+        "js13k"
+      ],
+      "desc": "四发火箭选一发，别越过自己的射线。",
+      "cover": "assets/covers/js13k-pocketrocket.svg",
+      "coverFrom": "scene",
+      "accent": 320,
+      "category": [
+        "puzzle"
+      ],
+      "tags": [
+        "躲闪",
+        "极简",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/pocketrocket/",
+      "repo": "https://github.com/js13kGames/pocketrocket",
+      "upstream": "https://github.com/js13kGames/pocketrocket",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-radius-raid",
+      "title": "Radius Raid 半径突袭",
+      "alias": [
+        "半径",
+        "js13k"
+      ],
+      "desc": "13 种敌机 5 种强化，卷轴打到底。",
+      "cover": "assets/covers/js13k-radius-raid.svg",
+      "coverFrom": "scene",
+      "accent": 230,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "太空",
+        "弹幕",
+        "复古",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/radius-raid/",
+      "repo": "https://github.com/js13kGames/radius-raid",
+      "upstream": "https://github.com/js13kGames/radius-raid",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-rainbow-claw",
+      "title": "Rainbow Claw 彩虹抓娃娃",
+      "alias": [
+        "彩虹",
+        "unicorn",
+        "js13k"
+      ],
+      "desc": "独角兽主题的抓娃娃机 roguelite。",
+      "cover": "assets/covers/js13k-rainbow-claw.svg",
+      "coverFrom": "scene",
+      "accent": 330,
+      "category": [
+        "arcade"
+      ],
+      "tags": [
+        "抓娃娃",
+        "肉鸽",
+        "彩虹",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/rainbow-claw/",
+      "repo": "https://github.com/js13kGames/rainbow-claw",
+      "upstream": "https://github.com/js13kGames/rainbow-claw",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-rainbow-reboot",
+      "title": "Rainbow Reboot",
+      "alias": [
+        "彩虹重启",
+        "js13k"
+      ],
+      "desc": "2026 年参赛作，WebXR 迷你游戏。",
+      "cover": "assets/covers/js13k-rainbow-reboot.svg",
+      "coverFrom": "scene",
+      "accent": 20,
+      "category": [
+        "casual"
+      ],
+      "tags": [
+        "WebXR",
+        "VR",
+        "极简",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/rainbow-reboot/",
+      "repo": "https://github.com/js13kGames/rainbow-reboot",
+      "upstream": "https://github.com/js13kGames/rainbow-reboot",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-road-the-game",
+      "title": "Road The Game 鸡过马路",
+      "alias": [
+        "鸡",
+        "过马路",
+        "js13k"
+      ],
+      "desc": "鸡为什么过马路？顺便把所有车撞一遍。",
+      "cover": "assets/covers/js13k-road-the-game.svg",
+      "coverFrom": "scene",
+      "accent": 40,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "黑色幽默",
+        "得分",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/road-the-game/",
+      "repo": "https://github.com/js13kGames/road-the-game",
+      "upstream": "https://github.com/js13kGames/road-the-game",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-senshi",
+      "title": "Senshi 战士",
+      "alias": [
+        "战士",
+        "js13k"
+      ],
+      "desc": "大逃杀风格的像素 MMO 混战。",
+      "cover": "assets/covers/js13k-senshi.svg",
+      "coverFrom": "scene",
+      "accent": 350,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "大逃杀",
+        "像素",
+        "多人",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/senshi/",
+      "repo": "https://github.com/js13kGames/senshi",
+      "upstream": "https://github.com/js13kGames/senshi",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-shapeblocks",
+      "title": "ShapeBlocks 形状块",
+      "alias": [
+        "形状",
+        "js13k"
+      ],
+      "desc": "形状堆叠消除，作者自己说 UI 没时间做。",
+      "cover": "assets/covers/js13k-shapeblocks.svg",
+      "coverFrom": "scene",
+      "accent": 170,
+      "category": [
+        "puzzle"
+      ],
+      "tags": [
+        "消除",
+        "形状",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/shapeblocks/",
+      "repo": "https://github.com/js13kGames/shapeblocks",
+      "upstream": "https://github.com/js13kGames/shapeblocks",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-sorades-13k",
+      "title": "Sorades 13K",
+      "alias": [
+        "sorades",
+        "js13k"
+      ],
+      "desc": "《警戒：永恒》风格卷轴射击，活过 13 波。",
+      "cover": "assets/covers/js13k-sorades-13k.svg",
+      "coverFrom": "scene",
+      "accent": 265,
+      "category": [
+        "shooter"
+      ],
+      "tags": [
+        "卷轴",
+        "射击",
+        "弹幕",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/sorades-13k/",
+      "repo": "https://github.com/js13kGames/sorades-13k",
+      "upstream": "https://github.com/js13kGames/sorades-13k",
+      "license": "Apache-2.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-spacepi",
+      "title": "SpacePi 太空派",
+      "alias": [
+        "太空pi",
+        "js13k"
+      ],
+      "desc": "鼠标准确度游戏，守住 13 个基地。",
+      "cover": "assets/covers/js13k-spacepi.svg",
+      "coverFrom": "scene",
+      "accent": 290,
+      "category": [
+        "puzzle",
+        "strategy"
+      ],
+      "tags": [
+        "防守",
+        "画线",
+        "鼠标",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/spacepi/",
+      "repo": "https://github.com/js13kGames/spacepi",
+      "upstream": "https://github.com/js13kGames/spacepi",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-terraform",
+      "title": "Terraform 改造星球",
+      "alias": [
+        "terraform",
+        "改造",
+        "js13k"
+      ],
+      "desc": "音乐解谜，把一颗死星改造成能住人的地方。",
+      "cover": "assets/covers/js13k-terraform.svg",
+      "coverFrom": "scene",
+      "accent": 185,
+      "category": [
+        "puzzle",
+        "music"
+      ],
+      "tags": [
+        "音乐",
+        "解谜",
+        "建造",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/terraform/",
+      "repo": "https://github.com/js13kGames/terraform",
+      "upstream": "https://github.com/js13kGames/terraform",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-the-unlucky-king",
+      "title": "The Unlucky King 倒霉国王",
+      "alias": [
+        "倒霉国王",
+        "js13k"
+      ],
+      "desc": "13KB 的平台跳跃，运气决定你能走多远。",
+      "cover": "assets/covers/js13k-the-unlucky-king.svg",
+      "coverFrom": "scene",
+      "accent": 5,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "平台",
+        "运气",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/the-unlucky-king/",
+      "repo": "https://github.com/js13kGames/the-unlucky-king",
+      "upstream": "https://github.com/js13kGames/the-unlucky-king",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-timer-madness",
+      "title": "Timer Madness 计时狂乱",
+      "alias": [
+        "计时",
+        "js13k"
+      ],
+      "desc": "手速训练：点破圆点，别让计时器跑完。",
+      "cover": "assets/covers/js13k-timer-madness.svg",
+      "coverFrom": "scene",
+      "accent": 215,
+      "category": [
+        "arcade"
+      ],
+      "tags": [
+        "反应",
+        "计时",
+        "点击",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/timer-madness/",
+      "repo": "https://github.com/js13kGames/timer-madness",
+      "upstream": "https://github.com/js13kGames/timer-madness",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-under-the-crypt",
+      "title": "Under the Crypt 墓下",
+      "alias": [
+        "墓下",
+        "js13k"
+      ],
+      "desc": "地牢爬行塔防，超难模式死了就重来。",
+      "cover": "assets/covers/js13k-under-the-crypt.svg",
+      "coverFrom": "scene",
+      "accent": 275,
+      "category": [
+        "tower",
+        "rpg"
+      ],
+      "tags": [
+        "塔防",
+        "爬行",
+        "高难度",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/under-the-crypt/",
+      "repo": "https://github.com/js13kGames/under-the-crypt",
+      "upstream": "https://github.com/js13kGames/under-the-crypt",
+      "license": "GPL-3.0",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-unifrost",
+      "title": "Unifrost 独霜",
+      "alias": [
+        "独霜",
+        "js13k"
+      ],
+      "desc": "2016 年 3D 平台跳跃，小得刚好。",
+      "cover": "assets/covers/js13k-unifrost.svg",
+      "coverFrom": "scene",
+      "accent": 205,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "3D",
+        "平台",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/unifrost/",
+      "repo": "https://github.com/js13kGames/unifrost",
+      "upstream": "https://github.com/js13kGames/unifrost",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-vier-wizard-wars",
+      "title": "Vier Wizard Wars",
+      "alias": [
+        "巫师战争",
+        "js13k"
+      ],
+      "desc": "像素世界打元素敌人，像老 Atari。",
+      "cover": "assets/covers/js13k-vier-wizard-wars.svg",
+      "coverFrom": "scene",
+      "accent": 310,
+      "category": [
+        "action",
+        "strategy"
+      ],
+      "tags": [
+        "像素",
+        "元素",
+        "复古",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "redirect",
+      "embeddable": false,
+      "url": "https://play.js13kgames.com/vier-wizard-wars/",
+      "repo": "https://github.com/js13kGames/vier-wizard-wars",
+      "upstream": "https://github.com/js13kGames/vier-wizard-wars",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "blocked"
+      },
+      "note": "官方 play 页禁止内嵌（frame-ancestors 只放行 js13kgames.com），需 fork 自托管后才能站内直接玩",
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "js13k-wind-rider",
+      "title": "Wind Rider 御风者",
+      "alias": [
+        "御风",
+        "js13k"
+      ],
+      "desc": "2014 年参赛作品，标题党式酷炫。",
+      "cover": "assets/covers/js13k-wind-rider.svg",
+      "coverFrom": "scene",
+      "accent": 130,
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "飞行",
+        "参赛作品",
+        "js13k",
+        "13KB"
+      ],
+      "kind": "web",
+      "mode": "embed",
+      "embeddable": true,
+      "url": "https://js13kgames.github.io/wind-rider/",
+      "repo": "https://github.com/js13kGames/wind-rider",
+      "upstream": "https://github.com/js13kGames/wind-rider",
+      "license": "MIT",
+      "platform": [
+        "web"
+      ],
+      "players": 1,
+      "featured": false,
+      "addedAt": "2026-10-04",
+      "source": "upstream",
+      "status": "active",
+      "embedCheck": {
+        "checkedAt": "2026-10-03",
+        "result": "ok"
+      },
+      "readmeLangs": {
+        "default": "en",
+        "available": [
+          "en"
+        ]
+      }
     }
   ]
 }

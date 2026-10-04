@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Road The Game 鸡过马路 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Road The Game 鸡过马路</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/js13kGames/road-the-game" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>Road The Game</p>
+<p>===</p>
+<p>Why did the chicken cross the road?</p>
+<h2>ToDo</h2>
+<ul>
+<li>Create the game [Mads|Tim]</li>
+<li>Better achievements [Mads|Tim]</li>
+<li>Rewrite to use rAF [Mads|Tim]</li>
+</ul>
+<h2>The Game (&amp; ideas)</h2>
+<ul>
+<li>You earn scores for every shit you do (hit special cars, die fast (like a mupliplicator or something))</li>
+<li>Stupid sounds like MMOOOOONSTER KILL from Quake3</li>
+<li>Intro screen with basic howto</li>
+<li>Favicon</li>
+<li>A "storm"/lot of cars after x minutes (random), but with a x second countdown so that the player will see that he is dying soon</li>
+<li>Show current game difficulty (based on how fast the cars are)</li>
+<li>Motor cycles in between the cars (on every side) with half the width of a car and a max height</li>
+<li>Random bombs, hurricanes, Tsunami -&gt; Connected to the "Storm"-Countdown so that a random SHIT FUCK will happen to the player</li>
+<li>Cooldown "display" for power-ups</li>
+<li>Use requestAnimationFrame so that the game pauses if the window is not active</li>
+<li>Spawn more power ups the faster the cars get</li>
+<li>Make the game scalable</li>
+<li>optimize for mobile -&gt; touch control and bigger board</li>
+<li>Change the volume of the audio</li>
+<li>Check if audio is available in the current browser and disable it if its not</li>
+<li>Fade power-ups smoothly in</li>
+<li>Max amount of power-ups</li>
+<li>Max amount of speed</li>
+<li>Don't create car-colors that are too dark (<a href="http://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color)" target="_blank" rel="noopener noreferrer">http://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color)</a></li>
+<li>Steal sound from <a href="http://www.cappel-nord.de/webaudio/" target="_blank" rel="noopener noreferrer">http://www.cappel-nord.de/webaudio/</a> (I already asked him if we can use it :D)</li>
+</ul>
+<h3>Completed</h3>
+<ul>
+<li>~~You control a minion~~</li>
+<li>~~You run from left to right and right to left~~</li>
+<li>~~In the middle of the canvas is a road~~</li>
+<li>~~On the road are different type of cars (size and color and shit)~~</li>
+<li>~~If you get hit by a car you are dead~~</li>
+<li>~~If you consume power up, you get special abbilities (more minions at the same time, bonus points for a limited time)~~</li>
+<li>~~Add a trail for power up *speed*~~</li>
+<li>~~Get crowded on power up *minion*~~</li>
+<li>~~Achievements~~</li>
+<li>~~Cars getting faster the longer you play~~</li>
+<li>~~Multiplier for each minion you have~~</li>
+<li>~~Death-Counter~~</li>
+<li>~~Power-ups spawn if you get one point (or if you reached the other side + every minion [maybe])~~</li>
+<li>~~Make cars wobble from side to side~~</li>
+<li>~~The player should have "human" colors (like on the classic "road: the game: bloodpath") and the color should be random after every death~~</li>
+<li>~~Turn audio on / off~~</li>
+<li>~~Reset the difficulty after you die (everything to default -&gt; # of cars, speed, power-ups)~~</li>
+<li>~~Use localStorage to save game stats (like "best"-score, deaths)~~</li>
+<li>~~Gulp to create endresult~~</li>
+<li>~~Make sounds~~</li>
+</ul>
+<h3>Modes for the future</h3>
+<ul>
+<li>Die fast, as much as possible</li>
+</ul>
+<h2>Bugs</h2>
+<ul>
+<li>Doesn't work in SF 26 on Ubuntu</li>
+<li>Minions don't die after being run over</li>
+<li>Cars are overlapping</li>
+<li>~~Power up *bomb* destroys all other power ups (Even the the ones to come)~~</li>
+<li>~~If you have x minions and move from one lane to the other you just get 1 score instead of 1 + x~~</li>
+<li>~~Minions overlap (after x + 1 minion power-ups you don't see the other minions anymore) -&gt; Maybe only when you have the invincible power up -&gt; nope, it's random~~</li>
+<li>The trail after the speed power up is not added if you are invincible</li>
+<li>~~Power up timer is not reset after taking a new power up~~</li>
+<li>Can't grap any power-up if you have the invincible power-up picked up once</li>
+</ul>
+<h2>Development on c9</h2>
+<ul>
+<li>SCSS -&gt; <code>sass --watch assets/scss:assets/css</code> in the console</li>
+</ul>
+<h2>Created by</h2>
+<ul>
+<li>Mads Cordes</li>
+<li>Tim Pietrusky</li>
+</ul>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://astrnox.github.io/gamespace/data/games.schema.json",
-  "title": "GameHub games.json",
+  "$id": "https://cranny.bbrrot.com/data/games.schema.json",
+  "title": "cranny games.json",
   "type": "object",
   "required": ["version", "categories", "games"],
   "properties": {
@@ -20,6 +20,22 @@
         }
       }
     },
+    "licenses": {
+      "type": "array",
+      "description": "站内出现的全部许可证，中文说明取自 GNU 与 OSI 的通行表述",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "url": { "type": "string" },
+          "commercial": { "type": "boolean", "description": "是否允许商业使用" },
+          "shareAlike": { "type": "boolean", "description": "改作后是否必须同样开源" },
+          "network": { "type": "boolean", "description": "作为网络服务提供时是否必须开源" }
+        }
+      }
+    },
     "games": {
       "type": "array",
       "items": { "$ref": "#/definitions/game" }
@@ -28,13 +44,19 @@
   "definitions": {
     "game": {
       "type": "object",
-      "required": ["id", "title", "desc", "cover", "category", "mode", "platform", "addedAt", "status"],
+      "required": ["id", "title", "desc", "cover", "category", "kind", "mode", "platform", "addedAt", "status"],
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
         "title": { "type": "string", "minLength": 1 },
         "alias": { "type": "array", "items": { "type": "string" } },
         "desc": { "type": "string", "maxLength": 80 },
+
         "cover": { "type": "string" },
+        "coverFrom": {
+          "type": "string",
+          "enum": ["scene", "letter", "screenshot"],
+          "description": "封面来源：机制构图 / 字母 / 真实截图"
+        },
         "accent": {
           "type": "integer", "minimum": 0, "maximum": 360,
           "description": "占位渐变的 HSL 色相角度"
@@ -46,12 +68,20 @@
         },
         "tags": { "type": "array", "items": { "type": "string" } },
 
+        "kind": {
+          "type": "string",
+          "enum": ["web", "download"],
+          "description": "web=浏览器里能玩；download=必须装客户端"
+        },
         "mode": { "type": "string", "enum": ["embed", "redirect", "download"] },
         "url": { "type": "string" },
         "repo": { "type": "string" },
         "platform": {
           "type": "array",
-          "items": { "type": "string", "enum": ["web", "pc", "android"] },
+          "items": {
+            "type": "string",
+            "enum": ["web", "pc", "win", "lin", "mac", "android", "ios"]
+          },
           "minItems": 1
         },
         "downloads": {
@@ -64,16 +94,40 @@
               "url": { "type": "string" },
               "code": { "type": "string" },
               "size": { "type": "string" },
-              "version": { "type": "string" }
+              "version": { "type": "string" },
+              "platform": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["web", "pc", "win", "lin", "mac", "android", "ios", "linux"]
+                }
+              }
             }
           }
         },
         "requirements": { "type": "string" },
 
+        "license": {
+          "type": ["string", "null"],
+          "description": "SPDX 标识；null 表示仓库里找不到许可证文件"
+        },
+        "licenseNote": {
+          "type": "string",
+          "description": "素材另需授权、或仓库无许可证文件等特殊情况"
+        },
+        "embeddable": {
+          "type": ["boolean", "null"],
+          "description": "实测是否可 iframe 内嵌；null 表示未检测"
+        },
+
+        "players": { "type": "integer", "minimum": 1, "description": "几人同屏/同局" },
         "featured": { "type": "boolean" },
         "addedAt": { "type": "string" },
-        "source": { "type": "string", "enum": ["fork", "own", "manual"] },
+        "source": { "type": "string", "enum": ["fork", "own", "manual", "upstream"] },
         "status": { "type": "string", "enum": ["active", "broken", "hidden"] },
+        "stars": { "type": "integer" },
+        "archived": { "type": "boolean", "description": "上游仓库已归档，谨慎选择" },
+        "pushedAt": { "type": "string", "description": "上游最后提交日期 YYYY-MM-DD" },
         "embedCheck": {
           "type": "object",
           "properties": {

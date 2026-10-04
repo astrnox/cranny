@@ -119,7 +119,7 @@
 .loader__ring:nth-child(2) {
   inset: 9px;
   border-bottom-color: var(--brand);
-  border-left-color: var(--orange);
+  border-left-color: var(--amber);
   animation: spinRev 1.45s linear infinite;
 }
 .loader__ring:nth-child(3) {
@@ -207,11 +207,11 @@
   border-radius: var(--radius-full);
   display: grid;
   place-items: center;
-  color: var(--orange);
-  background: var(--orange-soft);
+  color: var(--amber);
+  background: var(--amber-soft);
 }
 .fb__icon svg { width: 34px; height: 34px; }
-.fb__icon--info { background: var(--blue-soft); }
+.fb__icon--info { color: var(--green); background: var(--green-soft); }
 
 .fb__title {
   font-size: var(--fs-title);

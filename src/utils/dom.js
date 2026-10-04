@@ -19,9 +19,18 @@ export function el(tag, props = {}, children = []) {
   if (text != null) node.textContent = text;
   if (html != null) node.innerHTML = html;
 
-  if (dataset) Object.entries(dataset).forEach(([k, v]) => { node.dataset[k] = v; });
-  if (attrs)   Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
-  if (style)   Object.entries(style).forEach(([k, v]) => node.style.setProperty(k, v));
+  if (dataset) Object.entries(dataset).forEach(([k, v]) => {
+    if (v != null) node.dataset[k] = v;
+  });
+  /* null / undefined / false 一律跳过 —— setAttribute 会把它们写成字符串
+     "null" / "undefined" / "false"，那样 disabled="" 反而会让元素永远不可点。 */
+  if (attrs) Object.entries(attrs).forEach(([k, v]) => {
+    if (v === null || v === undefined || v === false) return;
+    node.setAttribute(k, v === true ? '' : v);
+  });
+  if (style) Object.entries(style).forEach(([k, v]) => {
+    if (v != null) node.style.setProperty(k, v);
+  });
   if (on)      Object.entries(on).forEach(([evt, fn]) => node.addEventListener(evt, fn));
 
   children.forEach(c => c && node.appendChild(c));

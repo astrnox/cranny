@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Untrusted 不可信 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Untrusted 不可信</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/AlexNisnevich/untrusted" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>**Untrusted —or— the Continuing Adventures of Dr. Eval** is an exciting Meta-JavaScript Adventure Game wherein you guide the dashing, steadfast Dr. Eval through a mysterious MACHINE CONTINUUM, wherein, using only his trusty computer and the TURING-COMPLETE power of JavaScript, he must literally ALTER HIS REALITY in order to find his freedom! You must literally edit and re-execute the very JavaScript running the game in your browser to save Dr. Eval from this dark and confusing reality!</p>
+<h3>Overview</h3>
+<p>The game presents you with a roguelike-like playing environment and a console window  with the JavaScript code generating each level. As loaded, each level is unbeatable, and most of the JavaScript is blocked from editing. The challenge is to open a path to the next level using only the limited tools left open to you.</p>
+<h3>Development</h3>
+<p>Run</p>
+<pre><code>make</code></pre>
+<p>to merge the JavaScript files into <code>scripts/build/untrusted.js</code> (and enables debug features).</p>
+<pre><code>make release</code></pre>
+<p>merges and minifies the JavaScript files into <code>scripts/build/untrusted.min.js</code> (and disables debug features).</p>
+<p>To run the game locally, you need to set up a local server to serve <code>index.html</code> (this step is necessary due to Access-Control-Allow-Origin restrictions).</p>
+<p>First install <a href="https://github.com/nodeapps/http-server/#installing-globally" target="_blank" rel="noopener noreferrer">http-server</a> if you haven't already:</p>
+<pre><code>npm install http-server</code></pre>
+<p>Then run:</p>
+<pre><code>make runlocal</code></pre>
+<p>Build your own mod in the <code>mods</code> directory:</p>
+<pre><code>make mod=example_mod</code></pre>
+<h3>Contributing Levels</h3>
+<p>To add a new level, create a jsx file in <a href="https://github.com/AlexNisnevich/untrusted/tree/master/levels/bonus" target="_blank" rel="noopener noreferrer">/levels/bonus</a> and add the level filename to the <code>bonusLevels</code> array in <a href="https://github.com/AlexNisnevich/untrusted/blob/master/scripts/game.js#L40" target="_blank" rel="noopener noreferrer">game.js</a>.</p>
+<p>If you are adding any new commands that the player can use, make sure to add them to <code>reference.js</code>.</p>
+<h4>The .jsx file format</h4>
+<p>jsx files are like regular JavaScript files, but have some additional syntax:</p>
+<ul>
+<li><code>#BEGIN_EDITABLE#</code> and <code>#END_EDITABLE#</code> surround editable lines</li>
+<li><code>#{#</code> and <code>#}#</code> wrap editable sections (parts of lines)</li>
+<li><code>#BEGIN_PROPERTIES#</code> and <code>#END_PROPERTIES#</code> surround the properties object at the start of the file. Available properties include:</li>
+<li><code>commandsIntroduced</code>: array of new commands introduced in the level (see <code>reference.js</code>)</li>
+<li><code>mapProperties</code>: optionally contains any of the following:</li>
+<li><code>allowOverwrite</code>: if true, placed static objects can be overwritten by other objects</li>
+<li><code>keyDelay</code>: specifies the lag, in milliseconds, between player keystrokes (default: 0)</li>
+<li><code>refreshRate</code>: the refresh rate of the level, in milliseconds (required for dynamic objects with <code>interval</code> properties to work correctly)</li>
+<li><code>showDrawingCanvas</code>: if true, the drawing canvas overlay is displayed</li>
+<li><code>showDummyDom</code>: if true, a dummy DOM will be displayed instead of the regular map</li>
+<li><code>music</code>: name of the background track for the level (see <code>sound.js</code>)</li>
+<li><code>startingMessage</code>: message displayed at the bottom of the screen when the level starts (if any)</li>
+<li><code>version</code>: increase the level version whenever you update a level</li>
+<li><code>nextBonusLevel</code>: load another level automatically when this one is solved</li>
+<li><code>#START_OF_START_LEVEL#</code> and <code>#END_OF_START_LEVEL#</code> should be the first and last line of the <code>startLevel</code> method, respectively</li>
+</ul>
+<h4>Adding music</h4>
+<p>To add a new background music track, add an MP3 file (that you have permission to use) to the <a href="https://github.com/AlexNisnevich/untrusted/tree/master/music" target="_blank" rel="noopener noreferrer">/music</a> and add a new entry to the <code>tracks</code> array in <a href="https://github.com/AlexNisnevich/untrusted/blob/master/scripts/sound.js" target="_blank" rel="noopener noreferrer">sound.js</a>.</p>
+<h3>Acknowledgements</h3>
+<p>Untrusted is a game by <a href="http://alex.nisnevich.com/" target="_blank" rel="noopener noreferrer">Alex Nisnevich</a> and <a href="https://github.com/neunenak" target="_blank" rel="noopener noreferrer">Greg Shuflin</a>.</p>
+<p>We'd like to thank:</p>
+<ul>
+<li><a href="https://github.com/dmazin" target="_blank" rel="noopener noreferrer">Dmitry Mazin</a> for design assistance and for the implementation of multiline editing</li>
+<li><a href="https://github.com/extrajordanary" target="_blank" rel="noopener noreferrer">Jordan Arnesen</a> for playtesting and design of lvl17</li>
+<li><a href="http://nhull.com" target="_blank" rel="noopener noreferrer">Natasha Hull-Richter</a> for extensive playtesting and assistance in level design</li>
+<li>Alex Bolotov, Colin Curtin, Conrad Irwin, Devin C-R, Eugene Evans, Gilbert Hsyu, Jacob Nisnevich, James Silvey, Jason Jiang, Jimmy Hack, Philip Shao, Ryan Fitzgerald, Stephen Liu, Yayoi Ukai, and Yuval Gnessin for playtesting and feedback</li>
+<li><a href="https://github.com/ondras" target="_blank" rel="noopener noreferrer">Ondřej Žára</a> for his <a href="http://ondras.github.io/rot.js/" target="_blank" rel="noopener noreferrer">rot.js</a> library</li>
+<li><a href="https://github.com/marijnh" target="_blank" rel="noopener noreferrer">Marijn Haverbeke</a> for his <a href="http://codemirror.net/" target="_blank" rel="noopener noreferrer">CodeMirror</a> library</li>
+<li><a href="http://www.cs.berkeley.edu/~bh/" target="_blank" rel="noopener noreferrer">Brian Harvey</a> for allowing us to use his likeness in lvl19</li>
+</ul>
+<h4>Soundtrack</h4>
+<p>You can <a href="https://soundcloud.com/untrusted/sets/untrusted-soundtrack" target="_blank" rel="noopener noreferrer">listen to the full soundtrack here</a>.</p>
+<p>The music that appears in Untrusted, in order, is:</p>
+<ul>
+<li>"The Green" - <a href="http://www.soundclick.com/bands/default.cfm?bandID=836578" target="_blank" rel="noopener noreferrer">Jonathan Holliday</a> (used with permission)</li>
+<li>"Dmitry's Thing #2" - <a href="https://soundcloud.com/dmitry-mazin" target="_blank" rel="noopener noreferrer">Dmitry Mazin</a> (written for Untrusted)</li>
+<li>"Obscure Terrain" - <a href="http://revolutionvoid.com/" target="_blank" rel="noopener noreferrer">Revolution Void</a> (CC-BY-NC-SA)</li>
+<li>"coming soon" - <a href="http://artistserver.com/Fex" target="_blank" rel="noopener noreferrer">Fex</a> (public domain)</li>
+<li>"cloudy sin" - <a href="https://soundcloud.com/stk13" target="_blank" rel="noopener noreferrer">iNTRICATE</a> (used with permission)</li>
+<li>"Dynamic Punctuality" - <a href="https://soundcloud.com/dmitry-mazin" target="_blank" rel="noopener noreferrer">Dmitry Mazin</a> (written for Untrusted)</li>
+<li>"Y" - <a href="https://soundcloud.com/tss-tortue-super-sonic" target="_blank" rel="noopener noreferrer">Tortue Super Sonic</a> (CC-BY-NC-SA)</li>
+<li>"Night Owl" - <a href="http://brokeforfree.com/" target="_blank" rel="noopener noreferrer">Broke for Free</a> (CC-BY)</li>
+<li>"The Waves Call Her Name" - <a href="http://sycamoredrive.bandcamp.com/" target="_blank" rel="noopener noreferrer">Sycamore Drive</a> (CC-BY-NC-SA)</li>
+<li>"Come and Find Me - B mix" - <a href="http://ericskiff.com/" target="_blank" rel="noopener noreferrer">Eric Skiff</a> (CC-BY)</li>
+<li>"Conspiracy" - <a href="https://www.facebook.com/MicAndAlan" target="_blank" rel="noopener noreferrer">Mike and Alan</a> (used with permission)</li>
+<li>"Messeah" - <a href="https://soundcloud.com/roccow" target="_blank" rel="noopener noreferrer">RoccoW</a> (CC-BY)</li>
+<li>"Searching" - <a href="http://ericskiff.com/" target="_blank" rel="noopener noreferrer">Eric Skiff</a> (CC-BY)</li>
+<li>"Da Funk Do You Know 'bout Chip?" - <a href="https://soundcloud.com/that-andy-guy" target="_blank" rel="noopener noreferrer">That Andy Guy</a> (used with permission)</li>
+<li>"Soixante-8" - <a href="http://freemusicarchive.org/music/Obsibilo/" target="_blank" rel="noopener noreferrer">Obsibilo</a> (CC-BY-NC-SA)</li>
+<li>"Tart (Pts 1 and 2)" - <a href="http://bleo.dummydrome.com/" target="_blank" rel="noopener noreferrer">BLEO feat KeFF</a> (CC-BY-NC-SA)</li>
+<li>"Beach Wedding Dance" - <a href="https://soundcloud.com/rolemusic" target="_blank" rel="noopener noreferrer">Rolemusic</a> (CC-BY-NC-SA)</li>
+<li>"Boss Loop 1" - <a href="http://www.youtube.com/user/Essasmusic" target="_blank" rel="noopener noreferrer">Essa</a> (free to use)</li>
+<li>"Adversity" - <a href="https://soundcloud.com/seropard" target="_blank" rel="noopener noreferrer">Seropard</a> (free to use)</li>
+<li>"Comme Des Orages" - <a href="http://freemusicarchive.org/music/Obsibilo/" target="_blank" rel="noopener noreferrer">Obsibilo</a> (CC-BY-NC-SA)</li>
+<li>"Brazilicon Alley" - <a href="http://vernonlenoir.wordpress.com/" target="_blank" rel="noopener noreferrer">Vernon Lenoir</a> (CC-BY-NC-SA), based on "Aquarela do Brazil" by Ary Barroso</li>
+</ul>
+<h3>License</h3>
+<p>This work is dual-licensed.</p>
+<ul>
+<li>Untrusted and the Untrusted soundtrack are licensed under a &lt;a rel="license" href="<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener noreferrer">http://creativecommons.org/licenses/by-nc-sa/3.0/</a>"&gt;Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC-BY-NC-SA 3.0)&lt;/a&gt;. In other words, you are free to use and modify Untrusted for non-commercial purposes, provided that you credit us and your work is also licensed under CC-BY-NC-SA.</li>
+<li>Additionally, the Untrusted code *without the soundtrack* is licenced under a commercial license. This means that you are able to use Untrusted for commercial purposes under some conditions, provided that you do not use any of the music. Please <a href="mailto:alex.nisnevich@gmail.com,greg.shuflin@gmail.com" target="_blank" rel="noopener noreferrer">contact us</a> for details.</li>
+</ul>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

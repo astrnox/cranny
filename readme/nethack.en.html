@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NetHack · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">NetHack</strong>
+  <span class="sep">·</span>
+  <span>NetHack-PL</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/NetHack/NetHack" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>NetHack 5.0.1 -- General information</p>
+<p>NetHack 5.0 is an enhancement to the dungeon exploration game NetHack,</p>
+<p>which is a distant descendent of Rogue and Hack, and a direct descendent</p>
+<p>of NetHack 3.6.</p>
+<p>NetHack 5.0.1 work-in-progress is not a release of NetHack. It consists</p>
+<p>primarily of bug fixes for 5.0.0 for an upcoming 5.0.1 release.</p>
+<p>The file doc/fixes5-0-1.txt in the source distribution is being updated with</p>
+<p>a list of fixes as they are committed.</p>
+<p>Because 5.0.1 work-in-progress is not a release, there are likely to still</p>
+<p>be bugs. Please don't treat NetHack-5.0.1 work-in-progress as released code.</p>
+<p>Use the most recent NetHack 5.0.0 release if stability is paramount.</p>
+<p>We're making the 5.0.1 work-in-progress available ahead of its release so</p>
+<p>that you can observe, test out, and contribute to its continuing development.</p>
+<p>Constructive suggestions, GitHub pull requests, and bug reports are all</p>
+<p>welcome and encouraged.</p>
+<p>NetHack 5.0 has made some general architectural improvements to the game or</p>
+<p>to its building process. Among them, 5.0 has:</p>
+<ul>
+<li>The source code is compliant with the C99 standard.</li>
+</ul>
+<ul>
+<li>removes barriers to building NetHack on one platform and operating system,</li>
+</ul>
+<p>for later execution on another (possibly quite different) platform and/or</p>
+<p>operating system. That capability is generally known as "cross-compiling."</p>
+<p>See the file "Cross-compiling" in the top-level folder for more information</p>
+<p>on that.</p>
+<ul>
+<li>The build-time "yacc and lex"-based level compiler, the</li>
+</ul>
+<p>"yacc and lex"-based dungeon compiler, and the quest text file processing</p>
+<p>previously done by NetHack's "makedefs" utility, have been replaced with</p>
+<p>Lua text alternatives that are loaded and processed by the game during play.</p>
+<ul>
+<li>- - - - - - - - - -</li>
+</ul>
+<p>Please read items (1), (2) and (3) BEFORE doing anything with your new code.</p>
+<ol>
+<li>Unpack the code in a dedicated new directory.  We will refer to that</li>
+</ol>
+<p>directory as the 'Top' directory.  It makes no difference what you</p>
+<p>call it.</p>
+<ol>
+<li>Having unpacked, you should have a file called 'Files' in your Top</li>
+</ol>
+<p>directory.</p>
+<p>This file contains the list of all the files you now SHOULD</p>
+<p>have in each directory.  Please check the files in each directory</p>
+<p>against this list to make sure that you have a complete set.</p>
+<p>This file also contains a list of what files are created during</p>
+<p>the build process.</p>
+<p>The names of the directories listed should not be changed unless you</p>
+<p>are ready to go through the makefiles and the makedefs program and change</p>
+<p>all the directory references in them.</p>
+<ol>
+<li>Before you do anything else, please read carefully the file called</li>
+</ol>
+<p>"license" in the 'dat' subdirectory.  It is expected that you comply</p>
+<p>with the terms of that license, and we are very serious about it.</p>
+<ol>
+<li>If you are attempting to build NetHack on one platform/processor, to</li>
+</ol>
+<p>produce a game on a different platform/processor it may behoove you to</p>
+<p>read the file "Cross-compiling" in your Top directory.</p>
+<ol>
+<li>If everything is in order, you can now turn to trying to get the program</li>
+</ol>
+<p>to compile and run on your particular system.  It is worth mentioning</p>
+<p>that the default configuration is SysV/Sun/Solaris2.x (simply because</p>
+<p>the code was housed on such a system).</p>
+<p>The files sys/*/Install.*, or sys/*/NewInstall.* were written to guide</p>
+<p>you in configuring the program for your operating system.  The files</p>
+<p>win/*/Install.* are available, where necessary, to help you in</p>
+<p>configuring the program for particular windowing environments.</p>
+<p>Reading them, and the man pages, should answer most of your questions.</p>
+<p>At the time of the most recent official release, NetHack 5.0, it had</p>
+<p>been tested to run and/or compile on:</p>
+<p>Intel Pentium or better running Linux, BSDI</p>
+<p>[compiles, runs]</p>
+<p>Intel Pentium or better running Windows 10 or 11</p>
+<p>[compiles, runs]</p>
+<p>Intel-based, or Apple M1, M2, M3, M4, M5 Macs running</p>
+<p>macOS 10.11 (El Capitan) to macOS 26 (Tahoe)</p>
+<p>[compiles, runs]</p>
+<p>(follow the instructions in sys/unix/NewInstall.unx)</p>
+<p>Intel 80386 or greater running MS-DOS with DPMI</p>
+<p>[cross-compiles on Linux, runs on MS-DOS, emulator/dosbox]</p>
+<p>built via djgpp compiler (native or Linux-hosted cross-compiler)</p>
+<p>AmigaOS 3.0 or later</p>
+<p>[cross-compiles on Linux or macOS, runs on Amiga or emulator]</p>
+<p>Running requires Kickstart 39+</p>
+<p>6 MB free RAM minimum (8 MB recommended)</p>
+<p>Hard drive with ~5 MB free space</p>
+<p>There has also been some success runing/comiling on:</p>
+<p>OpenVMS (aka VMS) V8.4 on Alpha and on Integrity/Itanium/IA64</p>
+<p>OpenVMS (ask VMS) V9.2-3 on x86-64</p>
+<ul>
+<li>- - - - - - - - - -</li>
+</ul>
+<p>If you have problems building the game, or you find bugs in it, we recommend</p>
+<p>filing a bug report from our "Contact Us" web page at:</p>
+<p><a href="https://www.nethack.org/common/contact.html" target="_blank" rel="noopener noreferrer">https://www.nethack.org/common/contact.html</a></p>
+<p>Please include the version information from #version or the command line</p>
+<p>option --version in the appropriate field.</p>
+<p>A public repository of the latest NetHack code that we've made</p>
+<p>available can be obtained via git here:</p>
+<p><a href="https://github.com/NetHack/NetHack" target="_blank" rel="noopener noreferrer">https://github.com/NetHack/NetHack</a></p>
+<p>or</p>
+<p><a href="https://sourceforge.net/p/nethack/NetHack/" target="_blank" rel="noopener noreferrer">https://sourceforge.net/p/nethack/NetHack/</a></p>
+<p>When sending correspondence, please observe the following:</p>
+<p>o Please be sure to include your machine type, OS, and patchlevel.</p>
+<p>o Please avoid sending us binary files (e.g. save files or bones files).</p>
+<p>If you have found a bug and think that your save file would aid in solving</p>
+<p>the problem, send us a description in words of the problem, your machine</p>
+<p>type, your operating system, and the version of NetHack.  Tell us that you</p>
+<p>have a save file, but do not actually send it.</p>
+<p>You may then be contacted by a member of the development team with the</p>
+<p>address of a specific person to send the save file to.</p>
+<p>o Though we make an effort to reply to each bug report, it may take some</p>
+<p>time before you receive feedback.  This is especially true during the</p>
+<p>period immediately after a new release, when we get the most bug reports.</p>
+<p>o We don't give hints for playing the game.</p>
+<p>o Don't bother to ask when the next version will be out or you can expect</p>
+<p>to receive a stock answer.</p>
+<p>If you want to submit a patch for the NetHack source code via email directly,</p>
+<p>you can direct it to this address:</p>
+<p>nethack-bugs (at) nethack.org</p>
+<p>If a feature is not accepted you are free, of course, to post the patches</p>
+<p>to the net yourself and let the marketplace decide their worth.</p>
+<p>All of this amounts to the following:  If you decide to apply a free-lanced</p>
+<p>patch to your NetHack 5.0 code, you are welcome to do so, of course, but we</p>
+<p>won't be able to provide support or receive bug reports for it.</p>
+<p>In our own patches, we will assume that your code is synchronized with ours.</p>
+<p>-- Good luck, and happy Hacking --</p>
+<h1>$NHDT-Date: 1779926755 2026/05/28 00:05:55 $ $NHDT-Branch: NetHack-5.0 $:$NHDT-Revision: 1.113 $</h1>
+<h1>Copyright (c) 2012 by Michael Allison</h1>
+<h1>NetHack may be freely redistributed.  See license for details.</h1>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

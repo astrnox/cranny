@@ -3,13 +3,18 @@
    ============================================================ */
 
 import { $, $$, el, clear } from './utils/dom.js';
-import { state, normalize, visibleGames, stats, invalidateFavCache } from './core/state.js';
+import {
+  state, normalize, visibleGames, stats, invalidateFavCache, clearFacets,
+} from './core/state.js';
 import { loadGames } from './core/loader.js';
 import { initTheme } from './core/theme.js';
 import { store } from './core/storage.js';
 
 import { createCard } from './components/card.js';
-import { renderPills, syncSegmented, initSegmented } from './features/filters.js';
+import {
+  renderPills, syncSegmented, initSegmented,
+  renderFacets, initFacets, reconcileFacets,
+} from './features/filters.js';
 import { initSearch, initSearchShortcut } from './features/search.js';
 import { openPlayer, closePlayer, initPlayer } from './components/player.js';
 import { openDetail, closeDetail, initDetail } from './components/detail.js';
@@ -25,6 +30,14 @@ const dom = {
   searchClear: $('#searchClear'),
   themeToggle: $('#themeToggle'),
   pills:       $('#pills'),
+  facets: {
+    toggle:  $('#facetsToggle'),
+    body:    $('#facetsBody'),
+    badge:   $('#facetsBadge'),
+    reset:   $('#facetsReset'),
+    embedOpts:   $('#embedOpts'),
+    licenseOpts: $('#licenseOpts'),
+  },
   segmented:   $$('.segmented__item'),
   featSec:     $('#featuredSection'),
   featRow:     $('#featuredRow'),
@@ -138,7 +151,9 @@ function routeAction(g) {
    渲染
    ============================================================ */
 function render() {
+  reconcileFacets();
   renderPills(dom.pills, { onChange: render });
+  renderFacets(dom.facets, { onChange: render });
 
   const focusMode = Boolean(state.query.trim()) || state.category !== null;
 
@@ -164,11 +179,17 @@ function render() {
   renderCards(dom.grid, list);
 
   /* 标题 */
-  const tabName = { all: '全部', web: '网页', local: '本地', fav: '收藏' }[state.tab];
+  const tabName = { all: '全部', web: '网页', local: '需下载', fav: '收藏' }[state.tab];
   const catName = state.category ? state.categories.find(c => c.id === state.category)?.name : null;
+  /* 有细筛时把条件都拼进标题，避免用户不知道自己在看什么子集 */
+  const bits = [catName, tabName === '全部' ? null : tabName]
+    .concat(state.embed === true ? ['站内可玩'] : null,
+            state.embed === false ? ['仅外链'] : null,
+            state.license ? [licLabel(state.license)] : null)
+    .filter(Boolean);
   dom.gridTitle.textContent = state.query.trim()
     ? `搜索「${state.query.trim()}」`
-    : (catName ? `${catName} · ${tabName}` : (state.tab === 'all' ? '全部游戏' : `${tabName}游戏`));
+    : (bits.length ? bits.join(' · ') : '全部游戏');
   dom.gridCount.textContent = list.length ? `${list.length} 个` : '';
 
   /* 空状态 */
@@ -192,8 +213,8 @@ function emptyConfig() {
   };
   if (state.tab === 'local') return {
     kind: 'local',
-    title: '还没有本地游戏',
-    desc: '在 games.json 里以 mode: "download" 添加 PC / 安卓游戏。',
+    title: '这里还没有需要下载的游戏',
+    desc: '收录标准是浏览器能直接玩，桌游客户端还没加进来。',
     actionText: '看看网页游戏',
     onAction() { state.tab = 'web'; render(); },
   };
@@ -211,10 +232,16 @@ function emptyConfig() {
   };
   return {
     kind: 'default',
-    title: '这个分类下暂时没有游戏',
-    desc: '换个分类看看，或者回到全部游戏。',
-    actionText: '查看全部',
-    onAction() { state.category = null; state.tab = 'all'; render(); },
+    title: '这组筛选下没有游戏',
+    desc: '把细筛放宽一点试试。',
+    actionText: '清空全部筛选',
+    onAction() {
+      clearFacets();
+      state.tab = 'all';
+      dom.searchInput.value = '';
+      dom.searchWrap.classList.remove('has-value');
+      render();
+    },
   };
 }
 
@@ -222,11 +249,19 @@ function updateSubtitle() {
   const s = stats();
   dom.pageSub.textContent = [
     `${s.total} 个游戏`,
-    `${s.web} 个网页`,
-    s.local ? `${s.local} 个本地下载` : null,
+    s.embed ? `${s.embed} 个点开就能玩` : null,
+    s.local ? `${s.local} 个要下载` : null,
     s.fav ? `${s.fav} 个收藏` : null,
   ].filter(Boolean).join(' · ');
 }
+/** 把许可证 id 翻成中文标签，用于网格标题 */
+function licLabel(id) {
+  if (id === 'free') return '宽松许可';
+  if (id === 'none') return '未声明许可证';
+  const hit = state.licenses.find(l => l.id === id);
+  return hit ? hit.name : (id === 'gpl' || id === 'agpl' || id === 'mpl' || id === 'cc' ? id.toUpperCase() : id);
+}
+
 function initTopbar() {
   const onScroll = () => dom.topbar.classList.toggle('is-scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true });
@@ -245,6 +280,7 @@ function initTopbar() {
   initSearch({ input: dom.searchInput, wrap: dom.searchWrap, clearBtn: dom.searchClear, onChange: render });
   initSearchShortcut(dom.searchInput);
   initSegmented(dom.segmented, { onChange: render });
+  initFacets(dom.facets, { onChange: render });
 
   dom.recentClear.addEventListener('click', () => {
     store.clearRecent();

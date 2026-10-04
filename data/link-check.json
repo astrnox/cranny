@@ -1,0 +1,1062 @@
+{
+  "checkedAt": "2026-10-04",
+  "results": [
+    {
+      "id": "2048",
+      "title": "2048 合集",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://2048.xns.asia/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "hextris",
+      "title": "Hextris 六边形俄罗斯方块",
+      "repoOk": true,
+      "apiLicense": "NOASSERTION",
+      "status": 0,
+      "finalUrl": "https://hextris.io/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "tower-game",
+      "title": "Tower Game 叠塔",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/tower_game/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "plants-vs-zombies",
+      "title": "植物大战僵尸 H5",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/h5-game-plantsVSzombies/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "trust",
+      "title": "Trust",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/trust/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "temple-of-boom",
+      "title": "Temple of Boom",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/temple-of-boom/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "wordle-plus",
+      "title": "Wordle Plus",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/wordle-plus/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "odd-bot-out",
+      "title": "Odd Bot Out",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/odd-bot-out/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "bubble-shooter",
+      "title": "Bubble Shooter 泡泡龙",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/arkadiumx27s-bubble-shooter/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "10-minutes-till-dawn",
+      "title": "10 Minutes Till Dawn",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://astrnox.github.io/10-minutes-till-dawn/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "fcgame",
+      "title": "FCGame · FC/NES 模拟器",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://github.com/astrnox/fcgame",
+      "xfo": "deny",
+      "csp": "'none'",
+      "embeddable": false
+    },
+    {
+      "id": "worldguessr",
+      "title": "WorldGuessr 猜地理",
+      "repoOk": true,
+      "apiLicense": "NOASSERTION",
+      "status": 200,
+      "finalUrl": "https://github.com/astrnox/worldguessr",
+      "xfo": "deny",
+      "csp": "'none'",
+      "embeddable": false
+    },
+    {
+      "id": "remake",
+      "title": "Remake",
+      "repoOk": true,
+      "status": 0,
+      "finalUrl": "https://github.com/astrnox/remake",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "fluid-weiqi-web",
+      "title": "Fluid 围棋",
+      "repoOk": true,
+      "apiLicense": "NOASSERTION",
+      "status": 200,
+      "finalUrl": "https://github.com/astrnox/fluid-weiqi-web",
+      "xfo": "deny",
+      "csp": "'none'",
+      "embeddable": false
+    },
+    {
+      "id": "fight-the-landlord",
+      "title": "斗地主 AI 对战",
+      "repoOk": true,
+      "status": 0,
+      "finalUrl": "https://github.com/astrnox/fight-the-landlord",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "mindustry",
+      "title": "Mindustry 工厂战争",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://mindustrygame.github.io/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "freeciv-web",
+      "title": "Freeciv-web 自由文明",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://freecivweb.org/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "openttd-wasm",
+      "title": "OpenTTD 交通大亨",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://transport-tycoon.k3.demos.sulat.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "unciv",
+      "title": "Unciv 完整文明",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://rosebud.ai/play/unciv-base",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "cc-web",
+      "title": "Command & Conquer 网页复刻",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://adityaravishankar.github.io/command-and-conquer/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "ancient-beast",
+      "title": "Ancient Beast 远古巨兽",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://ancientbeast.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "burgomaster-1255",
+      "title": "1255 Burgomaster 城建",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://1255.areso.pro/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "3d-city",
+      "title": "3d.city 城市模拟",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://lo-th.github.io/3d.city/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "cataclysm-dda",
+      "title": "Cataclysm: DDA",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "SAMEORIGIN",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "shattered-pixel-dungeon",
+      "title": "Shattered Pixel Dungeon",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://pixel-dungeon.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "dcss",
+      "title": "Dungeon Crawl Stone Soup",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://crawl.develz.org/play.htm",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "nethack",
+      "title": "NetHack",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://www.alt.org/",
+      "xfo": null,
+      "csp": "'self'",
+      "embeddable": false
+    },
+    {
+      "id": "angband",
+      "title": "Angband",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://angband.live/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "a-dark-room",
+      "title": "A Dark Room",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://adarkroom.doublespeakgames.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "2048-original",
+      "title": "2048 原版",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "'self'",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "candy-box-2",
+      "title": "Candy Box 2",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://candybox2.github.io/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "clumsy-bird",
+      "title": "Clumsy Bird 笨笨鸟",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://ellisonleao.github.io/clumsy-bird/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "duck-hunt-js",
+      "title": "Duck Hunt JS 猎鸭",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://duckhuntjs.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "skifree-js",
+      "title": "SkiFree.js 滑雪",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://basicallydan.github.io/skifree.js/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "alien-invasion",
+      "title": "Alien Invasion 星际侵略",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://cykod.github.io/AlienInvasion/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "breakout-71",
+      "title": "Breakout 71",
+      "repoOk": false,
+      "repoErr": "Not Found",
+      "status": 200,
+      "finalUrl": "https://breakout.lecaro.me/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "digger",
+      "title": "Digger 挖地",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://www.lutzroeder.com/projects/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "custom-tetris",
+      "title": "Custom Tetris 俄罗斯方块",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://ondras.github.io/custom-tetris/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "backdooms",
+      "title": "Backdooms",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://kuber.studio/backdooms/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "captain-rogers",
+      "title": "Captain Rogers 罗杰船长",
+      "repoOk": true,
+      "apiLicense": "NOASSERTION",
+      "status": 404,
+      "finalUrl": "https://enclavegames.com/games/captain-rogers/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "green-mahjong",
+      "title": "Green Mahjong 绿麻将",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://danbeck.github.io/green-mahjong/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "c4",
+      "title": "c4 四子棋",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://kenrick95.github.io/c4/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "diablo-js",
+      "title": "Diablo JS 暗黑",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://mitallast.github.io/diablo-js/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "hexa-battle",
+      "title": "Hexa Battle 六角战",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://giacomotag.io/hb/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "untrusted",
+      "title": "Untrusted 不可信",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://untrustedgame.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "rapid-dominance",
+      "title": "Rapid Dominance 快节奏",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://wenta.github.io/rapid-dominance/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "hexgl",
+      "title": "HexGL 未来竞速",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://hexgl.bkcore.com/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "astray",
+      "title": "Astray 迷宫",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://wwwtyro.github.io/Astray/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "fluid-table-tennis",
+      "title": "Fluid Table Tennis 流体乒乓",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://anirudhjoshi.github.io/fluid_table_tennis/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "wpilot",
+      "title": "WPilot 太空飞行员",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://jfd.github.io/wpilot/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "nazi-zombies-portable",
+      "title": "Nazi Zombies Portable",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://nzp.gay/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "bemuse",
+      "title": "Bemuse 音乐游戏",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://bemuse.ninja/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "lichess",
+      "title": "Lichess 国际象棋",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "DENY",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "boxcars",
+      "title": "Boxcars 双陆棋",
+      "repoOk": true,
+      "status": 200,
+      "finalUrl": "https://play.bgammon.org/",
+      "xfo": null,
+      "csp": null,
+      "embeddable": true
+    },
+    {
+      "id": "stendhal",
+      "title": "Stendhal 斯坦达尔",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "SAMEORIGIN",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "openra",
+      "title": "OpenRA 红色警戒",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "warzone-2100",
+      "title": "Warzone 2100 战区2100",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "0ad",
+      "title": "0 A.D. 零纪元",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "widelands",
+      "title": "Widelands 旷野",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "wesnoth",
+      "title": "Battle for Wesnoth 韦诺之战",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "hedgewars",
+      "title": "Hedgewars 刺猬大战",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "freeciv",
+      "title": "Freeciv 自由文明（客户端）",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "luanti",
+      "title": "Luanti 体素沙盒",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "veloren",
+      "title": "Veloren 沃洛伦",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "endless-sky",
+      "title": "Endless Sky 无尽天空",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "flare-rpg",
+      "title": "Flare RPG 火焰",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "supertuxkart",
+      "title": "SuperTuxKart 超级卡丁车",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "xonotic",
+      "title": "Xonotic 超级武器竞赛",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "red-eclipse",
+      "title": "Red Eclipse 红日",
+      "repoOk": false,
+      "repoErr": "Not Found",
+      "status": "skip"
+    },
+    {
+      "id": "freedoom",
+      "title": "Freedoom 自由的地狱",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "quake3-arena",
+      "title": "Quake III Arena 引擎",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "openmw",
+      "title": "OpenMW 晨风",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "openrct2",
+      "title": "OpenRCT2 侏罗纪公园",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "stepmania",
+      "title": "StepMania 跳舞机",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "bananabread",
+      "title": "BananaBread 引擎",
+      "repoOk": true,
+      "status": "skip"
+    },
+    {
+      "id": "js13k-a-verse-on-leverage",
+      "title": "A Verse on Leverage",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-ap11",
+      "title": "ap11",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-asdf",
+      "title": "asdf · 西蒙复刻",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-bouncing-button",
+      "title": "Bouncing Button",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-chem-fight",
+      "title": "Chem Fight 化学大战",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-clash-of-elements",
+      "title": "Clash of Elements",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-dante",
+      "title": "Dante 但丁",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-dodos-escaping-from-extinction",
+      "title": "Dodos Escaping",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-elematter",
+      "title": "Elematter 元素塔防",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-felicity-fifth-element",
+      "title": "Felicity and the Fifth Element",
+      "repoOk": false,
+      "repoErr": "Not Found",
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-fill-in-4",
+      "title": "Fill in 4",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-floor-thirteen",
+      "title": "Floor Thirteen",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-forest-racer",
+      "title": "Forest Racer 森林竞速",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-hard-vacuum-recon",
+      "title": "Hard Vacuum Recon",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-junojs",
+      "title": "JunoJS",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-kazukis-escape",
+      "title": "Kazuki's Escape",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-mawlight",
+      "title": "MawLight 噬光",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-mentat",
+      "title": "Mentat 门萨",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-milehigh",
+      "title": "Mile High 空中事故",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-mission-darkwhite",
+      "title": "Mission Darkwhite",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-neptune-blue",
+      "title": "Neptune Blue 海王蓝",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-please-play-again",
+      "title": "Please Play Again",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-pocketrocket",
+      "title": "PocketRocket 口袋火箭",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-radius-raid",
+      "title": "Radius Raid 半径突袭",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-rainbow-claw",
+      "title": "Rainbow Claw 彩虹抓娃娃",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-rainbow-reboot",
+      "title": "Rainbow Reboot",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-road-the-game",
+      "title": "Road The Game 鸡过马路",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-senshi",
+      "title": "Senshi 战士",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-shapeblocks",
+      "title": "ShapeBlocks 形状块",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-sorades-13k",
+      "title": "Sorades 13K",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-spacepi",
+      "title": "SpacePi 太空派",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-terraform",
+      "title": "Terraform 改造星球",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-the-unlucky-king",
+      "title": "The Unlucky King 倒霉国王",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-timer-madness",
+      "title": "Timer Madness 计时狂乱",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-under-the-crypt",
+      "title": "Under the Crypt 墓下",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-unifrost",
+      "title": "Unifrost 独霜",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-vier-wizard-wars",
+      "title": "Vier Wizard Wars",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    },
+    {
+      "id": "js13k-wind-rider",
+      "title": "Wind Rider 御风者",
+      "repoOk": true,
+      "status": 200,
+      "xfo": null,
+      "csp": "frame-ancestors 'self' js13kgames.com",
+      "embeddable": false,
+      "known": "blocked"
+    }
+  ]
+}

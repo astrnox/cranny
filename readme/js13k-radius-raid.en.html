@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Radius Raid 半径突袭 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Radius Raid 半径突袭</strong>
+  <span class="sep">·</span>
+  <span>MIT</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/js13kGames/radius-raid" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<h1>Radius Raid #</h1>
+<p>Radius Raid is a space themed shoot 'em up where you must blast away unrelenting enemies before they destroy you. The game features 13 enemy types, 5 powerups, parallax backgrounds, retro sound effects, and locally stored stats.</p>
+<p>This is an an entry for <a href="http://js13kgames.com" target="_blank" rel="noopener noreferrer">js13kGames</a> 2013. The theme this year was bad luck, but I didn't work it into my game at all. There are certainly luck and chance factors that affect the gameplay, but those weren't built in for the competition. Check out <a href="http://js13kgames.com/entries/radius-raid" target="_blank" rel="noopener noreferrer">Radius Raid</a> and all of the other entries at <a href="http://js13kgames.com/entries" target="_blank" rel="noopener noreferrer">js13kGames</a>!</p>
+<p>**Final Size:** 13,278 bytes</p>
+<h1>Controls #</h1>
+<p>**Move:** WASD/Arrows</p>
+<p>**Aim/Fire:** Mouse</p>
+<p>**Autofire:** F</p>
+<p>**Pause:** P</p>
+<p>**Mute:** M</p>
+<h1>Notes #</h1>
+<p>I hate having to say this, but from my testing, if you are not running the game in Chrome... you're gonna have a bad time. It works in other browsers, but the frame rate is just not high enough. I didn't want to sacrifice any visuals for this one. Early on, I decided I would rather have it look and play better in one browser than look ok and play ok in many browsers. It is just the state of the games in browsers at the moment and I am ok with that.</p>
+<p>I so badly wanted to use <a href="https://twitter.com/rezoner" target="_blank" rel="noopener noreferrer">@rezoner</a>'s JavaScript chiptune composer, <a href="http://chirp.rezoner.net/" target="_blank" rel="noopener noreferrer">CHIRP</a>, but I just couldn't fit it in the limit. It really bummed me out. I composed a few ideas and really loved the feel of the music with the game. So upsetting. You should definitely check out the tool, it is amazing and will be incredibly useful for game music in the future!</p>
+<h1>Credits #</h1>
+<p>**Created By:** <a href="https://twitter.com/jackrugile" target="_blank" rel="noopener noreferrer">@jackrugile</a></p>
+<p>**Inspiration and Support:** <a href="https://twitter.com/rezoner" target="_blank" rel="noopener noreferrer">@rezoner</a>, <a href="https://twitter.com/loktar00" target="_blank" rel="noopener noreferrer">@loktar00</a>, <a href="https://twitter.com/end3r" target="_blank" rel="noopener noreferrer">@end3r</a>, <a href="https://twitter.com/austinhallock" target="_blank" rel="noopener noreferrer">@austinhallock</a>, <a href="https://twitter.com/chandlerprall" target="_blank" rel="noopener noreferrer">@chandlerprall</a></p>
+<p>**Audio Processing:** <a href="https://github.com/mneubrand/jsfxr" target="_blank" rel="noopener noreferrer">JSFXR</a> by <a href="https://twitter.com/markusneubrand" target="_blank" rel="noopener noreferrer">@markusneubrand</a></p>
+<p>**Game Inspiration and Ideas:** <a href="http://www.atari.com/arcade/asteroids" target="_blank" rel="noopener noreferrer">Asteroids</a>, <a href="http://armorgames.com/play/3204/cell-warfare" target="_blank" rel="noopener noreferrer">Cell Warfare</a>, <a href="http://armorgames.com/play/3097/space-pips" target="_blank" rel="noopener noreferrer">Space Pips</a>, and many more</p>
+<p>**HTML5 Canvas Reference:** <a href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html" target="_blank" rel="noopener noreferrer">HTML5 Canvas Cheat Sheet</a></p>
+<p>**Game Math Reference:** Billy Lamberta - <a href="http://lamberta.github.io/html5-animation/" target="_blank" rel="noopener noreferrer">Foundation HTML5 Animation with JavaScript</a></p>
+<h1>Screenshots #</h1>
+<p><em>Radius Raid Menu</em></p>
+<p><em>Radius Raid Gameplay</em></p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

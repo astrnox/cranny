@@ -29,12 +29,28 @@ function colorOf(id) {
   return PALETTE[hash % PALETTE.length];
 }
 
+// 需下载游戏的角标：安卓优先，其次按 platform 里的真实操作系统标，
+// 别一律写「PC」——下载页要靠这个区分 Windows / Linux / macOS。
+const OS_BADGE = [
+  ['win', 'Windows', 'win'],
+  ['lin', 'Linux', 'lin'],
+  ['mac', 'macOS', 'mac'],
+];
+
 export function badgeInfo(game) {
   if (game.status === 'broken') return { key: 'broken', text: '暂不可用' };
   if (game.mode === 'download') {
-    return (game.platform || []).includes('android')
-      ? { key: 'android', text: '安卓' }
-      : { key: 'pc', text: 'PC' };
+    const plats = game.platform || [];
+    const desk = OS_BADGE.filter(([p]) => plats.includes(p));
+    const hasAndroid = plats.includes('android');
+    // 只有一个桌面系统 → 直接写名字，用户能少点一次下载页
+    if (!hasAndroid && desk.length === 1) {
+      return { key: desk[0][2], text: desk[0][1] };
+    }
+    if (hasAndroid && desk.length) return { key: 'android', text: '安卓+电脑' };
+    if (hasAndroid) return { key: 'android', text: '安卓' };
+    if (desk.length > 1) return { key: 'pc', text: '跨平台' };
+    return { key: 'pc', text: '电脑版' };
   }
   if (game.mode === 'embed') return { key: 'play', text: '直接玩' };
   if (game.mode === 'repo')   return { key: 'repo', text: '看仓库' };

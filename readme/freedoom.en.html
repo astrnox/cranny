@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Freedoom 自由的地狱 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">Freedoom 自由的地狱</strong>
+  <span class="sep">·</span>
+  <span>BSD</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/freedoom/freedoom" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>= Freedoom</p>
+<p>_Freedoom_ is a complete, free content first person shooter game,</p>
+<p>based on the _Doom_ engine.</p>
+<p>_Freedoom_ is not a program - rather, it consists of the levels,</p>
+<p>artwork, sound effects and music that make up the game. To play</p>
+<p>_Freedoom_, &lt;&lt;How-to-play,it must be paired with an engine&gt;&gt; that</p>
+<p>can play it.</p>
+<p>_Freedoom_ is actually three games in one, consisting of two</p>
+<p>single-player oriented campaigns and one set of levels designed</p>
+<p>exclusively for multiplayer deathmatch:</p>
+<p>[horizontal]</p>
+<p>*Freedoom: Phase 1*:: Four episodes, nine levels each, totalling 36</p>
+<p>levels.  This game aims for compatibility with _The Ultimate Doom_</p>
+<p>mods, also known as plain _Doom_ or _Doom 1_.</p>
+<p>*Freedoom: Phase 2*:: 32 levels in one long episode, featuring extra</p>
+<p>monsters and a double-barrelled shotgun.  This project aims for</p>
+<p>compatibility with _Doom II_ mods.</p>
+<p>*FreeDM*:: A 32-level game designed for competitive deathmatch play.</p>
+<p>For more information, see <a href="https://freedoom.github.io/." target="_blank" rel="noopener noreferrer">https://freedoom.github.io/.</a></p>
+<p>== How to play</p>
+<p>Since _Freedoom_ is only the game data, you will still need to</p>
+<p>download an engine separately.  These are also often termed “source</p>
+<p>ports” by the community.  There are an overwhelming number of choices</p>
+<p>available, a lengthy list of which is available on the</p>
+<p><a href="https://doomwiki.org/wiki/Source_port[Doom" target="_blank" rel="noopener noreferrer">https://doomwiki.org/wiki/Source_port[Doom</a> Wiki].</p>
+<p>One particularly recommended by the _Freedoom_ project is</p>
+<p><a href="https://zdoom.org/[GZDoom]." target="_blank" rel="noopener noreferrer">https://zdoom.org/[GZDoom].</a>  This engine offers good support for</p>
+<p>single-player, multi-player, and the majority of mods created for both</p>
+<p>_Doom_ and _Freedoom_.</p>
+<p>On Windows, you should place _Freedoom_’s data files (those ending</p>
+<p>with +.wad+) alongside the engine (eg, +odamex.exe+).  On Unix-like</p>
+<p>systems, these data files should go in either +/usr/share/games/doom+</p>
+<p>or your home directory.  If _Freedoom_ comes packaged as part of your</p>
+<p>operating system distribution, it should already be installed into the</p>
+<p>proper location.</p>
+<p>For Unix-like operating systems, such as GNU/Linux or a BSD variant,</p>
+<p>_Freedoom_ may be packaged and installed with programs named</p>
+<p>+freedoom1+, +freedoom2+, and +freedm+ that automatically run an engine</p>
+<p>for proper play. Desktop files may also be installed so that you can</p>
+<p>start the game using a graphical interface and avoid the command line</p>
+<p>a ltogether.</p>
+<p>== Manual</p>
+<p>Freedoom has a complete PDF format manual that describes how to play the</p>
+<p>game, including an introductory tutorial and some tactical tips. It also</p>
+<p>has information on the monsters and power-ups you'll encounter during</p>
+<p>play. The manual is available in multiple languages and can be</p>
+<p>downloaded <a href="https://freedoom.github.io/manual.html[on" target="_blank" rel="noopener noreferrer">https://freedoom.github.io/manual.html[on</a> the website].</p>
+<p>Printed, physical manuals are also available for purchase.</p>
+<p>== Compatibility</p>
+<p>A secondary goal of Freedoom is _compatibility_ with modifications</p>
+<p>("mods") for the original Doom.  There is a massive</p>
+<p><a href="https://doomwiki.org/wiki/Idgames_archive[back" target="_blank" rel="noopener noreferrer">https://doomwiki.org/wiki/Idgames_archive[back</a> catalog], spanning over</p>
+<p>three decades, containing thousands of _Doom_ levels and other</p>
+<p>mods made by fans of the game. _Freedoom_ aims to be compatible with</p>
+<p>these and allows most to be played without the need to use non-free</p>
+<p>software.</p>
+<p>== What “free” means</p>
+<p>When we speak of free content or software, we refer to the movement in</p>
+<p>which your freedoms to use, copy, modify, and study a work is not</p>
+<p>infringed.  For example, you may freely use _Freedoom_ for any purpose</p>
+<p>you see fit, you may redistribute it to anyone without needing to ask</p>
+<p>for permission, you may modify it (provided you keep the license</p>
+<p>intact, see <code>COPYING</code>), and you may study it--for example, to see how</p>
+<p>an “IWAD” is built.  To facilitate this, you can get the full source</p>
+<p>code for _Freedoom_, in this case, in the form of a DeuTex tree.</p>
+<p>You may read more about free software at the <a href="https://www.gnu.org/[GNU]" target="_blank" rel="noopener noreferrer">https://www.gnu.org/[GNU]</a></p>
+<p>and <a href="https://www.fsf.org/[Free" target="_blank" rel="noopener noreferrer">https://www.fsf.org/[Free</a> Software Foundation] websites.</p>
+<p>== Contributing to Freedoom</p>
+<p>Contributions to _Freedoom_ are always welcome, however there are a</p>
+<p>few guidelines that should be followed:</p>
+<p>=== Intellectual property</p>
+<p>We know people hate legalese, but this is important.  This applies to</p>
+<p>*everything* which is submitted.</p>
+<p>You must be careful when basing on existing graphics or sounds.  Most</p>
+<p>_Doom_ projects are lax on reusing intellectual property--there are</p>
+<p>many mods which contain modified _Doom_ sprites, for example.</p>
+<p>However, due to the nature of this project, we do not have the same</p>
+<p>liberty to rip as we please.</p>
+<p>The general rules go as follows:</p>
+<ul>
+<li>You must have permission for everything you submit.  If you make</li>
+</ul>
+<p>your own resources, do not base on resources from _Doom_ or any</p>
+<p>other restricted work.  If you take work from other places, please</p>
+<p>make sure that the work is freely-licensed or that you obtain</p>
+<p>permission to include it in the _Freedoom_ project.  They may not</p>
+<p>place additional restrictions compared to the normal _Freedoom_</p>
+<p>license.</p>
+<ul>
+<li>Freedoom's name often leads some people to think that the project's</li>
+</ul>
+<p>goal is to make a "free clone of Doom". This is not the case! While</p>
+<p>compatibility with Doom is a goal, we are our building our own game.</p>
+<p>Please make an effort to ensure your work is original and distinct,</p>
+<p>and not just a copy of anything from Doom.</p>
+<ul>
+<li>Be especially careful of “free textures” (or “free sounds” or</li>
+</ul>
+<p>“free graphics”) sites.  Although these would appear at first to</p>
+<p>be okay to use, many are free for “non-commercial use only.”</p>
+<p>One of the things we want to be able to do is put this in</p>
+<p>GNU/Linux distributions (which can be sold or developed</p>
+<p>commercially).</p>
+<p>=== Levels</p>
+<p>All levels for _Freedoom_ must be vanilla-compatible, requiring an</p>
+<p>expanded-limits or limit-removing engine is not permissible.  This</p>
+<p>means you may not exceed the limits of the original _Doom_ engine, and</p>
+<p>do not depend on additional mapping features.  Levels should be in</p>
+<p>_Doom_’s original format, not in “Hexen”-format.</p>
+<p>It is sensible to also heed the following guidelines:</p>
+<ul>
+<li>Make sure that skill levels are implemented, and that all</li>
+</ul>
+<p>multiplayer start points, both cooperative and deathmatch, are</p>
+<p>present.</p>
+<ul>
+<li>Try to make levels appropriately difficult for their position</li>
+</ul>
+<p>within the progression of the game.  Also bear in mind that not</p>
+<p>all players may be as skilled a player as you.</p>
+<ul>
+<li>Do not use tricks that exploit _Doom_’s software renderer; some</li>
+</ul>
+<p>engines, especially those that use hardware accelerated rendering,</p>
+<p>may not render it properly.  Examples of tricks to avoid include</p>
+<p>those used to simulate 3D bridges and “deep water” effects.</p>
+<ul>
+<li>Test your levels in <a href="https://www.chocolate-doom.org/[Chocolate" target="_blank" rel="noopener noreferrer">https://www.chocolate-doom.org/[Chocolate</a></li>
+</ul>
+<p>Doom] to make sure that vanilla compatibility is maintained.  This</p>
+<p>is an engine with strict adherence to vanilla Doom limits and</p>
+<p>bugs, and working in it assures that levels can be played with any</p>
+<p>_Doom_ engine.</p>
+<ul>
+<li>Use a Doom editor to check for errors. In</li>
+</ul>
+<p><a href="http://eureka-editor.sourceforge.net/[Eureka]" target="_blank" rel="noopener noreferrer">http://eureka-editor.sourceforge.net/[Eureka]</a> it's possible to</p>
+<p>check for errors with the Check / All menu, or by pressing <code>F9</code>.</p>
+<ul>
+<li>If possible run <code>make test</code> and fix any errors found. Note that</li>
+</ul>
+<p>some of the errors can be fixed by <code>make fix</code>.</p>
+<p>=== Graphics</p>
+<p>Graphics should generally have the same color and size as the original</p>
+<p>_Doom_ graphics, as to remain compatible with mods.  Otherwise, levels</p>
+<p>may end up looking like a nightmare in design.  They may be</p>
+<p>thematically different as long as it doesn’t clash.</p>
+<p>_Doom_ uses a fictional corporation abbreviated as “UAC:” this is</p>
+<p>trademarked by id Software and cannot be used in _Freedoom_.  Instead,</p>
+<p>use the initials “AGM” for _Freedoom_.</p>
+<p>=== Documentation</p>
+<p>_Freedoom_ always needs help with documentation, so please send your</p>
+<p>patches, but keep in mind:</p>
+<ul>
+<li>We use <a href="http://asciidoc.org/[AsciiDoc]" target="_blank" rel="noopener noreferrer">http://asciidoc.org/[AsciiDoc]</a> for writing the</li>
+</ul>
+<p>documentation.  AsciiDoc is a simple plaintext-based format which</p>
+<p>is simple to read and write in its source form, and can generate</p>
+<p>nice HTML documents out of them.</p>
+<ul>
+<li>Headers are formated in a wiki-style format, this makes it easier</li>
+</ul>
+<p>for Vim (perhaps other editors, too) to automatically re-format</p>
+<p>text.</p>
+<ul>
+<li>Text is kept at 72 characters wide.  In Vim, you can set the</li>
+</ul>
+<p>editor to automatically insert line breaks as you’re typing by</p>
+<p>performing <code>set textwidth=72</code>.  Special exceptions to the width</p>
+<p>rule might be allowed when necessary (for example, inserting long</p>
+<p>URLs).</p>
+<p>=== Submitting your work</p>
+<p>The most common, and a fairly simple method, to submit your work is by</p>
+<p>posting it on the</p>
+<p><a href="https://www.doomworld.com/forum/17-freedoom/[Freedoom" target="_blank" rel="noopener noreferrer">https://www.doomworld.com/forum/17-freedoom/[Freedoom</a> forum] on</p>
+<p>Doomworld Forums.  This allows a great number of people to review the</p>
+<p>contribution and provide feedback, although the registration process</p>
+<p>is known to be cumbersome.</p>
+<p>An alternative to using the forum, is to post your submission on the</p>
+<p><a href="https://github.com/freedoom/freedoom/issues[issue" target="_blank" rel="noopener noreferrer">https://github.com/freedoom/freedoom/issues[issue</a> tracker], which may</p>
+<p>also be peer-reviewed and provide a feedback cycle.</p>
+<p>Unfortunately, the Freedoom project cannot provide hosting space in</p>
+<p>the form of a web page nor FTP, however there are many free file hosts</p>
+<p>to use when you need a location to upload files.  Sites and services</p>
+<p>such as <a href="https://www.dropbox.com/[Dropbox]" target="_blank" rel="noopener noreferrer">https://www.dropbox.com/[Dropbox]</a> and</p>
+<p><a href="https://mega.co.nz/[Mega]," target="_blank" rel="noopener noreferrer">https://mega.co.nz/[Mega],</a> as well as others, are common and should be</p>
+<p>simple to use.</p>
+<p>==== Crediting information</p>
+<p>_Freedoom_ is made up of submissions from many people all over the</p>
+<p>globe.  All of them, and you, deserve credit!  Please do not forget to</p>
+<p>provide your name and email when submitting resources.</p>
+<p>==== Using Git</p>
+<p>You can also commit on a clone of the _Freedoom_ repository, although</p>
+<p>this is a technical task and it is okay to let other _Freedoom_</p>
+<p>maintainers to do it instead: that is our normal mode of operation.</p>
+<p>However, pull requests are much appreciated and you may submit them in</p>
+<p>any manner you wish, with GitHub’s direct pull requests being the</p>
+<p>simplest, but by far not the only means.</p>
+<p>Freedoom uses the commit message style commonly seen in distributed</p>
+<p>version control systems, adopted by projects such as Linux and Git.</p>
+<p>For an explanation of this style, see</p>
+<p><a href="https://chris.beams.io/posts/git-commit/[How" target="_blank" rel="noopener noreferrer">https://chris.beams.io/posts/git-commit/[How</a> to Write a Git Commit</p>
+<p>Message].</p>
+<p>If you create a git commit for someone else it is helpful to set the</p>
+<p>author of the commit so that they get credit. Ask them what name/alias</p>
+<p>and email they would like to use. For example:</p>
+<p>[source,bash]</p>
+<hr>
+<p>git commit --author "Bob Smith &lt;bob@example.com&gt;" ...</p>
+<hr>
+<p>If they prefer not to give an email then the email can be omitted, so</p>
+<p>just "Bob Smith" in the above example.</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>

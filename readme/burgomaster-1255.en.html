@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1255 Burgomaster 城建 · README</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+    --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+  }
+}
+html[data-theme="light"]{
+  --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --border:#d1d9e0;
+  --code-bg:#f6f8fa; --quote-bg:#f6f8fa; --link:#ff5a36; --accent:#ff5a36;
+}
+html[data-theme="dark"]{
+  --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --border:#3d444d;
+  --code-bg:#161b22; --quote-bg:#161b22; --link:#ff7a58; --accent:#ff7a58;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+body{
+  padding:18px 20px 22px;
+  font:15px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  word-wrap:break-word;
+}
+h1,h2,h3,h4{line-height:1.3;margin:1.5em 0 .6em;font-weight:600}
+h1{font-size:1.5em;margin-top:0;padding-bottom:.4em;border-bottom:1px solid var(--border)}
+h2{font-size:1.22em;padding-bottom:.3em;border-bottom:1px solid var(--border)}
+h3{font-size:1.08em}
+p{margin:0 0 .9em}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 .9em;padding-left:1.5em}
+li{margin:.25em 0}
+code{
+  background:var(--code-bg);padding:.15em .38em;border-radius:4px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+pre{
+  background:var(--code-bg);border:1px solid var(--border);border-radius:6px;
+  padding:12px 14px;overflow-x:auto;margin:0 0 1em;
+}
+pre code{background:none;padding:0}
+blockquote{
+  margin:0 0 1em;padding:.5em 14px;border-left:3px solid var(--border);
+  background:var(--quote-bg);color:var(--muted);
+}
+blockquote>:last-child{margin-bottom:0}
+table{border-collapse:collapse;margin:0 0 1em;font-size:.94em;width:100%}
+th,td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+th{background:var(--code-bg);font-weight:600}
+hr{border:0;border-top:1px solid var(--border);margin:1.6em 0}
+img{max-width:100%;height:auto;border-radius:6px}
+kbd{
+  background:var(--code-bg);border:1px solid var(--border);border-bottom-width:2px;
+  border-radius:4px;padding:.1em .4em;font-size:.85em;
+}
+.head{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--border);
+  font-size:13px;color:var(--muted);
+}
+.head a{color:var(--muted)}
+.head .sep{opacity:.5}
+.prose-raw{
+  margin-top:22px;padding-top:14px;border-top:1px dashed var(--border);
+  font-size:12px;color:var(--muted);
+}
+.card{
+  border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:0 0 1em;
+  background:var(--code-bg);
+}
+.card h2{margin:0 0 .7em;font-size:1.05em;border:0;padding:0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.45em 1em;margin:0}
+.card dt{color:var(--muted);font-size:.9em;white-space:nowrap}
+.card dd{margin:0;font-size:.94em}
+.card .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1em}
+.card .actions a{
+  border:1px solid var(--border);border-radius:6px;padding:.34em .8em;
+  font-size:.88em;background:var(--bg);
+}
+.card .actions a:hover{border-color:var(--accent);text-decoration:none}
+.thin-note{
+  margin:0 0 1em;padding:.6em 12px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);color:var(--muted);font-size:.9em;
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <strong style="color:var(--fg)">1255 Burgomaster 城建</strong>
+  <span class="sep">·</span>
+  <span>GPL-3.0</span>
+  <span class="sep">·</span>
+  <a href="https://github.com/Areso/1255-burgomaster" target="_blank" rel="noopener noreferrer">在 GitHub 上看原版 ↗</a>
+</div>
+<p>1255 Burgomaster</p><p>Play the game</p><p>Play the game in web<br>--&gt;<br>Play the game in web (reserve link)</p><p>About the project</p><p>Hello there! My name is Anton Gladyshev, and I&#x27;m the author of this project.<br>The homepage of the project is https://github.com/Areso/1255-burgomaster .<br>This pet-project is dedicated to create a playable game, written in vanilla JavaScript, without even using jQuery and modern whistlers and jugglers, such as JS frameworks, TS-&gt;JS compilators, Node.js, web servers and so on.<br>Thus, to play the game, you need only a modern browser. To edit the game, you need only a text editor and imagination.<br>The project is oriented to be compact (in terms of the source code and the resources), blazing fast to download, fast enough to run even on aging devices</p><p>It runs well even on low-powered tablets and phones, let alone old PCs and laptops.</p><p>It heavily uses JS technologies as HTML5.Canvas, EcmaScript5 localStorage, JSON.parse() , and so on. So it requires a somewhat modern browser, with ES5/ES6 standarts support.</p><p>Minimum System Requirements</p><p>Browsers: any modern browser, but the game tested only on Firefox and Google Chrome</p><p>1024MB RAM</p><p>800MHz 1 Core CPU</p><p>5MB of data plan to download the game itself, analytics, and chat.<br>And some traffic will be used with in-game chat and usage statistics, though the game will work perfectly even if a connection is lost after the download is complete.<br>You also may download the game, to run it in offline (check options offline game).</p><p>About the game</p><p>Supported Languages(SL): English, Russian (Русский).</p><p>Community Supported Languages(CSL): German (Deutsch), Esperanto, French (Français)</p><p>Make note that my opportunity to translate the game to CSL is limited. I can answer in chat in supported languages and in Esperanto.</p><p>Also, any CSL translation could have mistakes or untranslated parts or parts of translation which are partly outdated.</p><p>You could help with translations for the game here:</p><p>https://docs.google.com/spreadsheets/d/1WxRoxfPpYBHqvWb4mQNxGVr3r4VyxHSEuELzdU1I2PE</p><p>This is a single-player game. There is built-in chat but it is not currently available to chat in.</p><p>Also, the game now has global goals, which are usually activated for a limited time.</p><p>In those events, all players can work together to achieve a high global goal, and in case of the achievement, they all got a reward, according to their pledge in the achievement.</p><p>The game itself is about building a city. You start with a set amount of gold and a few citizens.</p><p>This is an IDLE game, which means, every minute your city will spawn new citizens who will pay taxes to you.</p><p>You can construct as well as upgrade buildings, but upgrading existing ones will require more gold each time .</p><p>As of now, constructing building does not require time, only resources.</p><p>Straight management, which means, you need place management by clicking here and there and you will get what you clicked.<br>What game offers now:</p><p>13 buildings to build of 10 types</p><p>maps to explore (HoMM3-like)</p><p>autocampaigns (Fallout Shelter-like)</p><p>a hero managemenet</p><p>troops managemenet</p><p>artifacts to collect</p><p>executing people or placing festivals</p><p>University with a tech tree</p><p>random events: stealings from the treasury, fires and plagues</p><p>time-limited events: Halloween, New Year</p><p>two decoration themes: Summer and Winter</p><p>a record table</p><p>You will explore wild territories near your city.</p><p>Regarding your choices, you could get a boost in taxes, birthrate, happiness and so on.</p><p>The game could become a clicker game if you build the Gallows, and like to execute your citizens.</p><p>This game created and new features right now in development inspired by Travian, Townsmen, Stronghold and Stronghold Crusaders, HoMM (Heroes of Might and Magic), Lord of Realm, Anno series.</p><p>You can export and import save to transfer your progress between different browsers and PCs.</p><p>License</p><p>The source code is under GPLv3.</p><p>ALL GRAPHIC AND SOUND ASSETS UNDER PROPRIETARY LICENSE.</p><p>YOU MAY NOT REDISTRIBUTE THE GAME WITH THE ASSETS VIA PUBLISHING IN INTERNET, STORES, OR ANY OTHER WAY</p><p>YOU MAY USE ASSETS ONLY FOR LOCAL RUNNING</p><p>The Graveyard list</p><p>Here lie projects, which started around the same time (or later) and already dead:</p><p>Babylon&#x27;s Fall publisher Square Enix (2022, March 3 - 2023, February 27)</p><p>Hyper Scape publisher Ubisoft (2020 Aug - 2022, April 28)</p><p>Crowfall (2021-2022, November 22)</p><p>Super Bomberman R Online by Konami (2021 June-2022, December 1)</p><p>Scavangers by Behaviour Interactive (2021-2022, December 16)</p><p>Fuser (2020, November - 2022, December 19)</p><p>Dead and Buried II publisher Facebook (2019-2023)</p><p>Bogo publisher Facebook (2019-2023)</p><p>Only open sourced games could run as long as at least one of their fun exists</p>
+<p class="prose-raw">以上为该项目 README 的原文摘编，版权归原作者所有。</p>
+</body>
+</html>
